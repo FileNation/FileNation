@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
-
+import {InputComponent} from './input/input.component';
 @Injectable()
 export class EmailService {
 
@@ -10,16 +10,15 @@ export class EmailService {
 
   }
 
-  postJSON() {
-    var json = JSON.stringify({from: 'hello@alexsicart.com', to: 'alex@sharge.io'});
-    var params = 'json=' + json;
-    var headers = new Headers();
-    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+  sendEmail(to, from, hashes) {
+    // var json = JSON.stringify();
+    // var params =  json;
+    // var headers = new Headers();
+
+    // headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
     return this.http.post('http://localhost:3000/createEmail',
-    params, {
-      headers: headers
-    })
+    {to, from, hashes})
     .map(res => res.json());
   }
 }

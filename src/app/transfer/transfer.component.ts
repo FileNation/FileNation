@@ -15,6 +15,7 @@ export class TransferComponent implements OnInit {
   name: string;
   magnetURI: string;
   postData:string;
+  data: any;
 
 
   constructor(private ipfsService: IpfsService, private emailService: EmailService) { }
@@ -36,5 +37,6 @@ export class TransferComponent implements OnInit {
       this.hashes.push(torrent);
       console.log(this.hashes);
     });
+
   }
 }

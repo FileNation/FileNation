@@ -1,6 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 import { EmailService } from './../email.service';
+import { IpfsService } from './../ipfs.service';
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
@@ -11,18 +12,61 @@ const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA
 })
 export class InputComponent {
   postData:string;
-  constructor(private emailService: EmailService) { }
+  data: any;
+  hashes: any;
+  name: string;
+  parentSize: any;
+  sicart: any;
+  fuck: any;
 
-  emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.pattern(EMAIL_REGEX)]);
+  constructor(private emailService: EmailService, private ipfsService: IpfsService) {
 
-    onTestPost() {
-      this.emailService.postJSON()
-      .subscribe(
-        data => this.postData = JSON.stringify(data),
-        error => alert(error),
-        () => console.log("Finished")
-      );
+
+    this.data = {
+      to: '',
+      from: '',
+      hashes: ''
     }
   }
+  ngOnInit() {
+    this.hashes = [];
+    this.sicart = [];
+  };
+
+
+
+  toEmailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.pattern(EMAIL_REGEX)]);
+    fromEmailFormControl = new FormControl('', [
+      Validators.required,
+      Validators.pattern(EMAIL_REGEX)]);
+
+      onTestPost() {
+        this.emailService.sendEmail(this.data.to, this.data.from, this.data.hashes)
+        .subscribe(
+          data => this.postData = JSON.stringify(data),
+          error => console.log(error),
+          () => console.log("Finished")
+        );
+      }
+      upload = ($event) => {
+        var file = $event.target.files[0];
+        console.log('file: ', file);
+        this.name = file.name;
+        this.parentSize = file.size;
+
+
+
+        this.ipfsService.uploadIPFS(file)
+        .then((torrent) => {
+          this.hashes.push(torrent);
+          this.sicart.push(this.hashes.map((el) => `<h4>${el.name}</h4>` + '<br>' + 'https://instant.io/#' + el.magnetURI + '<br><br>'))
+          this.fuck = this.sicart;
+          console.log('bf:', this.data);
+          this.data.hashes = (this.fuck)
+          console.log('after:', this.data);
+        });
+
+      }
+    }
