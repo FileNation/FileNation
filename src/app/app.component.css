@@ -1,0 +1,10 @@
+.container {
+  height: 100vh;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/c/c6/Bitcoin_Network_Blue_2560x1440.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.container0 {
+  height: 100vh;
+}

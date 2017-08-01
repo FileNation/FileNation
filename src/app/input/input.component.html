@@ -1,0 +1,24 @@
+<form class="example-form">
+  <md-input-container class="example-full-width">
+    <input mdInput placeholder="Send Email to" [formControl]="emailFormControl">
+    <md-error *ngIf="emailFormControl.hasError('pattern')">
+      Please enter a valid email address
+    </md-error>
+    <md-error *ngIf="emailFormControl.hasError('required')">
+      Email is <strong>required</strong>
+    </md-error>
+  </md-input-container>
+  <br><br>
+  <md-input-container class="example-full-width">
+    <input mdInput placeholder="Your Email" [formControl]="emailFormControl">
+    <md-error *ngIf="emailFormControl.hasError('pattern')">
+      Please enter a valid email address
+    </md-error>
+    <md-error *ngIf="emailFormControl.hasError('required')">
+      Email is <strong>required</strong>
+    </md-error>
+  </md-input-container>
+</form>
+<br><br>
+<button (click)="onTestPost()"> Send! ></button><br>
+<!-- <p>Output: {{postData}}</p> -->
