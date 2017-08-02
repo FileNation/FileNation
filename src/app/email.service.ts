@@ -11,13 +11,7 @@ export class EmailService {
   }
 
   sendEmail(to, from, hashes) {
-    // var json = JSON.stringify();
-    // var params =  json;
-    // var headers = new Headers();
-
-    // headers.append('Content-Type', 'application/x-www-form-urlencoded');
-
-    return this.http.post('http://localhost:3000/createEmail',
+    return this.http.post('https://mighty-headland-68035.herokuapp.com/createEmail',
     {to, from, hashes})
     .map(res => res.json());
   }
