@@ -61,7 +61,7 @@ export class InputComponent {
         this.ipfsService.uploadIPFS(file)
         .then((torrent) => {
           this.hashes.push(torrent);
-          this.sicart.push(this.hashes.map((el) => `<h4>${el.name}</h4>` + '<br>' + 'https://instant.io/#' + el.magnetURI + '<br><br>'))
+          this.sicart.push(this.hashes.map((el) =>  '<br>' + 'https://gateway.ipfs.io/ipfs/' + el[0].hash + '<br><br>'))
           this.fuck = this.sicart;
           console.log('bf:', this.data);
           this.data.hashes = (this.fuck)
