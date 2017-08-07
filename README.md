@@ -1,8 +1,6 @@
 # dCloud
 IPFS implementation with Angular 4.
 
-### It's not already connected to the back-end part.
-
 ## Contributors
 
 We love pull requests from everyone. By participating in this project, you agree to abide by the thoughtbot
