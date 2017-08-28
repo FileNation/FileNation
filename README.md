@@ -1,5 +1,15 @@
-# dCloud
+# Decentralized-Cloud
+
+## Description
 IPFS implementation with Angular 4.
+
+Empowering people to upload & share everything with stamping & exclusivity.
+
+![IPFS](ipfs.png)
+
+### Requirements:
+
+Ignition! 🚀
 
 ## Contributors
 
