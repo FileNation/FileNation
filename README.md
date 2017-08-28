@@ -3,13 +3,24 @@
 ## Description
 IPFS implementation with Angular 4.
 
-Empowering people to upload & share everything with stamping & exclusivity.
+IPFS (the InterPlanetary File System) is a new hypermedia distribution protocol, addressed by content and identities. IPFS enables the creation of completely distributed applications. It aims to make the web faster, safer, and more open.
 
 ![IPFS](ipfs.png)
 
-### Requirements:
+## How it works
 
-Ignition! 🚀
+Decentralized-Cloud is a work in progress!
+
+$npm install
+$npm start
+
+## Tech Stack
+
+**Main Framework**: [Angular](https://angular.io/)
+
+**Libraries**: [IPFS](https://ipfs.io/)
+
+**Server**: Private
 
 ## Contributors
 
@@ -18,5 +29,3 @@ We love pull requests from everyone. By participating in this project, you agree
 
 Fork, then clone the repo:
 Push to your fork and  [submit a pull request].
-
-- IPFS can't upload + 60 Megabytes. Help please. :)
