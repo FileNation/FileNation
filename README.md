@@ -1,11 +1,12 @@
 # Decentralized-Cloud
 
 ## Description
-IPFS implementation with Angular 4.
+Decentralized Cloud is the simplest way to send your files around the world using the InterPlanetary File System.
 
 IPFS (the InterPlanetary File System) is a new hypermedia distribution protocol, addressed by content and identities. IPFS enables the creation of completely distributed applications. It aims to make the web faster, safer, and more open.
 
-![IPFS](ipfs.png)
+![IPFS](screenshots/ipfs.png)
+![IPFS](screenshots/ipfs1.png)
 
 ## How it works
 
