@@ -11,14 +11,12 @@ import { IpfsService } from './ipfs.service'
 import { AppComponent } from './app.component';
 import { TransferComponent } from './transfer/transfer.component';
 import { InputComponent } from './input/input.component';
-import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TransferComponent,
     InputComponent,
-    ProgressBarComponent
   ],
   imports: [
     BrowserModule,
