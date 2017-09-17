@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import webtorrent from 'webtorrent';
 import {Buffer} from 'buffer';
-import Ipfs from 'ipfs';
+import IPFS from 'ipfs';
 import {bs58} from 'bs58'
 import {Importer} from 'ipfs-unixfs-engine';
 
@@ -23,27 +23,12 @@ export class IpfsService {
 
      const repoPath = 'ipfs-' + Math.random()
 
-    // Create an IPFS node
-     this.node = new Ipfs({
-       init: false,
-       start: false,
-       repo: repoPath
+    this.node = new IPFS({
+       repo: 'ipfs-' + Math.random()
      })
 
-    //  Init the node
-     this.node.init(this.handleInit)
-   }
-
-   handleInit = (err) => {
-     if (err) {
-       throw err
-     }
-
-     this.node.start(() => {
-       console.log('Online status: ', this.node.isOnline() ? 'online' : 'offline');
-     })
-  }
-
+     this.node.on('ready', () => console.log('Online status: ', this.node.isOnline() ? 'online' : 'offline'))
+}
   uploadIPFS = (arg) => {
     console.log(arg);
     return new Promise((resolve, reject) => {
