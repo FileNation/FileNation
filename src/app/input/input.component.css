@@ -73,15 +73,15 @@ user-select: none;
 }
 
 .center {
-overflow: auto;
-height: 200px;
+  overflow: auto;
+  height: 200px;
 
 }
 
 .send svg{
-position: absolute;
-bottom: 0;
-left: 40%;
+  position: absolute;
+  bottom: 0;
+  left: 40%;
 }
 
 
@@ -91,4 +91,10 @@ left: 40%;
 
 .example-full-width {
   width: 85%;
+}
+
+p {
+  font-family: 'Source Code Pro';
+  font-size: 1.5em;
+  display: inline;
 }
