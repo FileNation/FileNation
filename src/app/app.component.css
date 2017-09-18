@@ -5,8 +5,9 @@
   background-position: center;
 }
 
-.container0 {
-  height: 100%;
+.container2 {
+  height: 100vh;
+  background-color: white;
 }
 
 p {
