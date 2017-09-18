@@ -40,11 +40,11 @@
     <div class="center" >
       <md-nav-list>
         <md-list-item *ngFor="let link of hashes">
-          <a md-line href="https://gateway.ipfs.io/ipfs/" target="_blank"></a>
+          <a md-line href="https://gateway.ipfs.io/ipfs/{{link[0].hash}}" target="_blank">{{link[0].hash}}</a>
           <button md-icon-button (click)="showInfo(link)">
             <i class="material-icons">note</i></button>
           </md-list-item>
         </md-nav-list>
       </div>
-    </div>
+  </div>
   </div>
