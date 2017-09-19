@@ -51,22 +51,27 @@ export class InputComponent {
         );
       }
       upload = ($event) => {
+
+        if (this.sicart.length < 1) {
         var file = $event.target.files[0];
         console.log('file: ', file);
         this.name = file.name;
         this.parentSize = file.size;
 
 
-
-        this.ipfsService.uploadIPFS(file)
-        .then((torrent) => {
-          this.hashes.push(torrent);
-          this.sicart.push(this.hashes.map((el) =>  '<br>' + 'https://gateway.ipfs.io/ipfs/' + el[0].hash + '<br><br>'))
-          this.fuck = this.sicart;
-          console.log('bf:', this.data);
-          this.data.hashes = (this.fuck)
-          console.log('after:', this.data);
-        });
+          this.ipfsService.uploadIPFS(file)
+          .then((torrent) => {
+            this.hashes.push(torrent);
+            this.sicart.push(this.hashes.map((el) =>  '<br>' + 'https://gateway.ipfs.io/ipfs/' + el[0].hash + '<br><br>'))
+            this.fuck = this.sicart;
+            console.log('bf:', this.data);
+            this.data.hashes = (this.fuck)
+            console.log('after:', this.data);
+          });
+        }
+        else {
+          alert("Sorry, working to upload more files!")
+        }
 
       }
     }
