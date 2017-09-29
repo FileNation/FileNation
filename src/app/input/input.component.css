@@ -56,7 +56,6 @@ button {
   border-radius: 5px;
   width: 20%;
   margin: 15px;
-  color: accent;
 }
 
 .center {
@@ -76,6 +75,10 @@ button {
 p {
   font-family: 'Source Code Pro';
   font-size: 1.5em;
+}
+
+.g-recaptcha {
+  margin-top: 25px;
 }
 
 /*
