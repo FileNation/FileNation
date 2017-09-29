@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { TransferComponent } from './transfer/transfer.component';
 import { InputComponent } from './input/input.component';
 import { TestComponent } from './test/test.component';
+import { LogInComponent } from './log-in/log-in.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { TestComponent } from './test/test.component';
     TransferComponent,
     InputComponent,
     TestComponent,
+    LogInComponent,
   ],
   imports: [
     BrowserModule,

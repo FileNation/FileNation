@@ -55,6 +55,7 @@ h2 {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-image: url("http://innovativeteams.net/wp-content/uploads/2016/03/networkOfIdeas-678x381.png");
 }
 
 .links {
@@ -62,9 +63,6 @@ h2 {
   margin: 10px;
   color: #005b7a;
 }
-
-
-
 
 @media all and (max-width: 700px) {
 

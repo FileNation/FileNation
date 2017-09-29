@@ -1,0 +1,28 @@
+<div>
+  <h2>Decentralized Cloud enables users to quickly and easily transfer a file of any size</h2>
+  <h3>Simply select a file, input the destination and source email, and hit send</h3>
+  <h4>For additional features, sign-in or create a free account below</h4>
+</div>
+
+
+<div class="buttonHolder" *ngIf="this.option == true" >
+<button (click)="buttonClick1()"> Sign-up</button> <button (click)="buttonClick2()"> Log-in</button>
+</div>
+
+<div class="loginHolder" *ngIf="this.login == true" >
+<h2> Sign-in to Decentralized Cloud</h2>
+<input type="text">
+<input type="text">
+<button> Submit </button>
+</div>
+
+<div class="signupHolder" *ngIf="this.signup == true">
+  <h2> Sign-up to Decentralized Cloud</h2>
+<input type="text">
+<input type="text">
+<input type="text">
+<input type="text">
+<input type="text">
+<input type="text">
+<button> Submit </button>
+</div>

@@ -32,7 +32,11 @@ export class InputComponent {
     this.sicart = [];
   };
 
+  clicked = false;
 
+  onbuttonClick() {
+  this.clicked = true;  //*ngIf="this.clicked === false"
+ }
 
   toEmailFormControl = new FormControl('', [
     Validators.required,
