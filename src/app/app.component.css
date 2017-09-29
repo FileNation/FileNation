@@ -5,6 +5,7 @@
   justify-content: space-around;
   width: 100vw;
   height: 100vh;
+  background-color: #f7f6f5;
 }
 
 .body {
@@ -14,16 +15,17 @@
   justify-content: center;
   align-items: center;
   margin: 10px;
+  background-color: white;
 }
 
 h1 {
   font-size: 3em;
   color: #005b7a;
-  border-left: 1px solid #0099cc;
-  border-bottom: 1px solid #0099cc;
   padding-left: 5px;
   align-self: flex-start;
   margin: 10px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
 }
 
 h2 {
@@ -31,6 +33,7 @@ h2 {
   color: #005b7a;
   align-self: flex-start;
   margin: 10px;
+  font-family: 'Raleway', sans-serif;
 }
 
 .transferHolder {
