@@ -1,45 +1,27 @@
 .container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
-.transfer {
-  background: #FFFFFF;
-  position: absolute;
-  height:500px;
-  width: 300px;
-  border-radius: 10px;
-  top: 18%;
-  left: 10%;
-}
-label{
-  display: inline-block;
+
+form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 label button{
-  margin-top: 20px;
-  margin-left: 20px;
   width: 80px;
   height: 80px;
   border-radius: 50%;
+  margin-bottom: 25px;
 }
-
-
-input[type="file"]{
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  width: 108px;
-  height: 130px;
-  font-size: 100px;
-  text-align: right;
-  filter: alpha(opacity=0);
-  opacity: 0;
-  outline: none;
-  background: white;
-  cursor: inherit;
-  display: block;
-}
-
 
 /*.mat-fab {
 position: relative;
@@ -50,7 +32,7 @@ height: 80px;
 #text {
   text-align: left;
   vertical-align: middle;
-  font-size: 60px;
+  font-size: 1em;
 }
 
 /*.image-upload svg {
@@ -68,33 +50,45 @@ user-select: none;
 }
 
 .form-input {
-  margin-left: 20px;
-  margin-top: 10px;
+}
+
+button {
+  border-radius: 5px;
+  width: 20%;
+  margin: 15px;
+  color: accent;
 }
 
 .center {
   overflow: auto;
-  height: 200px;
-
 }
 
 .send svg{
-  position: absolute;
-  bottom: 0;
-  left: 40%;
 }
-
 
 .example-form {
   width: auto;
 }
 
 .example-full-width {
-  width: 85%;
 }
 
 p {
   font-family: 'Source Code Pro';
   font-size: 1.5em;
-  display: inline;
 }
+
+/*
+input[type="file"]{
+  width: 108px;
+  height: 130px;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 1;
+  outline: none;
+  background: white;
+  border: 1px solid grey;
+  cursor: inherit;
+  display: block;
+}*/

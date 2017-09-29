@@ -11,12 +11,14 @@ import { IpfsService } from './ipfs.service'
 import { AppComponent } from './app.component';
 import { TransferComponent } from './transfer/transfer.component';
 import { InputComponent } from './input/input.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TransferComponent,
     InputComponent,
+    TestComponent,
   ],
   imports: [
     BrowserModule,

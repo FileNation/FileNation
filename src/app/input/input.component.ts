@@ -21,7 +21,6 @@ export class InputComponent {
 
   constructor(private emailService: EmailService, private ipfsService: IpfsService) {
 
-
     this.data = {
       to: '',
       from: '',
