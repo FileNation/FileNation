@@ -17,9 +17,7 @@ export class IpfsService {
 
   constructor(http: Http) {
     this.http = http;
-    // Create an IPFS node
     this.client = new webtorrent();
-    console.log('working');
 
      const repoPath = 'ipfs-' + Math.random()
 
@@ -30,7 +28,6 @@ export class IpfsService {
      this.node.on('ready', () => console.log('Online status: ', this.node.isOnline() ? 'online' : 'offline'))
 }
   uploadIPFS = (arg) => {
-    console.log(arg);
     return new Promise((resolve, reject) => {
       this.client.seed(arg, (torrent) => {
         torrent.files[0].getBuffer((err, buffer) => {
@@ -38,7 +35,6 @@ export class IpfsService {
         if (err || !res) {
           return reject(err);
         }
-        console.log(res);
         resolve(res);
         })
         })
