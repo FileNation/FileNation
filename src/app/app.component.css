@@ -70,6 +70,10 @@ h2 {
   flex-wrap: wrap;
 }
 
+h2 {
+  text-align: center;
+}
+
 .transferHolder {
   width: 90%;
   order: 1;
@@ -81,7 +85,9 @@ h2 {
 }
 
 .links {
+  width: 90%;
   order: 10;
+  display: none;
 }
 
 }

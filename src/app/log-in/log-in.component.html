@@ -10,10 +10,11 @@
 </div>
 
 <div class="loginHolder" *ngIf="this.login == true" >
-<h2> Sign-in to Decentralized Cloud</h2>
+<h2> Log-in to Decentralized Cloud</h2>
 <input type="text">
 <input type="text">
-<button> Submit </button>
+<button class="loginButton"> Submit </button>
+<p>Don't have an account already? Sign-up <button class="transferButton"(click)="signIn()">here</button></p>
 </div>
 
 <div class="signupHolder" *ngIf="this.signup == true">
@@ -24,5 +25,6 @@
 <input type="text">
 <input type="text">
 <input type="text">
-<button> Submit </button>
+<button class="signupButton"> Submit </button>
+<p>Already ahve an account? Sign-in <button class="transferButton"(click)="signIn()">here</button></p>
 </div>

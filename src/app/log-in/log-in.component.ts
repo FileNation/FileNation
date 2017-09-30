@@ -26,4 +26,10 @@ export class LogInComponent implements OnInit {
     this.signup = true;
   }
 
+  signIn() {
+    this.signup = false;
+    this.login = true;
+  }
+
+
 }

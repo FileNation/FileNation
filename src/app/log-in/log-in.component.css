@@ -1,7 +1,6 @@
 .buttonHolder {
-  width: 400px;
+  width: 100%;
   display: flex;
-  border: 1px solid green;
 }
 
 button {
@@ -10,14 +9,14 @@ button {
   border-radius: 5px;
   margin: 10px;
   color: white;
-  background-color: blue;
+  background-color: #0099cc;
   border: none;
 }
 
 input {
   margin: 5px;
   border-radius: 5px;
-  border: none;
+  border: 1px solid #0099cc;
 }
 
 .loginHolder {
@@ -34,9 +33,17 @@ input {
   align-items: center;
 }
 
-h2, h3, h4 {
+h2, h3, h4, p {
   color: #005b7a;
   text-align: center;
   background-color: white;
   opacity: 0.8;
+}
+
+.loginButton {
+  width: 33%;
+}
+
+.signupButton {
+  width: 33%;
 }
