@@ -6,16 +6,20 @@
   width: 100vw;
   height: 100vh;
   background-color: #f7f6f5;
+
 }
 
 .body {
   width: 100%;
   height: 70%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   margin: 10px;
   background-color: white;
+  border-top: 2px solid #0099cc;
+  border-bottom: 2px solid #0099cc;
+  padding: 15px;
 }
 
 h1 {
@@ -39,33 +43,39 @@ h2 {
 
 .transferHolder {
   width: 50%;
+  max-width: 500px;
   height: 100%;
-  border: 1px solid #0099cc;
   border-radius: 5px;
   margin: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 2px solid #0099cc;
+
 }
 
 .infobar {
   width: 50%;
+  max-width: 500px;
   height: 100%;
-  border: 1px solid #0099cc;
   border-radius: 5px;
   margin: 10px;
   flex-direction: column;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-image: url("http://innovativeteams.net/wp-content/uploads/2016/03/networkOfIdeas-678x381.png");
+
 }
 
 .links {
   align-self: flex-end;
   margin: 10px;
   color: #005b7a;
+}
+
+.base {
+  display: flex;
 }
 
 @media all and (max-width: 700px) {
@@ -88,9 +98,7 @@ h2 {
   order: 2;
 }
 
-.links {
-  width: 90%;
-  order: 10;
+.base {
   display: none;
 }
 

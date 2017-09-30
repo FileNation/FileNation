@@ -19,16 +19,13 @@ export class LogInComponent implements OnInit {
   buttonClick1() {
     this.option = false;
     this.login = true;
+    this.signup = false;
   }
 
   buttonClick2() {
     this.option = false;
     this.signup = true;
-  }
-
-  signIn() {
-    this.signup = false;
-    this.login = true;
+    this.login = false;
   }
 
 
