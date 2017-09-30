@@ -4,6 +4,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule, FormControl, ReactiveFormsModule, FormArray } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+// import {MaterialModule} from '@angular/material';
 import {MdButtonModule, MdCheckboxModule, MdInputModule, MdListModule, MdProgressBarModule} from '@angular/material';
 
 import { IpfsService } from './ipfs.service'
