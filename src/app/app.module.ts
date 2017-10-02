@@ -4,7 +4,8 @@ import { HttpModule } from '@angular/http';
 import { FormsModule, FormControl, ReactiveFormsModule, FormArray } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule, MatInputModule, MatListModule, MatProgressBarModule} from '@angular/material';
+// import {MaterialModule} from '@angular/material';
+import {MdButtonModule, MdCheckboxModule, MdInputModule, MdListModule, MdProgressBarModule} from '@angular/material';;
 
 import { IpfsService } from './ipfs.service'
 
@@ -24,7 +25,7 @@ import { InputComponent } from './input/input.component';
     BrowserAnimationsModule,
     NoopAnimationsModule,
     [FormsModule, ReactiveFormsModule],
-    [MatButtonModule, MatCheckboxModule, MatInputModule, MatListModule, MatProgressBarModule],
+    [MdButtonModule, MdCheckboxModule, MdInputModule, MdListModule, MdProgressBarModule],
 
   ],
   providers: [
