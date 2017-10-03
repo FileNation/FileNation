@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="this.option == true">
   <h2>Decentralized Cloud enables users to quickly and easily transfer a file of any size</h2>
   <h3>Simply select a file, input the destination and source email, and hit send</h3>
   <h4>For additional features, sign-in or create a free account below</h4>
@@ -14,7 +14,7 @@
 <input type="text">
 <input type="text">
 <button class="loginButton"> Submit </button>
-<p>Don't have an account already? Sign-up <button class="transferButton"(click)="signIn()">here</button></p>
+<p>Don't have an account already? Sign-up <button class="transferButton"(click)="buttonClick2()">here</button>  </p>
 </div>
 
 <div class="signupHolder" *ngIf="this.signup == true">
@@ -26,5 +26,5 @@
 <input type="text">
 <input type="text">
 <button class="signupButton"> Submit </button>
-<p>Already ahve an account? Sign-in <button class="transferButton"(click)="signIn()">here</button></p>
+<p>Already have an account? Sign-in <button class="transferButton"(click)="buttonClick1()">here</button></p>
 </div>

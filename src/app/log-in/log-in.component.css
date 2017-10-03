@@ -4,7 +4,7 @@
 }
 
 button {
-  width: 100%;
+  width: 60%;
   height: 100%;
   border-radius: 5px;
   margin: 10px;
@@ -36,8 +36,7 @@ input {
 h2, h3, h4, p {
   color: #005b7a;
   text-align: center;
-  background-color: white;
-  opacity: 0.8;
+  background-color: rgba(255,255,255,.7);
 }
 
 .loginButton {
@@ -46,4 +45,9 @@ h2, h3, h4, p {
 
 .signupButton {
   width: 33%;
+}
+
+.transferButton {
+  width: 15%;
+  margin: 1px;
 }
