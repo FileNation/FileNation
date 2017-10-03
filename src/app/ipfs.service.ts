@@ -5,6 +5,7 @@ import {Buffer} from 'buffer';
 import IPFS from 'ipfs';
 import {bs58} from 'bs58'
 import {Importer} from 'ipfs-unixfs-engine';
+import streamBuffers from 'stream-buffers';
 
 
 @Injectable()
@@ -34,16 +35,33 @@ export class IpfsService {
     return new Promise((resolve, reject) => {
       this.client.seed(fileObj, (torrent) => {
         torrent.files[0].getBuffer((err, buffer) => {
+
+        let myReadableStreamBuffer = new streamBuffers.ReadableStreamBuffer({
+          chunkSize: 25000 
+        });
+
           this.node.files.createAddStream((err, stream) => {
             console.log('ERR', err)
             console.log('STREAM', stream)
-              stream.on('data', (file) => {
+            stream.on('data', (file) => {
               console.log('FILE', file)
               resolve(file);
             })
             console.log('WRITE');
-            stream.write(buffer);
+              myReadableStreamBuffer.on('data', (chunk) => {
+              myReadableStreamBuffer.resume()
+            })
+
+            stream.write(myReadableStreamBuffer);
+
+            myReadableStreamBuffer.put(Buffer.from(buffer))
+            myReadableStreamBuffer.stop()
+
+            myReadableStreamBuffer.on('end', () => {
+            console.log('stream ended.')
             stream.end()
+            })
+            myReadableStreamBuffer.resume()
           })
 
         })
