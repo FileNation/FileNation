@@ -1,7 +1,7 @@
 import {Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 import { EmailService } from './../email.service';
-import { IpfsService } from './../ipfs.service';
+import { IpfsService } from '../ipfs.service';
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
@@ -21,6 +21,7 @@ export class InputComponent {
   submit: boolean;
   submitResponse: boolean;
   form: boolean;
+  progress: number;
 
 constructor(private emailService: EmailService, private ipfsService: IpfsService) {
 
@@ -38,7 +39,12 @@ this.file = [];
 this.submit = false;
 this.submitResponse = false;
 this.form = true;
+this.progress = this.ipfsService.progress;
+this.getTransfer();
 };
+
+
+
 
 //Verifies email inputs
 toEmailFormControl = new FormControl('', [
@@ -76,6 +82,9 @@ toggleFile() {
   this.file = [];
 }
 
+getTransfer() {
+  setInterval( ()=>this.progress = this.ipfsService.progress), 500;
+}
 
 //Called when user opts to upload / send another file
 refresh() {
@@ -90,12 +99,15 @@ refresh() {
 
 upload = ($event) => {
   if (this.file.length < 1) {
+
     var file = $event.target.files[0];
     this.name = file.name;
     this.parentSize = file.size;
     this.ipfsService.uploadIPFS(file)
     .then((torrent) => {
+
       this.hashes.push(torrent);
+
       this.file.push('<br>' + 'https://ipfs.io/ipfs/' + this.hashes[0].hash + '<br><br>');
       this.temp = this.file;
       this.data.hashes = (this.temp)

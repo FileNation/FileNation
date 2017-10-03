@@ -50,6 +50,13 @@ label button{
   font-family: 'Raleway', sans-serif;
 }
 
+.progressBar {
+  text-align: center;
+  font-size: 1.7em;
+  color: #005b7a;
+  font-family: 'Raleway', sans-serif;
+}
+
 .fileFeedback {
   display: flex;
   flex-direction:column;

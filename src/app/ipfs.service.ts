@@ -13,6 +13,7 @@ export class IpfsService {
   client: any;
   http: Http;
   node: any;
+  progress: number;
 
   constructor(http: Http) {
     this.http = http;
@@ -36,10 +37,10 @@ export class IpfsService {
       this.client.seed(fileObj, (torrent) => {
         torrent.files[0].getBuffer((err, buffer) => {
 
+          this.progress = 0;
         let myReadableStreamBuffer = new streamBuffers.ReadableStreamBuffer({
-          chunkSize: 25000 
+          chunkSize: 25000   //determines data transfer rate
         });
-
           this.node.files.createAddStream((err, stream) => {
             console.log('ERR', err)
             console.log('STREAM', stream)
@@ -49,8 +50,13 @@ export class IpfsService {
             })
             console.log('WRITE');
               myReadableStreamBuffer.on('data', (chunk) => {
+                this.progress += chunk.byteLength
+                console.log('Progress', this.progress);
+
               myReadableStreamBuffer.resume()
+
             })
+
 
             stream.write(myReadableStreamBuffer);
 

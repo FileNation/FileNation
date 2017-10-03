@@ -3,7 +3,7 @@
 
 <div class="container" *ngIf="this.form">
   <div class="transfer">
-    <div class="image-upload" *ngIf="this.file.length === 0">
+    <div class="image-upload" *ngIf="this.file.length === 0 && !this.progress">
       <label for="file-input">
         <button md-fab><svg fill="#FFFFFF" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 0h24v24H0z" fill="none"/>
@@ -12,7 +12,7 @@
       </label>
       <input id="file-input" type="file" (change)="upload($event)"/>
     </div>
-
+    <div class="progressBar" *ngIf="this.progress">Upload progress: <br> {{(this.progress / this.parentSize *100).toFixed(1)}} %</div>
     <div  class="fileFeedback" *ngIf="this.file.length > 0">
       <p class="selectedFile"><strong>File Selected:</strong> {{this.name}}</p>
         <button md-raised-button color="accent" (click)="toggleFile()">Change file</button>
