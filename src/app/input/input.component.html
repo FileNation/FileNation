@@ -2,7 +2,8 @@
 
 
 <div class="container" *ngIf="this.form">
-  <div class="transfer">
+
+    <!-- Upload icon and button-->
     <div class="image-upload" *ngIf="this.file.length === 0 && !this.progress">
       <label for="file-input">
         <button md-fab><svg fill="#FFFFFF" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
@@ -12,12 +13,19 @@
       </label>
       <input id="file-input" type="file" (change)="upload($event)"/>
     </div>
+
+    <!-- Displays progress of file upload-->
     <div class="progressBar" *ngIf="this.progress">Upload progress: <br> {{(this.progress / this.parentSize *100).toFixed(1)}} %</div>
+
+
+    <!-- Displays file name once uploaded and allows user to change selection -->
     <div  class="fileFeedback" *ngIf="this.file.length > 0">
-      <p class="selectedFile"><strong>File Selected:</strong> {{this.name}}</p>
-        <button md-raised-button color="accent" (click)="toggleFile()">Change file</button>
+      <p class="selectedFile"><strong>File Selected:</strong><br> <span style="color:#0099cc">{{this.name}}</span></p>
+      <button class="changeButton" md-raised-button color="accent" (click)="toggleFile()">Change file</button>
     </div>
-    <br><br>
+
+
+
     <div class="form-input">
       <form class="example-form" (ngSubmit)="onTestPost()" >
         <md-input-container class="example-full-width">
@@ -29,7 +37,6 @@
             Email is <strong>required</strong>
           </md-error>
         </md-input-container>
-        <br><br>
         <md-input-container class="example-full-width">
           <input mdInput placeholder="Your Email" [(ngModel)]="data.from" [formControl]="fromEmailFormControl">
           <md-error *ngIf="fromEmailFormControl.hasError('pattern')">
@@ -39,29 +46,27 @@
             Email is <strong>required</strong>
           </md-error>
         </md-input-container>
-        <br><br><br>
         <button md-raised-button color="accent" type="submit">Send</button>
-
       </form>
-
     </div>
 
     <div class="g-recaptcha" data-sitekey="6LcokjIUAAAAAJnGe8_lM3HlcQktt1Wg7gMYib-N"></div>
-    </div>
+
 
   </div>
 
 
+
+<!-- Placeholder -->
 <div *ngIf="this.submit">
-<h2>Sending file...</h2>
+  <h2>Sending file...</h2>
 </div>
 
-
+<!-- Displays once file has been uploaded and sent -->
 <div class="successMessage" *ngIf="this.submitResponse">
-<h2>The below file has been added to IPFS and sent to: {{this.data.to}} </h2>
+  <h2>The below file has been added to IPFS and sent to: <br/> <span style="color:#0099cc">{{this.data.to}} </span></h2>
   {{this.name}}
-<button class="successButton" md-raised-button color="accent" (click)="refresh()">Send another file</button>
-
+  <button class="successButton" md-raised-button color="accent" (click)="refresh()">Send another file</button>
 </div>
 
 

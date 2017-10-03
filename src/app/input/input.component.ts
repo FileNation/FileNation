@@ -44,8 +44,6 @@ this.getTransfer();
 };
 
 
-
-
 //Verifies email inputs
 toEmailFormControl = new FormControl('', [
   Validators.required,
@@ -62,7 +60,7 @@ onTestPost() {
     setTimeout(()=> {
       this.submit = false;
       this.submitResponse = true;
-    }, 3000);
+    }, 2000);
   this.emailService.sendEmail(this.data.to, this.data.from, this.data.hashes)
   .subscribe(
     data => {
@@ -95,6 +93,9 @@ refresh() {
   this.form = true;
   this.data.to = '';
   this.data.from = '';
+  this.file.length = 0;
+  this.progress = null;
+
 }
 
 upload = ($event) => {

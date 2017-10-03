@@ -1,10 +1,8 @@
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
+  align-items: stretch;
+  justify-content: space-around;
 }
 
 .image-upload {
@@ -14,7 +12,31 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-bottom: -20px;
+  margin-bottom: 25px;
+}
+
+.image-upload > input {
+  background-color: pink;
+  border-radius: 5px;
+  width: 87px;
+  border: non
+}
+
+.progressBar {
+  text-align: center;
+  font-size: 1.7em;
+  color: #005b7a;
+  font-family: 'Raleway', sans-serif;
+}
+
+.selectedFile {
+  text-align: center;
+  font-size: 1em;
+  color: blue;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #005b7a;
+  font-family: 'Raleway', sans-serif;
 }
 
 form {
@@ -31,37 +53,27 @@ label button{
   height: 80px;
   border-radius: 50%;
   margin-bottom: 25px;
-  z-index: 2;
 }
 
-.image-upload > input {
-  background-color: pink;
+button {
   border-radius: 5px;
-  width: 87px;
-}
-
-.selectedFile {
-  text-align: center;
-  font-size: 1em;
-  color: blue;
-  padding-left: 10px;
-  padding-right: 10px;
-  color: #005b7a;
-  font-family: 'Raleway', sans-serif;
-}
-
-.progressBar {
-  text-align: center;
-  font-size: 1.7em;
-  color: #005b7a;
-  font-family: 'Raleway', sans-serif;
+  width: 20%;
+  margin: 15px;
 }
 
 .fileFeedback {
+  width: 100%;
   display: flex;
   flex-direction:column;
-  flex align: center;
-  justify-content: center;
+  border: 1px solid red;
+}
+
+.changeButton {
+  margin: auto;
+  width: 105px;
+  text-align: center;
+
+
 }
 
 .successMessage {
@@ -78,12 +90,6 @@ label button{
   margin-top: 50px;
 }
 
-/*.mat-fab {
-position: relative;
-margin: 30px;
-width: 80px;
-height: 80px;
-}*/
 #text {
   text-align: left;
   vertical-align: middle;
@@ -95,25 +101,8 @@ h2 {
   font-family: 'Raleway', sans-serif;
 }
 
-/*.image-upload svg {
-position: absolute;
-height: 4em;
-width: 4em;
-top: 10%;
-display: block;
-margin: 0 0.625em 0 1.25em;
-user-select: none;
-}*/
-
 #file-input:hover {
   filter: drop-shadow(0 0 10px white);
-}
-
-button {
-  border-radius: 5px;
-  width: 20%;
-  margin: 15px;
-  margin-top: -10px;
 }
 
 .center {
@@ -135,20 +124,5 @@ p {
 }
 
 .g-recaptcha {
-  margin-top: 25px;
+  margin: 25px;
 }
-
-/*
-input[type="file"]{
-  width: 108px;
-  height: 130px;
-  font-size: 100px;
-  text-align: right;
-  filter: alpha(opacity=0);
-  opacity: 1;
-  outline: none;
-  background: white;
-  border: 1px solid grey;
-  cursor: inherit;
-  display: block;
-}*/
