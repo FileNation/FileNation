@@ -6,7 +6,6 @@
   width: 100vw;
   height: 100vh;
   background-color: #f7f6f5;
-
 }
 
 .body {
@@ -49,10 +48,10 @@ h2 {
   margin: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
+  min-height: 400px;
   align-items: center;
   border: 2px solid #0099cc;
-
 }
 
 .infobar {
@@ -61,18 +60,21 @@ h2 {
   height: 100%;
   border-radius: 5px;
   margin: 10px;
-  flex-direction: column;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding-right: 20px;
+}
 
+.fileFeedback {
+  display: flex;
+  justify-content: center;
 }
 
 .spacer {
   width: 5%;
-
 }
+
 .links {
   align-self: flex-end;
   margin: 10px;
@@ -81,12 +83,24 @@ h2 {
 
 .base {
   display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 10px;
 }
+
+
 
 @media all and (max-width: 700px) {
 
+.container {
+  width: 100%;
+  height: 100%;
+}
+
 .body{
   flex-wrap: wrap;
+  background-color: #f7f6f5;
+  border-bottom: none;
 }
 
 h2 {
@@ -96,11 +110,14 @@ h2 {
 .transferHolder {
   width: 90%;
   order: 1;
+  background-color: white;
 }
 
 .infobar {
   width: 90%;
   order: 2;
+  border: 2px solid #0099cc;
+  background-color: white;
 }
 
 .spacer {
@@ -108,6 +125,18 @@ h2 {
 }
 
 .base {
+  order: 3;
+}
+
+.feedback {
+  display: none;
+}
+
+.github-button{
+  display: none;
+}
+
+.label {
   display: none;
 }
 

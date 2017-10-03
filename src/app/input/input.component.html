@@ -1,18 +1,23 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
-<div class="container" > 
-
-    <div class="image-upload">
+<div class="container" *ngIf="this.form">
+  <div class="transfer">
+    <div class="image-upload" *ngIf="this.file.length === 0">
       <label for="file-input">
         <button md-fab><svg fill="#FFFFFF" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 0h24v24H0z" fill="none"/>
           <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/>
         </svg></button>
       </label>
-      <!-- <input id="file-input" type="file" (change)="upload($event)"/> -->
+      <input id="file-input" type="file" (change)="upload($event)"/>
     </div>
 
+    <div  class="fileFeedback" *ngIf="this.file.length > 0">
+      <p class="selectedFile"><strong>File Selected:</strong> {{this.name}}</p>
+        <button md-raised-button color="accent" (click)="toggleFile()">Change file</button>
+    </div>
+    <br><br>
     <div class="form-input">
       <form class="example-form" (ngSubmit)="onTestPost()" >
         <md-input-container class="example-full-width">
@@ -24,7 +29,7 @@
             Email is <strong>required</strong>
           </md-error>
         </md-input-container>
-
+        <br><br>
         <md-input-container class="example-full-width">
           <input mdInput placeholder="Your Email" [(ngModel)]="data.from" [formControl]="fromEmailFormControl">
           <md-error *ngIf="fromEmailFormControl.hasError('pattern')">
@@ -34,27 +39,39 @@
             Email is <strong>required</strong>
           </md-error>
         </md-input-container>
-
-        <button md-raised-button color="accent" type="submit" (click)="onbuttonClick()">Send</button>
-        <div class="g-recaptcha" data-sitekey="6LcokjIUAAAAAJnGe8_lM3HlcQktt1Wg7gMYib-N"></div>
+        <br><br><br>
+        <button md-raised-button color="accent" type="submit">Send</button>
 
       </form>
+
+    </div>
+
+    <div class="g-recaptcha" data-sitekey="6LcokjIUAAAAAJnGe8_lM3HlcQktt1Wg7gMYib-N"></div>
     </div>
 
   </div>
 
 
+<div *ngIf="this.submit">
+<h2>Sending file...</h2>
+</div>
 
-    <!--
-    <br>
-    <div class="center" >
-      <md-nav-list>
-        <md-list-item *ngFor="let link of hashes">
-          <a md-line href="https://gateway.ipfs.io/ipfs/{{link[0].hash}}" target="_blank">{{link[0].hash}}</a>
-          <button md-icon-button (click)="showInfo(link)">
-            <i class="material-icons">note</i></button>
-          </md-list-item>
-        </md-nav-list>
-      </div>
-  </div>
-  </div> -->
+
+<div class="successMessage" *ngIf="this.submitResponse">
+<h2>The below file has been added to IPFS and sent to: {{this.data.to}} </h2>
+  {{this.name}}
+<button class="successButton" md-raised-button color="accent" (click)="refresh()">Send another file</button>
+
+</div>
+
+
+  <!-- <br>
+  <div class="center" >
+    <md-nav-list>
+      <md-list-item *ngFor="let link of hashes">
+        <a md-line href="https://ipfs.io/ipfs/{{link[0].hash}}" target="_blank">{{link[0].hash}}</a>
+        <button md-icon-button (click)="showInfo(link)">
+          <i class="material-icons">note</i></button>
+        </md-list-item>
+      </md-nav-list>
+    </div> -->

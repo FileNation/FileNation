@@ -7,13 +7,11 @@ import {bs58} from 'bs58'
 import {Importer} from 'ipfs-unixfs-engine';
 
 
-
 @Injectable()
 export class IpfsService {
   client: any;
   http: Http;
   node: any;
-
 
   constructor(http: Http) {
     this.http = http;
@@ -29,18 +27,25 @@ export class IpfsService {
 
      this.node.on('ready', () => console.log('Online status: ', this.node.isOnline() ? 'online' : 'offline'))
 }
-  uploadIPFS = (arg) => {
-    console.log(arg);
+  uploadIPFS = (fileObj) => {
+    console.log('----------')
+    console.log(fileObj);
+    console.log('----------')
     return new Promise((resolve, reject) => {
-      this.client.seed(arg, (torrent) => {
+      this.client.seed(fileObj, (torrent) => {
         torrent.files[0].getBuffer((err, buffer) => {
-        this.node.files.add(buffer, (err, res) => {
-        if (err || !res) {
-          return reject(err);
-        }
-        console.log(res);
-        resolve(res);
-        })
+          this.node.files.createAddStream((err, stream) => {
+            console.log('ERR', err)
+            console.log('STREAM', stream)
+              stream.on('data', (file) => {
+              console.log('FILE', file)
+              resolve(file);
+            })
+            console.log('WRITE');
+            stream.write(buffer);
+            stream.end()
+          })
+
         })
       });
     });
