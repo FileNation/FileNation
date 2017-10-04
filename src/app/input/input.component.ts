@@ -77,7 +77,9 @@ onTestPost() {
 //Called when user opts to change the selected file
 toggleFile() {
   this.hashes = [];
-  this.file = [];
+  this.file.length = [];
+  this.progress = undefined;
+  console.log('Progress', this.progress)
 }
 
 getTransfer() {
@@ -93,9 +95,6 @@ refresh() {
   this.form = true;
   this.data.to = '';
   this.data.from = '';
-  this.file.length = 0;
-  this.progress = null;
-
 }
 
 upload = ($event) => {

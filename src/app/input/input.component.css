@@ -16,10 +16,9 @@
 }
 
 .image-upload > input {
-  background-color: pink;
   border-radius: 5px;
-  width: 87px;
-  border: non
+  width: 100px;
+  border: 1px solid red;
 }
 
 .progressBar {
@@ -65,15 +64,13 @@ button {
   width: 100%;
   display: flex;
   flex-direction:column;
-  border: 1px solid red;
+  margin-bottom: 10px;
 }
 
 .changeButton {
   margin: auto;
   width: 105px;
   text-align: center;
-
-
 }
 
 .successMessage {
@@ -99,6 +96,10 @@ button {
 h2 {
   color: #005b7a;
   font-family: 'Raleway', sans-serif;
+}
+
+#file-input {
+  width: 100px;
 }
 
 #file-input:hover {

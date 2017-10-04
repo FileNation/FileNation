@@ -4,7 +4,7 @@
 <div class="container" *ngIf="this.form">
 
     <!-- Upload icon and button-->
-    <div class="image-upload" *ngIf="this.file.length === 0 && !this.progress">
+    <div class="image-upload" *ngIf="!this.progress">
       <label for="file-input">
         <button md-fab><svg fill="#FFFFFF" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 0h24v24H0z" fill="none"/>

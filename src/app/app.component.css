@@ -8,6 +8,31 @@
   background-color: #f7f6f5;
 }
 
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #0099cc;
+}
+
+h1 {
+  font-size: 3em;
+  color: #005b7a;
+  padding-left: 5px;
+  margin: 10px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.0em;
+  color: #005b7a;
+  margin: 10px;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
 .body {
   width: 100%;
   height: 70%;
@@ -19,25 +44,6 @@
   border-top: 2px solid #0099cc;
   border-bottom: 2px solid #0099cc;
   padding: 15px;
-}
-
-h1 {
-  font-size: 3em;
-  color: #005b7a;
-  padding-left: 5px;
-  align-self: flex-start;
-  margin: 10px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
-  text-decoration: underline;
-}
-
-h2 {
-  font-size: 1.5em;
-  color: #005b7a;
-  align-self: flex-start;
-  margin: 10px;
-  font-family: 'Raleway', sans-serif;
 }
 
 .transferHolder {
@@ -78,17 +84,28 @@ h2 {
 .links {
   align-self: flex-end;
   margin: 10px;
+  margin-left: 25px;
   color: #005b7a;
 }
 
 .base {
   display: flex;
   width: 100%;
-  justify-content: space-around;
+  justify-content: flex-end;
+  align-items: center;
   margin-top: 10px;
 }
 
+@media all and (max-width: 880px) {
 
+.header {
+  flex-direction: column;
+  align-items: center;
+  justify-content:
+}
+
+
+}
 
 @media all and (max-width: 700px) {
 
