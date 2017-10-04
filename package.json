@@ -14,7 +14,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^4.4.1",
-    "@angular/cdk": "github:angular/cdk-builds",
+    "@angular/cdk": "^2.0.0-beta.11",
     "@angular/common": "^4.4.1",
     "@angular/compiler": "^4.4.1",
     "@angular/core": "^4.4.1",
@@ -24,7 +24,6 @@
     "@angular/platform-browser": "^4.4.1",
     "@angular/platform-browser-dynamic": "^4.4.1",
     "@angular/router": "^4.4.1",
-    "angular-material": "^1.1.5",
     "bcrypt": "^1.0.3",
     "bs58": "^4.0.1",
     "buffer": "^5.0.7",
