@@ -12,10 +12,10 @@ export class LogInComponent implements OnInit {
   ngOnInit() {
   }
 
-  option = false;
+  option = true;
   login = false;
   signup = false;
-  loggedin = true;
+  loggedin = false;
 
   onSignup() {
     this.loggedin = true;

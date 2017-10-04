@@ -1,16 +1,31 @@
 <div class="account">
   <div class="navbar">
-    <div class="username">
-      User:<br />
-      {{this.user}}
-    </div>
 
     <div class="files">
-      <button md-raised-button color="accent" type="submit">Files</button>
+      <button (click)="onFiles()">Files</button>
     </div>
     <div class="contacts">
-      <button md-raised-button color="accent" type="submit">Contacts</button>
+      <button (click)="onContacts()">Contacts</button>
+    </div>
+    <div class="username">
+      <div id="greet">
+        hello, <br />
+      </div>
+      <div id="text">
+        {{this.user.split('@')[0]}}
+      </div>
     </div>
   </div>
-  account works!
+  <div *ngIf="this.filePage === true" >
+    <div *ngFor="let file of this.files">
+
+      {{file}}
+
+    </div>
+    accounts works!
+  </div>
+  <div *ngIf="this.contactsPage === true">
+
+  </div>
+
 </div>

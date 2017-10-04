@@ -5,6 +5,14 @@
   justify-content: space-around;
 }
 
+.topHolder {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .image-upload {
   width: 100%;
   height: 20%;
@@ -16,13 +24,12 @@
 }
 
 .image-upload > input {
-  background-color: pink;
   border-radius: 5px;
-  width: 87px;
-  border: non
+  width: 100px;
+  border: 1px solid red;
 }
 
-.progressBar {
+.progressBar, .progressBarTitle {
   text-align: center;
   font-size: 1.7em;
   color: #005b7a;
@@ -65,15 +72,13 @@ button {
   width: 100%;
   display: flex;
   flex-direction:column;
-  border: 1px solid red;
+  margin-bottom: 10px;
 }
 
 .changeButton {
   margin: auto;
   width: 105px;
   text-align: center;
-
-
 }
 
 .successMessage {
@@ -99,6 +104,10 @@ button {
 h2 {
   color: #005b7a;
   font-family: 'Raleway', sans-serif;
+}
+
+#file-input {
+  width: 87px;
 }
 
 #file-input:hover {
