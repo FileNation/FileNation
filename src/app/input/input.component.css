@@ -95,6 +95,13 @@ button {
   margin-top: 50px;
 }
 
+.fileName {
+  border: 2px double #005b7a;
+  border-radius: 5px;
+  padding: 5px;
+
+}
+
 #text {
   text-align: left;
   vertical-align: middle;
