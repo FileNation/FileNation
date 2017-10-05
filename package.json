@@ -14,7 +14,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^4.4.1",
-    "@angular/cdk": "github:angular/cdk-builds",
+    "@angular/cdk": "^2.0.0-beta.11",
     "@angular/common": "^4.4.1",
     "@angular/compiler": "^4.4.1",
     "@angular/core": "^4.4.1",
@@ -24,8 +24,11 @@
     "@angular/platform-browser": "^4.4.1",
     "@angular/platform-browser-dynamic": "^4.4.1",
     "@angular/router": "^4.4.1",
+<<<<<<< HEAD
+=======
     "angular-material": "^1.1.5",
     "angular2-recaptcha": "^0.6.0",
+>>>>>>> 1e5fe670fa29b7df6b5bc7aa78b4c90157aa3f32
     "bcrypt": "^1.0.3",
     "bs58": "^4.0.1",
     "buffer": "^5.0.7",
