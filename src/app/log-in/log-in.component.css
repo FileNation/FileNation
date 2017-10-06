@@ -1,0 +1,53 @@
+.buttonHolder {
+  width: 100%;
+  display: flex;
+}
+
+button {
+  width: 60%;
+  height: 100%;
+  border-radius: 5px;
+  margin: 10px;
+  color: white;
+  background-color: #0099cc;
+  border: none;
+}
+
+input {
+  margin: 5px;
+  border-radius: 5px;
+  border: 1px solid #0099cc;
+}
+
+.loginHolder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signupHolder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h2, h3, h4, p {
+  color: #005b7a;
+  text-align: center;
+  background-color: rgba(255,255,255,.7);
+}
+
+.loginButton {
+  width: 33%;
+}
+
+.signupButton {
+  width: 33%;
+}
+
+.transferButton {
+  width: 15%;
+  margin: 1px;
+}

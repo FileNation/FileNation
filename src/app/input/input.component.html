@@ -1,7 +1,12 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<div class="container">
-  <div class="transfer">
-    <div class="image-upload">
+
+
+<div class="container" *ngIf="form">
+
+
+  <div class="topHolder">
+    <!-- Upload icon and button-->
+    <div class="image-upload" *ngIf="!showUpdate">
       <label for="file-input">
         <button md-fab><svg fill="#FFFFFF" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 0h24v24H0z" fill="none"/>
@@ -10,7 +15,21 @@
       </label>
       <input id="file-input" type="file" (change)="upload($event)"/>
     </div>
-    <br><br>
+
+    <!-- Displays progress of file upload-->
+    <div class="progressBarTitle" *ngIf="!progress && showUpdate">Checking file...</div>
+    <div class="progressBar" *ngIf="progress && showUpdate && this.progress < this.parentSize">Upload progress: <br> {{(this.progress / this.parentSize *100).toFixed(1)}} %</div>
+
+
+    <!-- Displays file name once uploaded and allows user to change selection -->
+    <div  class="fileFeedback" *ngIf="file.length > 0">
+      <p class="selectedFile"><strong>File Selected:</strong><br> <span style="color:#0099cc">{{this.name}}</span></p>
+      <button class="changeButton" md-raised-button color="accent" (click)="toggleFile()">Change file</button>
+    </div>
+
+  </div>
+
+
     <div class="form-input">
       <form class="example-form" (ngSubmit)="onTestPost()" >
         <md-input-container class="example-full-width">
@@ -22,7 +41,6 @@
             Email is <strong>required</strong>
           </md-error>
         </md-input-container>
-        <br><br>
         <md-input-container class="example-full-width">
           <input mdInput placeholder="Your Email" [(ngModel)]="data.from" [formControl]="fromEmailFormControl">
           <md-error *ngIf="fromEmailFormControl.hasError('pattern')">
@@ -32,19 +50,38 @@
             Email is <strong>required</strong>
           </md-error>
         </md-input-container>
-        <br><br><br>
         <button md-raised-button color="accent" type="submit">Send</button>
       </form>
     </div>
-    <br>
-    <div class="center" >
-      <md-nav-list>
-        <md-list-item *ngFor="let link of hashes">
-          <a md-line href="https://ipfs.io/ipfs/{{link[0].hash}}" target="_blank">{{link[0].hash}}</a>
-          <button md-icon-button (click)="showInfo(link)">
-            <i class="material-icons">note</i></button>
-          </md-list-item>
-        </md-nav-list>
-      </div>
+
   </div>
-  </div>
+
+    <!-- <div class="g-recaptcha" data-sitekey="6LcokjIUAAAAAJnGe8_lM3HlcQktt1Wg7gMYib-N"> </div> -->
+
+
+
+
+
+<!-- Placeholder -->
+<div *ngIf="submit">
+  <h2>Sending file...</h2>
+</div>
+
+<!-- Displays once file has been uploaded and sent -->
+<div class="successMessage" *ngIf="submitResponse">
+  <h2>The below file has been added to IPFS and sent to: <br/> <span style="color:#0099cc">{{this.data.to}} </span></h2>
+  <span class="fileName">{{this.name}}</span>
+  <button class="successButton" md-raised-button color="accent" (click)="refresh()">Send another file</button>
+</div>
+
+
+  <!-- <br>
+  <div class="center" >
+    <md-nav-list>
+      <md-list-item *ngFor="let link of hashes">
+        <a md-line href="https://ipfs.io/ipfs/{{link[0].hash}}" target="_blank">{{link[0].hash}}</a>
+        <button md-icon-button (click)="showInfo(link)">
+          <i class="material-icons">note</i></button>
+        </md-list-item>
+      </md-nav-list>
+    </div> -->

@@ -5,19 +5,25 @@ import { FormsModule, FormControl, ReactiveFormsModule, FormArray } from '@angul
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 // import {MaterialModule} from '@angular/material';
-import {MdButtonModule, MdCheckboxModule, MdInputModule, MdListModule, MdProgressBarModule} from '@angular/material';;
+import {MdButtonModule, MdCheckboxModule, MdInputModule, MdListModule, MdProgressBarModule} from '@angular/material';
 
 import { IpfsService } from './ipfs.service'
 
 import { AppComponent } from './app.component';
 import { TransferComponent } from './transfer/transfer.component';
 import { InputComponent } from './input/input.component';
+import { TestComponent } from './test/test.component';
+import { LogInComponent } from './log-in/log-in.component';
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TransferComponent,
     InputComponent,
+    TestComponent,
+    LogInComponent,
+    AccountComponent,
   ],
   imports: [
     BrowserModule,

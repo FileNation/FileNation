@@ -1,100 +1,144 @@
 .container {
   display: flex;
   flex-direction: column;
+  align-items: stretch;
+  justify-content: space-around;
 }
-.transfer {
-  background: #FFFFFF;
-  position: absolute;
-  height:500px;
-  width: 300px;
-  border-radius: 10px;
-  top: 18%;
-  left: 10%;
+
+.topHolder {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-label{
-  display: inline-block;
+
+.image-upload {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.image-upload > input {
+  border-radius: 5px;
+  width: 100px;
+  border: 1px solid red;
+}
+
+.progressBar, .progressBarTitle {
+  text-align: center;
+  font-size: 1.7em;
+  color: #005b7a;
+  font-family: 'Raleway', sans-serif;
+}
+
+.selectedFile {
+  text-align: center;
+  font-size: 1em;
+  color: blue;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #005b7a;
+  font-family: 'Raleway', sans-serif;
+}
+
+form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 label button{
-  margin-top: 20px;
-  margin-left: 20px;
   width: 80px;
   height: 80px;
   border-radius: 50%;
+  margin-bottom: 25px;
 }
 
-
-input[type="file"]{
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  width: 108px;
-  height: 130px;
-  font-size: 100px;
-  text-align: right;
-  filter: alpha(opacity=0);
-  opacity: 0;
-  outline: none;
-  background: white;
-  cursor: inherit;
-  display: block;
+button {
+  border-radius: 5px;
+  width: 20%;
+  margin: 15px;
 }
 
+.fileFeedback {
+  width: 100%;
+  display: flex;
+  flex-direction:column;
+  margin-bottom: 10px;
+}
 
-/*.mat-fab {
-position: relative;
-margin: 30px;
-width: 80px;
-height: 80px;
-}*/
+.changeButton {
+  margin: auto;
+  width: 105px;
+  text-align: center;
+}
+
+.successMessage {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.successButton {
+  width: 150px;
+  margin-top: 50px;
+}
+
+.fileName {
+  border: 2px double #005b7a;
+  border-radius: 5px;
+  padding: 5px;
+
+}
+
 #text {
   text-align: left;
   vertical-align: middle;
-  font-size: 60px;
+  font-size: 1em;
 }
 
-/*.image-upload svg {
-position: absolute;
-height: 4em;
-width: 4em;
-top: 10%;
-display: block;
-margin: 0 0.625em 0 1.25em;
-user-select: none;
-}*/
+h2 {
+  color: #005b7a;
+  font-family: 'Raleway', sans-serif;
+}
+
+#file-input {
+  width: 87px;
+}
 
 #file-input:hover {
   filter: drop-shadow(0 0 10px white);
 }
 
-.form-input {
-  margin-left: 20px;
-  margin-top: 10px;
-}
-
 .center {
   overflow: auto;
-  height: 200px;
-
 }
 
 .send svg{
-  position: absolute;
-  bottom: 0;
-  left: 40%;
 }
-
 
 .example-form {
   width: auto;
 }
 
 .example-full-width {
-  width: 85%;
 }
 
 p {
-  font-family: 'Source Code Pro';
   font-size: 1.5em;
-  display: inline;
+}
+
+.g-recaptcha {
+  margin: 25px;
 }
