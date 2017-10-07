@@ -34,10 +34,12 @@ input {
 }
 
 h2, h3, h4, p {
-  color: black;
-  text-align: center;
+  font-family: 'Source Code Pro';
+  font-size: 1.3em;
+  display: inline;
   background-color: rgba(255,255,255,.7);
 }
+
 
 .loginButton {
   width: 33%;

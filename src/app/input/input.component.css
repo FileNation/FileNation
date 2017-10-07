@@ -114,7 +114,7 @@ h2 {
 }
 
 #file-input {
-  width: 87px;
+  width: auto;
 }
 
 #file-input:hover {
