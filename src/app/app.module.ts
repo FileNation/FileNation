@@ -24,6 +24,8 @@ import { AccountComponent } from './account/account.component';
     TestComponent,
     LogInComponent,
     AccountComponent,
+    
+
   ],
   imports: [
     BrowserModule,
