@@ -13,16 +13,16 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  color: #0099cc;
+  color: black;
   align-self: flex-start;
 }
 
 h1 {
   font-size: 3em;
-  color: #005b7a;
+  color: black;
   padding-left: 5px;
   margin: 10px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Source Code Pro', sans-serif;
   font-weight: 600;
 }
 
@@ -42,8 +42,6 @@ h2 {
   align-items: center;
   margin: 10px;
   background-color: white;
-  border-top: 2px solid #0099cc;
-  border-bottom: 2px solid #0099cc;
   padding: 15px;
 }
 
@@ -58,7 +56,6 @@ h2 {
   justify-content: space-around;
   min-height: 400px;
   align-items: center;
-  border: 2px solid #0099cc;
 }
 
 .infobar {
