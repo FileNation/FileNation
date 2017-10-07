@@ -1,10 +1,12 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
-<div class="container" *ngIf="this.form">
+<div class="container" *ngIf="form">
 
+
+  <div class="topHolder">
     <!-- Upload icon and button-->
-    <div class="image-upload" *ngIf="!this.progress">
+    <div class="image-upload" *ngIf="!showUpdate">
       <label for="file-input">
         <button md-fab><svg fill="#FFFFFF" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 0h24v24H0z" fill="none"/>
@@ -15,15 +17,17 @@
     </div>
 
     <!-- Displays progress of file upload-->
-    <div class="progressBar" *ngIf="this.progress">Upload progress: <br> {{(this.progress / this.parentSize *100).toFixed(1)}} %</div>
+    <div class="progressBarTitle" *ngIf="!progress && showUpdate">Checking file...</div>
+    <div class="progressBar" *ngIf="progress && showUpdate && this.progress < this.parentSize">Upload progress: <br> {{(this.progress / this.parentSize *100).toFixed(1)}} %</div>
 
 
     <!-- Displays file name once uploaded and allows user to change selection -->
-    <div  class="fileFeedback" *ngIf="this.file.length > 0">
+    <div  class="fileFeedback" *ngIf="file.length > 0">
       <p class="selectedFile"><strong>File Selected:</strong><br> <span style="color:#0099cc">{{this.name}}</span></p>
       <button class="changeButton" md-raised-button color="accent" (click)="toggleFile()">Change file</button>
     </div>
 
+  </div>
 
 
     <div class="form-input">
@@ -50,22 +54,23 @@
       </form>
     </div>
 
-    <div class="g-recaptcha" data-sitekey="6LcokjIUAAAAAJnGe8_lM3HlcQktt1Wg7gMYib-N"></div>
-
-
   </div>
+
+    <!-- <div class="g-recaptcha" data-sitekey="6LcokjIUAAAAAJnGe8_lM3HlcQktt1Wg7gMYib-N"> </div> -->
+
+
 
 
 
 <!-- Placeholder -->
-<div *ngIf="this.submit">
+<div *ngIf="submit">
   <h2>Sending file...</h2>
 </div>
 
 <!-- Displays once file has been uploaded and sent -->
-<div class="successMessage" *ngIf="this.submitResponse">
+<div class="successMessage" *ngIf="submitResponse">
   <h2>The below file has been added to IPFS and sent to: <br/> <span style="color:#0099cc">{{this.data.to}} </span></h2>
-  {{this.name}}
+  <span class="fileName">{{this.name}}</span>
   <button class="successButton" md-raised-button color="accent" (click)="refresh()">Send another file</button>
 </div>
 

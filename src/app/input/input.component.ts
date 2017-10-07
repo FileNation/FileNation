@@ -22,6 +22,7 @@ export class InputComponent {
   submitResponse: boolean;
   form: boolean;
   progress: number;
+  showUpdate: boolean;
 
 constructor(private emailService: EmailService, private ipfsService: IpfsService) {
 
@@ -40,9 +41,9 @@ this.submit = false;
 this.submitResponse = false;
 this.form = true;
 this.progress = this.ipfsService.progress;
+this.showUpdate = false;
 this.getTransfer();
 };
-
 
 //Verifies email inputs
 toEmailFormControl = new FormControl('', [
@@ -78,8 +79,8 @@ onTestPost() {
 toggleFile() {
   this.hashes = [];
   this.file.length = [];
-  this.progress = undefined;
-  console.log('Progress', this.progress)
+  this.showUpdate = false;
+
 }
 
 getTransfer() {
@@ -95,11 +96,12 @@ refresh() {
   this.form = true;
   this.data.to = '';
   this.data.from = '';
+  this.showUpdate = false;
 }
 
 upload = ($event) => {
   if (this.file.length < 1) {
-
+    this.showUpdate = true;
     var file = $event.target.files[0];
     this.name = file.name;
     this.parentSize = file.size;

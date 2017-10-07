@@ -5,6 +5,14 @@
   justify-content: space-around;
 }
 
+.topHolder {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .image-upload {
   width: 100%;
   height: 20%;
@@ -21,7 +29,7 @@
   border: 1px solid red;
 }
 
-.progressBar {
+.progressBar, .progressBarTitle {
   text-align: center;
   font-size: 1.7em;
   color: #005b7a;
@@ -87,6 +95,13 @@ button {
   margin-top: 50px;
 }
 
+.fileName {
+  border: 2px double #005b7a;
+  border-radius: 5px;
+  padding: 5px;
+
+}
+
 #text {
   text-align: left;
   vertical-align: middle;
@@ -99,7 +114,7 @@ h2 {
 }
 
 #file-input {
-  width: 100px;
+  width: 87px;
 }
 
 #file-input:hover {
