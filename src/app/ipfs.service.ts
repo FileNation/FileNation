@@ -39,7 +39,7 @@ export class IpfsService {
 
           this.progress = 0;
         let myReadableStreamBuffer = new streamBuffers.ReadableStreamBuffer({
-          chunkSize: 950000   //determines data transfer rate
+          chunkSize: 3000000   //determines data transfer rate
         });
           this.node.files.createAddStream((err, stream) => {
             console.log('ERR', err)
@@ -76,4 +76,3 @@ export class IpfsService {
   }
 
 }
-

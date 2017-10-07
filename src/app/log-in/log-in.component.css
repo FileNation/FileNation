@@ -34,8 +34,8 @@ input {
 }
 
 h2, h3, h4, p {
-  color: black;
-  text-align: left;
+  color: #005b7a;
+  text-align: center;
   background-color: rgba(255,255,255,.7);
 }
 
