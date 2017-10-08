@@ -56,3 +56,15 @@ p {
   width: 15%;
   margin: 1px;
 }
+
+.donations{
+  margin-left:37%;
+}
+
+.donations > a{
+  padding: 10px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
