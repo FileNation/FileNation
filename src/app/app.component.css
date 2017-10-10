@@ -5,7 +5,7 @@
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background-color: #f7f6f5;
+  background-color: white;
 }
 
 .header {
@@ -28,7 +28,7 @@ h1 {
 
 h2 {
   font-size: 1.0em;
-  color: #005b7a;
+  color: #ff4181 !important;
   margin: 10px;
   font-family: 'Raleway', sans-serif;
   text-align: center;
@@ -91,6 +91,7 @@ h2 {
   width: 100%;
   justify-content: flex-end;
   align-items: center;
+  margin-right: 25px;
   margin-top: 10px;
 }
 
