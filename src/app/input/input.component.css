@@ -26,6 +26,7 @@
 .image-upload > input {
   border-radius: 5px;
   width: 100px;
+  border: 1px solid #b5b5b5;
 }
 
 .progressBar, .progressBarTitle {
