@@ -1,7 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "d-cloud"
+    "name": "d-cloud",
+    "ejected": true
   },
   "apps": [
     {
@@ -55,6 +56,7 @@
   },
   "defaults": {
     "styleExt": "css",
-    "component": {}
+    "component": {
+    }
   }
 }
