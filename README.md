@@ -14,10 +14,14 @@ IPFS (the InterPlanetary File System) is a new hypermedia distribution protocol,
 Decentralized-Cloud is a work in progress!
 
 Download the modules:
-    npm i
+
+      npm i
 Start the App on the browser:
-    npm start
+      
+      npm start
+      
 Run production mode:
+
     npm run build --prod
 
 ## Tech Stack
