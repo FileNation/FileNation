@@ -106,7 +106,7 @@ h2 {
 
 }
 
-@media all and (max-width: 700px) {
+@media all and (max-width: 820px) {
 
 .container {
   width: 100%;
@@ -115,7 +115,7 @@ h2 {
 
 .body{
   flex-wrap: wrap;
-  background-color: #f7f6f5;
+  background-color: #ff4181;
   border-bottom: none;
 }
 
