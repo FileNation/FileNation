@@ -74,3 +74,6 @@ p {
   flex-direction: column;
 
 }
+.image-center {
+  margin-left: 25%;
+}
