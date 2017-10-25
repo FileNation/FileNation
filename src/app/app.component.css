@@ -43,6 +43,7 @@ h2 {
   margin: 10px;
   background-color: white;
   padding: 15px;
+  box-sizing: border-box;
 }
 
 .transferHolder {
