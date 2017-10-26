@@ -55,7 +55,7 @@ toEmailFormControl = new FormControl('', [
 
 //Called when form is submitted
 onTestPost() {
-  if (this.file.length) {
+  if (this.file.length && this.data.to) {
     this.form = false;
     this.submit = true;
     setTimeout(()=> {
