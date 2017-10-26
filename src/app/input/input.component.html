@@ -33,7 +33,7 @@
     <div class="form-input">
       <form class="example-form" (ngSubmit)="onTestPost()" >
         <md-input-container class="example-full-width">
-          <input mdInput placeholder="Send Email to" [(ngModel)]="data.to" [formControl]="toEmailFormControl">
+          <input mdInput placeholder="Send Email to" [(ngModel)]="data.to" [formControl]="toEmailFormControl" required>
           <md-error *ngIf="toEmailFormControl.hasError('pattern')">
             Please enter a valid email address
           </md-error>
