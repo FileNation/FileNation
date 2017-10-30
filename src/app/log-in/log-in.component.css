@@ -77,3 +77,11 @@ p {
 .image-center {
   margin-left: 25%;
 }
+
+@media all and (max-width: 1020px) {
+
+img {
+  visibility: hidden;
+}
+
+}

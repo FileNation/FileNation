@@ -116,7 +116,7 @@ h2 {
 
 .body{
   flex-wrap: wrap;
-  background-color: #ff4181;
+  background-color: white;
   border-bottom: none;
 }
 
@@ -155,6 +155,9 @@ h2 {
 
 .label {
   display: none;
+}
+img {
+  visibility: hidden;
 }
 
 }
