@@ -41,7 +41,9 @@ h2 {
   justify-content: center;
   align-items: center;
   margin: 10px;
-  background-color: white;
+  background-image: url('https://source.unsplash.com/user/erondu/1600x900');
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 15px;
   box-sizing: border-box;
 }
@@ -157,6 +159,9 @@ h2 {
   display: none;
 }
 img {
+  visibility: hidden;
+}
+.base {
   visibility: hidden;
 }
 

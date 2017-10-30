@@ -7,6 +7,10 @@
 
 .topHolder {
   height: 200px;
+  width: 350px;
+  background-color: white;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,8 +50,11 @@
 }
 
 form {
-  width: 100%;
+  width: 350px !important;
   height: 100%;
+  background-color: white;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -82,6 +89,7 @@ button {
 
 .successMessage {
   display: flex;
+  background-color: white;
   flex-direction: column;
   padding: 10px;
   align-items: center;
