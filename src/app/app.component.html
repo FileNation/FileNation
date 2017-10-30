@@ -1,33 +1,37 @@
+
+
 <div class="container">
 
-<div class="header">
-  <h1>Decentralized Cloud</h1>
+ 
+      <app-header></app-header>
+  
+<!-- header -->
 
-  <h2 style="color: #0099cc">
-    Decentralized Cloud enables users to quickly and easily transfer large files of any format.
-    </h2>
-</div>
 
+<!-- body in home.component -->
+  <!-- Full Width Column -->
+ 
+ 
+    
   <div class="body">
+    <router-outlet></router-outlet>
 
-    <div class="transferHolder">
-        <app-transfer></app-transfer>
-    </div>
-    <div class="spacer"></div>
-    <div class="infobar">
-      <app-log-in></app-log-in>
-      <div class="spacer"></div>
-    </div>
-
-  </div >
-  <div class="base">
-  <div class = "feedback" class="links">
-  <a class="github-button" href="https://github.com/alexsicart/Decentralized-Cloud" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star alexsicart/Decentralized-Cloud on GitHub">Star</a>
-  <a class="github-button" href="https://github.com/alexsicart/decentralized-cloud/issues" data-icon="octicon-issue-opened" data-size="large" data-show-count="true" aria-label="Issue alexsicart/decentralized-cloud on GitHub">Issue</a>
   </div>
-  <p class="donations" class="links"><a class="mat-raised-button mat-accent" href="https://www.paypal.me/alexsicart">Donate</a></p>
-    <!-- <app-test></app-test> -->
-  <!-- <p class="links">About - Terms of Use - Contact</p> -->
+  
+
+  
+        <div class="base">
+            <div class = "feedback" class="links">
+            <a class="github-button" href="https://github.com/alexsicart/Decentralized-Cloud" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star alexsicart/Decentralized-Cloud on GitHub">Star</a>
+            <a class="github-button" href="https://github.com/alexsicart/decentralized-cloud/issues" data-icon="octicon-issue-opened" data-size="large" data-show-count="true" aria-label="Issue alexsicart/decentralized-cloud on GitHub">Issue</a>
+            </div>
+            <p class="donations" class="links"><a class="mat-raised-button mat-accent" href="https://www.paypal.me/alexsicart">Donate</a></p>
+              <!-- <app-test></app-test> -->
+             <p class="links" [routerLink]="['about']">About - Terms of Use - Contact</p> 
+          
+          </div>
 
 </div>
-</div>
+
+
+

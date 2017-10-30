@@ -16,6 +16,18 @@ import { TestComponent } from './test/test.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { AccountComponent } from './account/account.component';
 
+
+// get use with routes and modular
+import { RouterModule, PreloadAllModules } from '@angular/router';
+
+// import your router file
+import {ROUTES} from './app.routes';
+
+
+import {LocationStrategy, HashLocationStrategy} from '@angular/common';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +36,9 @@ import { AccountComponent } from './account/account.component';
     TestComponent,
     LogInComponent,
     AccountComponent,
-    
+    HeaderComponent,
+    HomeComponent
+
 
   ],
   imports: [
@@ -34,6 +48,7 @@ import { AccountComponent } from './account/account.component';
     NoopAnimationsModule,
     [FormsModule, ReactiveFormsModule],
     [MdButtonModule, MdCheckboxModule, MdInputModule, MdListModule, MdProgressBarModule],
+    RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules})
 
   ],
   providers: [
