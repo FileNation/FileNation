@@ -12,6 +12,7 @@
   margin-left: 150px !important;
 }
 
+
 @media all and (max-width: 880px) {
 
 .header {
@@ -48,7 +49,7 @@ h2 {
 .infobar {
   width: 90%;
   order: 2;
-  border: 2px solid #0099cc;
+  /*border: 2px solid #0099cc;*/
   background-color: white;
 
 }

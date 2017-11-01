@@ -48,36 +48,7 @@ h2 {
   box-sizing: border-box;
 }
 
-.transferHolder {
-  width: 50%;
-  max-width: 500px;
-  height: 100%;
-  border-radius: 5px;
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  min-height: 400px;
-  align-items: center;
-  margin-left: 150px !important;
-}
 
-.infobar {
-  width: 50%;
-  max-width: 1000px;
-  height: 100%;
-  border-radius: 5px;
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.fileFeedback {
-  display: flex;
-  justify-content: center;
-}
 
 .spacer {
   width: 5%;
