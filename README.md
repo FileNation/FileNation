@@ -38,4 +38,4 @@ We love pull requests from everyone. By participating in this project, you agree
 [code of conduct](https://thoughtbot.com/open-source-code-of-conduct)
 
 Fork, then clone the repo:
-Push to your fork and  [submit a pull request](https://github.com/alexsicart/Decentralized-Cloud/pulls).
+Push to your fork and  [submit a pull request](https://github.com/alexsicart/Decentralized-Cloud/pull/new/gh-pages).
