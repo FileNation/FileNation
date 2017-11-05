@@ -91,11 +91,13 @@ button {
 .successMessage {
   display: flex;
   background-color: white;
+  width: 500px;
   flex-direction: column;
   padding: 10px;
   align-items: center;
   justify-content: space-between;
   text-align: center;
+  border-radius: 25px;
 }
 
 .successButton {
@@ -165,4 +167,3 @@ input[type="file"] {
   margin-top: 5em;
   cursor: pointer !important;
   }
-
