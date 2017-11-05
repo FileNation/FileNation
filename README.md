@@ -6,7 +6,9 @@ Decentralized Cloud is the simplest way to send your files around the world usin
 IPFS (the InterPlanetary File System) is a new hypermedia distribution protocol, addressed by content and identities. IPFS enables the creation of completely distributed applications. It aims to make the web faster, safer, and more open.
 
 ![IPFS](screenshots/ipfs.png)
+
 ![IPFS](screenshots/ipfs1.png)
+
 ![IPFS](screenshots/ipfs2.png)
 
 ## How it works
@@ -14,14 +16,11 @@ IPFS (the InterPlanetary File System) is a new hypermedia distribution protocol,
 Decentralized-Cloud is a work in progress!
 
 Download the modules:
-
       npm i
 Start the App on the browser:
-      
       npm start
-      
-Run production mode:
 
+Run production mode:
     npm run build --prod
 
 ## Tech Stack
