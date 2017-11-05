@@ -121,10 +121,8 @@ h2 {
 }
 
 #file-input {
-  /* position: absolute; */
-  cursor: pointer;
-  height: 130px;
-  width: 90px;
+  cursor: pointer;  
+  width: auto;
   margin-top: -15px;
 }
 
@@ -166,5 +164,5 @@ input[type="file"] {
 #uploadCircle {
   margin-top: 5em;
   cursor: pointer !important;
-}
+  }
 
