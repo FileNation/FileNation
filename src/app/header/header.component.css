@@ -1,6 +1,6 @@
 h1, h2, h3 {
   margin-left: 20px;
-  font-family: 'Roboto',sans-serif;   
+  font-family: 'Roboto',sans-serif;
 }
 
 h1 {
@@ -9,8 +9,17 @@ h1 {
 
 }
 
+h3 {
+  margin-left: 45px;
+  font-size: 1.6rem;
+}
+
 .logo {
   margin-bottom: -5px;
   position: relative;
   align-content: center;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 100000px white);
 }
