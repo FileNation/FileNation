@@ -6,11 +6,31 @@ h1, h2, h3 {
 h1 {
   font-weight: 900;
   font-size: 3.5rem;
-
 }
 
+h1:focus {
+  outline: -webkit-focus-ring-color auto 0px;
+  outline-color: -webkit-focus-ring-color;
+  outline-style: auto;
+  outline-width: 0px;
+}
+
+
+
 .logo {
-  margin-bottom: -5px;
+  margin-bottom: -10px;
   position: relative;
   align-content: center;
 }
+
+h3 {
+  margin-left: 45px;
+  font-size: 1.6rem;
+}
+
+
+
+
+
+
+
