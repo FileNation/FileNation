@@ -1,12 +1,26 @@
 h1, h2, h3 {
   margin-left: 20px;
-  font-family: 'Roboto',sans-serif;
+  font-family: 'Roboto',sans-serif;   
 }
 
 h1 {
   font-weight: 900;
   font-size: 3.5rem;
+}
 
+h1:focus {
+  outline: -webkit-focus-ring-color auto 0px;
+  outline-color: -webkit-focus-ring-color;
+  outline-style: auto;
+  outline-width: 0px;
+}
+
+
+
+.logo {
+  margin-bottom: -10px;
+  position: relative;
+  align-content: center;
 }
 
 h3 {
@@ -14,12 +28,9 @@ h3 {
   font-size: 1.6rem;
 }
 
-.logo {
-  margin-bottom: -5px;
-  position: relative;
-  align-content: center;
-}
 
-.logo:hover {
-  filter: drop-shadow(0 0 100000px white);
-}
+
+
+
+
+
