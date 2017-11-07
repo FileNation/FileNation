@@ -8,7 +8,7 @@
     <!-- Upload icon and button-->
     <div class="image-upload" *ngIf="!showUpdate">
       <label for="file-input">
-        <button title ="Add Your Files" (click)="file.click()" id="uploadCircle"md-fab><svg fill="#FFFFFF" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
+        <button title ="Add Your Files" (click)="file.click()" id="uploadCircle"mat-fab><svg fill="#FFFFFF" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 0h24v24H0z" fill="none"/>
           <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/>
         </svg></button>
@@ -16,7 +16,7 @@
       <input #file id="file-input" type="file" (change)="upload($event)"/>
     </div>
 
-    
+
 
     <!-- Displays progress of file upload-->
     <div class="progressBarTitle" *ngIf="!progress && showUpdate">Checking file...</div>
@@ -26,7 +26,7 @@
     <!-- Displays file name once uploaded and allows user to change selection -->
     <div  class="fileFeedback" *ngIf="file.length > 0">
       <p class="selectedFile"><strong>File Selected:</strong><br> <span style="color:#0099cc">{{this.name}}</span></p>
-      <button class="changeButton" md-raised-button color="accent" (click)="toggleFile()">Change file</button>
+      <button class="changeButton" mat-raised-button color="accent" (click)="toggleFile()">Change file</button>
     </div>
 
   </div>
@@ -34,25 +34,25 @@
 
     <div class="form-input">
       <form class="example-form" (ngSubmit)="onTestPost()" >
-        <md-input-container class="example-full-width">
-          <input mdInput placeholder="Send Email to" [(ngModel)]="data.to" [formControl]="toEmailFormControl" required>
-          <md-error *ngIf="toEmailFormControl.hasError('pattern')">
+        <mat-input-container class="example-full-width">
+          <input matInput placeholder="Send Email to" [(ngModel)]="data.to" [formControl]="toEmailFormControl" required>
+          <mat-error *ngIf="toEmailFormControl.hasError('pattern')">
             Please enter a valid email address
-          </md-error>
-          <md-error *ngIf="toEmailFormControl.hasError('required')">
+          </mat-error>
+          <mat-error *ngIf="toEmailFormControl.hasError('required')">
             Email is <strong>required</strong>
-          </md-error>
-        </md-input-container>
-        <md-input-container class="example-full-width">
-          <input mdInput placeholder="Your Email" [(ngModel)]="data.from" [formControl]="fromEmailFormControl">
-          <md-error *ngIf="fromEmailFormControl.hasError('pattern')">
+          </mat-error>
+        </mat-input-container>
+        <mat-input-container class="example-full-width">
+          <input matInput placeholder="Your Email" [(ngModel)]="data.from" [formControl]="fromEmailFormControl">
+          <mat-error *ngIf="fromEmailFormControl.hasError('pattern')">
             Please enter a valid email address
-          </md-error>
-          <md-error *ngIf="fromEmailFormControl.hasError('required')">
+          </mat-error>
+          <mat-error *ngIf="fromEmailFormControl.hasError('required')">
             Email is <strong>required</strong>
-          </md-error>
-        </md-input-container>
-        <button md-raised-button color="accent" type="submit">Send</button>
+          </mat-error>
+        </mat-input-container>
+        <button mat-raised-button color="accent" type="submit">Send</button>
       </form>
     </div>
 
@@ -73,17 +73,17 @@
 <div class="successMessage" *ngIf="submitResponse">
   <h2>The below file has been added to IPFS and sent to: <br/> <span style="color:#0099cc">{{this.data.to}} </span></h2>
   <span class="fileName">{{this.name}}</span>
-  <button class="successButton" md-raised-button color="accent" (click)="refresh()">Send another file</button>
+  <button class="successButton" mat-raised-button color="accent" (click)="refresh()">Send another file</button>
 </div>
 
 
   <!-- <br>
   <div class="center" >
-    <md-nav-list>
-      <md-list-item *ngFor="let link of hashes">
-        <a md-line href="https://ipfs.io/ipfs/{{link[0].hash}}" target="_blank">{{link[0].hash}}</a>
-        <button md-icon-button (click)="showInfo(link)">
+    <mat-nav-list>
+      <mat-list-item *ngFor="let link of hashes">
+        <a mat-line href="https://ipfs.io/ipfs/{{link[0].hash}}" target="_blank">{{link[0].hash}}</a>
+        <button mat-icon-button (click)="showInfo(link)">
           <i class="material-icons">note</i></button>
-        </md-list-item>
-      </md-nav-list>
+        </mat-list-item>
+      </mat-nav-list>
     </div> -->
