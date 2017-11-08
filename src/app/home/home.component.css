@@ -12,6 +12,10 @@
   margin-left: 150px !important;
 }
 
+.file-box {
+  margin-top: 150px;
+}
+
 
 @media all and (max-width: 880px) {
 
@@ -31,6 +35,7 @@
   height: 100%;
 }
 
+
 .body{
   flex-wrap: wrap;
   background-color: white;
@@ -44,6 +49,7 @@ h2 {
 .transferHolder {
   order: 1;
   background-color: white;
+  margin-left: 10% !important;
 }
 
 .infobar {
