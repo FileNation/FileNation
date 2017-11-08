@@ -1,11 +1,31 @@
 .container {
   background-color: white;
-  height: 250px;
-  width: 400px;
+  height: 350px;
+  width: 350px;
   padding: 50px;
+  margin-left: 30%;
+  margin-top: 30%;
+  border-radius: 25px;
 }
 
 a {
   color: black;
-  
+
+}
+
+.logo {
+  text-decoration: underline;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 10px white);
+}
+
+#img-circle {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #8658c9;
 }

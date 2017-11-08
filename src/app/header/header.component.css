@@ -1,6 +1,6 @@
 h1, h2, h3 {
   margin-left: 20px;
-  font-family: 'Roboto',sans-serif;   
+  font-family: 'Roboto',sans-serif;
 }
 
 h1 {
@@ -21,16 +21,13 @@ h1:focus {
   margin-bottom: -10px;
   position: relative;
   align-content: center;
+  margin-left: 30px;
+  filter: drop-shadow(0 0 300px white);
+  /*background-color: white;*/
 }
+
 
 h3 {
   margin-left: 45px;
   font-size: 1.6rem;
 }
-
-
-
-
-
-
-
