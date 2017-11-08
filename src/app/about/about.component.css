@@ -3,7 +3,7 @@
   height: 350px;
   width: 350px;
   padding: 50px;
-  margin-left: 30%;
+  margin-left: 7%;
   margin-top: 30%;
   border-radius: 25px;
 }
@@ -28,4 +28,12 @@ a {
     border-style: solid;
     border-width: 3px;
     border-color: #8658c9;
+}
+
+@media all and (max-width: 620px) {
+
+.container {
+    width: 250px;
+}
+
 }
