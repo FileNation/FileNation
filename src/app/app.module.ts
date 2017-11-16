@@ -37,9 +37,7 @@ import { HomeComponent } from './home/home.component'
     LogInComponent,
     AccountComponent,
     HeaderComponent,
-    HomeComponent
-
-
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
