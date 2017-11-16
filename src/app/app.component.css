@@ -73,9 +73,46 @@ h2 {
   margin-top: 10px;
 }
 
-
-
-
+.title-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+}
+.title-bar-title {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  justify-content: center;
+  margin-left: 10%;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.5em;
+  /*border-width: thin;
+  border-bottom-style: solid;*/
+}
+.title-bar-left-container {
+  display: flex;
+  align-items: center;
+  margin-left: 10%;
+}
+.title-bar-theme-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #EC5281;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-style: dashed;
+  height: 40px;
+}
+.title-bar-right-container {
+  display: flex;
+  align-items: center;
+  margin-right: 10%;
+}
 
 @media all and (max-width: 620px) {
 
