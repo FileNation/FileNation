@@ -1,0 +1,21 @@
+.dropin {
+  background: rgb(252, 68, 130);
+  position: absolute;
+  /* margin-top: -50px !important; */
+  top: 0;
+  left: 0;
+  font-size: 175px;
+  width: 100vw !important;
+  height: 100vh !important;
+  visibility: hidden;
+  z-index: -1;
+}
+.nonopaque {
+  opacity: .2;
+  color: rgba(0,0,0,0);
+  z-index: 666 !important;  
+}
+input {
+  visibility: visible !important;
+  opacity: 0;
+}

@@ -49,19 +49,8 @@
   color: #005b7a;
   font-family: 'Raleway', sans-serif;
 }
-.singledropper {
-  background: blue;
-}
-.dropin {
-  position: absolute;
-  margin-top: -50px !important;
-  font-size: 175px;
-  width: 200px !important;
-  z-index: 666;
-}
-.dropzone {
-  height: 300px !important;
-}
+
+
 form {
   width: 350px !important;
   height: 100%;

@@ -43,6 +43,7 @@ h2 {
   background-size: cover;
   box-sizing: border-box;
   margin-bottom: 10px;
+  z-index: 2;
 }
 
 

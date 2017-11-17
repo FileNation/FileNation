@@ -1,7 +1,9 @@
-import {Component, OnInit } from '@angular/core';
+import {Component, OnInit, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 import { EmailService } from './../email.service';
 import { IpfsService } from '../ipfs.service';
+
+import {DragZoneComponent } from '../dragzone/dragzone.component'
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
@@ -24,26 +26,27 @@ export class InputComponent {
   progress: number;
   showUpdate: boolean;
 
-constructor(private emailService: EmailService, private ipfsService: IpfsService) {
 
-this.data = {
-  to: '',
-  from: '',
-  hashes: ''
+  constructor(private emailService: EmailService, private ipfsService: IpfsService) {
+
+    this.data = {
+      to: '',
+      from: '',
+      hashes: ''
+    }
+
+  }
+
+  ngOnInit() {
+    this.hashes = [];
+    this.file = [];
+    this.submit = false;
+    this.submitResponse = false;
+    this.form = true;
+    this.progress = this.ipfsService.progress;
+    this.showUpdate = false;
+    this.getTransfer();
 }
-
-}
-
-ngOnInit() {
-this.hashes = [];
-this.file = [];
-this.submit = false;
-this.submitResponse = false;
-this.form = true;
-this.progress = this.ipfsService.progress;
-this.showUpdate = false;
-this.getTransfer();
-};
 
 //Verifies email inputs
 toEmailFormControl = new FormControl('', [
@@ -102,6 +105,24 @@ refresh() {
 upload = ($event) => {
   if (this.file.length < 1) {
     this.showUpdate = true;
+
+    // ================================
+    
+    // setTimeout(() => {
+    //   console.log(document.querySelector('.dropin'));
+    //   document.querySelector('.dropin').addEventListener('dragover', function($event) {
+    //     this.classList.add('nonopaque');
+    //   })
+    //   document.querySelector('.dropin').addEventListener('dragleave', function($event) {
+    //     this.classList.remove('nonopaque');
+    //   })
+    //   document.querySelector('.dropin').addEventListener('drag', function($event) {
+    //     this.classList.remove('nonopaque');
+    //   })
+    // }, 2000)
+
+    // ================================
+
     var file = $event.target.files[0];
     this.name = file.name;
     this.parentSize = file.size;
