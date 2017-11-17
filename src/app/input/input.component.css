@@ -4,6 +4,16 @@
   align-items: stretch;
   justify-content: space-around;
 }
+@media screen and (max-width: 500px) {
+  .container {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    padding-left: 40px;
+    padding-right: 50px;
+  }
+}
 
 .topHolder {
   height: 200px;
@@ -123,7 +133,7 @@ h2 {
 }
 
 #file-input {
-  cursor: pointer;  
+  cursor: pointer;
   width: auto;
   margin-top: -15px;
 }

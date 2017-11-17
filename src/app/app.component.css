@@ -7,7 +7,7 @@
   height: 100vh;
   background-color: white;
 }
-
+/*
 .header {
   width: 100%;
   display: flex;
@@ -15,7 +15,7 @@
   justify-content: space-around;
   color: black;
   align-self: flex-start;
-}
+}*/
 
 h1 {
   font-size: 3em;
@@ -35,17 +35,30 @@ h2 {
 }
 
 .body {
-  width: 100%;
-  height: 92%;
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   background-image: url('https://source.unsplash.com/user/erondu/1600x900');
   background-repeat: no-repeat;
   background-size: cover;
-  box-sizing: border-box;
-  margin-bottom: 10px;
+  /*box-sizing: border-box;*/
+  /*margin-bottom: 10px;*/
 }
 
-
+.body-container {
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
 .spacer {
   width: 5%;
@@ -66,43 +79,80 @@ h2 {
 
 .base {
   display: flex;
+  flex-direction: row;
   width: 100%;
   justify-content: flex-end;
   align-items: center;
-  margin-right: 25px;
-  margin-top: 10px;
+  background-color: #fff;
+  padding-right: 5vw;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-width: thin;
+  border-top-style: solid;
+  z-index: 1000;
 }
-
-.title-bar {
+.base-buttons {
   display: flex;
+  justify-content: space-between;
+  flex-flow: row;
+  margin-right: 2vw;
+}
+.about-button {
+  text-align: center;
+  font-size: 0.9em;
+  padding: 6.6px;
+  align: center;
+  vertical-align: middle;
+  color: rgb(255, 0, 145);
+  background-color: white;
+  border: solid;
+  border-radius: 2px;
+  width: 70px;
+  box-shadow: 0px 1px 3px #888888;
+
+}
+.feedback {
+  display: flex;
+  flex-flow: row wrap;
+}
+.spacer {
+  width:3vw;
+  height: 3vw;
+}
+.title-bar {
+  top:0;
+  display: flex;
+  position: sticky;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
-  width: 100%;
+  width: 100vw;
   background-color: #fff;
+  border-width: thin;
+  border-bottom-style: solid;
+  z-index: 1000;
 }
 .title-bar-title {
   display: flex;
   align-items: center;
-  white-space: nowrap;
+  flex-wrap: wrap;
+  white-space: wrap;
   justify-content: center;
   margin-left: 10%;
   font-family: 'Raleway', sans-serif;
-  font-size: 1.5em;
+  font-size: 0.8em;
   /*border-width: thin;
   border-bottom-style: solid;*/
 }
 .title-bar-left-container {
   display: flex;
   align-items: center;
-  margin-left: 10%;
+  margin-left: 5%;
 }
 .title-bar-theme-button {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: #EC5281;
   padding-left: 10px;
   padding-right: 10px;
   border-style: dashed;
@@ -114,10 +164,25 @@ h2 {
   margin-right: 10%;
 }
 
-@media all and (max-width: 620px) {
-
-.base {
-  visibility: hidden;
-}
-
+@media screen and (max-width: 500px) {
+  .spacer {
+    width: 0vw;
+    height: 0;
+  }
+  .title-bar-right-container {
+    margin-right: 5vw;
+  }
+  .body-container {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .base-buttons {
+    transform: scale(0.7);
+  }
+  .feedback {
+    transform: scale(0.7);
+  }
 }

@@ -18,14 +18,11 @@
     <div class="title-bar">
       <div class="title-bar-left-container">
         <div class="title-bar-logo">
-          <svg _ngcontent-c4="" fill="#EC5281" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
-            <path _ngcontent-c4="" d="M0 0h24v24H0z" fill="none"></path>
-            <path _ngcontent-c4="" d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"></path>
-          </svg>
+          <img src="../favicon.ico" alt="" style="height: 6vh; margin: 10px;"/>
         </div>
-        <h4 class="title-bar-title">
-          Decentralized Cloud
-        </h4>
+        <p class="title-bar-title">
+          the decentralized cloud
+        </p>
       </div>
 
       <div class="title-bar-right-container">
@@ -35,17 +32,27 @@
       </div>
     </div>
 
-    <router-outlet></router-outlet>
+    <div class="body-container">
+      <router-outlet></router-outlet>
+    </div>
 
   </div>
 
-        <div class="base">
-            <div class = "feedback" >
-            <a class="github-button" href="https://github.com/alexsicart/Decentralized-Cloud" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star alexsicart/Decentralized-Cloud on GitHub">Star</a>
-            <a class="github-button" href="https://github.com/alexsicart/decentralized-cloud/issues" data-icon="octicon-issue-opened" data-size="large" data-show-count="true" aria-label="Issue alexsicart/decentralized-cloud on GitHub">Issue</a>
-            </div>
-            <p class="donations"><a class="mat-raised-button mat-accent" href="https://www.paypal.me/alexsicart">Donate</a></p>
-             <p class="links" [routerLink]="['about']">About - Terms of Use - Contact</p>
-          </div>
+  <div class="base">
+      <div class="spacer"></div>
+      <div class = "feedback" >
+        <a class="github-button" href="https://github.com/alexsicart/Decentralized-Cloud" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star alexsicart/Decentralized-Cloud on GitHub">Star</a>
+        <div class="spacer"></div>
+        <a class="github-button" href="https://github.com/alexsicart/decentralized-cloud/issues" data-icon="octicon-issue-opened" data-size="large" data-show-count="true" aria-label="Issue alexsicart/decentralized-cloud on GitHub">Issue</a>
+      </div>
+      <div class="spacer"></div>
+      <div class="base-buttons">
+        <a class="mat-raised-button mat-accent" href="https://www.paypal.me/alexsicart">Donate</a>
+        <div class="spacer"></div>
+        <a style="text-decoration: none;" [routerLink]="['about']" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+          <div class="about-button">About</div>
+        </a>
+      </div>
+    </div>
 
 </div>
