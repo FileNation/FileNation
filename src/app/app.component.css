@@ -44,8 +44,10 @@ h2 {
   background-image: url('https://source.unsplash.com/user/thehmstravels/1600x900');
   background-repeat: no-repeat;
   background-size: cover;
-  /*box-sizing: border-box;*/
-  /*margin-bottom: 10px;*/
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  z-index: 2;
+
 }
 
 .body-container {

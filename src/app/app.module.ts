@@ -26,8 +26,8 @@ import {ROUTES} from './app.routes';
 
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 import { HeaderComponent } from './header/header.component';
-import { HomeComponent } from './home/home.component';
-import { NewsfeedComponent } from './newsfeed/newsfeed.component'
+import { HomeComponent } from './home/home.component'
+import { DragZoneComponent } from './dragzone/dragzone.component';
 
 @NgModule({
   declarations: [
@@ -39,9 +39,7 @@ import { NewsfeedComponent } from './newsfeed/newsfeed.component'
     AccountComponent,
     HeaderComponent,
     HomeComponent,
-    NewsfeedComponent
-
-
+    DragZoneComponent,
   ],
   imports: [
     BrowserModule,
