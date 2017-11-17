@@ -15,6 +15,9 @@
   color: rgba(0,0,0,0);
   z-index: 666 !important;  
 }
+.dropin2 {
+  visibility: hidden;
+}
 input {
   visibility: visible !important;
   opacity: 0;

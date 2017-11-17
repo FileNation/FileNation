@@ -9,23 +9,22 @@ import { trigger } from '@angular/animations';
 export class DragZoneComponent implements OnInit {
   @ViewChild('dropin')
   dropin;
+  @ViewChild('dropin2')
+  dropin2;
   @Input() onUpload;
-  click() {this.dropin.nativeElement.click()}
+  click() {this.dropin2.nativeElement.click()}
   constructor() { 
   }
-
+  emptyClick = () => { console.log('caught') };
   ngOnInit() {
     this.dropin.nativeElement.addEventListener('dragover', function($event) {
+      this.disabled = false;
       this.classList.add('nonopaque');
-      console.log(this.onUpload);
+      console.log(this);
     })
     this.dropin.nativeElement.addEventListener('dragleave', function($event) {
-      this.classList.remove('nonopaque');
-    })
-    this.dropin.nativeElement.addEventListener('drop', function($event) {
+      this.disabled = true;
       this.classList.remove('nonopaque');
     })
   }
-
-
 }
