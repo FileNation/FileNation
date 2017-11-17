@@ -1,7 +1,6 @@
 .container {
   display: flex;
   flex-direction: column;
-
 }
 
 label{
@@ -18,7 +17,7 @@ label button{
 
 
 input[type="file"]{
-  position: absolute;
+  position: fixed;
   top: 5px;
   left: 5px;
   text-align: right;
@@ -38,15 +37,14 @@ input[type="file"]{
   filter: drop-shadow(0 0 10px white);
 }
 
-.form-input {
+/*.form-input {
   margin-left: 20px;
   margin-top: 10px;
-}
+}*/
 
 .center {
-overflow: auto;
-height: 200px;
-
+  overflow: auto;
+  height: 200px;
 }
 
 .send svg{
