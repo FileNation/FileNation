@@ -41,7 +41,7 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-image: url('https://source.unsplash.com/user/erondu/1600x900');
+  background-image: url('https://source.unsplash.com/user/thehmstravels/1600x900');
   background-repeat: no-repeat;
   background-size: cover;
   /*box-sizing: border-box;*/
@@ -94,26 +94,14 @@ h2 {
 .base-buttons {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-flow: row;
   margin-right: 2vw;
-}
-.about-button {
-  text-align: center;
-  font-size: 0.9em;
-  padding: 6.6px;
-  align: center;
-  vertical-align: middle;
-  color: rgb(255, 0, 145);
-  background-color: white;
-  border: solid;
-  border-radius: 2px;
-  width: 70px;
-  box-shadow: 0px 1px 3px #888888;
-
 }
 .feedback {
   display: flex;
   flex-flow: row wrap;
+  align-items: center;
 }
 .spacer {
   width:3vw;
@@ -166,11 +154,12 @@ h2 {
 
 @media screen and (max-width: 500px) {
   .spacer {
-    width: 0vw;
+    width: 3vw;
     height: 0;
   }
   .title-bar-right-container {
     margin-right: 5vw;
+    transform: scale(0.9);
   }
   .body-container {
     flex-wrap: wrap;
@@ -180,9 +169,9 @@ h2 {
     justify-content: center;
   }
   .base-buttons {
-    transform: scale(0.7);
+    transform: scale(0.9);
   }
   .feedback {
-    transform: scale(0.7);
+    transform: scale(0.9);
   }
 }
