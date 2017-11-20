@@ -103,26 +103,9 @@ refresh() {
 }
 
 upload = ($event) => {
+  console.log($event.target.files)
   if (this.file.length < 1) {
     this.showUpdate = true;
-
-    // ================================
-    
-    // setTimeout(() => {
-    //   console.log(document.querySelector('.dropin'));
-    //   document.querySelector('.dropin').addEventListener('dragover', function($event) {
-    //     this.classList.add('nonopaque');
-    //   })
-    //   document.querySelector('.dropin').addEventListener('dragleave', function($event) {
-    //     this.classList.remove('nonopaque');
-    //   })
-    //   document.querySelector('.dropin').addEventListener('drag', function($event) {
-    //     this.classList.remove('nonopaque');
-    //   })
-    // }, 2000)
-
-    // ================================
-
     var file = $event.target.files[0];
     this.name = file.name;
     this.parentSize = file.size;
