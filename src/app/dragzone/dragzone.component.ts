@@ -13,7 +13,7 @@ export class DragZoneComponent implements OnInit {
   dropin2;
   @Input() onUpload;
   click() {this.dropin2.nativeElement.click()}
-  constructor() { 
+  constructor() {
   }
   emptyClick = () => { console.log('caught') };
   ngOnInit() {

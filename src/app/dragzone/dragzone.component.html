@@ -1,7 +1,7 @@
 
   <script src="./dropzone.js"></script>
-  
-  <form action="/file-upload" class="dropzone">
-    <input #dropin class="dropin" id="file-input" type="file" (change)="onUpload($event)" disabled="disabled"/>
-    <input #dropin2 class="dropin2" id="file-input" type="file" (change)="onUpload($event)"/>
+
+  <form action="/file-upload" class="dropzone" uploadMultiple="true">
+    <input #dropin class="dropin" id="file-input" type="file" (change)="onUpload($event)" disabled="disabled" multiple />
+    <input #dropin2 class="dropin2" id="file-input" type="file" (change)="onUpload($event)" multiple />
   </form>

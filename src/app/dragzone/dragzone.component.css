@@ -13,7 +13,7 @@
 .nonopaque {
   opacity: .2;
   color: rgba(0,0,0,0);
-  z-index: 666 !important;  
+  z-index: 666 !important;
 }
 .dropin2 {
   visibility: hidden;
