@@ -25,6 +25,8 @@ export class InputComponent {
   form: boolean;
   progress: number;
   showUpdate: boolean;
+  completed: number;
+  totalFiles: number;
 
 
   constructor(private emailService: EmailService, private ipfsService: IpfsService) {
@@ -38,6 +40,9 @@ export class InputComponent {
   }
 
   ngOnInit() {
+    //change to upload maybe?
+    this.totalFiles = 0;
+    this.completed = 0;
     this.hashes = [];
     this.file = [];
     this.submit = false;
@@ -80,6 +85,8 @@ onTestPost() {
 
 //Called when user opts to change the selected file
 toggleFile() {
+  this.totalFiles = 0;
+  this.completed = 0;
   this.hashes = [];
   this.file.length = [];
   this.showUpdate = false;
@@ -92,6 +99,8 @@ getTransfer() {
 
 //Called when user opts to upload / send another file
 refresh() {
+  this.totalFiles = 0;
+  this.completed = 0;
   this.hashes = [];
   this.file = [];
   this.submit = false;
@@ -103,25 +112,35 @@ refresh() {
 }
 
 upload = ($event) => {
-  console.log($event.target.files)
-  if (this.file.length < 1) {
+  if (!this.file.length) {
     this.showUpdate = true;
-    var file = $event.target.files[0];
-    this.name = file.name;
-    this.parentSize = file.size;
-    this.ipfsService.uploadIPFS(file)
-    .then((torrent) => {
-
-      this.hashes.push(torrent);
-
-      this.file.push('<br>' + 'https://ipfs.io/ipfs/' + this.hashes[0].hash + '<br><br>');
-      this.temp = this.file;
-      this.data.hashes = (this.temp)
-    });
-    }
-    else {
-      alert("Sorry, still uploading previous file!")
-    }
+    let concatSize = 0;
+    let file = Object.keys($event.target.files).map(key => $event.target.files[key]);
+    let concatName = file.map(el => {
+      concatSize += el.size;
+      this.totalFiles++;
+      return el.name;
+    }).join(' and ');
+    this.name = concatName;
+    this.parentSize = concatSize;
+    file.forEach( (el, key) => {
+      this.ipfsService.uploadIPFS(el)
+      .then((torrent) => {
+        try {
+          this.hashes.push(torrent);
+          this.file.push('<br>' + 'https://ipfs.io/ipfs/' + this.hashes[key].hash + '<br><br>');
+          this.data.hashes = (this.file)
+        } catch (e) {
+          console.log('ERROR:', e)
+        }
+      }).then(() => {
+        this.completed++
+      });
+    })
+  }
+  else {
+    alert("Sorry, still uploading previous file!")
+  }
 }
 
     }
