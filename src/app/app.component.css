@@ -108,6 +108,20 @@ h2 {
   width:3vw;
   height: 3vw;
 }
+.title-bar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:60px;
+  height:50px;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(359deg); }
+}
+.logo-anim {
+  animation: spin linear 30s infinite;
+}
 .title-bar {
   top:0;
   display: flex;
