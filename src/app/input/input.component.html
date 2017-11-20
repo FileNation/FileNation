@@ -19,7 +19,7 @@
 
     <!-- Displays progress of file upload-->
     <div class="progressBarTitle" *ngIf="!progress && showUpdate">Checking file...</div>
-    <div class="progressBar" *ngIf="progress && showUpdate && this.progress < this.parentSize">Upload progress: <br> {{(this.progress / this.parentSize *100).toFixed(1)}} %</div>
+    <div class="progressBar" *ngIf="progress && showUpdate && this.completed < this.totalFiles">Upload progress: <br> {{(this.progress / this.parentSize *100).toFixed(1)}} %</div>
 
 
     <!-- Displays file name once uploaded and allows user to change selection -->
@@ -29,7 +29,6 @@
     </div>
 
   </div>
- 
 
     <div class="form-input">
       <form class="example-form" (ngSubmit)="onTestPost()" >
