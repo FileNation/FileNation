@@ -177,4 +177,86 @@ input[type="file"] {
 #uploadCircle {
   margin-top: 5em;
   cursor: pointer !important;
+}
+
+/*Spinner animation*/
+@keyframes scaler {
+  0% { width: 50px; height: 50px;}
+  50% { width: 100px; height: 100px;}
+  100% { width: 50px; height: 50px;}
+}
+@keyframes counterspin2 {
+  0% { transform: rotate(0deg) scale(1.0); }
+  10% { transform: rotate(0deg) scale(1.3); }
+  20% { transform: rotate(90deg) scale(1.3); }
+  30% { transform: rotate(90deg) scale(1.0); }
+  40% { transform: rotate(0deg) scale(1.0); }
+  50% { transform: rotate(0deg) scale(1.3); }
+  60% { transform: rotate(45deg) scale(1.3); }
+  70% { transform: rotate(45deg) scale(1.0); }
+  80% { transform: rotate(0deg) scale(1.0); }
+  90% { transform: rotate(0deg) scale(1.3); }
+  100% { transform: rotate(0deg) scale(1.0); }
+}
+
+@keyframes spin2 {
+  0% { transform: rotate(0deg) scale(1.0); }
+  10% { transform: rotate(-90deg) scale(1.0); }
+  20% { transform: rotate(-90deg) scale(1.3); }
+  30% { transform: rotate(-45deg) scale(1.3); }
+  40% { transform: rotate(0deg) scale(1.0); }
+  50% { transform: rotate(0deg) scale(1.0); }
+  60% { transform: rotate(0deg) scale(1.0); }
+  70% { transform: rotate(45deg) scale(1.0); }
+  80% { transform: rotate(90deg) scale(1.3); }
+  90% { transform: rotate(45deg) scale(1.0); }
+  100% { transform: rotate(0deg) scale(1.0); }
+}
+@keyframes fader {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fadeout {
+  0% { opacity: 1;}
+  100% { opacity: 0;}
+}
+.spinner-container {
+  animation: fader linear 0.5s;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  left:0;
+  top:0;
+}
+.spinner-background {
+  background-color: white;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+.spinner-container-out {
+  opacity: 0;
+  animation: fadeout linear 0.5s;
+  background-color: white;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  left:0;
+  top:0;
+}
+.spinner-pos {
+  left: 45%;
+  top:42%;
+  opacity: 1.0;
+}
+.spinner-anim1 {
+  animation: spin2 5s ease infinite;
+}
+.spinner-anim2 {
+  animation: counterspin2 5s ease infinite;
+}
+@media screen and (max-width: 626px) {
+  .spinner-container {
+    display: none;
   }
+}

@@ -140,7 +140,10 @@ h2 {
   0% { transform: rotate(0deg); filter: hue-rotate(0deg);}
   100% { transform: rotate(359deg); filter: hue-rotate(0deg);}
 }
-
+@keyframes fader {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 .logo-anim2 {
   animation: scaler ease 2.5s infinite;
 }
