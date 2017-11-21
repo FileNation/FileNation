@@ -10,6 +10,6 @@ export class AppComponent {
   constructor(private ipfsService: IpfsService) {}
 
   ngOnInit() {
-
+    
   }
 }

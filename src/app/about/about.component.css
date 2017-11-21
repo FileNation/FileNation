@@ -1,10 +1,18 @@
+@keyframes popup {
+  0% { margin-left: -2000px;}
+  100% { margin-left: 0;}
+}
+
 .container {
+  top: 12vh;
+  left: 2vw;
+  position: absolute;
+  animation: popup 1s ease;
   background-color: white;
   height: 350px;
   width: 350px;
+  transform: scale(0.8);
   padding: 50px;
-  margin-left: 7%;
-  margin-top: 30%;
   border-radius: 25px;
 }
 
@@ -29,11 +37,59 @@ a {
     border-width: 3px;
     border-color: #8658c9;
 }
+/*some hard coded css, its a quick fix, but needs to be refactored*/
 
-@media all and (max-width: 620px) {
-
-.container {
-    width: 250px;
+/*ipad*/
+@media screen and (max-width: 768px) {
+  .container {
+    top: 30vh;
+    left: 20vw;
+    transform: scale(1.0);
+  }
 }
-
+@media screen and (max-width: 1024px) {
+  .container {
+    top: 30vh;
+    left: 25vw;
+    transform: scale(1.0);
+  }
+}
+/*nexus5x*/
+@media screen and (max-width: 412px) {
+  .container {
+    top: 15vh;
+    left: -5vw;
+    transform: scale(0.75);
+  }
+}
+/*galaxys5*/
+@media screen and (max-width: 360px) {
+  .container {
+    top: 10vh;
+    left: -12vw;
+    transform: scale(0.75);
+  }
+}
+/*iphone 6 and 6+*/
+@media screen and (max-width: 414px) {
+  .container {
+    top: 15vh;
+    left: -5vw;
+    transform: scale(0.75);
+  }
+}
+@media screen and (max-width: 375px) {
+  .container {
+    top: 15vh;
+    left: -10vw;
+    transform: scale(0.75);
+  }
+}
+/*iphone5*/
+@media screen and (max-width: 320px) {
+  .container {
+    top: 12vh;
+    left: -20vw;
+    transform: scale(0.65);
+  }
 }
