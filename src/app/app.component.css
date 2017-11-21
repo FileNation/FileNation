@@ -1,3 +1,6 @@
+* {
+  overflow: hidden; /*hacky but it works...*/
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -7,15 +10,6 @@
   height: 100vh;
   background-color: white;
 }
-/*
-.header {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  color: black;
-  align-self: flex-start;
-}*/
 
 h1 {
   font-size: 3em;
@@ -46,12 +40,11 @@ h2 {
   background-size: cover;
   box-sizing: border-box;
   z-index: 2;
-
 }
 
 .body-container {
   position: fixed;
-  overflow-y: scroll;
+  overflow: hidden;
   width: 100%;
   height: 100%;
   flex-wrap: wrap;
@@ -65,6 +58,10 @@ h2 {
   width: 5%;
 }
 .feedback {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
   margin: 10px;
 }
 
@@ -82,7 +79,7 @@ h2 {
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   background-color: #fff;
   padding-right: 5vw;
@@ -115,12 +112,40 @@ h2 {
   width:60px;
   height:50px;
 }
+/*SAVING THESE ANIMATIONS FOR LATER. THEY ARE COOL*/
 @keyframes spin {
   0% { transform: rotate(0deg); }
-  100% { transform: rotate(359deg); }
+  50% { transform: rotate(-22deg);}
+  100% { transform: rotate(-44deg); }
+}
+@keyframes scaler {
+  0% { transform: scale(1); opacity:1; }
+  50% { transform: scale(1.3); opacity:1; }
+  100% { transform: scale(1); opacity:1; }
+}
+@keyframes spin2 {
+  0% { transform: rotate(0deg); filter: hue-rotate(0deg);}
+  10% { transform: rotate(-90deg); filter: hue-rotate(100deg);}
+  20% { transform: rotate(0deg); filter: hue-rotate(100deg);}
+  30% { transform: rotate(90deg); filter: hue-rotate(100deg);}
+  40% { transform: rotate(0deg); filter: hue-rotate(0deg);}
+  50% { transform: rotate(0deg); filter: hue-rotate(0deg);}
+  60% { transform: rotate(-90deg); filter: hue-rotate(100deg);}
+  70% { transform: rotate(0deg); filter: hue-rotate(100deg);}
+  80% { transform: rotate(90deg); filter: hue-rotate(100deg);}
+  90% { transform: rotate(0deg); filter: hue-rotate(0deg);}
+  100% { transform: rotate(0deg); filter: hue-rotate(0deg);}
+}
+@keyframes spin1 {
+  0% { transform: rotate(0deg); filter: hue-rotate(0deg);}
+  100% { transform: rotate(359deg); filter: hue-rotate(0deg);}
+}
+
+.logo-anim2 {
+  animation: scaler ease 2.5s infinite;
 }
 .logo-anim {
-  animation: spin linear 30s infinite;
+  animation: spin1 linear 8s infinite;
 }
 .title-bar {
   top:0;
@@ -166,7 +191,9 @@ h2 {
   align-items: center;
   margin-right: 10%;
 }
-
+.github-mobile-button {
+  display: none;
+}
 @media screen and (max-width: 500px) {
   .spacer {
     width: 3vw;
@@ -188,5 +215,18 @@ h2 {
   }
   .feedback {
     transform: scale(0.9);
+  }
+}
+@media screen and (max-width: 491px) {
+  .feedback {
+    display: none;
+  }
+  .github-mobile-button {
+    display: inline-block;
+  }
+  .base-buttons {
+    justify-content: space-around;
+    width: 100%;
+    margin-right: 0;
   }
 }

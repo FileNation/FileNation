@@ -119,6 +119,7 @@ refresh() {
 }
 
 upload = ($event) => {
+  console.log('BANANANANANANANANNA', $event.type);
   if (!this.file.length) {
     this.showUpdate = true;
     let concatSize = 0;
