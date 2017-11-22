@@ -24,6 +24,11 @@ export class DragZoneComponent implements OnInit {
       this.classList.add('nonopaque');
       console.log(this);
     })
+    this.dropin.nativeElement.addEventListener('dragon', function($event) {
+      this.disabled = false;
+      this.classList.add('nonopaque');
+      console.log(this);
+    })
     this.dropin.nativeElement.addEventListener('dragleave', function($event) {
       this.disabled = true;
       this.classList.remove('nonopaque');

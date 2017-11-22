@@ -26,6 +26,7 @@
   justify-content: flex-start;
   width: 100vw;
   height: 50vh;
+  z-index: -100000;
 }
 @media screen and (max-width: 500px) {
   .transferHolder {
