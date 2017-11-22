@@ -57,7 +57,7 @@ export class InputComponent {
 }
 animateStyles() {
   if (!this.animated) TweenMax.to(this.document.getElementById('animatedLoader'),
-    1, {scrambleText:{text:'uploading to IPFS', chars:'10', revealDelay:0.1, speed:0.3}}),
+    1, {scrambleText:{text:'sending through IPFS', chars:'10', revealDelay:0.1, speed:0.3}}),
     this.animated = true;
 }
 
