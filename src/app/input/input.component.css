@@ -9,6 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  top:-15vh;
   width: 100vw;
   height: 100vh;
   z-index: 9999;
@@ -188,6 +189,7 @@ input[type="file"] {
 #uploadCircle {
   margin-top: 5em;
   cursor: pointer !important;
+  z-index: 1000;
 }
 
 /*Spinner animation*/
