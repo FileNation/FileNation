@@ -113,7 +113,7 @@ button {
 .successMessage {
   display: flex;
   background-color: white;
-  width: 500px;
+  max-width: 500px;
   flex-direction: column;
   padding: 10px;
   align-items: center;
