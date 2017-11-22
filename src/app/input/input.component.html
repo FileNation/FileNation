@@ -1,10 +1,9 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div class="input-wrapper">
-  
+
 <div class="container" *ngIf="form">
 
   <div class="topHolder">
-    <!-- Loading spinner -->
 
     <!-- Upload icon and button-->
     <div class="image-upload" *ngIf="!showUpdate">
@@ -13,7 +12,8 @@
           <path d="M0 0h24v24H0z" fill="none"/>
           <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/>
         </svg></button>
-      </label><p id="addYourFiles">Upload your files</p>
+      </label>
+      <p id="lolwut">{{animationController()}}</p>
       <app-dragzone #file [onUpload]='upload'></app-dragzone>
     </div>
 
@@ -63,7 +63,7 @@
     <!-- <div class="spinner-container" *ngIf="(!form && !submitResponse)"> -->
     <div class="spinner-container">
         <img class="spinner-anim1 spinner-pos" src="../assets/dcloud-logo-background-pink.png" alt="" style="height: 25vh;"/>
-        <img class="spinner-anim2 spinner-pos" src="../assets/dcloud-logo-white.png" alt="" style="height: 25vh;"/>
+        <img class="spinner-anim2 spinner-pos" src="../assets/spinner-white.png" alt="" style="height: 25vh;"/>
     </div>
     <!-- <div id="animatedLoader" class="sequencer">{{animateStyles()}}initiating sequence</div> -->
   </div>

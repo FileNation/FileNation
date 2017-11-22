@@ -43,11 +43,11 @@ h2 {
   width: 0%;
 }*/
 .feedback {
+  transform: scale(0.9);
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
   align-items: center;
-  margin: 10px;
 }
 
 .links {
@@ -63,21 +63,20 @@ h2 {
 .base {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 100vw;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   background-color: rgba(0, 0);
-  padding-right: 5vw;
-  padding-top: 5px;
   padding-bottom: 5px;
   z-index: 1000;
 }
 .base-buttons {
+  transform: scale(0.9);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-flow: row;
-  margin-right: 2vw;
+
   color: blue !important;
 }
 .feedback {
@@ -135,7 +134,7 @@ h2 {
   animation: spin1 linear 8s infinite;
 }
 .title-bar {
-  top:0;
+  padding-top:1vh;
   display: flex;
   position: sticky;
   flex-direction: row;
@@ -153,7 +152,7 @@ h2 {
   justify-content: center;
   margin-left: 10%;
   font-family: 'Raleway', sans-serif;
-  font-size: 0.8em;
+  font-size: 1.1em;
   /*border-width: thin;
   border-bottom-style: solid;*/
 }
@@ -179,6 +178,14 @@ h2 {
 .github-mobile-button {
   display: none;
 }
+.palPrim {
+  background-color: #0081cb;
+  color: #fff;
+}
+.palSecond {
+  background-color: #69e2ff;
+  color: #fff;
+}
 @media screen and (max-width: 500px) {
   .spacer {
     width: 3vw;
@@ -203,6 +210,9 @@ h2 {
   }
 }
 @media screen and (max-width: 491px) {
+  .base {
+    width: 100vw;
+  }
   .feedback {
     display: none;
   }

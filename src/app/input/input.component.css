@@ -91,6 +91,7 @@ label button {
   height: 80px;
   border-radius: 50%;
   margin-bottom: 25px;
+  z-index: 9999;
 }
 
 button {
@@ -177,9 +178,11 @@ p {
   margin: 25px;
 }
 
-#addYourFiles {
+#lolwut {
   position: relative !important;
   margin-top: -4px !important;
+  max-width: 30vw;
+  text-align: center;
 }
 
 input[type="file"] {
@@ -241,7 +244,8 @@ input[type="file"] {
   align-items: center;
   width: 50vw;
   height:100vh;
-  background-color: rgba(64,84,178,1);
+  background-color: #263238;
+  z-index: -1;
 }
 
 .spinner-container {
@@ -253,7 +257,7 @@ input[type="file"] {
 
 .spinner-pos {
   position: absolute;
-  transform: translate(-50%, -50%);  
+  transform: translate(-50%, -50%);
 }
 .spinner-anim1 {
   animation: spin2 5s ease infinite;

@@ -32,7 +32,7 @@ export class InputComponent {
   totalFiles: number;
   animated: boolean;
 
-  constructor(@Inject(DOCUMENT) private document: any, private emailService: EmailService, private ipfsService: IpfsService) {
+  constructor(@Inject(DOCUMENT) private document:any, private emailService: EmailService, private ipfsService: IpfsService) {
 
     this.data = {
       to: '',
@@ -43,7 +43,6 @@ export class InputComponent {
   }
 
   ngOnInit() {
-    this.animated = false;
     //change to upload maybe?
     this.totalFiles = 0;
     this.completed = 0;
@@ -55,11 +54,22 @@ export class InputComponent {
     this.progress = this.ipfsService.progress;
     this.showUpdate = false;
     this.getTransfer();
+    this.animated = false;
 }
-animateStyles() {
-  if (!this.animated) TweenMax.to(this.document.getElementById('animatedLoader'),
-    1, {scrambleText:{text:'sending through IPFS', chars:'10', revealDelay:0.1, speed:0.3}}),
+
+animationController = () => {
+  if (!this.animated) {
     this.animated = true;
+
+    TweenMax.to(this.document.getElementById('lolwut'), 2,
+      {scrambleText:{text:'Welcome to the decentralized cloud.', chars:'01', revealDelay:0.5, speed:0.1}});
+
+    setTimeout( () => TweenMax.to(this.document.getElementById('lolwut'), 2,
+      {scrambleText:{text:'Send files to one across the planet, using the IPFS', chars:'01', revealDelay:0, speed:0.1}}),4500);
+
+    setTimeout( () => TweenMax.to(this.document.getElementById('lolwut'), 2,
+      {scrambleText:{text:'Drag your files, or use the button above to upload.', chars:'01', revealDelay:0, speed:0.1}}),9000);
+  }
 }
 
 //Verifies email inputs
