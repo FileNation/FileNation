@@ -1,5 +1,5 @@
 * {
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Raleway Thin', sans-serif;
 }
 .container {
   display: flex;
@@ -148,10 +148,9 @@ h2 {
 .title-bar-title {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   white-space: wrap;
   justify-content: center;
-  margin-left: 10%;
+  margin-left: 10px;
   font-family: 'Raleway', sans-serif;
   font-size: 1.1em;
   /*border-width: thin;
@@ -161,15 +160,6 @@ h2 {
   display: flex;
   align-items: center;
   margin-left: 5%;
-}
-.title-bar-theme-button {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-style: dashed;
-  height: 40px;
 }
 .title-bar-right-container {
   display: flex;

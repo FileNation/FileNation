@@ -1,6 +1,6 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
 * {
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Raleway Thin', sans-serif;
 }
 .container {
   display: flex;
@@ -273,6 +273,22 @@ input[type="file"] {
   animation: counterspin2 5s ease infinite;
 }
 @media screen and (max-width: 626px) {
+  * {
+    align-items: center;
+  }
+  .animation-wrapper {
+    display: none;
+  }
+  #lolwut {
+    width: 900px;
+  }
+  .container {
+    transform: scale(1.2);
+    top:-25vh;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+  }
   .spinner-container {
     display: none;
   }

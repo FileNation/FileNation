@@ -27,7 +27,7 @@
     <!-- Displays file name once uploaded and allows user to change selection -->
     <div  class="fileFeedback" *ngIf="file.length > 0">
       <p class="selectedFile"><strong>File Selected:</strong><br> <span style="color:#0099cc">{{this.name}}</span></p>
-      <button class="changeButton" mat-raised-button color="accent" (click)="toggleFile()">Change file</button>
+      <button class="changeButton" mat-raised-button color="accent" (click)="toggleFile()">Change</button>
     </div>
 
   </div>
@@ -58,16 +58,6 @@
 
   </div>
 
-  <div class="animation-wrapper">
-    <!-- this is the loading to the ipfs spinner stuff -->
-    <!-- <div class="spinner-container" *ngIf="(!form && !submitResponse)"> -->
-    <div class="spinner-container">
-        <img class="spinner-anim1 spinner-pos" src="../assets/dcloud-logo-background-pink.png" alt="" style="height: 25vh;"/>
-        <img class="spinner-anim2 spinner-pos" src="../assets/spinner-white.png" alt="" style="height: 25vh;"/>
-    </div>
-    <!-- <div id="animatedLoader" class="sequencer">{{animateStyles()}}initiating sequence</div> -->
-  </div>
-
 
     <!-- <div class="spinner-container-out" *ngIf="(!form && submitResponse)">
       <div class="spinner-background"></div>
@@ -92,10 +82,18 @@
 <div class="successMessage" *ngIf="submitResponse">
   <h2>The below file has been added to IPFS and sent to: <br/> <span style="color:#0099cc">{{this.data.to}} </span></h2>
   <span class="fileName">{{this.name}}</span>
-  <button class="successButton" mat-raised-button color="accent" (click)="refresh()">Send another file</button>
+  <button class="successButton" mat-raised-button color="accent" (click)="refresh()">Send another</button>
 </div>
 
-
+<div class="animation-wrapper">
+  <!-- this is the loading to the ipfs spinner stuff -->
+  <!-- <div class="spinner-container" *ngIf="(!form && !submitResponse)"> -->
+  <div class="spinner-container">
+      <img class="spinner-anim1 spinner-pos" src="../assets/dcloud-logo-background-pink.png" alt="" style="height: 25vh;"/>
+      <img class="spinner-anim2 spinner-pos" src="../assets/spinner-white.png" alt="" style="height: 25vh;"/>
+  </div>
+  <!-- <div id="animatedLoader" class="sequencer">{{animateStyles()}}initiating sequence</div> -->
+</div>
   <!-- <br>
   <div class="center" >
     <mat-nav-list>
