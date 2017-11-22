@@ -4,6 +4,17 @@
   align-items: stretch;
   justify-content: space-around;
 }
+.sequencer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+
+  font-size: 20px;
+}
 @media screen and (max-width: 500px) {
   .container {
     display: flex;
@@ -257,6 +268,9 @@ input[type="file"] {
 }
 @media screen and (max-width: 626px) {
   .spinner-container {
+    display: none;
+  }
+  .spinner-container-out {
     display: none;
   }
 }

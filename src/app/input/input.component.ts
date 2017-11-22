@@ -1,7 +1,9 @@
-import {Component, OnInit, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
+import {Component, OnInit, ElementRef, AfterViewInit, ViewChild, Inject } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 import { EmailService } from './../email.service';
 import { IpfsService } from '../ipfs.service';
+import { TweenMax } from 'gsap';
+import { DOCUMENT } from '@angular/platform-browser';
 
 import {DragZoneComponent } from '../dragzone/dragzone.component'
 
@@ -27,9 +29,9 @@ export class InputComponent {
   showUpdate: boolean;
   completed: number;
   totalFiles: number;
+  animated: boolean;
 
-
-  constructor(private emailService: EmailService, private ipfsService: IpfsService) {
+  constructor(@Inject(DOCUMENT) private document: any, private emailService: EmailService, private ipfsService: IpfsService) {
 
     this.data = {
       to: '',
@@ -40,6 +42,7 @@ export class InputComponent {
   }
 
   ngOnInit() {
+    this.animated = false;
     //change to upload maybe?
     this.totalFiles = 0;
     this.completed = 0;
@@ -51,6 +54,11 @@ export class InputComponent {
     this.progress = this.ipfsService.progress;
     this.showUpdate = false;
     this.getTransfer();
+}
+animateStyles() {
+  if (!this.animated) TweenMax.to(this.document.getElementById('animatedLoader'),
+    1, {scrambleText:{text:'uploading to IPFS', chars:'10', revealDelay:0.1, speed:0.3}}),
+    this.animated = true;
 }
 
 //Verifies email inputs
