@@ -1,3 +1,6 @@
+* {
+  font-family: 'Roboto Mono', monospace;
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -33,9 +36,7 @@ h2 {
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
-  background-image: url('https://source.unsplash.com/user/erondu/1600x900');
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #fff;
   z-index: 2;
 }
 

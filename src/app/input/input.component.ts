@@ -65,10 +65,16 @@ animationController = () => {
       {scrambleText:{text:'Welcome to the decentralized cloud.', chars:'01', revealDelay:0.5, speed:0.1}});
 
     setTimeout( () => TweenMax.to(this.document.getElementById('lolwut'), 2,
-      {scrambleText:{text:'Send files to one across the planet, using the IPFS', chars:'01', revealDelay:0, speed:0.1}}),4500);
+      {scrambleText:{text:'Send files across the planet, using the IPFS', chars:'01', revealDelay:0, speed:0.1}}),4500);
 
     setTimeout( () => TweenMax.to(this.document.getElementById('lolwut'), 2,
-      {scrambleText:{text:'Drag your files, or use the button above to upload.', chars:'01', revealDelay:0, speed:0.1}}),9000);
+      {scrambleText:{text:'Drag & drop your files...', chars:'01', revealDelay:0, speed:0.1}}),9000);
+
+    setTimeout( () => TweenMax.to(this.document.getElementById('lolwut'), 2,
+      {scrambleText:{text:'...or use the button above to upload.', chars:'01', revealDelay:0, speed:0.1}}),11500);
+
+    setTimeout( () => TweenMax.to(this.document.getElementById('lolwut'), 1,
+      {scrambleText:{text:'Upload to begin.', chars:'01', revealDelay:0, speed:0.1}}),14500);
   }
 }
 

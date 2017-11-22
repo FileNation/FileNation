@@ -1,7 +1,11 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
+* {
+  font-family: 'Roboto Mono', monospace;
+}
 .container {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
   justify-content: flex-start;
   height: 100vh;
   width: 50vw;
@@ -44,12 +48,12 @@
 }
 
 .image-upload {
+  margin-bottom: 5%;
   width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 25px;
 }
 
 .image-upload>input {
@@ -78,6 +82,7 @@
 
 
 form {
+  /*margin-top: -8%;*/
   width: 100%;
   height: 50%;
   display: flex;
@@ -179,6 +184,8 @@ p {
 }
 
 #lolwut {
+  margin-bottom: -10%;
+  overflow: hidden;
   position: relative !important;
   margin-top: -4px !important;
   max-width: 30vw;
