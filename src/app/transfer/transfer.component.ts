@@ -26,7 +26,6 @@ export class TransferComponent implements OnInit {
 
   upload = ($event) => {
     var file = $event.target.files[0];
-    console.log('file: ', file);
     this.name = file.name;
     this.parentSize = file.size;
 

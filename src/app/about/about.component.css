@@ -1,26 +1,34 @@
-.container {
-  background-color: white;
-  height: 350px;
-  width: 350px;
-  padding: 50px;
-  margin-left: 7%;
-  margin-top: 30%;
-  border-radius: 25px;
+@keyframes popup {
+  0% { opacity: 0;}
+  100% { opacity: 1;}
 }
-
+* {
+  font-family: 'Raleway Thin', sans-serif;
+  font-weight: 100;
+}
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: space-around;
+  animation: popup 1s ease;
+  background-color: white;
+  height: 100%;
+  width: 100vw;
+  padding: 3vw;
+}
+.content {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: space-between;
+}
 a {
   color: black;
-
 }
-
-.logo {
-  text-decoration: underline;
+.lead {
+  max-width: 70vw;
 }
-
-.logo:hover {
-  filter: drop-shadow(0 0 10px white);
-}
-
 #img-circle {
     border-radius: 50%;
     height: 200px;
@@ -29,11 +37,59 @@ a {
     border-width: 3px;
     border-color: #8658c9;
 }
+/*some hard coded css, its a quick fix, but needs to be refactored*/
 
-@media all and (max-width: 620px) {
-
-.container {
-    width: 250px;
+/*ipad*/
+@media screen and (max-width: 768px) {
+  .container {
+    top: 30vh;
+    left: 20vw;
+    transform: scale(1.0);
+  }
 }
-
+@media screen and (max-width: 1024px) {
+  .container {
+    top: 30vh;
+    left: 25vw;
+    transform: scale(1.0);
+  }
+}
+/*nexus5x*/
+@media screen and (max-width: 412px) {
+  .container {
+    top: 15vh;
+    left: -5vw;
+    transform: scale(0.75);
+  }
+}
+/*galaxys5*/
+@media screen and (max-width: 360px) {
+  .container {
+    top: 10vh;
+    left: -12vw;
+    transform: scale(0.75);
+  }
+}
+/*iphone 6 and 6+*/
+@media screen and (max-width: 414px) {
+  .container {
+    top: 15vh;
+    left: -5vw;
+    transform: scale(0.75);
+  }
+}
+@media screen and (max-width: 375px) {
+  .container {
+    top: 15vh;
+    left: -10vw;
+    transform: scale(0.75);
+  }
+}
+/*iphone5*/
+@media screen and (max-width: 320px) {
+  .container {
+    top: 12vh;
+    left: -20vw;
+    transform: scale(0.65);
+  }
 }
