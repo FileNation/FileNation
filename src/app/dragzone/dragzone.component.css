@@ -1,9 +1,10 @@
 .dropin {
+  top: 0;
+  left: 0;
   position: absolute;
   width: 100vw !important;
   height: 100vh !important;
   visibility: hidden;
-  z-index: -1;
 }
 .nonopaque {
   position: absolute;

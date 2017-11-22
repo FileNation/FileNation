@@ -13,6 +13,6 @@ export class AppComponent {
 
   ngOnInit() {
     TweenMax.to(this.document.getElementById('title'),
-      1, {scrambleText:{text:'decentralized.cloud', chars:' ', revealDelay:0.5, speed:0.1}});
+      2, {scrambleText:{text:'decentralized.cloud', chars:' ', revealDelay:0.5, speed:0.1}});
   }
 }
