@@ -11,11 +11,7 @@
   display: flex;
   flex-flow: row nowrap;
 }
-.animation-wrapper {
-  width: 50vw;
-  height:100vh;
-  background-color: pink;
-}
+
 .sequencer {
   position: absolute;
   display: flex;
@@ -237,33 +233,24 @@ input[type="file"] {
   0% { opacity: 1;}
   100% { opacity: 0;}
 }
+
+.animation-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height:100vh;
+  background-color: pink;
+}
+
 .spinner-container {
+  display: flex;
   animation: fader linear 0.5s;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  left:0;
-  top:0;
 }
-.spinner-background {
-  background-color: white;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-}
-.spinner-container-out {
-  opacity: 0;
-  animation: fadeout linear 0.5s;
-  background-color: white;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  left:0;
-  top:0;
-}
+
 .spinner-pos {
-  left: 45%;
-  top:42%;
+  position: relative;
   opacity: 1.0;
 }
 .spinner-anim1 {
