@@ -2,7 +2,19 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  justify-content: space-around;
+  justify-content: flex-start;
+  height: 100vh;
+  width: 50vw;
+  background-color: rgba(255,255,255,0.9);
+}
+.input-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.animation-wrapper {
+  width: 50vw;
+  height:100vh;
+  background-color: pink;
 }
 .sequencer {
   position: absolute;
@@ -27,11 +39,8 @@
 }
 
 .topHolder {
-  height: 200px;
-  width: 350px;
-  background-color: white;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
+  width: 100%;
+  height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,11 +82,8 @@
 
 
 form {
-  width: 350px !important;
-  height: 100%;
-  background-color: white;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  width: 100%;
+  height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
