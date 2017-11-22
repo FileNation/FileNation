@@ -1,2 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+  overflow: hidden; /*hacky but it works to solve the wierd screen margins...*/
+}
+
 @import "~@angular/material/prebuilt-themes/indigo-pink.css"
