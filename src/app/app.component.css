@@ -66,12 +66,10 @@ h2 {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
+  background-color: rgba(0, 0);
   padding-right: 5vw;
   padding-top: 5px;
   padding-bottom: 5px;
-  border-width: thin;
-  border-top-style: solid;
   z-index: 1000;
 }
 .base-buttons {
@@ -80,6 +78,7 @@ h2 {
   align-items: center;
   flex-flow: row;
   margin-right: 2vw;
+  color: blue !important;
 }
 .feedback {
   display: flex;
@@ -143,9 +142,7 @@ h2 {
   align-items: center;
   justify-content: space-between;
   width: 100vw;
-  background-color: #fff;
-  border-width: thin;
-  border-bottom-style: solid;
+  background-color: rgba(255,255,255,0);
   z-index: 1000;
 }
 .title-bar-title {

@@ -5,7 +5,7 @@
   justify-content: flex-start;
   height: 100vh;
   width: 50vw;
-  background-color: rgba(255,255,255,0.9);
+  background-color: rgba(255,255,255,1);
 }
 .input-wrapper {
   display: flex;
@@ -241,17 +241,19 @@ input[type="file"] {
   align-items: center;
   width: 50vw;
   height:100vh;
-  background-color: pink;
+  background-color: rgba(64,84,178,1);
 }
 
 .spinner-container {
   display: flex;
+  align-items: center;
+  justify-content: center;
   animation: fader linear 0.5s;
 }
 
 .spinner-pos {
-  position: relative;
-  opacity: 1.0;
+  position: absolute;
+  transform: translate(-50%, -50%);  
 }
 .spinner-anim1 {
   animation: spin2 5s ease infinite;
