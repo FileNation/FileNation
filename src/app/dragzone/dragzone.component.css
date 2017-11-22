@@ -1,0 +1,35 @@
+.dropin {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100vw !important;
+  height: 100vh !important;
+  visibility: hidden;
+}
+.nonopaque {
+  position: absolute;
+  opacity: 0.0;
+  color: rgba(0,0,0,0);
+  z-index: 666 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+}
+.overlay {
+  background: rgba(252, 68, 130, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  visibility: visible;
+  z-index: 1000;
+}
+.dropin2 {
+  position: absolute;
+  visibility: hidden;
+}
+input {
+  position: absolute;
+  visibility: visible !important;
+  opacity: 0;
+}

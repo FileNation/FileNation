@@ -6,15 +6,7 @@
   width: 100vw;
   height: 100vh;
   background-color: white;
-}
-
-.header {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  color: black;
-  align-self: flex-start;
+  overflow: hidden;
 }
 
 h1 {
@@ -35,22 +27,39 @@ h2 {
 }
 
 .body {
-  width: 100%;
-  height: 92%;
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   background-image: url('https://source.unsplash.com/user/erondu/1600x900');
   background-repeat: no-repeat;
   background-size: cover;
   box-sizing: border-box;
-  margin-bottom: 10px;
+  z-index: 2;
 }
 
-
-
-.spacer {
-  width: 5%;
+.body-container {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
+/*.spacer {
+  width: 0%;
+}*/
 .feedback {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
   margin: 10px;
 }
 
@@ -66,21 +75,159 @@ h2 {
 
 .base {
   display: flex;
+  flex-direction: row;
   width: 100%;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
-  margin-right: 25px;
-  margin-top: 10px;
+  background-color: #fff;
+  padding-right: 5vw;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-width: thin;
+  border-top-style: solid;
+  z-index: 1000;
 }
-
-
-
-
-
-@media all and (max-width: 620px) {
-
-.base {
-  visibility: hidden;
+.base-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row;
+  margin-right: 2vw;
 }
-
+.feedback {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.spacer {
+  width:3vw;
+  height: 3vw;
+}
+.title-bar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:60px;
+  height:50px;
+}
+/*SAVING THESE ANIMATIONS FOR LATER. THEY ARE COOL*/
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(-22deg);}
+  100% { transform: rotate(-44deg); }
+}
+@keyframes scaler {
+  0% { transform: scale(1); opacity:1; }
+  50% { transform: scale(1.3); opacity:1; }
+  100% { transform: scale(1); opacity:1; }
+}
+@keyframes spin2 {
+  0% { transform: rotate(0deg); filter: hue-rotate(0deg);}
+  10% { transform: rotate(-90deg); filter: hue-rotate(100deg);}
+  20% { transform: rotate(0deg); filter: hue-rotate(100deg);}
+  30% { transform: rotate(90deg); filter: hue-rotate(100deg);}
+  40% { transform: rotate(0deg); filter: hue-rotate(0deg);}
+  50% { transform: rotate(0deg); filter: hue-rotate(0deg);}
+  60% { transform: rotate(-90deg); filter: hue-rotate(100deg);}
+  70% { transform: rotate(0deg); filter: hue-rotate(100deg);}
+  80% { transform: rotate(90deg); filter: hue-rotate(100deg);}
+  90% { transform: rotate(0deg); filter: hue-rotate(0deg);}
+  100% { transform: rotate(0deg); filter: hue-rotate(0deg);}
+}
+@keyframes spin1 {
+  0% { transform: rotate(0deg); filter: hue-rotate(0deg);}
+  100% { transform: rotate(359deg); filter: hue-rotate(0deg);}
+}
+@keyframes fader {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.logo-anim2 {
+  animation: scaler ease 2.5s infinite;
+}
+.logo-anim {
+  animation: spin1 linear 8s infinite;
+}
+.title-bar {
+  top:0;
+  display: flex;
+  position: sticky;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  background-color: #fff;
+  border-width: thin;
+  border-bottom-style: solid;
+  z-index: 1000;
+}
+.title-bar-title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  white-space: wrap;
+  justify-content: center;
+  margin-left: 10%;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.8em;
+  /*border-width: thin;
+  border-bottom-style: solid;*/
+}
+.title-bar-left-container {
+  display: flex;
+  align-items: center;
+  margin-left: 5%;
+}
+.title-bar-theme-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-style: dashed;
+  height: 40px;
+}
+.title-bar-right-container {
+  display: flex;
+  align-items: center;
+  margin-right: 10%;
+}
+.github-mobile-button {
+  display: none;
+}
+@media screen and (max-width: 500px) {
+  .spacer {
+    width: 3vw;
+    height: 0;
+  }
+  .title-bar-right-container {
+    margin-right: 5vw;
+    transform: scale(0.9);
+  }
+  .body-container {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .base-buttons {
+    transform: scale(0.9);
+  }
+  .feedback {
+    transform: scale(0.9);
+  }
+}
+@media screen and (max-width: 491px) {
+  .feedback {
+    display: none;
+  }
+  .github-mobile-button {
+    display: inline-block;
+  }
+  .base-buttons {
+    justify-content: space-around;
+    width: 100%;
+    margin-right: 0;
+  }
 }
