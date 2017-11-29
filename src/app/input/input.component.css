@@ -31,8 +31,7 @@
   height: 200px;
   width: 350px;
   background-color: white;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
+  border-radius: 3px 3px 0 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -69,7 +68,11 @@
   padding-left: 10px;
   padding-right: 10px;
   color: #005b7a;
-  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+}
+
+.selectedFile .fileName2 {
+  font-weight: 300;
 }
 
 
@@ -77,12 +80,12 @@ form {
   width: 350px !important;
   height: 100%;
   background-color: white;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-radius: 0 0 3px 3px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 25px;
 }
 
 label button {
@@ -93,9 +96,10 @@ label button {
 }
 
 button {
-  border-radius: 5px;
+  border-radius: 3px;
   width: 20%;
   margin: 15px;
+  font-weight: 300;
 }
 
 .fileFeedback {
@@ -120,7 +124,17 @@ button {
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  border-radius: 25px;
+  border-radius: 3px;
+  padding: 30px;
+}
+
+.successMessage h2 {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.successMessage .senderEmail {
+  font-weight: 300;
 }
 
 .successButton {
@@ -129,9 +143,9 @@ button {
 }
 
 .fileName {
-  border: 2px double #005b7a;
+  border: 1px double #005b7a;
   border-radius: 5px;
-  padding: 5px;
+  padding: 10px 20px;
 }
 
 #text {
@@ -142,7 +156,6 @@ button {
 
 h2 {
   color: #005b7a;
-  font-family: 'Raleway', sans-serif;
 }
 
 #file-input {
@@ -179,6 +192,7 @@ p {
 #addYourFiles {
   position: relative !important;
   margin-top: -4px !important;
+  font-weight: 300;
 }
 
 input[type="file"] {

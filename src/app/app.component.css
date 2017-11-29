@@ -14,7 +14,6 @@ h1 {
   color: black;
   padding-left: 5px;
   margin: 10px;
-  font-family: 'Source Code Pro', sans-serif;
   font-weight: 600;
 }
 
@@ -22,11 +21,11 @@ h2 {
   font-size: 1.0em;
   color: #ff4181 !important;
   margin: 10px;
-  font-family: 'Raleway', sans-serif;
   text-align: center;
 }
 
 .body {
+  font-family: 'Roboto',sans-serif;
   overflow-x: hidden;
   width: 100vw;
   height: 100vh;
@@ -83,8 +82,7 @@ h2 {
   padding-right: 5vw;
   padding-top: 5px;
   padding-bottom: 5px;
-  border-width: thin;
-  border-top-style: solid;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
   z-index: 1000;
 }
 .base-buttons {
@@ -157,8 +155,7 @@ h2 {
   justify-content: space-between;
   width: 100vw;
   background-color: #fff;
-  border-width: thin;
-  border-bottom-style: solid;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
   z-index: 1000;
 }
 .title-bar-title {
@@ -230,4 +227,8 @@ h2 {
     width: 100%;
     margin-right: 0;
   }
+}
+
+.mat-raised-button {
+  font-weight: 300;
 }

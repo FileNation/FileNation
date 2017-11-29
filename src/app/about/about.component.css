@@ -9,11 +9,12 @@
   position: absolute;
   animation: popup 1s ease;
   background-color: white;
-  height: 350px;
+  /*height: 350px;*/
   width: 350px;
   transform: scale(0.8);
-  padding: 50px;
-  border-radius: 25px;
+  padding: 30px;
+  border-radius: 3px;
+  text-align: center;
 }
 
 a {
