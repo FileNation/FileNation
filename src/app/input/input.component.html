@@ -41,7 +41,7 @@
 
     <!-- Displays file name once uploaded and allows user to change selection -->
     <div  class="fileFeedback" *ngIf="file.length > 0">
-      <p class="selectedFile"><strong>File Selected:</strong><br> <span style="color:#0099cc">{{this.name}}</span></p>
+      <p class="selectedFile"><strong>File Selected:</strong><br> <span class="fileName2" style="color:#0099cc">{{this.name}}</span></p>
       <button class="changeButton" mat-raised-button color="accent" (click)="toggleFile()">Change file</button>
     </div>
 
@@ -86,7 +86,9 @@
 
 <!-- Displays once file has been uploaded and sent -->
 <div class="successMessage" *ngIf="submitResponse">
-  <h2>The below file has been added to IPFS and sent to: <br/> <span style="color:#0099cc">{{this.data.to}} </span></h2>
+  <h2>The below file has been added to IPFS and sent to: <br/>
+    <span class="senderEmail" style="color:#0099cc">{{this.data.to}} </span>
+  </h2>
   <span class="fileName">{{this.name}}</span>
   <button class="successButton" mat-raised-button color="accent" (click)="refresh()">Send another file</button>
 </div>
