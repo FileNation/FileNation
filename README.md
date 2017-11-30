@@ -1,3 +1,4 @@
+[![Follow](https://img.shields.io/twitter/follow/SnapCloud_io.svg?style=social&label=Follow)](https://twitter.com/SnapCloud_io)
 # Decentralized-Cloud
 
 ## Description
