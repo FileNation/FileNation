@@ -1,8 +1,8 @@
 [![Follow](https://img.shields.io/twitter/follow/SnapCloud_io.svg?style=social&label=Follow)](https://twitter.com/SnapCloud_io)
-# Decentralized-Cloud
+# SnapCloud
 
 ## Description
-Decentralized Cloud is the simplest way to send your files around the world using the InterPlanetary File System.
+SnapCloud is the simplest way to send your files around the world using the InterPlanetary File System.
 
 IPFS (the InterPlanetary File System) is a new hypermedia distribution protocol, addressed by content and identities. IPFS enables the creation of completely distributed applications. It aims to make the web faster, safer, and more open.
 
@@ -14,7 +14,7 @@ IPFS (the InterPlanetary File System) is a new hypermedia distribution protocol,
 
 ## How it works
 
-Decentralized-Cloud is a work in progress!
+SnapCloud is a work in progress!
 
 Download the modules:
 
