@@ -14,6 +14,7 @@ export class IpfsService {
   http: Http;
   node: any;
   progress: number;
+  stream: any;
 
   constructor(http: Http) {
     this.http = http;
@@ -41,10 +42,10 @@ export class IpfsService {
         let myReadableStreamBuffer = new streamBuffers.ReadableStreamBuffer({
           chunkSize: 900000   //determines data transfer rate
         });
-          this.node.files.createAddStream((err, stream) => {
+          this.stream = this.node.files.addReadableStream();
             console.log('ERR', err)
-            console.log('STREAM', stream)
-            stream.on('data', (file) => {
+            console.log('STREAM', this.stream)
+            this.stream.on('data', (file) => {
               console.log('FILE', file)
               resolve(file);
             })
@@ -58,17 +59,16 @@ export class IpfsService {
             })
 
 
-            stream.write(myReadableStreamBuffer);
+            this.stream.write(myReadableStreamBuffer);
 
             myReadableStreamBuffer.put(Buffer.from(buffer))
             myReadableStreamBuffer.stop()
 
             myReadableStreamBuffer.on('end', () => {
             console.log('stream ended.')
-            stream.end()
+            this.stream.end()
             })
             myReadableStreamBuffer.resume()
-          })
 
         })
       });
