@@ -20,7 +20,6 @@ export class IpfsService {
     this.http = http;
     // Create an IPFS node
     this.client = new webtorrent();
-    console.log('working');
 
      const repoPath = 'ipfs-' + Math.random()
 
@@ -31,9 +30,6 @@ export class IpfsService {
      this.node.on('ready', () => console.log('Online status: ', this.node.isOnline() ? 'online' : 'offline'))
 }
   uploadIPFS = (fileObj) => {
-    console.log('----------')
-    console.log(fileObj);
-    console.log('----------')
     return new Promise((resolve, reject) => {
       this.client.seed(fileObj, (torrent) => {
         torrent.files[0].getBuffer((err, buffer) => {
@@ -43,16 +39,11 @@ export class IpfsService {
           chunkSize: 900000   //determines data transfer rate
         });
           this.stream = this.node.files.addReadableStream();
-            console.log('ERR', err)
-            console.log('STREAM', this.stream)
             this.stream.on('data', (file) => {
-              console.log('FILE', file)
               resolve(file);
             })
-            console.log('WRITE');
               myReadableStreamBuffer.on('data', (chunk) => {
                 this.progress += chunk.byteLength
-                console.log('Progress', this.progress);
 
               myReadableStreamBuffer.resume()
 
@@ -65,7 +56,6 @@ export class IpfsService {
             myReadableStreamBuffer.stop()
 
             myReadableStreamBuffer.on('end', () => {
-            console.log('stream ended.')
             this.stream.end()
             })
             myReadableStreamBuffer.resume()
