@@ -4,7 +4,6 @@ import webtorrent from 'webtorrent';
 import {Buffer} from 'buffer';
 import IPFS from 'ipfs';
 import {bs58} from 'bs58'
-import {Importer} from 'ipfs-unixfs-engine';
 import streamBuffers from 'stream-buffers';
 
 
