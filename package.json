@@ -34,7 +34,7 @@
     "create-torrent": "^3.29.2",
     "gsap": "^1.20.3",
     "hammerjs": "^2.0.8",
-    "ipfs": "^0.27.0",
+    "ipfs": "^0.27.1",
     "jsonwebtoken": "^8.0.1",
     "koa": "^2.3.0",
     "koa-bodyparser": "^4.2.0",
