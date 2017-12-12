@@ -17,17 +17,14 @@ export class DragZoneComponent implements OnInit {
   click() {this.dropin2.nativeElement.click()}
   constructor() {
   }
-  emptyClick = () => { console.log('caught') };
   ngOnInit() {
     this.dropin.nativeElement.addEventListener('dragover', function($event) {
       this.disabled = false;
       this.classList.add('nonopaque');
-      console.log(this);
     })
     this.dropin.nativeElement.addEventListener('dragon', function($event) {
       this.disabled = false;
       this.classList.add('nonopaque');
-      console.log(this);
     })
     this.dropin.nativeElement.addEventListener('dragleave', function($event) {
       this.disabled = true;

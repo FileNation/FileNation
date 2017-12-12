@@ -34,7 +34,6 @@ export class TransferComponent implements OnInit {
     this.ipfsService.uploadIPFS(file)
     .then((torrent) => {
       this.hashes.push(torrent);
-      console.log(this.hashes);
     });
 
   }

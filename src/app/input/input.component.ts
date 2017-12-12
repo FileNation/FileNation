@@ -72,12 +72,10 @@ fromEmailFormControl = new FormControl('', [
 
 //Called when form is submitted
 onTestPost() {
-  console.log('REGEX!!!!!!!!!!!!!!!!!', this.data.to.match(MULTIPLE_REGEX))
   if (!this.data.to.match(MULTIPLE_REGEX)) alert (`Invalid Recipient, please verify recpient's email!`);
   else if (!this.data.from.match(EMAIL_REGEX)) alert (`Invalid Sender, please verify senders's email!`);
   else {
     if (this.file.length && this.data.to) {
-      console.log(this.data.to);
       this.form = false;
       this.submit = true;
       setTimeout(()=> {
@@ -146,7 +144,6 @@ upload = ($event) => {
           this.file.push('<br>' + 'https://ipfs.io/ipfs/' + this.hashes[key].hash + '<br><br>');
           this.data.hashes = (this.file)
         } catch (e) {
-          console.log('ERROR:', e)
         }
       }).then(() => {
         this.completed++
