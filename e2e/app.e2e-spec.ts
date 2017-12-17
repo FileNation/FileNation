@@ -1,10 +1,10 @@
-import { DCloudPage } from './app.po';
+import { SnapCloudPage } from './app.po';
 
-describe('d-cloud App', () => {
-  let page: DCloudPage;
+describe('snapcloud App', () => {
+  let page: SnapCloudPage;
 
   beforeEach(() => {
-    page = new DCloudPage();
+    page = new SnapCloudPage();
   });
 
   it('should display welcome message', () => {

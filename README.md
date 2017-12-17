@@ -1,31 +1,34 @@
 [![Follow](https://img.shields.io/twitter/follow/SnapCloud_io.svg?style=social&label=Follow)](https://twitter.com/SnapCloud_io)
-# Decentralized-Cloud
+# SnapCloud.io
 
-## Description
-Decentralized Cloud is the simplest way to send your files around the world using the InterPlanetary File System.
+_The simplest way to send unlimited files around the world_
 
-IPFS (the InterPlanetary File System) is a new hypermedia distribution protocol, addressed by content and identities. IPFS enables the creation of completely distributed applications. It aims to make the web faster, safer, and more open.
+[SnapCloud.io](https://SnapCloud.io) lets you send (large) files as a link to an email. The files cannot be censored as they are sent stored and transmitted decentralised because it uses the InterPlanetary File System (IPFS).
 
-![IPFS](screenshots/ipfs.png)
+IPFS is a media distribution protocol, addressed by content and identities. IPFS enables the creation of completely distributed applications. It aims to make the web faster, safer, and more open.
 
-![IPFS](screenshots/ipfs1.png)
+![SnapCloud screenshot](https://user-images.githubusercontent.com/1063454/34084513-0dfbd644-e382-11e7-9891-526f373bbe92.png)
 
-![IPFS](screenshots/ipfs2.png)
+## Run on your own computer
 
-## How it works
+If you would like to test SnapCloud on your own computer make sure you have Node installed and clone this repo 
 
-Decentralized-Cloud is a work in progress!
+      git clone https://github.com/alexsicart/snapcloud
 
-Download the modules:
+Go into the folder and download modules:
 
       npm i
-Start the App on the browser:
+
+
+Testrun the the App on http://localhost:4200 with:
 
       npm start
-
-Run production mode:
+      
+There you go. If you later wish to build the code for production please run:
 
     npm run build --prod
+     
+
 
 ## Tech Stack
 
