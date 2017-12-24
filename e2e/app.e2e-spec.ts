@@ -1,10 +1,10 @@
-import { SnapCloudPage } from './app.po';
+import { FilenationPage } from './app.po';
 
-describe('snapcloud App', () => {
-  let page: SnapCloudPage;
+describe('Filenation App', () => {
+  let page: FilenationPage;
 
   beforeEach(() => {
-    page = new SnapCloudPage();
+    page = new FilenationPage();
   });
 
   it('should display welcome message', () => {

@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class SnapCloudPage {
+export class FilenationPage {
   navigateTo() {
     return browser.get('/');
   }
