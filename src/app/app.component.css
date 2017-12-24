@@ -172,6 +172,17 @@ h2 {
   /*border-width: thin;
   border-bottom-style: solid;*/
 }
+
+#title:hover {
+  cursor: pointer;
+  border-style: none !important;
+}
+
+#title:active {
+filter: drop-shadow(0 0 10px white);
+border-style: none;
+}
+
 .title-bar-left-container {
   display: flex;
   align-items: center;
