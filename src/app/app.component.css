@@ -93,6 +93,9 @@ h2 {
   flex-flow: row;
   margin-right: 2vw;
 }
+.base-twitter-follow-button {
+ margin-left: 60px
+}
 .feedback {
   display: flex;
   flex-flow: row wrap;
