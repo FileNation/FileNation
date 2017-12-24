@@ -16,6 +16,9 @@
 
   font-size: 20px;
 }
+.mat-fab.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent {
+    background-color: #dc5971 !important;
+}
 @media screen and (max-width: 500px) {
   .container {
     display: flex;
