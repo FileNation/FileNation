@@ -10,7 +10,7 @@
   animation: popup 1s ease;
   background-color: white;
   /*height: 350px;*/
-  width: 350px;
+  width: 450px;
   transform: scale(0.8);
   padding: 30px;
   border-radius: 3px;
@@ -32,8 +32,8 @@ a {
 
 #img-circle {
     border-radius: 50%;
-    height: 200px;
-    width: 200px;
+    height: 250px;
+    width: 300px;
     border-style: solid;
     border-width: 3px;
     border-color: #8658c9;
