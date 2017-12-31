@@ -141,7 +141,7 @@ upload = ($event) => {
       .then((torrent) => {
         try {
           this.hashes.push(torrent);
-          this.file.push('<br>' + 'https://www.eternum.io/ipfs/' + this.hashes[key].hash + '<br><br>');
+          this.file.push('<br>' + 'https://ipfs.io/ipfs/' + this.hashes[key].hash + '<br><br>');
           this.data.hashes = (this.file)
         } catch (e) {
         }
