@@ -16,8 +16,8 @@
 
   font-size: 20px;
 }
-.mat-fab.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent {
-    background-color: #3e65e6 !important;
+.mat-fab.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent, .mat-raised-button .mat-primary .mat-fab.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
+    background-color: #009ccc !important;
 }
 @media screen and (max-width: 500px) {
   .container {
