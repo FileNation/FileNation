@@ -72,6 +72,10 @@ h2 {
   margin: 10px;
 }
 
+.img-twitter {
+  height: 45px;
+}
+
 .base {
   display: flex;
   flex-direction: row;
@@ -208,6 +212,7 @@ border-style: none;
 .github-mobile-button {
   display: none;
 }
+
 @media screen and (max-width: 500px) {
   .spacer {
     width: 3vw;
