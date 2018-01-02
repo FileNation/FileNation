@@ -48,7 +48,7 @@
     <div class="form-input">
       <form class="example-form" (ngSubmit)="onTestPost()" >
         <mat-input-container class="example-full-width">
-          <input matInput placeholder="Send Email to" [(ngModel)]="data.to" [formControl]="toEmailFormControl" required>
+          <input matInput placeholder="Send Files to" [(ngModel)]="data.to" [formControl]="toEmailFormControl" required>
           <mat-error *ngIf="toEmailFormControl.hasError('pattern')">
             Please enter a valid email address
           </mat-error>
