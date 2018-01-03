@@ -86,6 +86,10 @@ h2 {
   padding-left: 0px !important;
 }
 
+.about-twitter {
+  text-decoration: none;
+}
+
 .base {
   display: flex;
   flex-direction: row;
