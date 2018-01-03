@@ -1,3 +1,8 @@
+* {
+  font-family: 'Montserrat Alternates', sans-serif !important;
+
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -62,22 +67,22 @@ h2 {
   margin: 10px;
 }
 
-.links {
-  align-self: flex-end;
-  margin-left: 25px;
-  color: #005b7a;
-  margin-right: 20px;
-}
-.donations {
-  margin: 10px;
-}
 
 .img-twitter {
-  height: 30px;
+  height: 32px;
+  filter:drop-shadow(10px 10px 10px black);
 }
 
 .dot-color {
   color: white;
+}
+
+.about-button {
+  color: white;
+  font-size: 1.5em;
+  filter:drop-shadow(0 0 10px black);
+  margin: 8px !important;
+  padding-left: 0px !important;
 }
 
 .base {
@@ -89,7 +94,7 @@ h2 {
   padding-right: 5vw;
   padding-top: 5px;
   padding-bottom: 5px;
-  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+  /* box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12); */
   z-index: 1000;
   bottom: 0px;
   position:fixed;
@@ -166,22 +171,17 @@ h2 {
   align-items: center;
   justify-content: space-between;
   width: 100vw;
-  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+  /* box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12); */
   z-index: 1000;
 }
 .title-bar-title {
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
   white-space: wrap;
-  justify-content: center;
-  margin-left: 10%;
-  font-family: 'Raleway', sans-serif;
-  font-size: 1.1em;
+  font-size: 1.5em;
   filter:drop-shadow(10px 10px 10px black);
   color: white;
-  /*border-width: thin;
-  border-bottom-style: solid;*/
+  position: absolute;
 }
 
 #title:hover {
