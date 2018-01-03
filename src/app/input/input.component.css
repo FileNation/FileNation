@@ -16,8 +16,13 @@
 
   font-size: 20px;
 }
+.mat-fab.mat-accent[_ngcontent-c3], .mat-mini-fab.mat-accent[_ngcontent-c3], .mat-raised-button.mat-accent[_ngcontent-c3], .mat-raised-button[_ngcontent-c3] .mat-primary[_ngcontent-c3] .mat-fab.mat-primary[_ngcontent-c3], .mat-mini-fab.mat-primary[_ngcontent-c3], .mat-raised-button.mat-primary[_ngcontent-c3]: hover {
+  color: #008bcd !important;
+  font-weight: 500 !important;
+}
+
 .mat-fab.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent, .mat-raised-button .mat-primary .mat-fab.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
-    background-color: #009ccc !important;
+  background-image: linear-gradient(to bottom left, #00c5ccff, #0063ccff) !important;
 }
 @media screen and (max-width: 500px) {
   .container {
@@ -31,8 +36,8 @@
 }
 
 .topHolder {
-  height: 450px;
-  width: 330px;
+  height: 420px;
+  width: 300px;
   background-color: white;
   border-radius: 3px 3px 0 0;
   display: flex;
@@ -78,6 +83,7 @@
 
 .selectedFile .fileName2 {
   font-weight: 300;
+  width: 20px;
 }
 
 
@@ -93,8 +99,8 @@ form {
 }
 
 label button {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   margin-bottom: 25px;
 }

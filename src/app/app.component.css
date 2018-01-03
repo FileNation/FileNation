@@ -1,6 +1,7 @@
 * {
-  font-family: 'Montserrat Alternates', sans-serif !important;
-
+  font-family: 'Josefin Sans', sans-serif !important;
+  font-style: italic;
+  font-style: bold;
 }
 
 .container {
@@ -178,7 +179,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   white-space: wrap;
-  font-size: 1.5em;
+  font-size: 1.6em;
   filter:drop-shadow(10px 10px 10px black);
   color: white;
   position: absolute;
