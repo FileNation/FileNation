@@ -76,6 +76,10 @@ h2 {
   height: 30px;
 }
 
+.dot-color {
+  color: white;
+}
+
 .base {
   display: flex;
   flex-direction: row;
