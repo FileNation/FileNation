@@ -7,11 +7,11 @@ _The simplest way to send unlimited files around the world_
 
 IPFS is a media distribution protocol, addressed by content and identities. IPFS enables the creation of completely distributed applications. It aims to make the web faster, safer, and more open.
 
-![Filenation screenshot](https://user-images.githubusercontent.com/1063454/34084513-0dfbd644-e382-11e7-9891-526f373bbe92.png)
+![Filenation screenshot](/screenshots/filenation.png)
 
 ## Run on your own computer
 
-If you would like to test Filenation on your own computer make sure you have Node installed and clone this repo 
+If you would like to test Filenation on your own computer make sure you have Node installed and clone this repo
 
       git clone https://github.com/alexsicart/Filenation
 
@@ -23,11 +23,11 @@ Go into the folder and download modules:
 Testrun the the App on http://localhost:4200 with:
 
       npm start
-      
+
 There you go. If you later wish to build the code for production please run:
 
     npm run build --prod
-     
+
 
 
 ## Tech Stack
