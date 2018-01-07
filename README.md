@@ -13,7 +13,7 @@ IPFS is a media distribution protocol, addressed by content and identities. IPFS
 
 If you would like to test Filenation on your own computer make sure you have Node installed and clone this repo
 
-      git clone https://github.com/alexsicart/Filenation
+      git clone https://github.com/Filenation/Filenation
 
 Go into the folder and download modules:
 
