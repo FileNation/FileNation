@@ -1,5 +1,6 @@
 [![Follow](https://img.shields.io/twitter/follow/Filenation_io.svg?style=social&label=Follow)](https://twitter.com/Filenation_io)
-# Filenation.io
+
+# Filenation.io <img align="right" src="/static/logo.png" height="80px" />
 
 _The simplest way to send unlimited files around the world_
 
@@ -7,7 +8,7 @@ _The simplest way to send unlimited files around the world_
 
 IPFS is a media distribution protocol, addressed by content and identities. IPFS enables the creation of completely distributed applications. It aims to make the web faster, safer, and more open.
 
-![Filenation screenshot](/screenshots/filenation.png)
+![Filenation screenshot](/static/filenation.png)
 
 ## Run on your own computer
 
