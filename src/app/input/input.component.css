@@ -36,7 +36,7 @@
 }
 
 .topHolder {
-  height: 420px;
+  height: 460px;
   width: 300px;
   background-color: white;
   border-radius: 3px 3px 0 0;
@@ -95,7 +95,6 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 25px;
 }
 
 label button {
