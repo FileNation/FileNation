@@ -25,7 +25,7 @@
     "@angular/platform-browser": "^4.4.1",
     "@angular/platform-browser-dynamic": "^4.4.1",
     "@angular/router": "^4.4.1",
-    "@ngtools/webpack": "^1.9.3",
+    "@ngtools/webpack": "^1.9.4",
     "angular-material": "^1.1.5",
     "bcrypt": "^1.0.3",
     "bs58": "^4.0.1",
@@ -57,10 +57,10 @@
     "zone.js": "^0.8.19"
   },
   "devDependencies": {
-    "@angular/cli": "^1.6.3",
+    "@angular/cli": "^1.6.4",
     "@angular/compiler-cli": "^4.4.1",
     "@angular/language-service": "^4.4.1",
-    "@types/jasmine": "^2.8.3",
+    "@types/jasmine": "^2.8.4",
     "@types/jasminewd2": "^2.0.3",
     "@types/node": "^6.0.96",
     "autoprefixer": "^6.5.3",
