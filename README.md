@@ -4,7 +4,7 @@
 
 _The simplest way to send unlimited files around the world_
 
-[Filenation.io](https://Filenation.io) lets you send files as a link to an email. The files cannot be censored as they are sent stored and transmitted decentralised because it uses the InterPlanetary File System (IPFS).
+[Filenation.io](https://Filenation.io) lets you send (large) files as a link to an email. The files cannot be censored as they are sent stored and transmitted decentralised because it uses the InterPlanetary File System (IPFS).
 
 IPFS is a media distribution protocol, addressed by content and identities. IPFS enables the creation of completely distributed applications. It aims to make the web faster, safer, and more open.
 
