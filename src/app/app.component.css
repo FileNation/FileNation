@@ -186,6 +186,7 @@ h2 {
   font-size: 1.6em;
   filter:drop-shadow(10px 10px 10px black);
   color: white;
+  position: absolute;
 }
 
 #title:hover {
