@@ -191,11 +191,7 @@ h2 {
 #title:hover {
   cursor: pointer;
   border-style: none !important;
-}
-
-#title:active {
-filter: drop-shadow(0 0 10px white);
-border-style: none;
+  filter: drop-shadow(0 0 10px white);
 }
 
 .title-bar-left-container {
