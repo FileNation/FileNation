@@ -10,9 +10,9 @@ export class EmailService {
 
   }
 
-  sendEmail(to, from, hashes) {
+  sendEmail(to, from, message, hashes) {
     return this.http.post('https://mighty-headland-68035.herokuapp.com/createEmail',
-    {to, from, hashes})
+    {to, from, message, hashes})
     .map(res => res.json());
   }
 }
