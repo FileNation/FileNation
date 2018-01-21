@@ -67,7 +67,13 @@
         </mat-input-container>
 
         <mat-form-field class="example-full-width">
-          <textarea matInput placeholder="Message" [(ngModel)]="data.message"></textarea>
+          <textarea matInput placeholder="Message" [(ngModel)]="data.message" [formControl]="messageFormControl" required>
+          <mat-error *ngIf="messageFormControl.hasError('pattern')">
+            Please enter a valid message
+          </mat-error>
+          <mat-error *ngIf="messageFormControl.hasError('required')">
+            Message is <strong>required</strong>
+          </mat-error></textarea>
         </mat-form-field>
         <button mat-raised-button color="accent" type="submit">Send</button>
       </form>

@@ -9,7 +9,7 @@ import {DragZoneComponent } from '../dragzone/dragzone.component'
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+$/;
 const MULTIPLE_REGEX = /^([a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+(,+ )?)+$/;
-
+const TEXT_REGEX = /^[a-zA-Z0-9-]/;
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
@@ -70,6 +70,9 @@ toEmailFormControl = new FormControl('', [
 fromEmailFormControl = new FormControl('', [
   Validators.required,
   Validators.pattern(EMAIL_REGEX)]);
+messageFormControl = new FormControl('', [
+    Validators.required,
+    Validators.pattern(TEXT_REGEX)]);
 
 //Called when form is submitted
 onTestPost() {
