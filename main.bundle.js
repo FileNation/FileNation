@@ -680,6 +680,8 @@ var InputComponent = (function () {
             alert("Invalid Recipient, please verify recpient's email!");
         else if (!this.data.from.match(EMAIL_REGEX))
             alert("Invalid Sender, please verify senders's email!");
+        else if (!this.data.message.match(TEXT_REGEX))
+            alert("Invalid message.");
         else {
             if (this.file.length && this.data.to) {
                 this.form = false;
@@ -1291,6 +1293,20 @@ module.exports = __webpack_require__("./src/main.ts");
 /***/ }),
 
 /***/ 27:
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 28:
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 29:
 /***/ (function(module, exports) {
 
 /* (ignored) */
