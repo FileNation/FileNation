@@ -78,6 +78,7 @@ messageFormControl = new FormControl('', [
 onTestPost() {
   if (!this.data.to.match(MULTIPLE_REGEX)) alert (`Invalid Recipient, please verify recpient's email!`);
   else if (!this.data.from.match(EMAIL_REGEX)) alert (`Invalid Sender, please verify senders's email!`);
+  else if (!this.data.message.match(TEXT_REGEX)) alert (`Invalid message.`);
   else {
     if (this.file.length && this.data.to) {
       this.form = false;
