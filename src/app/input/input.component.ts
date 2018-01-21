@@ -37,6 +37,7 @@ export class InputComponent {
     this.data = {
       to: '',
       from: '',
+      message: '',
       hashes: ''
     }
 
@@ -82,7 +83,7 @@ onTestPost() {
         this.submit = false;
         this.submitResponse = true;
       }, 2000);
-    this.emailService.sendEmail(this.data.to, this.data.from, this.data.hashes)
+    this.emailService.sendEmail(this.data.to, this.data.from, this.data.message, this.data.hashes)
     .subscribe(
       data => {
         this.postData = JSON.stringify(data),
@@ -121,6 +122,7 @@ refresh() {
   this.form = true;
   this.data.to = '';
   this.data.from = '';
+  this.data.message = '';
   this.showUpdate = false;
 }
 
