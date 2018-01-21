@@ -65,14 +65,24 @@
             Email is <strong>required</strong>
           </mat-error>
         </mat-input-container>
+
+        <mat-form-field class="example-full-width">
+          <textarea matInput placeholder="Message" matTextareaAutosize matAutosizeMinRows="2"
+                    matAutosizeMaxRows="3" [(ngModel)]="data.message" [formControl]="messageFormControl" required>
+          <mat-error *ngIf="messageFormControl.hasError('pattern')">
+            Please enter a valid message
+          </mat-error>
+          <mat-error *ngIf="messageFormControl.hasError('required')">
+            Message is <strong>required</strong>
+          </mat-error></textarea>
+        </mat-form-field>
         <button mat-raised-button color="accent" type="submit">Send</button>
       </form>
     </div>
   </div>
-  </div>
+</div>
 
-    <!-- <div class="g-recaptcha" data-sitekey="6LcokjIUAAAAAJnGe8_lM3HlcQktt1Wg7gMYib-N"> </div> -->
-
+<!-- <div class="g-recaptcha" data-sitekey="6LcokjIUAAAAAJnGe8_lM3HlcQktt1Wg7gMYib-N"> </div> -->
 
 
 
@@ -92,13 +102,13 @@
 </div>
 
 
-  <!-- <br>
-  <div class="center" >
-    <mat-nav-list>
-      <mat-list-item *ngFor="let link of hashes">
-        <a mat-line href="https://ipfs.io/ipfs/{{link[0].hash}}" target="_blank">{{link[0].hash}}</a>
-        <button mat-icon-button (click)="showInfo(link)">
-          <i class="material-icons">note</i></button>
-        </mat-list-item>
-      </mat-nav-list>
-    </div> -->
+<!-- <br>
+<div class="center" >
+<mat-nav-list>
+<mat-list-item *ngFor="let link of hashes">
+<a mat-line href="https://ipfs.io/ipfs/{{link[0].hash}}" target="_blank">{{link[0].hash}}</a>
+<button mat-icon-button (click)="showInfo(link)">
+<i class="material-icons">note</i></button>
+</mat-list-item>
+</mat-nav-list>
+</div> -->
