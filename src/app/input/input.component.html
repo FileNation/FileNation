@@ -2,16 +2,16 @@
 <!-- this is the loading to the ipfs spinner stuff -->
 <div class="spinner-container" *ngIf="(!form && !submitResponse)">
   <div class="spinner-background"></div>
-  <img class="spinner-anim1 spinner-pos" src="../assets/snapcloud-logo-background2.png" alt="" style="height: 17.5vh; position: absolute;"/>
-  <img class="spinner-anim2 spinner-pos" src="../assets/snapcloud-logo-background-pink.png" alt="" style="height: 17.5vh; position: absolute;"/>
+  <img class="spinner-anim1 spinner-pos" src="../assets/snapcloud-logo-background2.png" alt="" style="height: 30vh; position: absolute;"/>
+  <img class="spinner-anim2 spinner-pos" src="../assets/snapcloud-logo-background-pink.png" alt="" style="height: 30vh; position: absolute;"/>
   <div id="animatedLoader" class="sequencer">{{animateStyles()}}initiating sequence</div>
 </div>
 
 
 <div class="spinner-container-out" *ngIf="(!form && submitResponse)">
   <div class="spinner-background"></div>
-  <img class="spinner-anim1 spinner-pos" src="../assets/snapcloud-logo-background2.png" alt="" style="height: 17.5vh; position: absolute;"/>
-  <img class="spinner-anim2 spinner-pos" src="../assets/snapcloud-logo-background-pink.png" alt="" style="height: 17.5vh; position: absolute;"/>
+  <img class="spinner-anim1 spinner-pos" src="../assets/snapcloud-logo-background2.png" alt="" style="height: 30vh; position: absolute;"/>
+  <img class="spinner-anim2 spinner-pos" src="../assets/snapcloud-logo-background-pink.png" alt="" style="height: 30vh; position: absolute;"/>
   <h1 id="animatedLoader" class="spinner-pos"></h1>
 </div>
 
@@ -57,7 +57,7 @@
           </mat-error>
         </mat-input-container>
         <mat-input-container class="example-full-width">
-          <input matInput placeholder="Your Email" [(ngModel)]="data.from" [formControl]="fromEmailFormControl">
+          <input matInput placeholder="Your Email" [(ngModel)]="data.from" [formControl]="fromEmailFormControl" required>
           <mat-error *ngIf="fromEmailFormControl.hasError('pattern')">
             Please enter a valid email address
           </mat-error>
