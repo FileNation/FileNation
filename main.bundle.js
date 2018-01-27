@@ -194,9 +194,8 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__account_account_component__ = __webpack_require__("./src/app/account/account.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__app_routes__ = __webpack_require__("./src/app/app.routes.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__header_header_component__ = __webpack_require__("./src/app/header/header.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__home_home_component__ = __webpack_require__("./src/app/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__dragzone_dragzone_component__ = __webpack_require__("./src/app/dragzone/dragzone.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__home_home_component__ = __webpack_require__("./src/app/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__dragzone_dragzone_component__ = __webpack_require__("./src/app/dragzone/dragzone.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -224,7 +223,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
 var AppModule = (function () {
     function AppModule() {
     }
@@ -239,9 +237,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_10__test_test_component__["a" /* TestComponent */],
             __WEBPACK_IMPORTED_MODULE_11__log_in_log_in_component__["a" /* LogInComponent */],
             __WEBPACK_IMPORTED_MODULE_12__account_account_component__["a" /* AccountComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__header_header_component__["a" /* HeaderComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__home_home_component__["a" /* HomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_17__dragzone_dragzone_component__["a" /* DragZoneComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__home_home_component__["a" /* HomeComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__dragzone_dragzone_component__["a" /* DragZoneComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -417,67 +414,6 @@ var _a;
 
 /***/ }),
 
-/***/ "./src/app/header/header.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "h1, h2, h3 {\n  margin-left: 20px;\n}\n\nh1 {\n  font-weight: 900;\n  font-size: 3.5rem;\n}\n\nh1:focus {\n  outline: -webkit-focus-ring-color auto 0px;\n  outline-color: -webkit-focus-ring-color;\n  outline-style: auto;\n  outline-width: 0px;\n}\n\n\n\n.logo {\n  margin-bottom: -10px;\n  position: relative;\n  -ms-flex-line-pack: center;\n      align-content: center;\n  margin-left: 30px;\n  -webkit-filter: drop-shadow(0 0 300px white);\n          filter: drop-shadow(0 0 300px white);\n  /*background-color: white;*/\n}\n\n\nh3 {\n  margin-left: 45px;\n  font-size: 1.6rem;\n}\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "./src/app/header/header.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "\n<header class=\"content-header\">\n    <nav class=\"navbar navbar-static-top\">\n      <div class=\"container\">\n        <h1 class=\"logo\" [routerLink]=\"['/']\"><img src=\"https://ipfs.io/ipfs/QmWUnikBm1sADXghU16YxSZKWXKizyf471v2vhzmAiY57a\" height=\"60\" width=\"95\"></h1>\n        <!-- <h3 style=\"color: #0099cc\">\n              The WeTranser Alternative.\n        </h3> -->\n      </div>\n    </nav>\n </header>\n"
-
-/***/ }),
-
-/***/ "./src/app/header/header.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeaderComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var HeaderComponent = (function () {
-    function HeaderComponent() {
-    }
-    HeaderComponent.prototype.ngOnInit = function () {
-    };
-    return HeaderComponent;
-}());
-HeaderComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
-        selector: 'app-header',
-        template: __webpack_require__("./src/app/header/header.component.html"),
-        styles: [__webpack_require__("./src/app/header/header.component.css")]
-    }),
-    __metadata("design:paramtypes", [])
-], HeaderComponent);
-
-//# sourceMappingURL=header.component.js.map
-
-/***/ }),
-
 /***/ "./src/app/home/home.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -560,7 +496,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/input/input.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\n<!-- this is the loading to the ipfs spinner stuff -->\n<div class=\"spinner-container\" *ngIf=\"(!form && !submitResponse)\">\n  <div class=\"spinner-background\"></div>\n  <img class=\"spinner-anim1 spinner-pos\" src=\"../assets/snapcloud-logo-background2.png\" alt=\"\" style=\"height: 30vh; position: absolute;\"/>\n  <img class=\"spinner-anim2 spinner-pos\" src=\"../assets/snapcloud-logo-background-pink.png\" alt=\"\" style=\"height: 30vh; position: absolute;\"/>\n  <div id=\"animatedLoader\" class=\"sequencer\">{{animateStyles()}}initiating sequence</div>\n</div>\n\n\n<div class=\"spinner-container-out\" *ngIf=\"(!form && submitResponse)\">\n  <div class=\"spinner-background\"></div>\n  <img class=\"spinner-anim1 spinner-pos\" src=\"../assets/snapcloud-logo-background2.png\" alt=\"\" style=\"height: 30vh; position: absolute;\"/>\n  <img class=\"spinner-anim2 spinner-pos\" src=\"../assets/snapcloud-logo-background-pink.png\" alt=\"\" style=\"height: 30vh; position: absolute;\"/>\n  <h1 id=\"animatedLoader\" class=\"spinner-pos\"></h1>\n</div>\n\n<div class=\"container\" *ngIf=\"form\">\n\n\n  <div class=\"topHolder\">\n    <!-- Loading spinner -->\n\n    <!-- Upload icon and button-->\n    <div class=\"image-upload\" *ngIf=\"!showUpdate\">\n      <label for=\"file-input\">\n        <button title =\"Add Your Files\" (click)=\"file.click()\" id=\"uploadCircle\"mat-fab><svg fill=\"#FFFFFF\" height=\"55\" viewBox=\"0 0 24 24\" width=\"55\" xmlns=\"http://www.w3.org/2000/svg\">\n          <path d=\"M0 0h24v24H0z\" fill=\"none\"/>\n          <path d=\"M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z\"/>\n        </svg></button>\n      </label><p id=\"addYourFiles\">Upload your files</p>\n      <app-dragzone #file [onUpload]='upload'></app-dragzone>\n    </div>\n\n\n\n    <!-- Displays progress of file upload-->\n    <div class=\"progressBarTitle\" *ngIf=\"!progress && showUpdate\">Checking file...</div>\n    <div class=\"progressBar\" *ngIf=\"progress && showUpdate && this.completed < this.totalFiles\">Upload progress: <br> {{(this.progress / this.parentSize *100).toFixed(1)}} %</div>\n\n\n    <!-- Displays file name once uploaded and allows user to change selection -->\n    <div  class=\"fileFeedback\" *ngIf=\"file.length > 0\">\n      <p class=\"selectedFile\"><strong>File Selected:</strong><br> <span class=\"fileName2\" style=\"color:#0099cc\">{{this.name}}</span></p>\n      <button class=\"changeButton\" mat-raised-button color=\"accent\" (click)=\"toggleFile()\">Change file</button>\n    </div>\n\n    <div class=\"form-input\">\n      <form class=\"example-form\" (ngSubmit)=\"onTestPost()\" >\n        <mat-input-container class=\"example-full-width\">\n          <input matInput placeholder=\"Send Files to\" [(ngModel)]=\"data.to\" [formControl]=\"toEmailFormControl\" required>\n          <mat-error *ngIf=\"toEmailFormControl.hasError('pattern')\">\n            Please enter a valid email address\n          </mat-error>\n          <mat-error *ngIf=\"toEmailFormControl.hasError('required')\">\n            Email is <strong>required</strong>\n          </mat-error>\n        </mat-input-container>\n        <mat-input-container class=\"example-full-width\">\n          <input matInput placeholder=\"Your Email\" [(ngModel)]=\"data.from\" [formControl]=\"fromEmailFormControl\" required>\n          <mat-error *ngIf=\"fromEmailFormControl.hasError('pattern')\">\n            Please enter a valid email address\n          </mat-error>\n          <mat-error *ngIf=\"fromEmailFormControl.hasError('required')\">\n            Email is <strong>required</strong>\n          </mat-error>\n        </mat-input-container>\n\n        <mat-form-field class=\"example-full-width\">\n          <textarea matInput placeholder=\"Message\" matTextareaAutosize matAutosizeMinRows=\"2\"\n                    matAutosizeMaxRows=\"3\" [(ngModel)]=\"data.message\" [formControl]=\"messageFormControl\" required>\n          <mat-error *ngIf=\"messageFormControl.hasError('pattern')\">\n            Please enter a valid message\n          </mat-error>\n          <mat-error *ngIf=\"messageFormControl.hasError('required')\">\n            Message is <strong>required</strong>\n          </mat-error></textarea>\n        </mat-form-field>\n        <button mat-raised-button color=\"accent\" type=\"submit\">Send</button>\n      </form>\n    </div>\n  </div>\n</div>\n\n<!-- <div class=\"g-recaptcha\" data-sitekey=\"6LcokjIUAAAAAJnGe8_lM3HlcQktt1Wg7gMYib-N\"> </div> -->\n\n\n\n\n<!-- Placeholder -->\n<div *ngIf=\"submit\">\n  <h2></h2>\n</div>\n\n<!-- Displays once file has been uploaded and sent -->\n<div class=\"successMessage\" *ngIf=\"submitResponse\">\n  <h2>The below file has been added to IPFS and sent to: <br/>\n    <span class=\"senderEmail\" style=\"color:#0099cc\">{{this.data.to}} </span>\n  </h2>\n  <span class=\"fileName\">{{this.name}}</span>\n  <button class=\"successButton\" mat-raised-button color=\"accent\" (click)=\"refresh()\">Send another file</button>\n</div>\n\n\n<!-- <br>\n<div class=\"center\" >\n<mat-nav-list>\n<mat-list-item *ngFor=\"let link of hashes\">\n<a mat-line href=\"https://ipfs.io/ipfs/{{link[0].hash}}\" target=\"_blank\">{{link[0].hash}}</a>\n<button mat-icon-button (click)=\"showInfo(link)\">\n<i class=\"material-icons\">note</i></button>\n</mat-list-item>\n</mat-nav-list>\n</div> -->\n"
+module.exports = "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\n<!-- this is the loading to the ipfs spinner stuff -->\n<div class=\"spinner-container\" *ngIf=\"(!form && !submitResponse)\">\n  <div class=\"spinner-background\"></div>\n  <img class=\"spinner-anim1 spinner-pos\" src=\"../assets/snapcloud-logo-background2.png\" alt=\"\" style=\"height: 30vh; position: absolute;\"/>\n  <img class=\"spinner-anim2 spinner-pos\" src=\"../assets/snapcloud-logo-background-pink.png\" alt=\"\" style=\"height: 30vh; position: absolute;\"/>\n  <div id=\"animatedLoader\" class=\"sequencer\">{{animateStyles()}}initiating sequence</div>\n</div>\n\n\n<div class=\"spinner-container-out\" *ngIf=\"(!form && submitResponse)\">\n  <div class=\"spinner-background\"></div>\n  <img class=\"spinner-anim1 spinner-pos\" src=\"../assets/snapcloud-logo-background2.png\" alt=\"\" style=\"height: 30vh; position: absolute;\"/>\n  <img class=\"spinner-anim2 spinner-pos\" src=\"../assets/snapcloud-logo-background-pink.png\" alt=\"\" style=\"height: 30vh; position: absolute;\"/>\n  <h1 id=\"animatedLoader\" class=\"spinner-pos\"></h1>\n</div>\n\n<div class=\"container\" *ngIf=\"form\">\n\n\n  <div class=\"topHolder\">\n    <!-- Loading spinner -->\n\n    <!-- Upload icon and button-->\n    <div class=\"image-upload\" *ngIf=\"!showUpdate\">\n      <label for=\"file-input\">\n        <button title =\"Add Your Files\" (click)=\"file.click()\" id=\"uploadCircle\"mat-fab><svg fill=\"#FFFFFF\" height=\"55\" viewBox=\"0 0 24 24\" width=\"55\" xmlns=\"http://www.w3.org/2000/svg\">\n          <path d=\"M0 0h24v24H0z\" fill=\"none\"/>\n          <path d=\"M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z\"/>\n        </svg></button>\n      </label><p id=\"addYourFiles\">Upload your files</p>\n      <app-dragzone #file [onUpload]='upload'></app-dragzone>\n    </div>\n\n\n\n    <!-- Displays progress of file upload-->\n    <div class=\"progressBarTitle\" *ngIf=\"!progress && showUpdate\">Checking file...</div>\n    <div class=\"progressBar\" *ngIf=\"progress && showUpdate && this.completed < this.totalFiles\">Upload progress: <br> {{(this.progress / this.parentSize *100).toFixed(1)}} %</div>\n\n\n    <!-- Displays file name once uploaded and allows user to change selection -->\n    <div  class=\"fileFeedback\" *ngIf=\"file.length > 0\">\n      <p class=\"selectedFile\"><strong>File Selected:</strong><br> <span class=\"fileName2\" style=\"color:#0099cc\">{{this.name}}</span></p>\n      <button class=\"changeButton\" mat-raised-button color=\"accent\" (click)=\"toggleFile()\">Change file</button>\n    </div>\n\n    <div class=\"form-input\">\n      <form class=\"example-form\" (ngSubmit)=\"onTestPost()\" >\n        <mat-input-container class=\"example-full-width\">\n          <input matInput placeholder=\"Send Files to\" [(ngModel)]=\"data.to\" [formControl]=\"toEmailFormControl\" required>\n          <mat-error *ngIf=\"toEmailFormControl.hasError('pattern')\">\n            Please enter a valid email address\n          </mat-error>\n          <mat-error *ngIf=\"toEmailFormControl.hasError('required')\">\n            Email is <strong>required</strong>\n          </mat-error>\n        </mat-input-container>\n        <mat-input-container class=\"example-full-width\">\n          <input matInput placeholder=\"Your Email\" [(ngModel)]=\"data.from\" [formControl]=\"fromEmailFormControl\" required>\n          <mat-error *ngIf=\"fromEmailFormControl.hasError('pattern')\">\n            Please enter a valid email address\n          </mat-error>\n          <mat-error *ngIf=\"fromEmailFormControl.hasError('required')\">\n            Email is <strong>required</strong>\n          </mat-error>\n        </mat-input-container>\n\n        <mat-form-field class=\"example-full-width\">\n          <textarea matInput placeholder=\"Message\" matTextareaAutosize matAutosizeMinRows=\"2\"\n                    matAutosizeMaxRows=\"3\" [(ngModel)]=\"data.message\" [formControl]=\"messageFormControl\">\n          <mat-error *ngIf=\"messageFormControl.hasError('pattern')\">\n            Please enter a valid message\n          </mat-error>\n          <mat-error *ngIf=\"messageFormControl.hasError('required')\">\n            Message is <strong>required</strong>\n          </mat-error></textarea>\n        </mat-form-field>\n        <button mat-raised-button color=\"accent\" type=\"submit\">Send</button>\n      </form>\n    </div>\n  </div>\n</div>\n\n<!-- <div class=\"g-recaptcha\" data-sitekey=\"6LcokjIUAAAAAJnGe8_lM3HlcQktt1Wg7gMYib-N\"> </div> -->\n\n\n\n\n<!-- Placeholder -->\n<div *ngIf=\"submit\">\n  <h2></h2>\n</div>\n\n<!-- Displays once file has been uploaded and sent -->\n<div class=\"successMessage\" *ngIf=\"submitResponse\">\n  <h2>The below file has been added to IPFS and sent to: <br/>\n    <span class=\"senderEmail\" style=\"color:#0099cc\">{{this.data.to}} </span>\n  </h2>\n  <span class=\"fileName\">{{this.name}}</span>\n  <button class=\"successButton\" mat-raised-button color=\"accent\" (click)=\"refresh()\">Send another file</button>\n</div>\n\n\n<!-- <br>\n<div class=\"center\" >\n<mat-nav-list>\n<mat-list-item *ngFor=\"let link of hashes\">\n<a mat-line href=\"https://ipfs.io/ipfs/{{link[0].hash}}\" target=\"_blank\">{{link[0].hash}}</a>\n<button mat-icon-button (click)=\"showInfo(link)\">\n<i class=\"material-icons\">note</i></button>\n</mat-list-item>\n</mat-nav-list>\n</div> -->\n"
 
 /***/ }),
 
@@ -680,7 +616,7 @@ var InputComponent = (function () {
             alert("Invalid Recipient, please verify recpient's email!");
         else if (!this.data.from.match(EMAIL_REGEX))
             alert("Invalid Sender, please verify senders's email!");
-        else if (!this.data.message.match(TEXT_REGEX))
+        else if (!(this.data.message.length === 0) && (!this.data.message.match(TEXT_REGEX)))
             alert("Invalid message.");
         else {
             if (this.file.length && this.data.to) {
