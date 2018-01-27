@@ -25,7 +25,6 @@ import {ROUTES} from './app.routes';
 
 
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
-import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component'
 import { DragZoneComponent } from './dragzone/dragzone.component';
 
@@ -37,7 +36,6 @@ import { DragZoneComponent } from './dragzone/dragzone.component';
     TestComponent,
     LogInComponent,
     AccountComponent,
-    HeaderComponent,
     HomeComponent,
     DragZoneComponent,
   ],
