@@ -719,7 +719,7 @@ var IpfsService = (function () {
                     torrent.files[0].getBuffer(function (err, buffer) {
                         _this.progress = 0;
                         var myReadableStreamBuffer = new __WEBPACK_IMPORTED_MODULE_5_stream_buffers___default.a.ReadableStreamBuffer({
-                            chunkSize: 700000 //determines data transfer rate
+                            chunkSize: 25000 //determines data transfer rate
                         });
                         _this.stream = _this.node.files.addReadableStream();
                         _this.stream.on('data', function (file) {
