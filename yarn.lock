@@ -2,27 +2,27 @@
 # yarn lockfile v1
 
 
-"@angular-devkit/build-optimizer@~0.0.41":
-  version "0.0.41"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/build-optimizer/-/build-optimizer-0.0.41.tgz#29bd4a14a425f6946cc75c37a7aa42508d2fc1ac"
+"@angular-devkit/build-optimizer@0.0.42":
+  version "0.0.42"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/build-optimizer/-/build-optimizer-0.0.42.tgz#402b0dda4883db91e2381c3ddc55888408a7894e"
   dependencies:
     loader-utils "^1.1.0"
     source-map "^0.5.6"
     typescript "~2.6.2"
     webpack-sources "^1.0.1"
 
-"@angular-devkit/core@~0.0.28":
-  version "0.0.28"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-0.0.28.tgz#840b6efa728bc3e93a1c469e482cf1095c96561f"
+"@angular-devkit/core@0.0.29":
+  version "0.0.29"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-0.0.29.tgz#6fb319b45a62eff172318cbe256fdb24ef20af2b"
   dependencies:
     ajv "~5.5.1"
     chokidar "^1.7.0"
     rxjs "^5.5.6"
     source-map "^0.5.6"
 
-"@angular-devkit/schematics@~0.0.51":
-  version "0.0.51"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-0.0.51.tgz#5b5e5b1604a34e200fb749d1076064374f757276"
+"@angular-devkit/schematics@0.0.52":
+  version "0.0.52"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-0.0.52.tgz#cbd2f42778b50d6422a254ffaec05ad4ef3cb6c0"
   dependencies:
     "@ngtools/json-schema" "^1.1.0"
     rxjs "^5.5.6"
@@ -39,16 +39,16 @@
   dependencies:
     tslib "^1.7.1"
 
-"@angular/cli@^1.6.4":
-  version "1.6.5"
-  resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-1.6.5.tgz#9217c5d5c366292aca61fb0328c406bb5b0f2d76"
+"@angular/cli@^1.6.7":
+  version "1.6.7"
+  resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-1.6.7.tgz#e2323753c144b5de6c699bbebee688105a394641"
   dependencies:
-    "@angular-devkit/build-optimizer" "~0.0.41"
-    "@angular-devkit/core" "~0.0.28"
-    "@angular-devkit/schematics" "~0.0.51"
+    "@angular-devkit/build-optimizer" "0.0.42"
+    "@angular-devkit/core" "0.0.29"
+    "@angular-devkit/schematics" "0.0.52"
     "@ngtools/json-schema" "1.1.0"
-    "@ngtools/webpack" "1.9.5"
-    "@schematics/angular" "~0.1.16"
+    "@ngtools/webpack" "1.9.7"
+    "@schematics/angular" "0.1.17"
     autoprefixer "^7.2.3"
     chalk "~2.2.0"
     circular-dependency-plugin "^4.2.1"
@@ -83,11 +83,10 @@
     postcss-url "^7.1.2"
     raw-loader "^0.5.1"
     resolve "^1.1.7"
-    rxjs "^5.5.2"
+    rxjs "^5.5.6"
     sass-loader "^6.0.6"
     semver "^5.1.0"
     silent-error "^1.0.0"
-    source-map-loader "^0.2.0"
     source-map-support "^0.4.1"
     style-loader "^0.13.1"
     stylus "^0.54.5"
@@ -458,9 +457,9 @@
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@ngtools/json-schema/-/json-schema-1.1.0.tgz#c3a0c544d62392acc2813a42c8a0dc6f58f86922"
 
-"@ngtools/webpack@1.9.5", "@ngtools/webpack@^1.9.4":
-  version "1.9.5"
-  resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-1.9.5.tgz#10292e9237d1218fe16dee24423155500b2d2324"
+"@ngtools/webpack@1.9.7", "@ngtools/webpack@^1.9.7":
+  version "1.9.7"
+  resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-1.9.7.tgz#ef15b90142ddf2a2c9072fe3d58c6bf500163fe5"
   dependencies:
     chalk "~2.2.0"
     enhanced-resolve "^3.1.0"
@@ -471,15 +470,19 @@
     tree-kill "^1.0.0"
     webpack-sources "^1.1.0"
 
-"@schematics/angular@~0.1.16":
-  version "0.1.16"
-  resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-0.1.16.tgz#174ab994fd56c423674171ae5a22407ba3ee2123"
+"@schematics/angular@0.1.17":
+  version "0.1.17"
+  resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-0.1.17.tgz#084a7cbe2de6f94a856bd08d95c9d35ef8905e2b"
   dependencies:
     typescript "~2.6.2"
 
-"@types/jasmine@*", "@types/jasmine@^2.8.4":
+"@types/jasmine@*":
   version "2.8.4"
   resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-2.8.4.tgz#5528fb5e53f1b27594f81f18debb7eab8dc532cb"
+
+"@types/jasmine@^2.8.6":
+  version "2.8.6"
+  resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-2.8.6.tgz#14445b6a1613cf4e05dd61c3c3256d0e95c0421e"
 
 "@types/jasminewd2@^2.0.3":
   version "2.0.3"
@@ -628,7 +631,7 @@ ammo@2.x.x, ammo@^2.0.4:
     boom "5.x.x"
     hoek "4.x.x"
 
-angular-material@^1.1.5:
+angular-material@^1.1.6:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/angular-material/-/angular-material-1.1.6.tgz#ec8c55423f4da2eb06c91f44af3cf50f867fbe59"
 
@@ -2218,7 +2221,7 @@ css-color-names@0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/css-color-names/-/css-color-names-0.0.4.tgz#808adc2e79cf84738069b646cb20ec27beb629e0"
 
-css-loader@^0.28.1, css-loader@^0.28.8:
+css-loader@^0.28.1, css-loader@^0.28.9:
   version "0.28.9"
   resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-0.28.9.tgz#68064b85f4e271d7ce4c48a58300928e535d1c95"
   dependencies:
@@ -5234,9 +5237,9 @@ jsonpointer@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/jsonpointer/-/jsonpointer-4.0.1.tgz#4fd92cb34e0e9db3c89c8622ecf51f9b978c6cb9"
 
-jsonwebtoken@^8.0.1:
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/jsonwebtoken/-/jsonwebtoken-8.1.0.tgz#c6397cd2e5fd583d65c007a83dc7bb78e6982b83"
+jsonwebtoken@^8.1.1:
+  version "8.1.1"
+  resolved "https://registry.yarnpkg.com/jsonwebtoken/-/jsonwebtoken-8.1.1.tgz#b04d8bb2ad847bc93238c3c92170ffdbdd1cb2ea"
   dependencies:
     jws "^3.1.4"
     lodash.includes "^4.3.0"
@@ -5246,7 +5249,7 @@ jsonwebtoken@^8.0.1:
     lodash.isplainobject "^4.0.6"
     lodash.isstring "^4.0.1"
     lodash.once "^4.0.0"
-    ms "^2.0.0"
+    ms "^2.1.1"
     xtend "^4.0.1"
 
 jsprim@^1.2.2:
@@ -5326,9 +5329,9 @@ karma-cli@~1.0.1:
   dependencies:
     resolve "^1.1.6"
 
-karma-coverage-istanbul-reporter@^1.3.3:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/karma-coverage-istanbul-reporter/-/karma-coverage-istanbul-reporter-1.3.3.tgz#daf26051d5a0daa5838a4ce81aa4a41724bdf36b"
+karma-coverage-istanbul-reporter@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/karma-coverage-istanbul-reporter/-/karma-coverage-istanbul-reporter-1.4.1.tgz#2b42d145ddbb4868d85d52888c495a21c61d873c"
   dependencies:
     istanbul-api "^1.1.14"
     minimatch "^3.0.4"
@@ -5474,9 +5477,9 @@ koa-oauth-server@^1.0.1:
     oauth2-server "^2.3.0"
     thenify "^3.0.0"
 
-koa-router@^7.3.0:
-  version "7.3.0"
-  resolved "https://registry.yarnpkg.com/koa-router/-/koa-router-7.3.0.tgz#241f0449ac5cd1071831a9a3d80b521fafb6baa1"
+koa-router@^7.4.0:
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/koa-router/-/koa-router-7.4.0.tgz#aee1f7adc02d5cb31d7d67465c9eacc825e8c5e0"
   dependencies:
     debug "^3.1.0"
     http-errors "^1.3.1"
@@ -5624,7 +5627,7 @@ level-js@^2.2.4:
     typedarray-to-buffer "~1.0.0"
     xtend "~2.1.2"
 
-"level-js@github:timkuijsten/level.js#idbunwrapper":
+level-js@timkuijsten/level.js#idbunwrapper:
   version "2.2.3"
   resolved "https://codeload.github.com/timkuijsten/level.js/tar.gz/18e03adab34c49523be7d3d58fafb0c632f61303"
   dependencies:
@@ -6551,6 +6554,10 @@ mime@^1.2.11, mime@^1.3.4, mime@^1.4.1, mime@^1.5.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/mime/-/mime-1.6.0.tgz#32cd9e5c64553bd58d19a568af452acff04981b1"
 
+mime@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/mime/-/mime-2.2.0.tgz#161e541965551d3b549fa1114391e3a3d55b923b"
+
 mimic-fn@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-1.1.0.tgz#e667783d92e89dbd342818b5230b9d62a672ad18"
@@ -6678,9 +6685,9 @@ mongodb@2.2.34, mongodb@^2.2.34:
     mongodb-core "2.1.18"
     readable-stream "2.2.7"
 
-mongoose@^4.13.9:
-  version "4.13.9"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-4.13.9.tgz#ca4d99aed6e36e87854c2295387e7ea17966cfe3"
+mongoose@^4.13.10:
+  version "4.13.10"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-4.13.10.tgz#3fdf86fd04af5772d4f7183a68a096bfb886db88"
   dependencies:
     async "2.1.4"
     bson "~1.0.4"
@@ -6755,7 +6762,7 @@ ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
 
-ms@^2.0.0:
+ms@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
 
@@ -6811,7 +6818,7 @@ multihashing-async@~0.4.6, multihashing-async@~0.4.7:
     murmurhash3js "^3.0.1"
     nodeify "^1.0.1"
 
-"multiplex@github:dignifiedquire/multiplex":
+multiplex@dignifiedquire/multiplex:
   version "6.7.0"
   resolved "https://codeload.github.com/dignifiedquire/multiplex/tar.gz/b5d5edd30454e2c978ee8c52df86f5f4840d2eab"
   dependencies:
@@ -8240,6 +8247,13 @@ pump@^2.0.0:
     end-of-stream "^1.1.0"
     once "^1.3.1"
 
+pump@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/pump/-/pump-2.0.1.tgz#12399add6e4cf7526d973cbc8b5ce2e2908b3909"
+  dependencies:
+    end-of-stream "^1.1.0"
+    once "^1.3.1"
+
 pumpify@^1.3.3:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/pumpify/-/pumpify-1.4.0.tgz#80b7c5df7e24153d03f0e7ac8a05a5d068bd07fb"
@@ -8801,7 +8815,7 @@ rusha@^0.8.1:
   version "0.8.12"
   resolved "https://registry.yarnpkg.com/rusha/-/rusha-0.8.12.tgz#5d838ce1fce8b145674ee771eaad5bcb2575e64b"
 
-rxjs@^5.5.2, rxjs@^5.5.6:
+rxjs@^5.5.6:
   version "5.5.6"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.5.6.tgz#e31fb96d6fd2ff1fd84bcea8ae9c02d007179c02"
   dependencies:
@@ -10663,9 +10677,9 @@ websocket-extensions@>=0.1.1:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.3.tgz#5d2ff22977003ec687a4b87073dfbbac146ccf29"
 
-webtorrent@^0.98.19:
-  version "0.98.20"
-  resolved "https://registry.yarnpkg.com/webtorrent/-/webtorrent-0.98.20.tgz#f335869185a64447b6fe730c3c66265620b8c14a"
+webtorrent@^0.98.21:
+  version "0.98.21"
+  resolved "https://registry.yarnpkg.com/webtorrent/-/webtorrent-0.98.21.tgz#5bda8a7192b3e76b65cd796affc38d471c769b5a"
   dependencies:
     addr-to-ip-port "^1.4.2"
     bitfield "^1.1.2"
@@ -10680,11 +10694,11 @@ webtorrent@^0.98.19:
     inherits "^2.0.1"
     load-ip-set "^1.2.7"
     memory-chunk-store "^1.2.0"
-    mime "^1.4.1"
+    mime "^2.2.0"
     multistream "^2.0.5"
     package-json-versionify "^1.0.2"
     parse-torrent "^5.8.0"
-    pump "^1.0.1"
+    pump "^2.0.1"
     random-iterate "^1.0.1"
     randombytes "^2.0.3"
     range-parser "^1.2.0"
@@ -11001,6 +11015,6 @@ zero-fill@^2.2.3:
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/zero-fill/-/zero-fill-2.2.3.tgz#a3def06ba5e39ae644850bb4ca2ad4112b4855e9"
 
-zone.js@^0.8.19:
+zone.js@^0.8.20:
   version "0.8.20"
   resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.8.20.tgz#a218c48db09464b19ff6fc8f0d4bb5b1046e185d"
