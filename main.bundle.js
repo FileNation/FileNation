@@ -119,7 +119,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"body\">\n    <div class=\"title-bar\">\n      <div class=\"title-bar-left-container\">\n        <div class=\"title-bar-logo\">\n        <img src=\"../assets/logo.png\" id=\"title\" alt=\"\" style=\"height: 5vh; position: absolute;\"/>\n        <!-- <img src=\"../assets/logo.png\" alt=\"\" style=\"height: 4vh; position: absolute;\"/> -->\n      </div>\n      <p id=\"title\" class=\"title-bar-title\">\n        FileNation.io\n      </p>\n    </div>\n      <div class=\"title-bar-right-container\">\n    </div>\n  </div>\n\n  <div class=\"body-container\">\n    <router-outlet></router-outlet>\n  </div>\n\n  <div class=\"base\">\n  <div class=\"spacer\"></div>\n  <div class=\"base-buttons\">\n    <h1 class=\"dot-color\"></h1>\n      <a href=\"https://www.dropbox.com/sh/v9qq1huq9j0ftlh/AAC0zYL1IpJOYDhF2S8ZqWuJa?dl=0\" class=\"about-twitter\" target=\"_blank\"><h1 class=\"about-button\">About</h1></a>\n    <h1 class=\"dot-color\"></h1>\n    <a href=\"https://twitter.com/Filenation_io\" target=\"_blank\"><img class=\"img-twitter\" src=\"../assets/twitter.png\" /></a>\n    <div class=\"spacer\"></div>\n    <div class=\"spacer\"></div>\n  </div>\n</div>\n</div>\n\n</div>\n"
+module.exports = "<div class=\"container\">\n  <div class=\"body\">\n    <div class=\"title-bar\">\n      <div class=\"title-bar-left-container\">\n        <div class=\"title-bar-logo\">\n        <img src=\"../assets/logo.png\" id=\"title\" alt=\"\" style=\"height: 5vh; position: absolute;\"/>\n        <!-- <img src=\"../assets/logo.png\" alt=\"\" style=\"height: 4vh; position: absolute;\"/> -->\n      </div>\n      <p id=\"title\" class=\"title-bar-title\">\n        FileNation\n      </p>\n    </div>\n      <div class=\"title-bar-right-container\">\n    </div>\n  </div>\n\n  <div class=\"body-container\">\n    <router-outlet></router-outlet>\n  </div>\n\n  <div class=\"base\">\n  <div class=\"spacer\"></div>\n  <div class=\"base-buttons\">\n    <h1 class=\"dot-color\"></h1>\n      <a href=\"https://www.dropbox.com/sh/v9qq1huq9j0ftlh/AAC0zYL1IpJOYDhF2S8ZqWuJa?dl=0\" class=\"about-twitter\" target=\"_blank\"><h1 class=\"about-button\">About</h1></a>\n    <h1 class=\"dot-color\"></h1>\n    <a href=\"https://twitter.com/Filenation_io\" target=\"_blank\"><img class=\"img-twitter\" src=\"../assets/twitter.png\" /></a>\n    <div class=\"spacer\"></div>\n    <div class=\"spacer\"></div>\n  </div>\n</div>\n</div>\n\n</div>\n"
 
 /***/ }),
 
@@ -1088,17 +1088,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ }),
 
 /***/ 0:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__("./src/main.ts");
-
+/* (ignored) */
 
 /***/ }),
 
 /***/ 1:
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-/* (ignored) */
+module.exports = __webpack_require__("./src/main.ts");
+
 
 /***/ }),
 
@@ -1256,13 +1256,6 @@ module.exports = __webpack_require__("./src/main.ts");
 
 /***/ }),
 
-/***/ 30:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
 /***/ 4:
 /***/ (function(module, exports) {
 
@@ -1305,5 +1298,5 @@ module.exports = __webpack_require__("./src/main.ts");
 
 /***/ })
 
-},[0]);
+},[1]);
 //# sourceMappingURL=main.bundle.js.map
