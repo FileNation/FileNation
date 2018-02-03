@@ -10,6 +10,14 @@ IPFS is a media distribution protocol, addressed by content and identities. IPFS
 
 ![Filenation screenshot](/static/filenation.png)
 
+FileNation is quite young but we already have some interesting achievements:
+
+- Launch of the first functional version of our Product (MVP)
+
+- First position in the Ranking of *HackerNews* (one of the most prestigious sites about technology)
+
+- More than 600 stars in GitHub showing the interest of the tech community.
+
 ## Run on your own computer
 
 If you would like to test Filenation on your own computer make sure you have Node installed and clone this repo
