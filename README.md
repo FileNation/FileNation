@@ -14,9 +14,9 @@ FileNation is quite young but we already have some interesting achievements:
 
 - Launch of the first functional version of our Product (MVP)
 
-- First position in the Ranking of *HackerNews* (one of the most prestigious sites about technology)
+- First position in the Ranking of **HackerNews** (one of the most prestigious sites about technology)
 
-- More than 600 stars in GitHub showing the interest of the tech community.
+- More than 600 stars in **GitHub** showing the interest of the tech community.
 
 ## Run on your own computer
 
