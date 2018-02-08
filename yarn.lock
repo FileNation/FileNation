@@ -40,14 +40,14 @@
     tslib "^1.7.1"
 
 "@angular/cli@^1.6.7":
-  version "1.6.7"
-  resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-1.6.7.tgz#e2323753c144b5de6c699bbebee688105a394641"
+  version "1.6.8"
+  resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-1.6.8.tgz#963b48086ee3e9584a136d3c45893260f516dd75"
   dependencies:
     "@angular-devkit/build-optimizer" "0.0.42"
     "@angular-devkit/core" "0.0.29"
     "@angular-devkit/schematics" "0.0.52"
     "@ngtools/json-schema" "1.1.0"
-    "@ngtools/webpack" "1.9.7"
+    "@ngtools/webpack" "1.9.8"
     "@schematics/angular" "0.1.17"
     autoprefixer "^7.2.3"
     chalk "~2.2.0"
@@ -91,7 +91,7 @@
     style-loader "^0.13.1"
     stylus "^0.54.5"
     stylus-loader "^3.0.1"
-    uglifyjs-webpack-plugin "^1.1.5"
+    uglifyjs-webpack-plugin "^1.1.8"
     url-loader "^0.6.2"
     webpack "~3.10.0"
     webpack-dev-middleware "~1.12.0"
@@ -457,9 +457,9 @@
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@ngtools/json-schema/-/json-schema-1.1.0.tgz#c3a0c544d62392acc2813a42c8a0dc6f58f86922"
 
-"@ngtools/webpack@1.9.7", "@ngtools/webpack@^1.9.7":
-  version "1.9.7"
-  resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-1.9.7.tgz#ef15b90142ddf2a2c9072fe3d58c6bf500163fe5"
+"@ngtools/webpack@1.9.8", "@ngtools/webpack@^1.9.7":
+  version "1.9.8"
+  resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-1.9.8.tgz#c9d1d1884b86ea9a5fbbd6f65080dc3ac37c8d97"
   dependencies:
     chalk "~2.2.0"
     enhanced-resolve "^3.1.0"
@@ -487,8 +487,8 @@
     "@types/jasmine" "*"
 
 "@types/node@^6.0.46", "@types/node@^6.0.96":
-  version "6.0.96"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.96.tgz#7bf0bf40d6ce51e93762cc47d010c8cc5ebb2179"
+  version "6.0.98"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.98.tgz#69e6af43ade9e76bc5fba6864cd16195564b9d35"
 
 "@types/q@^0.0.32":
   version "0.0.32"
@@ -1222,7 +1222,7 @@ bn.js@^1.0.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-1.3.0.tgz#0db4cbf96f8f23b742f5bcb9d1aa7a9994a05e83"
 
-bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.11.3, bn.js@^4.4.0, bn.js@^4.8.0:
+bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.11.0, bn.js@^4.11.3, bn.js@^4.4.0, bn.js@^4.8.0:
   version "4.11.8"
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.8.tgz#2cde09eb5ee341f484746bb0309b3253b1b1442f"
 
@@ -1592,12 +1592,12 @@ caniuse-api@^1.5.2:
     lodash.uniq "^4.5.0"
 
 caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
-  version "1.0.30000801"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000801.tgz#a1d49def94c4e5aca5ccf1d58812e4668fac19d4"
+  version "1.0.30000804"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000804.tgz#84feb42018fc64cf6aff6371e43115f292c00179"
 
 caniuse-lite@^1.0.30000791, caniuse-lite@^1.0.30000792:
-  version "1.0.30000792"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000792.tgz#d0cea981f8118f3961471afbb43c9a1e5bbf0332"
+  version "1.0.30000804"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000804.tgz#8729a143d65378e8936adbb161f550e9c49fc09d"
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
@@ -1913,7 +1913,11 @@ commander@2.9.0:
   dependencies:
     graceful-readlink ">= 1.0.0"
 
-commander@^2.11.0, commander@^2.9, commander@^2.9.0, commander@~2.13.0:
+commander@^2.11.0, commander@^2.9, commander@^2.9.0:
+  version "2.14.1"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.14.1.tgz#2235123e37af8ca3c65df45b026dbd357b01b9aa"
+
+commander@~2.13.0:
   version "2.13.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.13.0.tgz#6964bca67685df7c1f1430c584f07d7597885b9c"
 
@@ -2717,8 +2721,8 @@ ejs@^2.5.7:
   resolved "https://registry.yarnpkg.com/ejs/-/ejs-2.5.7.tgz#cc872c168880ae3c7189762fd5ffc00896c9518a"
 
 electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.30:
-  version "1.3.32"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.32.tgz#11d0684c0840e003c4be8928f8ac5f35dbc2b4e6"
+  version "1.3.33"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.33.tgz#bf00703d62a7c65238136578c352d6c5c042a545"
 
 elliptic@^6.0.0, elliptic@^6.2.3:
   version "6.4.0"
@@ -3032,10 +3036,10 @@ ethereumjs-util@^4.0.1:
     secp256k1 "^3.0.1"
 
 ethereumjs-util@^5.0.0:
-  version "5.1.3"
-  resolved "https://registry.yarnpkg.com/ethereumjs-util/-/ethereumjs-util-5.1.3.tgz#0c1f6efb1da9c5b6720a65697859fc0be6672df0"
+  version "5.1.4"
+  resolved "https://registry.yarnpkg.com/ethereumjs-util/-/ethereumjs-util-5.1.4.tgz#d1a4a9be31eaf8b33aad399894f854fdafda2469"
   dependencies:
-    bn.js "^4.8.0"
+    bn.js "^4.11.0"
     create-hash "^1.1.2"
     ethjs-util "^0.1.3"
     keccak "^1.0.2"
@@ -3389,8 +3393,8 @@ flush-write-stream@^1.0.0:
     readable-stream "^2.0.4"
 
 focus-trap@^2.3.0:
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/focus-trap/-/focus-trap-2.4.2.tgz#44ea1c55a9c22c2b6529dcebbde6390eb2ee4c88"
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/focus-trap/-/focus-trap-2.4.3.tgz#95edc23e77829b7772cb2486d61fd6371ce112f9"
   dependencies:
     tabbable "^1.0.3"
 
@@ -4012,8 +4016,8 @@ hoek@4.x.x, hoek@^4.2.0:
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-4.2.0.tgz#72d9d0754f7fe25ca2d01ad8f8f9a9449a89526d"
 
 hoek@5.x.x, hoek@^5.0.2:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/hoek/-/hoek-5.0.2.tgz#d2f2c95d36fe7189cf8aa8c237abc1950eca1378"
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/hoek/-/hoek-5.0.3.tgz#b71d40d943d0a95da01956b547f83c4a5b4a34ac"
 
 hooks-fixed@2.0.2:
   version "2.0.2"
@@ -4333,8 +4337,8 @@ ipaddr.js@1.5.2:
   resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.5.2.tgz#d4b505bde9946987ccf0fc58d9010ff9607e3fa0"
 
 "ipaddr.js@>= 0.1.5", ipaddr.js@^1.0.1:
-  version "1.5.4"
-  resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.5.4.tgz#962263d9d26132956fc5c630b638a30d3cdffc14"
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.6.0.tgz#e3fa357b773da619f26e95f049d055c72796f86b"
 
 ipfs-api@^17.3.0:
   version "17.5.0"
@@ -4371,8 +4375,8 @@ ipfs-api@^17.3.0:
     tar-stream "^1.5.5"
 
 ipfs-bitswap@~0.18.0:
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/ipfs-bitswap/-/ipfs-bitswap-0.18.0.tgz#911055cfcf12a914f8b0400de1725540edff6eaa"
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/ipfs-bitswap/-/ipfs-bitswap-0.18.1.tgz#8efb2a2d34444b2b451e6bb860ac8b2ea5228407"
   dependencies:
     async "^2.6.0"
     big.js "^5.0.3"
@@ -4389,12 +4393,12 @@ ipfs-bitswap@~0.18.0:
     lodash.uniqwith "^4.5.0"
     lodash.values "^4.3.0"
     moving-average "^1.0.0"
-    multicodec "~0.2.5"
+    multicodec "~0.2.6"
     multihashing-async "~0.4.7"
     protons "^1.0.1"
     pull-defer "~0.2.2"
     pull-length-prefixed "^1.3.0"
-    pull-pushable "^2.1.1"
+    pull-pushable "^2.1.2"
     pull-stream "^3.6.1"
     safe-buffer "^5.1.1"
     varint-decoder "^0.1.1"
@@ -5082,9 +5086,9 @@ jasmine-core@~2.6.2:
   version "2.6.4"
   resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-2.6.4.tgz#dec926cd0a9fa287fb6db5c755fa487e74cecac5"
 
-jasmine-core@~2.9.0:
-  version "2.9.1"
-  resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-2.9.1.tgz#b6bbc1d8e65250d56f5888461705ebeeeb88f22f"
+jasmine-core@~2.99.0:
+  version "2.99.1"
+  resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-2.99.1.tgz#e6400df1e6b56e130b61c4bcd093daa7f6e8ca15"
 
 jasmine-spec-reporter@~4.1.0:
   version "4.1.1"
@@ -5093,12 +5097,12 @@ jasmine-spec-reporter@~4.1.0:
     colors "1.1.2"
 
 jasmine@^2.5.3:
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/jasmine/-/jasmine-2.9.0.tgz#76571f925c8783409e7c6153572e5a6341cf93eb"
+  version "2.99.0"
+  resolved "https://registry.yarnpkg.com/jasmine/-/jasmine-2.99.0.tgz#8ca72d102e639b867c6489856e0e18a9c7aa42b7"
   dependencies:
     exit "^0.1.2"
     glob "^7.0.6"
-    jasmine-core "~2.9.0"
+    jasmine-core "~2.99.0"
 
 jasminewd2@^2.1.0:
   version "2.2.0"
@@ -5863,14 +5867,14 @@ libp2p-swarm@~0.35.1:
     pull-stream "^3.6.1"
 
 libp2p-tcp@~0.11.2:
-  version "0.11.2"
-  resolved "https://registry.yarnpkg.com/libp2p-tcp/-/libp2p-tcp-0.11.2.tgz#37108a7ac337ff4e33b074d134a2e160a66a9a11"
+  version "0.11.5"
+  resolved "https://registry.yarnpkg.com/libp2p-tcp/-/libp2p-tcp-0.11.5.tgz#9bc566959d210b2543ffa9d2fd3daf5b1eabce84"
   dependencies:
     debug "^3.1.0"
     interface-connection "~0.3.2"
     ip-address "^5.8.9"
     lodash.includes "^4.3.0"
-    lodash.isfunction "^3.0.8"
+    lodash.isfunction "^3.0.9"
     mafmt "^3.0.2"
     multiaddr "^3.0.2"
     once "^1.4.0"
@@ -6120,7 +6124,7 @@ lodash.isequalwith@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.isequalwith/-/lodash.isequalwith-4.4.0.tgz#266726ddd528f854f21f4ea98a065606e0fbc6b0"
 
-lodash.isfunction@^3.0.8:
+lodash.isfunction@^3.0.8, lodash.isfunction@^3.0.9:
   version "3.0.9"
   resolved "https://registry.yarnpkg.com/lodash.isfunction/-/lodash.isfunction-3.0.9.tgz#06de25df4db327ac931981d1bdb067e5af68d051"
 
@@ -6325,8 +6329,8 @@ make-dir@^1.0.0:
     pify "^3.0.0"
 
 make-error@^1.1.1:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/make-error/-/make-error-1.3.2.tgz#8762ffad2444dd8ff1f7c819629fa28e24fea1c4"
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/make-error/-/make-error-1.3.3.tgz#a97ae14ffd98b05f543e83ddc395e1b2b6e4cc6a"
 
 map-cache@^0.2.2:
   version "0.2.2"
@@ -6605,8 +6609,8 @@ mississippi@^1.3.0:
     through2 "^2.0.0"
 
 mixin-deep@^1.2.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/mixin-deep/-/mixin-deep-1.3.0.tgz#47a8732ba97799457c8c1eca28f95132d7e8150a"
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/mixin-deep/-/mixin-deep-1.3.1.tgz#a49e7268dce1a0d9698e45326c5626df3543d0fe"
   dependencies:
     for-in "^1.0.2"
     is-extendable "^1.0.1"
@@ -6676,8 +6680,8 @@ mongodb@2.2.34, mongodb@^2.2.34:
     readable-stream "2.2.7"
 
 mongoose@^4.13.10:
-  version "4.13.10"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-4.13.10.tgz#3fdf86fd04af5772d4f7183a68a096bfb886db88"
+  version "4.13.11"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-4.13.11.tgz#da6edf8e399054e12836016316999519a358db43"
   dependencies:
     async "2.1.4"
     bson "~1.0.4"
@@ -6784,7 +6788,7 @@ multicast-dns@^6.0.1, multicast-dns@^6.2.3:
     dns-packet "^1.3.1"
     thunky "^1.0.2"
 
-multicodec@~0.2.3, multicodec@~0.2.5:
+multicodec@~0.2.3, multicodec@~0.2.5, multicodec@~0.2.6:
   version "0.2.6"
   resolved "https://registry.yarnpkg.com/multicodec/-/multicodec-0.2.6.tgz#9d2d6565fbc0815b139dfc906371fc39df4dfddb"
   dependencies:
@@ -9469,10 +9473,10 @@ sshpk@^1.7.0:
     tweetnacl "~0.14.0"
 
 ssri@^5.0.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/ssri/-/ssri-5.1.0.tgz#2cbf1df36b74d0fc91fcf89640a4b3e1d10b1899"
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/ssri/-/ssri-5.2.1.tgz#8b6eb873688759bd3c75a88dee74593d179bb73c"
   dependencies:
-    safe-buffer "^5.1.0"
+    safe-buffer "^5.1.1"
 
 stable@^0.1.6:
   version "0.1.6"
@@ -10130,7 +10134,7 @@ uglifyjs-webpack-plugin@^0.4.6:
     uglify-js "^2.8.29"
     webpack-sources "^1.0.1"
 
-uglifyjs-webpack-plugin@^1.1.5:
+uglifyjs-webpack-plugin@^1.1.8:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-1.1.8.tgz#1302fb9471a7daf3d0a5174da6d65f0f415e75ad"
   dependencies:
