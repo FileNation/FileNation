@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: stretch;
   justify-content: space-around;
-  margin-left: 90px;
+  margin-left: 120px;
 }
 .sequencer {
   position: absolute;
@@ -33,6 +33,7 @@
     justify-content: center;
     padding-left: 40px;
     padding-right: 50px;
+    margin-left: 0px !important;
   }
 }
 
