@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: stretch;
   justify-content: space-around;
+  margin-left: 90px;
 }
 .sequencer {
   position: absolute;
@@ -43,6 +44,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-color: black;
+  border-width: thin;
   border-radius: 10px;
   box-shadow: 0 0 12px 0 rgba(0,0,0,0.1), 0 10px 30px 0 rgba(0,0,0,0.2);
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
@@ -136,6 +139,7 @@ button {
   justify-content: space-between;
   text-align: center;
   border-radius: 3px;
+  border-color: black;
   padding: 30px;
 }
 
