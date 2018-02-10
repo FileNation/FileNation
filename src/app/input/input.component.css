@@ -36,24 +36,25 @@
 }
 
 .topHolder {
-  height: 498px;
+  height: 440px;
   width: 300px;
   background-color: white;
-  border-radius: 3px 3px 0 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  filter: drop-shadow(0 0 10px black);
+  border-radius: 10px;
+  box-shadow: 0 0 12px 0 rgba(0,0,0,0.1), 0 10px 30px 0 rgba(0,0,0,0.2);
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: -webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1),-webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .image-upload {
   width: 100%;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
   align-items: center;
-  margin-bottom: 25px;
 }
 
 .image-upload>input {
@@ -98,8 +99,8 @@ form {
 }
 
 label button {
-  width: 90px;
-  height: 90px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   margin-bottom: 25px;
 }
@@ -115,7 +116,8 @@ button {
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 45px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .changeButton {
@@ -200,7 +202,7 @@ p {
 
 #addYourFiles {
   position: relative !important;
-  margin-top: -4px !important;
+  margin-top: 21px !important;
   font-weight: 300;
 }
 
@@ -210,9 +212,13 @@ input[type="file"] {
 }
 
 #uploadCircle {
-  margin-top: 2em;
   cursor: pointer !important;
   z-index: 1000;
+}
+
+#upload-img {
+  height: 19px;
+  weight: 7px;
 }
 
 /*Spinner animation*/
