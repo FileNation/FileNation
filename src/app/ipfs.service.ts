@@ -30,8 +30,6 @@ export class IpfsService {
 }
   uploadIPFS = (fileObj) => {
     return new Promise((resolve, reject) => {
-      this.client.seed(fileObj, (torrent) => {
-        torrent.files[0].getBuffer((err, buffer) => {
 
           this.progress = 0;
         let myReadableStreamBuffer = new streamBuffers.ReadableStreamBuffer({
@@ -51,7 +49,7 @@ export class IpfsService {
 
             this.stream.write(myReadableStreamBuffer);
 
-            myReadableStreamBuffer.put(Buffer.from(buffer))
+            myReadableStreamBuffer.put(Buffer.from(fileObj))
             myReadableStreamBuffer.stop()
 
             myReadableStreamBuffer.on('end', () => {
@@ -59,8 +57,6 @@ export class IpfsService {
             })
             myReadableStreamBuffer.resume()
 
-        })
-      });
     });
   }
 
