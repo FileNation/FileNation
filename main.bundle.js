@@ -694,14 +694,12 @@ var _a, _b;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IpfsService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("./node_modules/@angular/http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_webtorrent__ = __webpack_require__("./node_modules/webtorrent/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_webtorrent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_webtorrent__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_buffer__ = __webpack_require__("./node_modules/node-libs-browser/node_modules/buffer/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_buffer___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_buffer__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ipfs__ = __webpack_require__("./node_modules/ipfs/src/core/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ipfs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_ipfs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_stream_buffers__ = __webpack_require__("./node_modules/stream-buffers/lib/streambuffer.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_stream_buffers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_stream_buffers__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_buffer__ = __webpack_require__("./node_modules/node-libs-browser/node_modules/buffer/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_buffer___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_buffer__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ipfs__ = __webpack_require__("./node_modules/ipfs/src/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ipfs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ipfs__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_stream_buffers__ = __webpack_require__("./node_modules/stream-buffers/lib/streambuffer.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_stream_buffers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_stream_buffers__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -716,14 +714,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var IpfsService = (function () {
     function IpfsService(http) {
         var _this = this;
         this.uploadIPFS = function (fileObj) {
             return new Promise(function (resolve, reject) {
                 _this.progress = 0;
-                var myReadableStreamBuffer = new __WEBPACK_IMPORTED_MODULE_5_stream_buffers___default.a.ReadableStreamBuffer({
+                var myReadableStreamBuffer = new __WEBPACK_IMPORTED_MODULE_4_stream_buffers___default.a.ReadableStreamBuffer({
                     chunkSize: 25000 //determines data transfer rate
                 });
                 _this.stream = _this.node.files.addReadableStream();
@@ -735,7 +732,7 @@ var IpfsService = (function () {
                     myReadableStreamBuffer.resume();
                 });
                 _this.stream.write(myReadableStreamBuffer);
-                myReadableStreamBuffer.put(__WEBPACK_IMPORTED_MODULE_3_buffer__["Buffer"].from(fileObj));
+                myReadableStreamBuffer.put(__WEBPACK_IMPORTED_MODULE_2_buffer__["Buffer"].from(fileObj));
                 myReadableStreamBuffer.stop();
                 myReadableStreamBuffer.on('end', function () {
                     _this.stream.end();
@@ -745,9 +742,8 @@ var IpfsService = (function () {
         };
         this.http = http;
         // Create an IPFS node
-        this.client = new __WEBPACK_IMPORTED_MODULE_2_webtorrent___default.a();
         var repoPath = 'ipfs-' + Math.random();
-        this.node = new __WEBPACK_IMPORTED_MODULE_4_ipfs___default.a({
+        this.node = new __WEBPACK_IMPORTED_MODULE_3_ipfs___default.a({
             repo: 'ipfs-' + Math.random()
         });
         this.node.on('ready', function () { return console.log('Online status: ', _this.node.isOnline() ? 'online' : 'offline'); });
@@ -1168,84 +1164,7 @@ module.exports = __webpack_require__("./src/main.ts");
 
 /***/ }),
 
-/***/ 19:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
 /***/ 2:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 20:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 21:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 22:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 23:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 24:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 25:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 26:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 27:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 28:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 29:
 /***/ (function(module, exports) {
 
 /* (ignored) */
@@ -1259,119 +1178,7 @@ module.exports = __webpack_require__("./src/main.ts");
 
 /***/ }),
 
-/***/ 30:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 31:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 32:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 33:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 34:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 35:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 36:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 37:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 38:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 39:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
 /***/ 4:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 40:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 41:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 42:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 43:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 44:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 45:
 /***/ (function(module, exports) {
 
 /* (ignored) */
