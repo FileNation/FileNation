@@ -32,7 +32,7 @@
 
 
     <!-- Displays progress of file upload-->
-    <div class="progressBarTitle" *ngIf="!progress && showUpdate">Checking file...</div>
+    <div class="progressBarTitle" *ngIf="!progress && showUpdate"></div>
     <div class="progressBar" *ngIf="progress && showUpdate && this.completed < this.totalFiles">Upload progress: <br> {{(this.progress / this.parentSize *100).toFixed(1)}} %</div>
 
 
