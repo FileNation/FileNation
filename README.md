@@ -41,11 +41,11 @@ There you go. If you later wish to build the code for production please run:
 
 ## Tech Stack
 
-**Main Framework**: [Angular](https://angular.io/)
+**Main Framework**: [Angular](https://angular.io/) Lead: @alexsicart
 
 **Libraries**: [IPFS](https://ipfs.io/)
 
-**Server**: Private (Koa)
+**Server**: Private (Python) Lead: @polbaladas
 
 ## Contributors
 
