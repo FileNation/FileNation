@@ -496,7 +496,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/input/input.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\n<!-- this is the loading to the ipfs spinner stuff -->\n<div class=\"spinner-container\" *ngIf=\"(!form && !submitResponse)\">\n  <div class=\"spinner-background\"></div>\n  <img class=\"spinner-anim1 spinner-pos\" src=\"../assets/snapcloud-logo-background2.png\" alt=\"\" style=\"height: 30vh; position: absolute;\"/>\n  <img class=\"spinner-anim2 spinner-pos\" src=\"../assets/snapcloud-logo-background-pink.png\" alt=\"\" style=\"height: 30vh; position: absolute;\"/>\n  <div id=\"animatedLoader\" class=\"sequencer\">{{animateStyles()}}initiating sequence</div>\n</div>\n\n\n<div class=\"spinner-container-out\" *ngIf=\"(!form && submitResponse)\">\n  <div class=\"spinner-background\"></div>\n  <img class=\"spinner-anim1 spinner-pos\" src=\"../assets/snapcloud-logo-background2.png\" alt=\"\" style=\"height: 30vh; position: absolute;\"/>\n  <img class=\"spinner-anim2 spinner-pos\" src=\"../assets/snapcloud-logo-background-pink.png\" alt=\"\" style=\"height: 30vh; position: absolute;\"/>\n  <h1 id=\"animatedLoader\" class=\"spinner-pos\"></h1>\n</div>\n\n<div class=\"container\" *ngIf=\"form\">\n\n\n  <div class=\"topHolder\">\n    <!-- Loading spinner -->\n\n    <!-- Upload icon and button-->\n    <div class=\"image-upload\" *ngIf=\"!showUpdate\">\n      <label for=\"file-input\">\n        <button title =\"Add Your Files\" (click)=\"file.click()\" id=\"uploadCircle\"mat-fab><img id=\"upload-img\" src=\"../../assets/add-plus-button.png\"/></button>\n      </label><p id=\"addYourFiles\">Upload your files</p>\n      <app-dragzone #file [onUpload]='upload'></app-dragzone>\n    </div>\n\n\n\n    <!-- Displays progress of file upload-->\n    <div class=\"progressBarTitle\" *ngIf=\"!progress && showUpdate\">Checking file...</div>\n    <div class=\"progressBar\" *ngIf=\"progress && showUpdate && this.completed < this.totalFiles\">Upload progress: <br> {{(this.progress / this.parentSize *100).toFixed(1)}} %</div>\n\n\n    <!-- Displays file name once uploaded and allows user to change selection -->\n    <div  class=\"fileFeedback\" *ngIf=\"file.length > 0\">\n      <p class=\"selectedFile\"><strong>File Selected:</strong><br> <span class=\"fileName2\" style=\"color:#0099cc\">{{this.name}}</span></p>\n      <button class=\"changeButton\" mat-raised-button color=\"accent\" (click)=\"toggleFile()\">Change file</button>\n    </div>\n\n    <div class=\"form-input\">\n      <form class=\"example-form\" (ngSubmit)=\"onTestPost()\" >\n        <mat-input-container class=\"example-full-width\">\n          <input matInput placeholder=\"Send Files to\" [(ngModel)]=\"data.to\" [formControl]=\"toEmailFormControl\" required>\n          <mat-error *ngIf=\"toEmailFormControl.hasError('pattern')\">\n            Please enter a valid email address\n          </mat-error>\n          <mat-error *ngIf=\"toEmailFormControl.hasError('required')\">\n            Email is <strong>required</strong>\n          </mat-error>\n        </mat-input-container>\n        <mat-input-container class=\"example-full-width\">\n          <input matInput placeholder=\"Your Email\" [(ngModel)]=\"data.from\" [formControl]=\"fromEmailFormControl\" required>\n          <mat-error *ngIf=\"fromEmailFormControl.hasError('pattern')\">\n            Please enter a valid email address\n          </mat-error>\n          <mat-error *ngIf=\"fromEmailFormControl.hasError('required')\">\n            Email is <strong>required</strong>\n          </mat-error>\n        </mat-input-container>\n\n        <mat-form-field class=\"example-full-width\">\n          <textarea matInput placeholder=\"Message\" matTextareaAutosize matAutosizeMinRows=\"2\"\n                    matAutosizeMaxRows=\"3\" [(ngModel)]=\"data.message\" [formControl]=\"messageFormControl\">\n          <mat-error *ngIf=\"messageFormControl.hasError('pattern')\">\n            Please enter a valid message\n          </mat-error>\n          <mat-error *ngIf=\"messageFormControl.hasError('required')\">\n            Message is <strong>required</strong>\n          </mat-error></textarea>\n        </mat-form-field>\n        <button mat-raised-button color=\"accent\" type=\"submit\">Send</button>\n      </form>\n    </div>\n  </div>\n</div>\n\n<!-- <div class=\"g-recaptcha\" data-sitekey=\"6LcokjIUAAAAAJnGe8_lM3HlcQktt1Wg7gMYib-N\"> </div> -->\n\n\n\n\n<!-- Placeholder -->\n<div *ngIf=\"submit\">\n  <h2></h2>\n</div>\n\n<!-- Displays once file has been uploaded and sent -->\n<div class=\"successMessage\" *ngIf=\"submitResponse\">\n  <h2>The below file has been added to IPFS and sent to: <br/>\n    <span class=\"senderEmail\" style=\"color:#0099cc\">{{this.data.to}} </span>\n  </h2>\n  <span class=\"fileName\">{{this.name}}</span>\n  <button class=\"successButton\" mat-raised-button color=\"accent\" (click)=\"refresh()\">Send another file</button>\n</div>\n\n\n<!-- <br>\n<div class=\"center\" >\n<mat-nav-list>\n<mat-list-item *ngFor=\"let link of hashes\">\n<a mat-line href=\"https://ipfs.io/ipfs/{{link[0].hash}}\" target=\"_blank\">{{link[0].hash}}</a>\n<button mat-icon-button (click)=\"showInfo(link)\">\n<i class=\"material-icons\">note</i></button>\n</mat-list-item>\n</mat-nav-list>\n</div> -->\n"
+module.exports = "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\n<!-- this is the loading to the ipfs spinner stuff -->\n<div class=\"spinner-container\" *ngIf=\"(!form && !submitResponse)\">\n  <div class=\"spinner-background\"></div>\n  <img class=\"spinner-anim1 spinner-pos\" src=\"../assets/snapcloud-logo-background2.png\" alt=\"\" style=\"height: 30vh; position: absolute;\"/>\n  <img class=\"spinner-anim2 spinner-pos\" src=\"../assets/snapcloud-logo-background-pink.png\" alt=\"\" style=\"height: 30vh; position: absolute;\"/>\n  <div id=\"animatedLoader\" class=\"sequencer\">{{animateStyles()}}initiating sequence</div>\n</div>\n\n\n<div class=\"spinner-container-out\" *ngIf=\"(!form && submitResponse)\">\n  <div class=\"spinner-background\"></div>\n  <img class=\"spinner-anim1 spinner-pos\" src=\"../assets/snapcloud-logo-background2.png\" alt=\"\" style=\"height: 30vh; position: absolute;\"/>\n  <img class=\"spinner-anim2 spinner-pos\" src=\"../assets/snapcloud-logo-background-pink.png\" alt=\"\" style=\"height: 30vh; position: absolute;\"/>\n  <h1 id=\"animatedLoader\" class=\"spinner-pos\"></h1>\n</div>\n\n<div class=\"container\" *ngIf=\"form\">\n\n\n  <div class=\"topHolder\">\n    <!-- Loading spinner -->\n\n    <!-- Upload icon and button-->\n    <div class=\"image-upload\" *ngIf=\"!showUpdate\">\n      <label for=\"file-input\">\n        <button title =\"Add Your Files\" (click)=\"file.click()\" id=\"uploadCircle\"mat-fab><img id=\"upload-img\" src=\"../../assets/add-plus-button.png\"/></button>\n      </label><p id=\"addYourFiles\">Upload your files</p>\n      <app-dragzone #file [onUpload]='upload'></app-dragzone>\n    </div>\n\n\n\n    <!-- Displays progress of file upload-->\n    <div class=\"progressBarTitle\" *ngIf=\"!progress && showUpdate && !this.completed\">Checking Files...</div>\n    <div class=\"progressBar\" *ngIf=\"progress && showUpdate && this.completed < this.totalFiles\">Upload progress: <br> {{(this.progress / this.parentSize *100).toFixed(1)}} %</div>\n\n\n    <!-- Displays file name once uploaded and allows user to change selection -->\n    <div  class=\"fileFeedback\" *ngIf=\"file.length > 0\">\n      <p class=\"selectedFile\"><strong>File Selected:</strong><br> <span class=\"fileName2\" style=\"color:#0099cc\">{{this.name}}</span></p>\n      <button class=\"changeButton\" mat-raised-button color=\"accent\" (click)=\"toggleFile()\">Change file</button>\n    </div>\n\n    <div class=\"form-input\">\n      <form class=\"example-form\" (ngSubmit)=\"onTestPost()\" >\n        <mat-input-container class=\"example-full-width\">\n          <input matInput placeholder=\"Send Files to\" [(ngModel)]=\"data.to\" [formControl]=\"toEmailFormControl\" required>\n          <mat-error *ngIf=\"toEmailFormControl.hasError('pattern')\">\n            Please enter a valid email address\n          </mat-error>\n          <mat-error *ngIf=\"toEmailFormControl.hasError('required')\">\n            Email is <strong>required</strong>\n          </mat-error>\n        </mat-input-container>\n        <mat-input-container class=\"example-full-width\">\n          <input matInput placeholder=\"Your Email\" [(ngModel)]=\"data.from\" [formControl]=\"fromEmailFormControl\" required>\n          <mat-error *ngIf=\"fromEmailFormControl.hasError('pattern')\">\n            Please enter a valid email address\n          </mat-error>\n          <mat-error *ngIf=\"fromEmailFormControl.hasError('required')\">\n            Email is <strong>required</strong>\n          </mat-error>\n        </mat-input-container>\n\n        <mat-form-field class=\"example-full-width\">\n          <textarea matInput placeholder=\"Message\" matTextareaAutosize matAutosizeMinRows=\"2\"\n                    matAutosizeMaxRows=\"3\" [(ngModel)]=\"data.message\" [formControl]=\"messageFormControl\">\n          <mat-error *ngIf=\"messageFormControl.hasError('pattern')\">\n            Please enter a valid message\n          </mat-error>\n          <mat-error *ngIf=\"messageFormControl.hasError('required')\">\n            Message is <strong>required</strong>\n          </mat-error></textarea>\n        </mat-form-field>\n        <button mat-raised-button color=\"accent\" type=\"submit\">Send</button>\n      </form>\n    </div>\n  </div>\n</div>\n\n<!-- <div class=\"g-recaptcha\" data-sitekey=\"6LcokjIUAAAAAJnGe8_lM3HlcQktt1Wg7gMYib-N\"> </div> -->\n\n\n\n\n<!-- Placeholder -->\n<div *ngIf=\"submit\">\n  <h2></h2>\n</div>\n\n<!-- Displays once file has been uploaded and sent -->\n<div class=\"successMessage\" *ngIf=\"submitResponse\">\n  <h2>The below file has been added to IPFS and sent to: <br/>\n    <span class=\"senderEmail\" style=\"color:#0099cc\">{{this.data.to}} </span>\n  </h2>\n  <span class=\"fileName\">{{this.name}}</span>\n  <button class=\"successButton\" mat-raised-button color=\"accent\" (click)=\"refresh()\">Send another file</button>\n</div>\n\n\n<!-- <br>\n<div class=\"center\" >\n<mat-nav-list>\n<mat-list-item *ngFor=\"let link of hashes\">\n<a mat-line href=\"https://ipfs.io/ipfs/{{link[0].hash}}\" target=\"_blank\">{{link[0].hash}}</a>\n<button mat-icon-button (click)=\"showInfo(link)\">\n<i class=\"material-icons\">note</i></button>\n</mat-list-item>\n</mat-nav-list>\n</div> -->\n"
 
 /***/ }),
 
@@ -565,18 +565,25 @@ var InputComponent = (function () {
                 _this.name = concatName;
                 _this.parentSize = concatSize_1;
                 file.forEach(function (el, key) {
-                    _this.ipfsService.uploadIPFS(el)
-                        .then(function (torrent) {
-                        try {
-                            _this.hashes.push(torrent);
-                            _this.file.push('<br>' + 'https://ipfs.io/ipfs/' + _this.hashes[key].hash + '<br><br>');
-                            _this.data.hashes = (_this.file);
-                        }
-                        catch (e) {
-                        }
-                    }).then(function () {
-                        _this.completed++;
-                    });
+                    console.log(el);
+                    var file = el;
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        console.log(reader.result);
+                        _this.ipfsService.uploadIPFS(reader.result)
+                            .then(function (torrent) {
+                            try {
+                                _this.hashes.push(torrent);
+                                _this.file.push('<br>' + 'https://ipfs.io/ipfs/' + _this.hashes[key].hash + '<br><br>');
+                                _this.data.hashes = (_this.file);
+                            }
+                            catch (e) {
+                            }
+                        }).then(function () {
+                            _this.completed++;
+                        });
+                    };
+                    reader.readAsArrayBuffer(file);
                 });
             }
             else {
@@ -715,29 +722,25 @@ var IpfsService = (function () {
         var _this = this;
         this.uploadIPFS = function (fileObj) {
             return new Promise(function (resolve, reject) {
-                _this.client.seed(fileObj, function (torrent) {
-                    torrent.files[0].getBuffer(function (err, buffer) {
-                        _this.progress = 0;
-                        var myReadableStreamBuffer = new __WEBPACK_IMPORTED_MODULE_5_stream_buffers___default.a.ReadableStreamBuffer({
-                            chunkSize: 25000 //determines data transfer rate
-                        });
-                        _this.stream = _this.node.files.addReadableStream();
-                        _this.stream.on('data', function (file) {
-                            resolve(file);
-                        });
-                        myReadableStreamBuffer.on('data', function (chunk) {
-                            _this.progress += chunk.byteLength;
-                            myReadableStreamBuffer.resume();
-                        });
-                        _this.stream.write(myReadableStreamBuffer);
-                        myReadableStreamBuffer.put(__WEBPACK_IMPORTED_MODULE_3_buffer__["Buffer"].from(buffer));
-                        myReadableStreamBuffer.stop();
-                        myReadableStreamBuffer.on('end', function () {
-                            _this.stream.end();
-                        });
-                        myReadableStreamBuffer.resume();
-                    });
+                _this.progress = 0;
+                var myReadableStreamBuffer = new __WEBPACK_IMPORTED_MODULE_5_stream_buffers___default.a.ReadableStreamBuffer({
+                    chunkSize: 25000 //determines data transfer rate
                 });
+                _this.stream = _this.node.files.addReadableStream();
+                _this.stream.on('data', function (file) {
+                    resolve(file);
+                });
+                myReadableStreamBuffer.on('data', function (chunk) {
+                    _this.progress += chunk.byteLength;
+                    myReadableStreamBuffer.resume();
+                });
+                _this.stream.write(myReadableStreamBuffer);
+                myReadableStreamBuffer.put(__WEBPACK_IMPORTED_MODULE_3_buffer__["Buffer"].from(fileObj));
+                myReadableStreamBuffer.stop();
+                myReadableStreamBuffer.on('end', function () {
+                    _this.stream.end();
+                });
+                myReadableStreamBuffer.resume();
             });
         };
         this.http = http;
