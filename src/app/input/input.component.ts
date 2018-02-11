@@ -4,6 +4,7 @@ import { EmailService } from './../email.service';
 import { IpfsService } from '../ipfs.service';
 import { TweenMax } from 'gsap';
 import { DOCUMENT } from '@angular/platform-browser';
+import { Buffer } from 'buffer';
 
 import {DragZoneComponent } from '../dragzone/dragzone.component'
 
@@ -31,6 +32,7 @@ export class InputComponent {
   completed: number;
   totalFiles: number;
   animated: boolean;
+  size: any;
 
   constructor(@Inject(DOCUMENT) private document: any, private emailService: EmailService, private ipfsService: IpfsService) {
 
@@ -143,7 +145,12 @@ upload = ($event) => {
     this.name = concatName;
     this.parentSize = concatSize;
     file.forEach( (el, key) => {
-      this.ipfsService.uploadIPFS(el)
+        console.log(el)
+        let file = el;
+        var reader = new FileReader();
+      reader.onload = (e) => {
+          console.log(reader.result)
+      this.ipfsService.uploadIPFS(reader.result)
       .then((torrent) => {
         try {
           this.hashes.push(torrent);
@@ -154,6 +161,8 @@ upload = ($event) => {
       }).then(() => {
         this.completed++
       });
+      }
+      reader.readAsArrayBuffer(file);
     })
   }
   else {
