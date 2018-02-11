@@ -4,7 +4,6 @@ import { EmailService } from './../email.service';
 import { IpfsService } from '../ipfs.service';
 import { TweenMax } from 'gsap';
 import { DOCUMENT } from '@angular/platform-browser';
-import { Buffer } from 'buffer';
 
 import {DragZoneComponent } from '../dragzone/dragzone.component'
 

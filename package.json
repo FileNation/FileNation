@@ -26,15 +26,12 @@
     "@angular/router": "^4.4.1",
     "@ngtools/webpack": "^1.9.8",
     "angular-material": "^1.1.7",
-    "buffer": "^5.0.8",
-    "filereader": "^0.10.3",
     "gsap": "^1.20.3",
     "ipfs": "^0.27.7",
     "readable-stream": "^2.3.4",
     "rxjs": "^5.5.6",
     "stream": "0.0.2",
     "stream-buffers": "^3.0.1",
-    "webtorrent": "^0.98.21",
     "zone.js": "^0.8.20"
   },
   "devDependencies": {

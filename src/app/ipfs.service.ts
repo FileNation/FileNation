@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import webtorrent from 'webtorrent';
 import {Buffer} from 'buffer';
 import IPFS from 'ipfs';
 import {bs58} from 'bs58'
@@ -9,7 +8,6 @@ import streamBuffers from 'stream-buffers';
 
 @Injectable()
 export class IpfsService {
-  client: any;
   http: Http;
   node: any;
   progress: number;
@@ -18,7 +16,6 @@ export class IpfsService {
   constructor(http: Http) {
     this.http = http;
     // Create an IPFS node
-    this.client = new webtorrent();
 
      const repoPath = 'ipfs-' + Math.random()
 
