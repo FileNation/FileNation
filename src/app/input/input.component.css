@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: stretch;
   justify-content: space-around;
-  margin-left: 120px;
+  margin-left: 13%;
 }
 .sequencer {
   position: absolute;
@@ -59,6 +59,7 @@
   width: 100%;
   display: flex;
   align-items: center;
+  margin-left: 10px !important;
 }
 
 .image-upload>input {
