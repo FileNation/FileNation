@@ -94,7 +94,7 @@ h2 {
   align-items: center;
   padding-right: 5vw;
   padding-top: 5px;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
   /* box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12); */
   z-index: 1000;
   bottom: 0px;
