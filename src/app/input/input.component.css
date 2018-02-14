@@ -23,7 +23,7 @@
 }
 
 .mat-fab.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent, .mat-raised-button .mat-primary .mat-fab.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
-  background-image: linear-gradient(to bottom left, #00c5ccff, #0063ccff) !important;
+  background-color: #168ccc !important;
 }
 @media screen and (max-width: 500px) {
   .container {
