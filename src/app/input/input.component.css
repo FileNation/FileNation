@@ -17,6 +17,7 @@
 
   font-size: 20px;
 }
+
 .mat-fab.mat-accent[_ngcontent-c3], .mat-mini-fab.mat-accent[_ngcontent-c3], .mat-raised-button.mat-accent[_ngcontent-c3], .mat-raised-button[_ngcontent-c3] .mat-primary[_ngcontent-c3] .mat-fab.mat-primary[_ngcontent-c3], .mat-mini-fab.mat-primary[_ngcontent-c3], .mat-raised-button.mat-primary[_ngcontent-c3]: hover {
   color: #008bcd !important;
   font-weight: 500 !important;
@@ -164,7 +165,6 @@ margin-bottom: 22px;
 
 .successButton {
   width: 150px;
-  margin-top: 50px;
 }
 
 .fileName {
