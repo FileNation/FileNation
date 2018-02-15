@@ -83,7 +83,7 @@
   color: blue;
   color: #005b7a;
   font-weight: 500;
-  height: 70px;
+  max-height: 70px;
   overflow: scroll;
 }
 
