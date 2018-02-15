@@ -38,7 +38,7 @@
 
     <!-- Displays file name once uploaded and allows user to change selection -->
     <div  class="fileFeedback" *ngIf="file.length > 0">
-      <p class="selectedFile"><strong>File Selected:</strong><br> <span class="fileName2" style="color:#0099cc">{{this.name}}</span></p>
+      <p class="selectedFile"><strong>File Selected:</strong><br> <span class="fileName2" style="color:#0099cc; overflow: auto; height:60px;">{{this.name}}</span></p>
       <button class="changeButton" mat-raised-button color="accent" (click)="toggleFile()">Change file</button>
     </div>
 
