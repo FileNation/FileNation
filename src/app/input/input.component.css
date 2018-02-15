@@ -81,10 +81,10 @@
   text-align: center;
   font-size: 1em;
   color: blue;
-  padding-left: 10px;
-  padding-right: 10px;
   color: #005b7a;
   font-weight: 500;
+  height: 70px;
+  overflow: scroll;
 }
 
 .selectedFile .fileName2 {
@@ -118,12 +118,14 @@ button {
 }
 
 .fileFeedback {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 40px;
-  height: 12vh !important;
+width: 100%;
+display: -ms-flexbox;
+display: flex;
+-ms-flex-direction: column;
+flex-direction: column;
+margin-bottom: 14px;
 }
+
 
 .changeButton {
   margin: auto;

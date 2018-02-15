@@ -144,11 +144,9 @@ upload = ($event) => {
     this.name = concatName;
     this.parentSize = concatSize;
     file.forEach( (el, key) => {
-        console.log(el)
         let file = el;
         var reader = new FileReader();
       reader.onload = (e) => {
-          console.log(reader.result)
       this.ipfsService.uploadIPFS(reader.result)
       .then((torrent) => {
         try {
