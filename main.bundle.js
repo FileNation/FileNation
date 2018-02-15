@@ -630,7 +630,7 @@ var InputComponent = (function () {
                 setTimeout(function () {
                     _this.submit = false;
                     _this.submitResponse = true;
-                }, 10000);
+                }, 3000);
                 this.emailService.sendEmail(this.data.to, this.data.from, this.data.message, this.data.hashes)
                     .subscribe(function (data) {
                     _this.postData = JSON.stringify(data),
