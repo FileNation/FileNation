@@ -54,7 +54,7 @@ h2 {
 }
 
 /*.spacer {
-  width: 0%;
+width: 0%;
 }*/
 .feedback {
   display: flex;
@@ -68,6 +68,7 @@ h2 {
 .img-twitter {
   height: 32px;
   filter:drop-shadow(10px 10px 10px black);
+  margin-left: 3.5px;
 }
 
 .dot-color {
@@ -77,9 +78,8 @@ h2 {
 .about-button {
   color: white;
   font-size: 1.5em;
-  filter:drop-shadow(0 0 10px black);
-  margin: 8px !important;
-  padding-left: 0px !important;
+  -webkit-filter: drop-shadow(0 0 10px black);
+  filter: drop-shadow(0 0 10px black);
 }
 
 .about-twitter {
@@ -107,8 +107,14 @@ h2 {
   flex-flow: row;
   margin-right: 2vw;
 }
+
+.base-buttons h1 {
+  padding-left: 0px !important;
+  margin: 8px !important;
+  font-weight: 600;
+}
 .base-twitter-follow-button {
- margin-left: 60px
+  margin-left: 60px
 }
 .feedback {
   display: flex;
