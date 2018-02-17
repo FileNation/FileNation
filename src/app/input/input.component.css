@@ -22,6 +22,9 @@
   color: #008bcd !important;
   font-weight: 500 !important;
 }
+.mat-form-field {
+    font-family: 'Josefin Sans', sans-serif !important;
+}
 
 .mat-fab.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent, .mat-raised-button .mat-primary .mat-fab.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
   background-color: #168ccc !important;

@@ -10,6 +10,8 @@
   background-color: white;
 }
 
+
+
 h1 {
   font-size: 3em;
   color: white;
@@ -26,7 +28,6 @@ h2 {
 }
 
 .body {
-  font-family: 'Roboto',sans-serif;
   overflow-x: hidden;
   width: 100vw;
   height: 100vh;
