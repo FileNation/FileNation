@@ -87,7 +87,7 @@ onTestPost() {
       setTimeout(()=> {
         this.submit = false;
         this.submitResponse = true;
-      }, 0);
+      }, 3000);
     this.emailService.sendEmail(this.data.to, this.data.from, this.data.message, this.data.hashes)
     .subscribe(
       data => {
