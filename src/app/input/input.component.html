@@ -1,6 +1,6 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!-- this is the loading to the ipfs spinner stuff -->
-<!-- <div class="spinner-container" *ngIf="(!form && !submitResponse)">
+<div class="spinner-container" *ngIf="(!form && !submitResponse)">
   <div class="spinner-background"></div>
   <img class="spinner-anim1 spinner-pos" src="../assets/snapcloud-logo-background2.png" alt="" style="height: 30vh; position: absolute;"/>
   <img class="spinner-anim2 spinner-pos" src="../assets/snapcloud-logo-background-pink.png" alt="" style="height: 30vh; position: absolute;"/>
@@ -13,9 +13,10 @@
   <img class="spinner-anim1 spinner-pos" src="../assets/snapcloud-logo-background2.png" alt="" style="height: 30vh; position: absolute;"/>
   <img class="spinner-anim2 spinner-pos" src="../assets/snapcloud-logo-background-pink.png" alt="" style="height: 30vh; position: absolute;"/>
   <h1 id="animatedLoader" class="spinner-pos"></h1>
-</div> -->
+</div>
 
 <div class="container" *ngIf="form">
+
 
   <div class="topHolder">
     <!-- Loading spinner -->
@@ -24,21 +25,21 @@
     <div class="image-upload" *ngIf="!showUpdate">
       <label for="file-input">
         <button title ="Add Your Files" (click)="file.click()" id="uploadCircle"mat-fab><img id="upload-img" src="../../assets/add-plus-button.png"/></button>
-      </label><p id="addYourFiles">Add your files</p>
+      </label><p id="addYourFiles">Upload your files</p>
       <app-dragzone #file [onUpload]='upload'></app-dragzone>
     </div>
 
 
 
     <!-- Displays progress of file upload-->
-    <div class="progressBarTitle" *ngIf="!progress && showUpdate && !this.completed">Checking files...</div>
+    <div class="progressBarTitle" *ngIf="!progress && showUpdate && !this.completed">Checking Files...</div>
     <div class="progressBar" *ngIf="progress && showUpdate && this.completed < this.totalFiles">Upload progress: <br> {{(this.progress / this.parentSize *100).toFixed(1)}} %</div>
 
 
     <!-- Displays file name once uploaded and allows user to change selection -->
     <div  class="fileFeedback" *ngIf="file.length > 0">
-      <p class="selectedFile"><strong>Files Selected:</strong><br> <span class="fileName2" style="color:#0099cc; overflow: auto; height:60px;">{{this.name}}</span></p>
-      <button class="changeButton" mat-raised-button color="accent" (click)="toggleFile()">Change files</button>
+      <p class="selectedFile"><strong>File Selected:</strong><br> <span class="fileName2" style="color:#0099cc">{{this.name}}</span></p>
+      <button class="changeButton" mat-raised-button color="accent" (click)="toggleFile()">Change file</button>
     </div>
 
     <div class="form-input">

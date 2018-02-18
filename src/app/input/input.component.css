@@ -288,7 +288,6 @@ input[type="file"] {
   top:0;
 }
 .spinner-background {
-  background-color: white;
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -296,7 +295,6 @@ input[type="file"] {
 .spinner-container-out {
   opacity: 0;
   animation: fadeout linear 0.5s;
-  background-color: white;
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -307,6 +305,7 @@ input[type="file"] {
   left: 42%;
   top:42%;
   opacity: 1.0;
+  filter: drop-shadow(0 0 80px white);
 }
 .spinner-anim1 {
   animation: spin2 5s ease infinite;

@@ -87,7 +87,7 @@ onTestPost() {
       setTimeout(()=> {
         this.submit = false;
         this.submitResponse = true;
-      }, 1000);
+      }, 2500);
     this.emailService.sendEmail(this.data.to, this.data.from, this.data.message, this.data.hashes)
     .subscribe(
       data => {
@@ -151,7 +151,7 @@ upload = ($event) => {
       .then((torrent) => {
         try {
           this.hashes.push(torrent);
-          this.file.push('https://ipfs.io/ipfs/' + this.hashes[key].hash);
+          this.file.push('<br>' + 'https://ipfs.io/ipfs/' + this.hashes[key].hash + '<br><br>');
           this.data.hashes = (this.file)
         } catch (e) {
         }
@@ -166,5 +166,4 @@ upload = ($event) => {
     alert("Sorry, still uploading previous file!")
   }
 }
-
-    }
+}
