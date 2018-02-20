@@ -11,7 +11,7 @@ export class EmailService {
   }
 
   sendEmail(to, from, message, hashes) {
-    return this.http.post('https://mighty-headland-68035.herokuapp.com/createEmail',
+    return this.http.post('http://174.138.5.9/api/createEmail/',
     {to, from, message, hashes})
     .map(res => res.json());
   }
