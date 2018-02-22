@@ -399,7 +399,7 @@ var EmailService = (function () {
         this.http = http;
     }
     EmailService.prototype.sendEmail = function (to, from, message, hashes) {
-        return this.http.post('https://mighty-headland-68035.herokuapp.com/createEmail', { to: to, from: from, message: message, hashes: hashes })
+        return this.http.post('https://email.filenation.io/api/createEmail/', { to: to, from: from, message: message, hashes: hashes })
             .map(function (res) { return res.json(); });
     };
     return EmailService;
