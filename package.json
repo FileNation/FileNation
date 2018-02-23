@@ -24,7 +24,7 @@
     "@angular/platform-browser": "^4.4.1",
     "@angular/platform-browser-dynamic": "^4.4.1",
     "@angular/router": "^4.4.1",
-    "@ngtools/webpack": "^1.10.0",
+    "@ngtools/webpack": "^1.10.1",
     "angular-material": "^1.1.7",
     "buffer": "^5.1.0",
     "gsap": "^1.20.4",
@@ -36,7 +36,7 @@
     "zone.js": "^0.8.20"
   },
   "devDependencies": {
-    "@angular/cli": "^1.7.0",
+    "@angular/cli": "^1.7.1",
     "@angular/compiler-cli": "^4.4.1",
     "@angular/language-service": "^4.4.1",
     "@types/jasmine": "^2.8.6",
@@ -45,8 +45,8 @@
     "autoprefixer": "^6.5.3",
     "circular-dependency-plugin": "^3.0.0",
     "codelyzer": "~3.0.1",
-    "copy-webpack-plugin": "^4.4.1",
-    "css-loader": "^0.28.9",
+    "copy-webpack-plugin": "^4.4.2",
+    "css-loader": "^0.28.10",
     "cssnano": "^3.10.0",
     "exports-loader": "^0.6.3",
     "file-loader": "^0.10.0",
