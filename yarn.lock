@@ -2,27 +2,27 @@
 # yarn lockfile v1
 
 
-"@angular-devkit/build-optimizer@0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/build-optimizer/-/build-optimizer-0.3.1.tgz#6a26a46c58858c7b67833c6d8a81198fa17d23e7"
+"@angular-devkit/build-optimizer@0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/build-optimizer/-/build-optimizer-0.3.2.tgz#77d4d1e4fcd09575f0200e2d6d21c1a3f995096f"
   dependencies:
     loader-utils "^1.1.0"
     source-map "^0.5.6"
     typescript "~2.6.2"
     webpack-sources "^1.0.1"
 
-"@angular-devkit/core@0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-0.3.1.tgz#6aeb990dec92d06360597928748aeeedc21afdde"
+"@angular-devkit/core@0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-0.3.2.tgz#b6fd6aa2e4f4ac3c39478198ba91a53d4c0f88d5"
   dependencies:
     ajv "~5.5.1"
     chokidar "^1.7.0"
     rxjs "^5.5.6"
     source-map "^0.5.6"
 
-"@angular-devkit/schematics@0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-0.3.1.tgz#eb40ca260681f4f420ca8ed41f754fb3ea689f81"
+"@angular-devkit/schematics@0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-0.3.2.tgz#09a2268fad61f4f956f42db87913b8748c512a78"
   dependencies:
     "@ngtools/json-schema" "^1.1.0"
     rxjs "^5.5.6"
@@ -39,17 +39,18 @@
   dependencies:
     tslib "^1.7.1"
 
-"@angular/cli@^1.7.0":
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-1.7.0.tgz#63c56e6d36d57bcd9d9d9425bd806f590f518211"
+"@angular/cli@^1.7.1":
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-1.7.1.tgz#3a9d0b8314d4c54226f941beeb53071385c294e0"
   dependencies:
-    "@angular-devkit/build-optimizer" "0.3.1"
-    "@angular-devkit/core" "0.3.1"
-    "@angular-devkit/schematics" "0.3.1"
+    "@angular-devkit/build-optimizer" "0.3.2"
+    "@angular-devkit/core" "0.3.2"
+    "@angular-devkit/schematics" "0.3.2"
     "@ngtools/json-schema" "1.2.0"
-    "@ngtools/webpack" "1.10.0"
-    "@schematics/angular" "0.3.1"
-    "@schematics/package-update" "0.3.1"
+    "@ngtools/webpack" "1.10.1"
+    "@schematics/angular" "0.3.2"
+    "@schematics/package-update" "0.3.2"
+    ajv "^6.1.1"
     autoprefixer "^7.2.3"
     cache-loader "^1.2.0"
     chalk "~2.2.0"
@@ -183,9 +184,9 @@
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@ngtools/json-schema/-/json-schema-1.1.0.tgz#c3a0c544d62392acc2813a42c8a0dc6f58f86922"
 
-"@ngtools/webpack@1.10.0", "@ngtools/webpack@^1.10.0":
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-1.10.0.tgz#1e4f60bdba8cdb8aeb93ebb976e63bf175acd279"
+"@ngtools/webpack@1.10.1", "@ngtools/webpack@^1.10.1":
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-1.10.1.tgz#0af9de19a9716ce0247b6aad83ba9c5702766a03"
   dependencies:
     chalk "~2.2.0"
     enhanced-resolve "^3.1.0"
@@ -196,15 +197,15 @@
     tree-kill "^1.0.0"
     webpack-sources "^1.1.0"
 
-"@schematics/angular@0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-0.3.1.tgz#0f5185f5e718145031532fb03d127446e22ee9b8"
+"@schematics/angular@0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-0.3.2.tgz#be209a032a3e4577992d94fbaa14bd4bfde485e2"
   dependencies:
     typescript "~2.6.2"
 
-"@schematics/package-update@0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@schematics/package-update/-/package-update-0.3.1.tgz#b7662a2aeb724e0f162b916cc0937278a6a1e709"
+"@schematics/package-update@0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@schematics/package-update/-/package-update-0.3.2.tgz#c5a299ceba8b9e56f3e1f804f86f07664ec6e01c"
   dependencies:
     rxjs "^5.5.6"
     semver "^5.3.0"
@@ -338,7 +339,7 @@ ajv@^5.0.0, ajv@^5.1.0, ajv@^5.1.5, ajv@~5.5.1:
     fast-json-stable-stringify "^2.0.0"
     json-schema-traverse "^0.3.0"
 
-ajv@^6.1.0:
+ajv@^6.1.0, ajv@^6.1.1:
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.1.1.tgz#978d597fbc2b7d0e5a5c3ddeb149a682f2abfa0e"
   dependencies:
@@ -1607,7 +1608,20 @@ copy-descriptor@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
 
-copy-webpack-plugin@^4.4.1, copy-webpack-plugin@~4.4.1:
+copy-webpack-plugin@^4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/copy-webpack-plugin/-/copy-webpack-plugin-4.4.2.tgz#c92bcd7df4d5e42c51398cc36b23820d0d10446a"
+  dependencies:
+    cacache "^10.0.1"
+    find-cache-dir "^1.0.0"
+    globby "^7.1.1"
+    is-glob "^4.0.0"
+    loader-utils "^0.2.15"
+    minimatch "^3.0.4"
+    p-limit "^1.0.0"
+    serialize-javascript "^1.4.0"
+
+copy-webpack-plugin@~4.4.1:
   version "4.4.1"
   resolved "https://registry.yarnpkg.com/copy-webpack-plugin/-/copy-webpack-plugin-4.4.1.tgz#1e8c366211db6dc2ddee40e5a3e4fc661dd149e8"
   dependencies:
@@ -1734,9 +1748,9 @@ css-color-names@0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/css-color-names/-/css-color-names-0.0.4.tgz#808adc2e79cf84738069b646cb20ec27beb629e0"
 
-css-loader@^0.28.9:
-  version "0.28.9"
-  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-0.28.9.tgz#68064b85f4e271d7ce4c48a58300928e535d1c95"
+css-loader@^0.28.10:
+  version "0.28.10"
+  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-0.28.10.tgz#40282e79230f7bcb4e483efa631d670b735ebf42"
   dependencies:
     babel-code-frame "^6.26.0"
     css-selector-tokenizer "^0.7.0"
