@@ -63,9 +63,9 @@
           </mat-error>
         </mat-input-container>
 
-        <mat-form-field class="example-full-width">
+        <mat-form-field class="example-full-width" hintLabel="Max 250 characters">
           <textarea matInput placeholder="Message" matTextareaAutosize matAutosizeMinRows="2"
-                    matAutosizeMaxRows="3" [(ngModel)]="data.message" [formControl]="messageFormControl">
+                    matAutosizeMaxRows="3" maxlength="250" [(ngModel)]="data.message" [formControl]="messageFormControl">
           <mat-error *ngIf="messageFormControl.hasError('pattern')">
             Please enter a valid message
           </mat-error>
