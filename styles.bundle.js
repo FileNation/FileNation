@@ -23,7 +23,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 exports.i(__webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":false,\"importLoaders\":1}!./node_modules/postcss-loader/index.js?{\"ident\":\"postcss\"}!./node_modules/@angular/material/prebuilt-themes/indigo-pink.css"), "");
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\nhtml {\n  overflow: hidden; /*hacky but it works to solve the wierd screen margins...*/\n}\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\nhtml {\n  overflow: hidden; /*hacky but it works to solve the wierd screen margins...*/\n}\n.mat-progress-spinner circle, .mat-spinner circle {\n    stroke: #168ccc !important;\n}\n", ""]);
 
 // exports
 
