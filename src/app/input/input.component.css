@@ -42,7 +42,7 @@
 }
 
 .topHolder {
-  height: 450px;
+  height: 470px;
   width: 300px;
   background-color: white;
   display: flex;
@@ -76,9 +76,9 @@
 .progressBarTitle {
   text-align: center;
   font-size: 1.7em;
-  color: #005b7a;
+  color: #168ccc;
   font-family: 'Raleway', sans-serif;
-  margin-bottom: 40px;
+  margin-bottom: 23px;
 }
 
 .selectedFile {
@@ -211,6 +211,10 @@ h2 {
 
 p {
   font-size: 1.5em;
+}
+
+.spinner-margin {
+  margin-bottom: 15px;
 }
 
 .g-recaptcha {

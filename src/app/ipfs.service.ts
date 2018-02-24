@@ -27,7 +27,6 @@ export class IpfsService {
 }
   uploadIPFS = (fileObj) => {
     return new Promise((resolve, reject) => {
-
           this.progress = 0;
         let myReadableStreamBuffer = new streamBuffers.ReadableStreamBuffer({
           chunkSize: 100000   //determines data transfer rate

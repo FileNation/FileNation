@@ -2,5 +2,8 @@
 html {
   overflow: hidden; /*hacky but it works to solve the wierd screen margins...*/
 }
+.mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #168ccc !important;
+}
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css"
