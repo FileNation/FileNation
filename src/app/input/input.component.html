@@ -1,18 +1,18 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!-- this is the loading to the ipfs spinner stuff -->
 <!-- <div class="spinner-container" *ngIf="(!form && !submitResponse)">
-  <div class="spinner-background"></div>
-  <img class="spinner-anim1 spinner-pos" src="../assets/snapcloud-logo-background2.png" alt="" style="height: 30vh; position: absolute;"/>
-  <img class="spinner-anim2 spinner-pos" src="../assets/snapcloud-logo-background-pink.png" alt="" style="height: 30vh; position: absolute;"/>
-  <div id="animatedLoader" class="sequencer">{{animateStyles()}}initiating sequence</div>
+<div class="spinner-background"></div>
+<img class="spinner-anim1 spinner-pos" src="../assets/snapcloud-logo-background2.png" alt="" style="height: 30vh; position: absolute;"/>
+<img class="spinner-anim2 spinner-pos" src="../assets/snapcloud-logo-background-pink.png" alt="" style="height: 30vh; position: absolute;"/>
+<div id="animatedLoader" class="sequencer">{{animateStyles()}}initiating sequence</div>
 </div>
 
 
 <div class="spinner-container-out" *ngIf="(!form && submitResponse)">
-  <div class="spinner-background"></div>
-  <img class="spinner-anim1 spinner-pos" src="../assets/snapcloud-logo-background2.png" alt="" style="height: 30vh; position: absolute;"/>
-  <img class="spinner-anim2 spinner-pos" src="../assets/snapcloud-logo-background-pink.png" alt="" style="height: 30vh; position: absolute;"/>
-  <h1 id="animatedLoader" class="spinner-pos"></h1>
+<div class="spinner-background"></div>
+<img class="spinner-anim1 spinner-pos" src="../assets/snapcloud-logo-background2.png" alt="" style="height: 30vh; position: absolute;"/>
+<img class="spinner-anim2 spinner-pos" src="../assets/snapcloud-logo-background-pink.png" alt="" style="height: 30vh; position: absolute;"/>
+<h1 id="animatedLoader" class="spinner-pos"></h1>
 </div> -->
 
 <div class="container" *ngIf="form">
@@ -33,7 +33,15 @@
 
     <!-- Displays progress of file upload-->
     <div class="progressBarTitle" *ngIf="!progress && showUpdate && !this.completed">Checking Files...</div>
-    <div class="progressBar" *ngIf="progress && showUpdate && this.completed < this.totalFiles">Upload progress: <br> {{(this.progress / this.parentSize *100).toFixed(1)}} %</div>
+    <div class="progressBar" *ngIf="progress && showUpdate && this.completed < this.totalFiles">
+      <mat-progress-spinner
+      class="spinner-margin"
+      [color]="color"
+      [mode]="mode"
+      [value]= "value">
+    </mat-progress-spinner>
+    {{(this.progress / this.parentSize *100).toFixed(1)}} %
+  </div>
 
 
     <!-- Displays file name once uploaded and allows user to change selection -->
@@ -65,7 +73,7 @@
 
         <mat-form-field class="example-full-width" hintLabel="Max 250 characters">
           <textarea matInput placeholder="Message" matTextareaAutosize matAutosizeMinRows="2"
-                    matAutosizeMaxRows="3" maxlength="250" [(ngModel)]="data.message" [formControl]="messageFormControl">
+          matAutosizeMaxRows="3" maxlength="250" [(ngModel)]="data.message" [formControl]="messageFormControl">
           <mat-error *ngIf="messageFormControl.hasError('pattern')">
             Please enter a valid message
           </mat-error>

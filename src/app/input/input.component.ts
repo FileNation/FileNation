@@ -32,6 +32,8 @@ export class InputComponent {
   totalFiles: number;
   animated: boolean;
   size: any;
+  color = '#168ccc';
+  mode = 'indeterminate';
 
   constructor(@Inject(DOCUMENT) private document: any, private emailService: EmailService, private ipfsService: IpfsService) {
 
@@ -63,6 +65,9 @@ animateStyles() {
     1, {scrambleText:{text:'sending through IPFS', chars:'10', revealDelay:0.1, speed:0.3}}),
     this.animated = true;
 }
+
+  // this.value = (this.progress / this.parentSize *100).toFixed(1);
+
 
 //Verifies email inputs
 toEmailFormControl = new FormControl('', [
@@ -115,6 +120,9 @@ toggleFile() {
 getTransfer() {
   setInterval( ()=>this.progress = this.ipfsService.progress), 500;
 }
+// getSpinnerProgress() {
+//   this.progress / this.parentSize *100).toFixed(1);
+// }
 
 //Called when user opts to upload / send another file
 refresh() {

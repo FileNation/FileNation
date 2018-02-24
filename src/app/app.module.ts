@@ -5,7 +5,7 @@ import { FormsModule, FormControl, ReactiveFormsModule, FormArray } from '@angul
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 // import {MaterialModule} from '@angular/material';
-import {MatButtonModule, MatCheckboxModule, MatInputModule, MatListModule, MatProgressBarModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatInputModule, MatListModule, MatProgressBarModule, MatProgressSpinnerModule} from '@angular/material';
 
 import { IpfsService } from './ipfs.service'
 
@@ -45,7 +45,7 @@ import { DragZoneComponent } from './dragzone/dragzone.component';
     BrowserAnimationsModule,
     NoopAnimationsModule,
     [FormsModule, ReactiveFormsModule],
-    [MatButtonModule, MatCheckboxModule, MatInputModule, MatListModule, MatProgressBarModule],
+    [MatButtonModule, MatCheckboxModule, MatInputModule, MatListModule, MatProgressBarModule, MatProgressSpinnerModule],
     RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules})
 
   ],
