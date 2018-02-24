@@ -1,18 +1,18 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!-- this is the loading to the ipfs spinner stuff -->
 <!-- <div class="spinner-container" *ngIf="(!form && !submitResponse)">
-  <div class="spinner-background"></div>
-  <img class="spinner-anim1 spinner-pos" src="../assets/snapcloud-logo-background2.png" alt="" style="height: 30vh; position: absolute;"/>
-  <img class="spinner-anim2 spinner-pos" src="../assets/snapcloud-logo-background-pink.png" alt="" style="height: 30vh; position: absolute;"/>
-  <div id="animatedLoader" class="sequencer">{{animateStyles()}}initiating sequence</div>
+<div class="spinner-background"></div>
+<img class="spinner-anim1 spinner-pos" src="../assets/snapcloud-logo-background2.png" alt="" style="height: 30vh; position: absolute;"/>
+<img class="spinner-anim2 spinner-pos" src="../assets/snapcloud-logo-background-pink.png" alt="" style="height: 30vh; position: absolute;"/>
+<div id="animatedLoader" class="sequencer">{{animateStyles()}}initiating sequence</div>
 </div>
 
 
 <div class="spinner-container-out" *ngIf="(!form && submitResponse)">
-  <div class="spinner-background"></div>
-  <img class="spinner-anim1 spinner-pos" src="../assets/snapcloud-logo-background2.png" alt="" style="height: 30vh; position: absolute;"/>
-  <img class="spinner-anim2 spinner-pos" src="../assets/snapcloud-logo-background-pink.png" alt="" style="height: 30vh; position: absolute;"/>
-  <h1 id="animatedLoader" class="spinner-pos"></h1>
+<div class="spinner-background"></div>
+<img class="spinner-anim1 spinner-pos" src="../assets/snapcloud-logo-background2.png" alt="" style="height: 30vh; position: absolute;"/>
+<img class="spinner-anim2 spinner-pos" src="../assets/snapcloud-logo-background-pink.png" alt="" style="height: 30vh; position: absolute;"/>
+<h1 id="animatedLoader" class="spinner-pos"></h1>
 </div> -->
 
 <div class="container" *ngIf="form">
@@ -33,50 +33,57 @@
 
     <!-- Displays progress of file upload-->
     <div class="progressBarTitle" *ngIf="!progress && showUpdate && !this.completed">Checking Files...</div>
-    <div class="progressBar" *ngIf="progress && showUpdate && this.completed < this.totalFiles">Upload progress: <br> {{(this.progress / this.parentSize *100).toFixed(1)}} %</div>
-
-
-    <!-- Displays file name once uploaded and allows user to change selection -->
-    <div  class="fileFeedback" *ngIf="file.length > 0">
-      <p class="selectedFile"><strong>File Selected:</strong><br> <span class="fileName2" style="color:#0099cc">{{this.name}}</span></p>
-      <button class="changeButton" mat-raised-button color="accent" (click)="toggleFile()">Change file</button>
-    </div>
-
-    <div class="form-input">
-      <form class="example-form" (ngSubmit)="onTestPost()" >
-        <mat-input-container class="example-full-width">
-          <input matInput placeholder="Send Files to" [(ngModel)]="data.to" [formControl]="toEmailFormControl" required>
-          <mat-error *ngIf="toEmailFormControl.hasError('pattern')">
-            Please enter a valid email address
-          </mat-error>
-          <mat-error *ngIf="toEmailFormControl.hasError('required')">
-            Email is <strong>required</strong>
-          </mat-error>
-        </mat-input-container>
-        <mat-input-container class="example-full-width">
-          <input matInput placeholder="Your Email" [(ngModel)]="data.from" [formControl]="fromEmailFormControl" required>
-          <mat-error *ngIf="fromEmailFormControl.hasError('pattern')">
-            Please enter a valid email address
-          </mat-error>
-          <mat-error *ngIf="fromEmailFormControl.hasError('required')">
-            Email is <strong>required</strong>
-          </mat-error>
-        </mat-input-container>
-
-        <mat-form-field class="example-full-width" hintLabel="Max 250 characters">
-          <textarea matInput placeholder="Message" matTextareaAutosize matAutosizeMinRows="2"
-                    matAutosizeMaxRows="3" maxlength="250" [(ngModel)]="data.message" [formControl]="messageFormControl">
-          <mat-error *ngIf="messageFormControl.hasError('pattern')">
-            Please enter a valid message
-          </mat-error>
-          <mat-error *ngIf="messageFormControl.hasError('required')">
-            Message is <strong>required</strong>
-          </mat-error></textarea>
-        </mat-form-field>
-        <button mat-raised-button color="accent" type="submit">Send</button>
-      </form>
-    </div>
+    <div class="progressBar" *ngIf="progress && showUpdate && this.completed < this.totalFiles">
+      <mat-progress-spinner
+      class="example-margin"
+      [color]="primary"
+      [mode]="determinate"
+      [value]=`{{(this.progress / this.parentSize *100).toFixed(1)}}`>
+    </mat-progress-spinner>
   </div>
+
+
+  <!-- Displays file name once uploaded and allows user to change selection -->
+  <div  class="fileFeedback" *ngIf="file.length > 0">
+    <p class="selectedFile"><strong>File Selected:</strong><br> <span class="fileName2" style="color:#0099cc">{{this.name}}</span></p>
+    <button class="changeButton" mat-raised-button color="accent" (click)="toggleFile()">Change file</button>
+  </div>
+
+  <div class="form-input">
+    <form class="example-form" (ngSubmit)="onTestPost()" >
+      <mat-input-container class="example-full-width">
+        <input matInput placeholder="Send Files to" [(ngModel)]="data.to" [formControl]="toEmailFormControl" required>
+        <mat-error *ngIf="toEmailFormControl.hasError('pattern')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="toEmailFormControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-input-container>
+      <mat-input-container class="example-full-width">
+        <input matInput placeholder="Your Email" [(ngModel)]="data.from" [formControl]="fromEmailFormControl" required>
+        <mat-error *ngIf="fromEmailFormControl.hasError('pattern')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="fromEmailFormControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-input-container>
+
+      <mat-form-field class="example-full-width" hintLabel="Max 250 characters">
+        <textarea matInput placeholder="Message" matTextareaAutosize matAutosizeMinRows="2"
+        matAutosizeMaxRows="3" maxlength="250" [(ngModel)]="data.message" [formControl]="messageFormControl">
+        <mat-error *ngIf="messageFormControl.hasError('pattern')">
+          Please enter a valid message
+        </mat-error>
+        <mat-error *ngIf="messageFormControl.hasError('required')">
+          Message is <strong>required</strong>
+        </mat-error></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="accent" type="submit">Send</button>
+    </form>
+  </div>
+</div>
 </div>
 
 <!-- <div class="g-recaptcha" data-sitekey="6LcokjIUAAAAAJnGe8_lM3HlcQktt1Wg7gMYib-N"> </div> -->
