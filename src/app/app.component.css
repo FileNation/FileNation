@@ -65,7 +65,7 @@ h2 {
   height: 100%;
   flex-wrap: wrap;
   display: flex;
-  align-items: center;
+  margin-top: 60px;
 }
 
 
@@ -107,7 +107,7 @@ h2 {
   align-items: center;
   padding-right: 5vw;
   padding-top: 5px;
-  padding-bottom: 10px;
+  padding-bottom: 36px;
   /* box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12); */
   z-index: 1000;
   bottom: 0px;
@@ -118,7 +118,6 @@ h2 {
   justify-content: space-between;
   align-items: center;
   flex-flow: row;
-  margin-right: 2vw;
 }
 
 .base-buttons h1 {
@@ -214,6 +213,7 @@ h2 {
   align-items: center;
   margin-left: 5%;
 }
+
 .title-bar-theme-button {
   display: flex;
   flex-direction: row;
@@ -226,7 +226,7 @@ h2 {
 .title-bar-right-container {
   display: flex;
   align-items: center;
-  margin-right: 10%;
+  margin-right: 7%;
 }
 .github-mobile-button {
   display: none;
@@ -250,6 +250,7 @@ h2 {
   }
   .base-buttons {
     transform: scale(0.9);
+    margin-right: 6vw;
   }
   .feedback {
     transform: scale(0.9);
@@ -265,7 +266,7 @@ h2 {
   .base-buttons {
     justify-content: space-around;
     width: 100%;
-    margin-right: 0;
+    margin-right: 6vw;
   }
 }
 
