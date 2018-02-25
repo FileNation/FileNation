@@ -226,7 +226,7 @@ h2 {
 .title-bar-right-container {
   display: flex;
   align-items: center;
-  margin-right: 7%;
+  margin-right: 5%;
 }
 .github-mobile-button {
   display: none;
