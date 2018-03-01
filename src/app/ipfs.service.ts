@@ -42,7 +42,6 @@ export class IpfsService {
 
             })
 
-
             this.stream.write(myReadableStreamBuffer);
 
             myReadableStreamBuffer.put(Buffer.from(fileObj))

@@ -23,8 +23,9 @@ h1 {
 h2 {
   font-size: 1.4em;
   color: white;
-  margin-left: 240px;
   text-align: center;
+  margin-left: 20px;
+  filter: drop-shadow(10px 10px 10px black);
 }
 
 .body {
@@ -95,7 +96,7 @@ h2 {
   filter: drop-shadow(0 0 10px black);
 }
 
-.about-twitter {
+.about-link {
   text-decoration: none;
 }
 
@@ -257,6 +258,9 @@ h2 {
 }
 @media screen and (max-width: 491px) {
   .feedback {
+    display: none;
+  }
+  h2 {
     display: none;
   }
   .github-mobile-button {
