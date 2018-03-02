@@ -121,7 +121,8 @@ label button {
 button {
   border-radius: 3px;
   width: 20%;
-  margin: 15px;
+  margin: 10px;
+  margin-top: 30px;
   font-weight: 300;
 }
 
@@ -227,7 +228,7 @@ p {
 
 #addYourFiles {
   position: relative !important;
-  margin-top: 21px !important;
+  margin-top: 35px !important;
   font-weight: 300;
 }
 
@@ -239,6 +240,7 @@ input[type="file"] {
 #uploadCircle {
   cursor: pointer !important;
   z-index: 1000;
+  margin-left: 16px;
 }
 
 #upload-img {
