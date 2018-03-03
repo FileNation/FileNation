@@ -1,100 +1,19 @@
 webpackJsonp(["main"],{
 
 /***/ "./src/$$_gendir lazy recursive":
-/***/ (function(module, exports, __webpack_require__) {
-
-var map = {
-	"./about/about.module": [
-		"./src/app/about/about.module.ts",
-		0
-	]
-};
-function webpackAsyncContext(req) {
-	var ids = map[req];
-	if(!ids)
-		return Promise.reject(new Error("Cannot find module '" + req + "'."));
-	return __webpack_require__.e(ids[1]).then(function() {
-		return __webpack_require__(ids[0]);
-	});
-};
-webpackAsyncContext.keys = function webpackAsyncContextKeys() {
-	return Object.keys(map);
-};
-webpackAsyncContext.id = "./src/$$_gendir lazy recursive";
-module.exports = webpackAsyncContext;
-
-/***/ }),
-
-/***/ "./src/app/account/account.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".account {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n\n  width: 50vw;\n  max-width: 500px;\n  height: 70vh;\n  border-radius: 5px;\n  margin: 10px;\n  border: 3px solid #ff4081;\n}\n\n.username{\n  color: grey;\n  font-weight: bold;\n  /*background-color: #0099cc;*/\n  border-left: 1px solid grey;\n  height: 100%;\n  /*border-radius: 15px;*/\n  font-family: Helvetica;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-align: start;\n      align-items: flex-start;\n}\n#greet {\n  font-weight: lighter;\n  color: accent;\n  margin: 2px;\n}\n#text {\n\n  margin-left: 10px;\n}\n.navbar {\n  display: -ms-flexbox;\n  display: flex;\n  background-color: #f0eeec;\n  height: 6%;\n  width: 100%;\n  -ms-flex-direction: row;\n      flex-direction: row;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  box-shadow:0px 1px 1px grey;\n  -ms-flex-align: center;\n      align-items: center;\n}\n.files {\n\n}\nbutton {\n  /*width: %;*/\n  height: 60%;\n  /*margin-right: 2px;*/\n  border-radius: 5px;\n  /*margin: 5px;*/\n  color: white;\n  background-color: #ff4081;\n  border: none;\n    /*background-color: #f0eeec; */\n}\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "./src/app/account/account.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"account\">\n  <div class=\"navbar\">\n\n    <div class=\"files\">\n      <button (click)=\"onFiles()\">Files</button>\n    </div>\n    <div class=\"contacts\">\n      <button (click)=\"onContacts()\">Contacts</button>\n    </div>\n    <div class=\"username\">\n      <div id=\"greet\">\n        hello, <br />\n      </div>\n      <div id=\"text\">\n        {{this.user.split('@')[0]}}\n      </div>\n    </div>\n  </div>\n  <div *ngIf=\"this.filePage === true\" >\n    <div *ngFor=\"let file of this.files\">\n\n      {{file}}\n\n    </div>\n    accounts works!\n  </div>\n  <div *ngIf=\"this.contactsPage === true\">\n\n  </div>\n\n</div>\n"
-
-/***/ }),
-
-/***/ "./src/app/account/account.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AccountComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var AccountComponent = (function () {
-    function AccountComponent() {
-        this.user = 'eddyfredyreding@gmail.com';
-        this.files = ['https://ipfs.io/ipfs/Qmd1UhG3GaAo1apjm6dHXzsMkwsAMjHqYfoViyrPuQeJSq', 'https://ipfs.io/ipfs/QmUPsPmpf96fNyoTB5mfQxRN6eS9tXn12VtxdQBs1QuYGx'];
-        this.filePage = true;
-        this.contactsPage = false;
-    }
-    AccountComponent.prototype.onFiles = function () {
-        this.filePage = true;
-        this.contactsPage = false;
-    };
-    AccountComponent.prototype.onContacts = function () {
-        this.filePage = false;
-        this.contactsPage = true;
-    };
-    AccountComponent.prototype.ngOnInit = function () {
-    };
-    return AccountComponent;
-}());
-AccountComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
-        selector: 'app-account',
-        template: __webpack_require__("./src/app/account/account.component.html"),
-        styles: [__webpack_require__("./src/app/account/account.component.css")]
-    }),
-    __metadata("design:paramtypes", [])
-], AccountComponent);
-
-//# sourceMappingURL=account.component.js.map
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = "./src/$$_gendir lazy recursive";
 
 /***/ }),
 
@@ -187,15 +106,12 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__("./node_modules/@angular/material/esm5/material.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ipfs_service__ = __webpack_require__("./src/app/ipfs.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__transfer_transfer_component__ = __webpack_require__("./src/app/transfer/transfer.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__input_input_component__ = __webpack_require__("./src/app/input/input.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__test_test_component__ = __webpack_require__("./src/app/test/test.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__log_in_log_in_component__ = __webpack_require__("./src/app/log-in/log-in.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__account_account_component__ = __webpack_require__("./src/app/account/account.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__app_routes__ = __webpack_require__("./src/app/app.routes.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__home_home_component__ = __webpack_require__("./src/app/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__dragzone_dragzone_component__ = __webpack_require__("./src/app/dragzone/dragzone.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__input_input_component__ = __webpack_require__("./src/app/input/input.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_routes__ = __webpack_require__("./src/app/app.routes.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__home_home_component__ = __webpack_require__("./src/app/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__dragzone_dragzone_component__ = __webpack_require__("./src/app/dragzone/dragzone.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__transfer_transfer_component__ = __webpack_require__("./src/app/transfer/transfer.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -213,13 +129,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
-
-
-
 // get use with routes and modular
 
 // import your router file
+
 
 
 
@@ -232,13 +145,10 @@ AppModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["M" /* NgModule */])({
         declarations: [
             __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__transfer_transfer_component__["a" /* TransferComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__input_input_component__["a" /* InputComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__test_test_component__["a" /* TestComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__log_in_log_in_component__["a" /* LogInComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__account_account_component__["a" /* AccountComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__home_home_component__["a" /* HomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__dragzone_dragzone_component__["a" /* DragZoneComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__input_input_component__["a" /* InputComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__home_home_component__["a" /* HomeComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__dragzone_dragzone_component__["a" /* DragZoneComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__transfer_transfer_component__["a" /* TransferComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -247,7 +157,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__["b" /* NoopAnimationsModule */],
             [__WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormsModule */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["i" /* ReactiveFormsModule */]],
             [__WEBPACK_IMPORTED_MODULE_5__angular_material__["a" /* MatButtonModule */], __WEBPACK_IMPORTED_MODULE_5__angular_material__["b" /* MatCheckboxModule */], __WEBPACK_IMPORTED_MODULE_5__angular_material__["c" /* MatInputModule */], __WEBPACK_IMPORTED_MODULE_5__angular_material__["d" /* MatListModule */], __WEBPACK_IMPORTED_MODULE_5__angular_material__["e" /* MatProgressBarModule */], __WEBPACK_IMPORTED_MODULE_5__angular_material__["f" /* MatProgressSpinnerModule */]],
-            __WEBPACK_IMPORTED_MODULE_13__angular_router__["b" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_14__app_routes__["a" /* ROUTES */], { preloadingStrategy: __WEBPACK_IMPORTED_MODULE_13__angular_router__["a" /* PreloadAllModules */] })
+            __WEBPACK_IMPORTED_MODULE_9__angular_router__["b" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_10__app_routes__["a" /* ROUTES */], { preloadingStrategy: __WEBPACK_IMPORTED_MODULE_9__angular_router__["a" /* PreloadAllModules */] })
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_6__ipfs_service__["a" /* IpfsService */]
@@ -269,8 +179,6 @@ AppModule = __decorate([
 
 var ROUTES = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_0__home_home_component__["a" /* HomeComponent */] },
-    { path: 'about', loadChildren: './about/about.module#AboutModule' }
-    // {path: '**', component: NotFoundComponent}
 ];
 //# sourceMappingURL=app.routes.js.map
 
@@ -435,7 +343,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "  <!-- <section class=\"content-header\">\n    <app-header></app-header>\n  </section> -->\n\n\n\n            <div class=\"transferHolder\">\n              <app-transfer></app-transfer>\n            </div>\n\n\n          <!-- <div class=\"spacer\"></div>\n        <div style=\"margin-left: 620px;\">\n            <div class=\"infobar\">\n              <app-log-in></app-log-in>\n              <div class=\"spacer\"></div>\n            </div>\n\n          </div> -->\n"
+module.exports = "\n  <!-- <section class=\"content-header\">\n    <app-header></app-header>\n  </section> -->\n\n\n\n            <div class=\"transferHolder\">\n              <app-transfer></app-transfer>\n            </div>\n\n\n          <!-- <div class=\"spacer\"></div>\n        <div style=\"margin-left: 620px;\">\n            <div class=\"infobar\">\n              <app-log-in></app-log-in>\n              <div class=\"spacer\"></div>\n            </div>\n          </div> -->\n"
 
 /***/ }),
 
@@ -483,7 +391,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".container {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-align: stretch;\n      align-items: stretch;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  margin-left: 13%;\n}\n.sequencer {\n  position: absolute;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-align: center;\n      align-items: center;\n  -ms-flex-pack: center;\n      justify-content: center;\n  top:-15vh;\n  width: 100vw;\n  height: 100vh;\n  z-index: 9999;\n\n  font-size: 20px;\n}\n\n.mat-fab.mat-accent[_ngcontent-c3], .mat-mini-fab.mat-accent[_ngcontent-c3], .mat-raised-button.mat-accent[_ngcontent-c3], .mat-raised-button[_ngcontent-c3] .mat-primary[_ngcontent-c3] .mat-fab.mat-primary[_ngcontent-c3], .mat-mini-fab.mat-primary[_ngcontent-c3], .mat-raised-button.mat-primary[_ngcontent-c3]: hover {\n  color: #008bcd !important;\n  font-weight: 500 !important;\n}\n.mat-form-field {\n    font-family: 'Josefin Sans', sans-serif !important;\n}\n\n.mat-fab.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent, .mat-raised-button .mat-primary .mat-fab.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {\n  background-color: #168ccc !important;\n}\n@media screen and (max-width: 500px) {\n  .container {\n    display: -ms-flexbox;\n    display: flex;\n    position: fixed;\n    -ms-flex-align: center;\n        align-items: center;\n    -ms-flex-pack: center;\n        justify-content: center;\n    padding-left: 40px;\n    padding-right: 50px;\n    margin-left: 0px !important;\n  }\n}\n\n.topHolder {\n  height: 470px;\n  width: 300px;\n  background-color: white;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-pack: center;\n      justify-content: center;\n  -ms-flex-align: center;\n      align-items: center;\n  border-color: black;\n  border-width: thin;\n  border-radius: 10px;\n  box-shadow: 0 0 12px 0 rgba(0,0,0,0.1), 0 10px 30px 0 rgba(0,0,0,0.2);\n  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);\n}\n\n.image-upload {\n  width: 100%;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-align: center;\n      align-items: center;\n  margin-left: 10px !important;\n}\n\n.image-upload>input {\n  border-radius: 5px;\n  width: 100px;\n  border: 1px solid #b5b5b5;\n}\n\n.progressBar,\n.progressBarTitle {\n  text-align: center;\n  font-size: 1.7em;\n  color: #168ccc;\n  font-family: 'Raleway', sans-serif;\n  margin-bottom: 23px;\n}\n\n.selectedFile {\n  text-align: center;\n  font-size: 1em;\n  color: blue;\n  color: #005b7a;\n  font-weight: 500;\n  max-height: 70px;\n  overflow: scroll;\n}\n\n.selectedFile .fileName2 {\n  font-weight: 300;\n  width: 20px;\n}\n\n.fileName2 {\n  margin: 5px;\n}\n\n\nform {\n  height: 100%;\n  background-color: white;\n  border-radius: 0 0 3px 3px;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-pack: center;\n      justify-content: center;\n  -ms-flex-align: center;\n      align-items: center;\n}\n\nlabel button {\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  margin-bottom: 25px;\n}\n\nbutton {\n  border-radius: 3px;\n  width: 20%;\n  margin: 15px;\n  font-weight: 300;\n}\n\n.fileFeedback {\nwidth: 100%;\ndisplay: -ms-flexbox;\ndisplay: flex;\n-ms-flex-direction: column;\nflex-direction: column;\nmargin-bottom: 22px;\n}\n\n\n.changeButton {\n  margin: auto;\n  width: 105px;\n  text-align: center;\n}\n\n.successMessage {\n  display: -ms-flexbox;\n  display: flex;\n  background-color: white;\n  max-width: 500px;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  padding: 10px;\n  -ms-flex-align: center;\n      align-items: center;\n  -ms-flex-pack: justify;\n      justify-content: space-between;\n  text-align: center;\n  border-radius: 3px;\n  border-color: black;\n  padding: 30px;\n  border-radius: 10px;\n  box-shadow: 0 0 12px 0 rgba(0,0,0,0.1), 0 10px 30px 0 rgba(0,0,0,0.2);\n  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);\n}\n\n.successMessage h2 {\n  font-weight: 400;\n  font-size: 18px;\n}\n\n.successMessage .senderEmail {\n  font-weight: 300;\n}\n\n.successButton {\n  width: 150px;\n}\n\n.fileName {\n  border: 1px double #005b7a;\n  border-radius: 5px;\n  padding: 10px 20px;\n}\n\n#text {\n  text-align: left;\n  vertical-align: middle;\n  font-size: 1em;\n}\n\nh2 {\n  color: #005b7a;\n}\n\n#file-input {\n  cursor: pointer;\n  width: auto;\n  margin-top: -15px;\n}\n\n#file-input:hover {\n  -webkit-filter: drop-shadow(0 0 10px white);\n          filter: drop-shadow(0 0 10px white);\n  cursor: pointer;\n}\n\n.center {\n  overflow: auto;\n}\n\n.send svg {}\n\n.example-form {\n  width: auto;\n}\n\n.example-full-width {}\n\np {\n  font-size: 1.5em;\n}\n\n.spinner-margin {\n  margin-bottom: 15px;\n}\n\n.g-recaptcha {\n  margin: 25px;\n}\n\n#addYourFiles {\n  position: relative !important;\n  margin-top: 21px !important;\n  font-weight: 300;\n}\n\ninput[type=\"file\"] {\n  -webkit-appearance: none;\n  opacity: 0;\n}\n\n#uploadCircle {\n  cursor: pointer !important;\n  z-index: 1000;\n}\n\n#upload-img {\n  height: 19px;\n  weight: 7px;\n}\n\n/*Spinner animation*/\n@keyframes scaler {\n  0% { width: 50px; height: 50px;}\n  50% { width: 100px; height: 100px;}\n  100% { width: 50px; height: 50px;}\n}\n@keyframes counterspin2 {\n  0% { transform: rotate(0deg) scale(1.0); }\n  10% { transform: rotate(0deg) scale(1.3); }\n  20% { transform: rotate(90deg) scale(1.3); }\n  30% { transform: rotate(90deg) scale(1.0); }\n  40% { transform: rotate(0deg) scale(1.0); }\n  50% { transform: rotate(0deg) scale(1.3); }\n  60% { transform: rotate(45deg) scale(1.3); }\n  70% { transform: rotate(45deg) scale(1.0); }\n  80% { transform: rotate(0deg) scale(1.0); }\n  90% { transform: rotate(0deg) scale(1.3); }\n  100% { transform: rotate(0deg) scale(1.0); }\n}\n\n@keyframes spin2 {\n  0% { transform: rotate(0deg) scale(1.0); }\n  10% { transform: rotate(-90deg) scale(1.0); }\n  20% { transform: rotate(-90deg) scale(1.3); }\n  30% { transform: rotate(-45deg) scale(1.3); }\n  40% { transform: rotate(0deg) scale(1.0); }\n  50% { transform: rotate(0deg) scale(1.0); }\n  60% { transform: rotate(0deg) scale(1.0); }\n  70% { transform: rotate(45deg) scale(1.0); }\n  80% { transform: rotate(90deg) scale(1.3); }\n  90% { transform: rotate(45deg) scale(1.0); }\n  100% { transform: rotate(0deg) scale(1.0); }\n}\n@keyframes fader {\n  0% { opacity: 0; }\n  100% { opacity: 1; }\n}\n@keyframes fadeout {\n  0% { opacity: 1;}\n  100% { opacity: 0;}\n}\n.spinner-container {\n  animation: fader linear 0.5s;\n  position: absolute;\n  width: 100vw;\n  height: 100vh;\n  left:0;\n  top:0;\n}\n.spinner-background {\n  position: absolute;\n  width: 100vw;\n  height: 100vh;\n}\n.spinner-container-out {\n  opacity: 0;\n  animation: fadeout linear 0.5s;\n  position: absolute;\n  width: 100vw;\n  height: 100vh;\n  left:0;\n  top:0;\n}\n.spinner-pos {\n  left: 42%;\n  top:42%;\n  opacity: 1.0;\n  -webkit-filter: drop-shadow(0 0 80px white);\n          filter: drop-shadow(0 0 80px white);\n}\n.spinner-anim1 {\n  animation: spin2 5s ease infinite;\n}\n.spinner-anim2 {\n  animation: counterspin2 5s ease infinite;\n}\n@media screen and (max-width: 626px) {\n  .spinner-container {\n    display: none;\n  }\n  .spinner-container-out {\n    display: none;\n  }\n}\n", ""]);
+exports.push([module.i, ".container {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-align: stretch;\n      align-items: stretch;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  margin-left: 13%;\n}\n.sequencer {\n  position: absolute;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-align: center;\n      align-items: center;\n  -ms-flex-pack: center;\n      justify-content: center;\n  top:-15vh;\n  width: 100vw;\n  height: 100vh;\n  z-index: 9999;\n\n  font-size: 20px;\n}\n\n.mat-fab.mat-accent[_ngcontent-c3], .mat-mini-fab.mat-accent[_ngcontent-c3], .mat-raised-button.mat-accent[_ngcontent-c3], .mat-raised-button[_ngcontent-c3] .mat-primary[_ngcontent-c3] .mat-fab.mat-primary[_ngcontent-c3], .mat-mini-fab.mat-primary[_ngcontent-c3], .mat-raised-button.mat-primary[_ngcontent-c3]: hover {\n  color: #008bcd !important;\n  font-weight: 500 !important;\n}\n.mat-form-field {\n    font-family: 'Josefin Sans', sans-serif !important;\n}\n\n.mat-fab.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent, .mat-raised-button .mat-primary .mat-fab.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {\n  background-color: #168ccc !important;\n}\n@media screen and (max-width: 500px) {\n  .container {\n    display: -ms-flexbox;\n    display: flex;\n    position: fixed;\n    -ms-flex-align: center;\n        align-items: center;\n    -ms-flex-pack: center;\n        justify-content: center;\n    padding-left: 40px;\n    padding-right: 50px;\n    margin-left: 0px !important;\n  }\n}\n\n.topHolder {\n  height: 470px;\n  width: 300px;\n  background-color: white;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-pack: center;\n      justify-content: center;\n  -ms-flex-align: center;\n      align-items: center;\n  border-color: black;\n  border-width: thin;\n  border-radius: 10px;\n  box-shadow: 0 0 12px 0 rgba(0,0,0,0.1), 0 10px 30px 0 rgba(0,0,0,0.2);\n  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);\n}\n\n.image-upload {\n  width: 100%;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-align: center;\n      align-items: center;\n  margin-left: 10px !important;\n}\n\n.image-upload>input {\n  border-radius: 5px;\n  width: 100px;\n  border: 1px solid #b5b5b5;\n}\n\n.progressBar,\n.progressBarTitle {\n  text-align: center;\n  font-size: 1.7em;\n  color: #168ccc;\n  font-family: 'Raleway', sans-serif;\n  margin-bottom: 23px;\n}\n\n.selectedFile {\n  text-align: center;\n  font-size: 1em;\n  color: blue;\n  color: #005b7a;\n  font-weight: 500;\n  max-height: 70px;\n  overflow: scroll;\n}\n\n.selectedFile .fileName2 {\n  font-weight: 300;\n  width: 20px;\n}\n\n.fileName2 {\n  margin: 5px;\n}\n\n\nform {\n  height: 100%;\n  background-color: white;\n  border-radius: 0 0 3px 3px;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-pack: center;\n      justify-content: center;\n  -ms-flex-align: center;\n      align-items: center;\n}\n\nlabel button {\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  margin-bottom: 25px;\n}\n\nbutton {\n  border-radius: 3px;\n  width: 20%;\n  margin: 10px;\n  margin-top: 30px;\n  font-weight: 300;\n}\n\n.fileFeedback {\nwidth: 100%;\ndisplay: -ms-flexbox;\ndisplay: flex;\n-ms-flex-direction: column;\nflex-direction: column;\nmargin-bottom: 22px;\n}\n\n\n.changeButton {\n  margin: auto;\n  width: 105px;\n  text-align: center;\n}\n\n.successMessage {\n  display: -ms-flexbox;\n  display: flex;\n  background-color: white;\n  max-width: 500px;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  padding: 10px;\n  -ms-flex-align: center;\n      align-items: center;\n  -ms-flex-pack: justify;\n      justify-content: space-between;\n  text-align: center;\n  border-radius: 3px;\n  border-color: black;\n  padding: 30px;\n  border-radius: 10px;\n  box-shadow: 0 0 12px 0 rgba(0,0,0,0.1), 0 10px 30px 0 rgba(0,0,0,0.2);\n  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);\n}\n\n.successMessage h2 {\n  font-weight: 400;\n  font-size: 18px;\n}\n\n.successMessage .senderEmail {\n  font-weight: 300;\n}\n\n.successButton {\n  width: 150px;\n}\n\n.fileName {\n  border: 1px double #005b7a;\n  border-radius: 5px;\n  padding: 10px 20px;\n}\n\n#text {\n  text-align: left;\n  vertical-align: middle;\n  font-size: 1em;\n}\n\nh2 {\n  color: #005b7a;\n}\n\n#file-input {\n  cursor: pointer;\n  width: auto;\n  margin-top: -15px;\n}\n\n#file-input:hover {\n  -webkit-filter: drop-shadow(0 0 10px white);\n          filter: drop-shadow(0 0 10px white);\n  cursor: pointer;\n}\n\n.center {\n  overflow: auto;\n}\n\n.send svg {}\n\n.example-form {\n  width: auto;\n}\n\n.example-full-width {}\n\np {\n  font-size: 1.5em;\n}\n\n.spinner-margin {\n  margin-bottom: 15px;\n}\n\n.g-recaptcha {\n  margin: 25px;\n}\n\n#addYourFiles {\n  position: relative !important;\n  margin-top: 35px !important;\n  font-weight: 300;\n}\n\ninput[type=\"file\"] {\n  -webkit-appearance: none;\n  opacity: 0;\n}\n\n#uploadCircle {\n  cursor: pointer !important;\n  z-index: 1000;\n  margin-left: 16px;\n}\n\n#upload-img {\n  height: 19px;\n  weight: 7px;\n}\n\n/*Spinner animation*/\n@keyframes scaler {\n  0% { width: 50px; height: 50px;}\n  50% { width: 100px; height: 100px;}\n  100% { width: 50px; height: 50px;}\n}\n@keyframes counterspin2 {\n  0% { transform: rotate(0deg) scale(1.0); }\n  10% { transform: rotate(0deg) scale(1.3); }\n  20% { transform: rotate(90deg) scale(1.3); }\n  30% { transform: rotate(90deg) scale(1.0); }\n  40% { transform: rotate(0deg) scale(1.0); }\n  50% { transform: rotate(0deg) scale(1.3); }\n  60% { transform: rotate(45deg) scale(1.3); }\n  70% { transform: rotate(45deg) scale(1.0); }\n  80% { transform: rotate(0deg) scale(1.0); }\n  90% { transform: rotate(0deg) scale(1.3); }\n  100% { transform: rotate(0deg) scale(1.0); }\n}\n\n@keyframes spin2 {\n  0% { transform: rotate(0deg) scale(1.0); }\n  10% { transform: rotate(-90deg) scale(1.0); }\n  20% { transform: rotate(-90deg) scale(1.3); }\n  30% { transform: rotate(-45deg) scale(1.3); }\n  40% { transform: rotate(0deg) scale(1.0); }\n  50% { transform: rotate(0deg) scale(1.0); }\n  60% { transform: rotate(0deg) scale(1.0); }\n  70% { transform: rotate(45deg) scale(1.0); }\n  80% { transform: rotate(90deg) scale(1.3); }\n  90% { transform: rotate(45deg) scale(1.0); }\n  100% { transform: rotate(0deg) scale(1.0); }\n}\n@keyframes fader {\n  0% { opacity: 0; }\n  100% { opacity: 1; }\n}\n@keyframes fadeout {\n  0% { opacity: 1;}\n  100% { opacity: 0;}\n}\n.spinner-container {\n  animation: fader linear 0.5s;\n  position: absolute;\n  width: 100vw;\n  height: 100vh;\n  left:0;\n  top:0;\n}\n.spinner-background {\n  position: absolute;\n  width: 100vw;\n  height: 100vh;\n}\n.spinner-container-out {\n  opacity: 0;\n  animation: fadeout linear 0.5s;\n  position: absolute;\n  width: 100vw;\n  height: 100vh;\n  left:0;\n  top:0;\n}\n.spinner-pos {\n  left: 42%;\n  top:42%;\n  opacity: 1.0;\n  -webkit-filter: drop-shadow(0 0 80px white);\n          filter: drop-shadow(0 0 80px white);\n}\n.spinner-anim1 {\n  animation: spin2 5s ease infinite;\n}\n.spinner-anim2 {\n  animation: counterspin2 5s ease infinite;\n}\n@media screen and (max-width: 626px) {\n  .spinner-container {\n    display: none;\n  }\n  .spinner-container-out {\n    display: none;\n  }\n}\n", ""]);
 
 // exports
 
@@ -496,7 +404,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/input/input.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\n<!-- this is the loading to the ipfs spinner stuff -->\n<!-- <div class=\"spinner-container\" *ngIf=\"(!form && !submitResponse)\">\n<div class=\"spinner-background\"></div>\n<img class=\"spinner-anim1 spinner-pos\" src=\"../assets/snapcloud-logo-background2.png\" alt=\"\" style=\"height: 30vh; position: absolute;\"/>\n<img class=\"spinner-anim2 spinner-pos\" src=\"../assets/snapcloud-logo-background-pink.png\" alt=\"\" style=\"height: 30vh; position: absolute;\"/>\n<div id=\"animatedLoader\" class=\"sequencer\">{{animateStyles()}}initiating sequence</div>\n</div>\n\n\n<div class=\"spinner-container-out\" *ngIf=\"(!form && submitResponse)\">\n<div class=\"spinner-background\"></div>\n<img class=\"spinner-anim1 spinner-pos\" src=\"../assets/snapcloud-logo-background2.png\" alt=\"\" style=\"height: 30vh; position: absolute;\"/>\n<img class=\"spinner-anim2 spinner-pos\" src=\"../assets/snapcloud-logo-background-pink.png\" alt=\"\" style=\"height: 30vh; position: absolute;\"/>\n<h1 id=\"animatedLoader\" class=\"spinner-pos\"></h1>\n</div> -->\n\n<div class=\"container\" *ngIf=\"form\">\n\n\n  <div class=\"topHolder\">\n    <!-- Loading spinner -->\n\n    <!-- Upload icon and button-->\n    <div class=\"image-upload\" *ngIf=\"!showUpdate\">\n      <label for=\"file-input\">\n        <button title =\"Add Your Files\" (click)=\"file.click()\" id=\"uploadCircle\"mat-fab><img id=\"upload-img\" src=\"../../assets/add-plus-button.png\"/></button>\n      </label><p id=\"addYourFiles\">Upload your files</p>\n      <app-dragzone #file [onUpload]='upload'></app-dragzone>\n    </div>\n\n\n\n    <!-- Displays progress of file upload-->\n    <div class=\"progressBarTitle\" *ngIf=\"!progress && showUpdate && !this.completed\">Checking Files...</div>\n    <div class=\"progressBar\" *ngIf=\"progress && showUpdate && this.completed < this.totalFiles\">\n      <mat-progress-spinner\n      class=\"spinner-margin\"\n      [color]=\"color\"\n      [mode]=\"mode\"\n      [value]= \"value\">\n    </mat-progress-spinner>\n    {{(this.progress / this.parentSize *100).toFixed(1)}} %\n  </div>\n\n\n    <!-- Displays file name once uploaded and allows user to change selection -->\n    <div  class=\"fileFeedback\" *ngIf=\"file.length > 0\">\n      <p class=\"selectedFile\"><strong>File Selected:</strong><br> <span class=\"fileName2\" style=\"color:#0099cc\">{{this.name}}</span></p>\n      <button class=\"changeButton\" mat-raised-button color=\"accent\" (click)=\"toggleFile()\">Change file</button>\n    </div>\n\n    <div class=\"form-input\">\n      <form class=\"example-form\" (ngSubmit)=\"onTestPost()\" >\n        <mat-input-container class=\"example-full-width\">\n          <input matInput placeholder=\"Send Files to\" [(ngModel)]=\"data.to\" [formControl]=\"toEmailFormControl\" required>\n          <mat-error *ngIf=\"toEmailFormControl.hasError('pattern')\">\n            Please enter a valid email address\n          </mat-error>\n          <mat-error *ngIf=\"toEmailFormControl.hasError('required')\">\n            Email is <strong>required</strong>\n          </mat-error>\n        </mat-input-container>\n        <mat-input-container class=\"example-full-width\">\n          <input matInput placeholder=\"Your Email\" [(ngModel)]=\"data.from\" [formControl]=\"fromEmailFormControl\" required>\n          <mat-error *ngIf=\"fromEmailFormControl.hasError('pattern')\">\n            Please enter a valid email address\n          </mat-error>\n          <mat-error *ngIf=\"fromEmailFormControl.hasError('required')\">\n            Email is <strong>required</strong>\n          </mat-error>\n        </mat-input-container>\n\n        <mat-form-field class=\"example-full-width\" hintLabel=\"Max 250 characters\">\n          <textarea matInput placeholder=\"Message\" matTextareaAutosize matAutosizeMinRows=\"2\"\n          matAutosizeMaxRows=\"3\" maxlength=\"250\" [(ngModel)]=\"data.message\" [formControl]=\"messageFormControl\">\n          <mat-error *ngIf=\"messageFormControl.hasError('pattern')\">\n            Please enter a valid message\n          </mat-error>\n          <mat-error *ngIf=\"messageFormControl.hasError('required')\">\n            Message is <strong>required</strong>\n          </mat-error></textarea>\n        </mat-form-field>\n        <button mat-raised-button color=\"accent\" type=\"submit\">Send</button>\n      </form>\n    </div>\n  </div>\n</div>\n\n<!-- <div class=\"g-recaptcha\" data-sitekey=\"6LcokjIUAAAAAJnGe8_lM3HlcQktt1Wg7gMYib-N\"> </div> -->\n\n\n\n\n<!-- Placeholder -->\n<div *ngIf=\"submit\">\n  <h2></h2>\n</div>\n\n<!-- Displays once file has been uploaded and sent -->\n<div class=\"successMessage\" *ngIf=\"submitResponse\">\n  <h2>The below file has been added to IPFS and sent to: <br/>\n    <span class=\"senderEmail\" style=\"color:#0099cc\">{{this.data.to}} </span>\n  </h2>\n  <span class=\"fileName\">{{this.name}}</span>\n  <button class=\"successButton\" mat-raised-button color=\"accent\" (click)=\"refresh()\">Send another file</button>\n</div>\n\n\n<!-- <br>\n<div class=\"center\" >\n<mat-nav-list>\n<mat-list-item *ngFor=\"let link of hashes\">\n<a mat-line href=\"https://ipfs.io/ipfs/{{link[0].hash}}\" target=\"_blank\">{{link[0].hash}}</a>\n<button mat-icon-button (click)=\"showInfo(link)\">\n<i class=\"material-icons\">note</i></button>\n</mat-list-item>\n</mat-nav-list>\n</div> -->\n"
+module.exports = "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\n<!-- this is the loading to the ipfs spinner stuff -->\n<!-- <div class=\"spinner-container\" *ngIf=\"(!form && !submitResponse)\">\n<div class=\"spinner-background\"></div>\n<img class=\"spinner-anim1 spinner-pos\" src=\"../assets/snapcloud-logo-background2.png\" alt=\"\" style=\"height: 30vh; position: absolute;\"/>\n<img class=\"spinner-anim2 spinner-pos\" src=\"../assets/snapcloud-logo-background-pink.png\" alt=\"\" style=\"height: 30vh; position: absolute;\"/>\n<div id=\"animatedLoader\" class=\"sequencer\">{{animateStyles()}}initiating sequence</div>\n</div>\n\n\n<div class=\"spinner-container-out\" *ngIf=\"(!form && submitResponse)\">\n<div class=\"spinner-background\"></div>\n<img class=\"spinner-anim1 spinner-pos\" src=\"../assets/snapcloud-logo-background2.png\" alt=\"\" style=\"height: 30vh; position: absolute;\"/>\n<img class=\"spinner-anim2 spinner-pos\" src=\"../assets/snapcloud-logo-background-pink.png\" alt=\"\" style=\"height: 30vh; position: absolute;\"/>\n<h1 id=\"animatedLoader\" class=\"spinner-pos\"></h1>\n</div> -->\n\n<div class=\"container\" *ngIf=\"form\">\n\n\n  <div class=\"topHolder\">\n    <!-- Loading spinner -->\n\n    <!-- Upload icon and button-->\n    <div class=\"image-upload\" *ngIf=\"!showUpdate\">\n      <label for=\"file-input\">\n        <button title =\"Add Your Files\" (click)=\"file.click()\" id=\"uploadCircle\"mat-fab><img id=\"upload-img\" src=\"../../assets/add-plus-button.png\"/></button>\n      </label><p id=\"addYourFiles\">Upload your files</p>\n      <app-dragzone #file [onUpload]='upload'></app-dragzone>\n    </div>\n\n\n\n    <!-- Displays progress of file upload-->\n    <div class=\"progressBarTitle\" *ngIf=\"!progress && showUpdate && !this.completed\">Checking Files...</div>\n    <div class=\"progressBar\" *ngIf=\"progress && showUpdate && this.completed < this.totalFiles\">\n      <mat-progress-spinner\n      class=\"spinner-margin\"\n      [color]=\"color\"\n      [mode]=\"mode\"\n      [value]= \"value\">\n    </mat-progress-spinner>\n    {{(this.progress / this.parentSize *100).toFixed(1)}} %\n  </div>\n\n\n    <!-- Displays file name once uploaded and allows user to change selection -->\n    <div  class=\"fileFeedback\" *ngIf=\"file.length > 0\">\n      <p class=\"selectedFile\"><strong>Files Selected:</strong><br> <span class=\"fileName2\" style=\"color:#0099cc\">{{this.name}}</span></p>\n      <button class=\"changeButton\" mat-raised-button color=\"accent\" (click)=\"toggleFile()\">Change files</button>\n      <app-dragzone #file [onUpload]='upload'></app-dragzone>\n    </div>\n\n    <div class=\"form-input\">\n      <form class=\"example-form\" (ngSubmit)=\"onTestPost()\" >\n        <mat-input-container class=\"example-full-width\">\n          <input matInput placeholder=\"Send Files to\" [(ngModel)]=\"data.to\" [formControl]=\"toEmailFormControl\" required>\n          <mat-error *ngIf=\"toEmailFormControl.hasError('pattern')\">\n            Please enter a valid email address\n          </mat-error>\n          <mat-error *ngIf=\"toEmailFormControl.hasError('required')\">\n            Email is <strong>required</strong>\n          </mat-error>\n        </mat-input-container>\n        <mat-input-container class=\"example-full-width\">\n          <input matInput placeholder=\"Your Email\" [(ngModel)]=\"data.from\" [formControl]=\"fromEmailFormControl\" required>\n          <mat-error *ngIf=\"fromEmailFormControl.hasError('pattern')\">\n            Please enter a valid email address\n          </mat-error>\n          <mat-error *ngIf=\"fromEmailFormControl.hasError('required')\">\n            Email is <strong>required</strong>\n          </mat-error>\n        </mat-input-container>\n\n        <mat-form-field class=\"example-full-width\" hintLabel=\"Max 250 characters\">\n          <textarea matInput placeholder=\"Message\" matTextareaAutosize matAutosizeMinRows=\"2\"\n          matAutosizeMaxRows=\"3\" maxlength=\"250\" [(ngModel)]=\"data.message\" [formControl]=\"messageFormControl\">\n          <mat-error *ngIf=\"messageFormControl.hasError('pattern')\">\n            Please enter a valid message\n          </mat-error>\n          <mat-error *ngIf=\"messageFormControl.hasError('required')\">\n            Message is <strong>required</strong>\n          </mat-error></textarea>\n        </mat-form-field>\n        <button mat-raised-button color=\"accent\" type=\"submit\">Send</button>\n      </form>\n    </div>\n  </div>\n</div>\n\n<!-- <div class=\"g-recaptcha\" data-sitekey=\"6LcokjIUAAAAAJnGe8_lM3HlcQktt1Wg7gMYib-N\"> </div> -->\n\n\n\n\n<!-- Placeholder -->\n<div *ngIf=\"submit\">\n  <h2></h2>\n</div>\n\n<!-- Displays once file has been uploaded and sent -->\n<div class=\"successMessage\" *ngIf=\"submitResponse\">\n  <h2>The below file has been added to IPFS and sent to: <br/>\n    <span class=\"senderEmail\" style=\"color:#0099cc\">{{this.data.to}} </span>\n  </h2>\n  <span class=\"fileName\">{{this.name}}</span>\n  <button class=\"successButton\" mat-raised-button color=\"accent\" (click)=\"refresh()\">Send another file</button>\n</div>\n\n\n<!-- <br>\n<div class=\"center\" >\n<mat-nav-list>\n<mat-list-item *ngFor=\"let link of hashes\">\n<a mat-line href=\"https://ipfs.io/ipfs/{{link[0].hash}}\" target=\"_blank\">{{link[0].hash}}</a>\n<button mat-icon-button (click)=\"showInfo(link)\">\n<i class=\"material-icons\">note</i></button>\n</mat-list-item>\n</mat-nav-list>\n</div> -->\n"
 
 /***/ }),
 
@@ -764,155 +672,6 @@ var _a;
 
 /***/ }),
 
-/***/ "./src/app/log-in/log-in.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".buttonHolder {\n  width: 100%;\n  display: -ms-flexbox;\n  display: flex;\n}\n\nbutton {\n  width: 60%;\n  height: 100%;\n  border-radius: 5px;\n  margin: 10px;\n  color: white;\n  background-color: #0099cc;\n  border: none;\n}\n\ninput {\n  margin: 5px;\n  border-radius: 5px;\n  border: 1px solid #0099cc;\n}\n\n.loginHolder {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-pack: center;\n      justify-content: center;\n  -ms-flex-align: center;\n      align-items: center;\n}\n\n.signupHolder {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-pack: center;\n      justify-content: center;\n  -ms-flex-align: center;\n      align-items: center;\n}\n\nh2, h3, h4, p {\n  font-family: 'Source Code Pro';\n  display: inline;\n  background-color: rgba(255,255,255,.7);\n}\n\np {\n  font-size: 1.1em;\n}\n\n\n.loginButton {\n  width: 33%;\n}\n\n.signupButton {\n  width: 33%;\n}\n\n.transferButton {\n  width: 15%;\n  margin: 1px;\n}\n\n.donations{\n  margin-left:37%;\n}\n\n.donations > a{\n  padding: 10px;\n  color: white;\n  border: none;\n  border-radius: 10px;\n}\n\n.log-img {\n  max-width: 100%;\n  max-height: 45vh;\n  -ms-flex-direction: column;\n      flex-direction: column;\n\n}\n.image-center {\n  margin-left: 25%;\n}\n\n@media all and (max-width: 1020px) {\n\nimg {\n  visibility: hidden;\n}\n\n}\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "./src/app/log-in/log-in.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div *ngIf=\"this.option == true\">\n<div *ngIf=\"this.option == true\">\n  <br><br>\n  <img class=\"log-img\" src=\"https://source.unsplash.com/user/erondu/\" />\n</div>\n\n\n<div class=\"buttonHolder\" *ngIf=\"this.option == true\" >\n<button (click)=\"buttonClick2()\"> Sign-up</button> <button (click)=\"buttonClick1()\"> Log-in</button>\n<button (click)=\"buttonClick1()\"> Log-in</button> <button (click)=\"buttonClick2()\"> Sign-up</button>\n</div>\n\n<div class=\"loginHolder\" *ngIf=\"this.login == true\" >\n<h2> Log-in to Filenation</h2>\n<input type=\"text\" placeholder=\"email\">\n<input type=\"text\" placeholder=\"password\">\n<button class=\"loginButton\" (click)=\"onSignin()\"> Submit </button>\n<p>Don't have an account already? Sign-up <button class=\"transferButton\"(click)=\"buttonClick2()\">here</button>  </p>\n</div>\n\n<div class=\"signupHolder\" *ngIf=\"this.signup == true\">\n<h2> Sign-up to Filenation</h2>\n<input type=\"text\" placeholder=\"email\">\n<input type=\"text\" placeholder=\"confirm email\">\n<input type=\"text\" placeholder=\"password\">\n\n<button class=\"signupButton\" (click)=\"onSignup()\"> Submit </button>\n<p>Already have an account? Sign-in <button class=\"transferButton\"(click)=\"buttonClick1()\">here</button></p>\n</div>\n\n<div class=\"loggedinHolder\" *ngIf=\"this.loggedin === true\">\n<app-account></app-account>\n</div>\n</div>\n"
-
-/***/ }),
-
-/***/ "./src/app/log-in/log-in.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LogInComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var LogInComponent = (function () {
-    function LogInComponent() {
-        this.option = true;
-        this.login = false;
-        this.signup = false;
-        this.loggedin = false;
-    }
-    LogInComponent.prototype.ngOnInit = function () {
-    };
-    LogInComponent.prototype.onSignup = function () {
-        this.loggedin = true;
-        this.option = false;
-        this.login = false;
-        this.signup = false;
-    };
-    LogInComponent.prototype.onSignin = function () {
-        this.loggedin = true;
-        this.option = false;
-        this.login = false;
-        this.signup = false;
-    };
-    LogInComponent.prototype.buttonClick1 = function () {
-        this.option = false;
-        this.login = true;
-        this.signup = false;
-    };
-    LogInComponent.prototype.buttonClick2 = function () {
-        this.option = false;
-        this.signup = true;
-        this.login = false;
-    };
-    return LogInComponent;
-}());
-LogInComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
-        selector: 'app-log-in',
-        template: __webpack_require__("./src/app/log-in/log-in.component.html"),
-        styles: [__webpack_require__("./src/app/log-in/log-in.component.css")]
-    }),
-    __metadata("design:paramtypes", [])
-], LogInComponent);
-
-//# sourceMappingURL=log-in.component.js.map
-
-/***/ }),
-
-/***/ "./src/app/test/test.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "./src/app/test/test.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<form action=\"https://www.paypal.com/cgi-bin/webscr\" method=\"post\">\n\n    <!-- Identify your business so that you can collect the payments. -->\n    <input type=\"hidden\" name=\"business\"\n        value=\"donations@kcparkfriends.org\">\n\n    <!-- Specify a Donate button. -->\n    <input type=\"hidden\" name=\"cmd\" value=\"_donations\">\n\n    <!-- Specify details about the contribution -->\n    <input type=\"hidden\" name=\"item_name\" value=\"Friends of the Park\">\n    <input type=\"hidden\" name=\"item_number\" value=\"Fall Cleanup Campaign\">\n    <input type=\"hidden\" name=\"currency_code\" value=\"USD\">\n\n    <!-- Display the payment button. -->\n    <input type=\"image\" name=\"submit\"\n    src=\"https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_donate_92x26.png\"\n    alt=\"Donate\">\n    <img alt=\"\" width=\"1\" height=\"1\"\n    src=\"https://www.paypalobjects.com/en_US/i/scr/pixel.gif\" >\n\n</form>\n"
-
-/***/ }),
-
-/***/ "./src/app/test/test.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TestComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var TestComponent = (function () {
-    function TestComponent() {
-    }
-    TestComponent.prototype.ngOnInit = function () {
-    };
-    return TestComponent;
-}());
-TestComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
-        selector: 'app-test',
-        template: __webpack_require__("./src/app/test/test.component.html"),
-        styles: [__webpack_require__("./src/app/test/test.component.css")]
-    }),
-    __metadata("design:paramtypes", [])
-], TestComponent);
-
-;
-//# sourceMappingURL=test.component.js.map
-
-/***/ }),
-
 /***/ "./src/app/transfer/transfer.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1098,10 +857,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ }),
 
 /***/ 1:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__("./src/main.ts");
-
+/* (ignored) */
 
 /***/ }),
 
@@ -1133,10 +891,18 @@ module.exports = __webpack_require__("./src/main.ts");
 
 /***/ }),
 
-/***/ 2:
+/***/ 14:
 /***/ (function(module, exports) {
 
 /* (ignored) */
+
+/***/ }),
+
+/***/ 2:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__("./src/main.ts");
+
 
 /***/ }),
 
@@ -1189,5 +955,5 @@ module.exports = __webpack_require__("./src/main.ts");
 
 /***/ })
 
-},[1]);
+},[2]);
 //# sourceMappingURL=main.bundle.js.map
