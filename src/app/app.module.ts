@@ -22,6 +22,7 @@ import {ROUTES} from './app.routes';
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 import { HomeComponent } from './home/home.component'
 import { DragZoneComponent } from './dragzone/dragzone.component';
+import { TransferComponent } from './transfer/transfer.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { DragZoneComponent } from './dragzone/dragzone.component';
     InputComponent,
     HomeComponent,
     DragZoneComponent,
+    TransferComponent,
   ],
   imports: [
     BrowserModule,
