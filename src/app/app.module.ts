@@ -10,12 +10,7 @@ import {MatButtonModule, MatCheckboxModule, MatInputModule, MatListModule, MatPr
 import { IpfsService } from './ipfs.service'
 
 import { AppComponent } from './app.component';
-import { TransferComponent } from './transfer/transfer.component';
 import { InputComponent } from './input/input.component';
-import { TestComponent } from './test/test.component';
-import { LogInComponent } from './log-in/log-in.component';
-import { AccountComponent } from './account/account.component';
-
 
 // get use with routes and modular
 import { RouterModule, PreloadAllModules } from '@angular/router';
@@ -31,11 +26,7 @@ import { DragZoneComponent } from './dragzone/dragzone.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TransferComponent,
     InputComponent,
-    TestComponent,
-    LogInComponent,
-    AccountComponent,
     HomeComponent,
     DragZoneComponent,
   ],
