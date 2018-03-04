@@ -22,6 +22,7 @@ export class InputComponent {
   name: string;
   parentSize: any;
   file: any;
+  files: any;
   temp: any;
   submit: boolean;
   submitResponse: boolean;
@@ -53,6 +54,7 @@ export class InputComponent {
     this.completed = 0;
     this.hashes = [];
     this.file = [];
+    this.files = [];
     this.submit = false;
     this.submitResponse = false;
     this.form = true;
@@ -154,7 +156,10 @@ export class InputComponent {
       file.forEach( (el, key) => {
         var reader = new FileReader();
         reader.onload = (e) => {
-          this.ipfsService.uploadIPFS(reader.result)
+          console.log(reader.result)
+          this.files.push(reader.result)
+          console.log(Array.isArray(this.files))
+          this.ipfsService.uploadIPFS(this.files)
           .then((torrent) => {
             try {
               this.hashes.push(torrent);
