@@ -43,8 +43,10 @@ export class IpfsService {
       })
 
       this.stream.write(myReadableStreamBuffer);
-
-      myReadableStreamBuffer.put(Buffer.from(fileObj))
+      console.log(fileObj)
+      fileObj.forEach(file =>
+      myReadableStreamBuffer.put(Buffer.from(file))
+    );
       myReadableStreamBuffer.stop()
 
       myReadableStreamBuffer.on('end', () => {
