@@ -151,11 +151,9 @@ export class InputComponent {
       }).join(' and ');
       this.name = concatName;
       this.parentSize = concatSize;
-      console.log(file);
       file.forEach( (el, key) => {
         var reader = new FileReader();
         reader.onload = (e) => {
-          console.log(reader.result);
           this.ipfsService.uploadIPFS(reader.result)
           .then((torrent) => {
             try {
