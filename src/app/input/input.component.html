@@ -48,7 +48,6 @@
     <div  class="fileFeedback" *ngIf="file.length > 0">
       <p class="selectedFile"><strong>Files Selected:</strong><br> <span class="fileName2" style="color:#0099cc">{{this.name}}</span></p>
       <button class="changeButton" mat-raised-button color="accent" (click)="toggleFile()">Change files</button>
-      <app-dragzone #file [onUpload]='upload'></app-dragzone>
     </div>
 
     <div class="form-input">
