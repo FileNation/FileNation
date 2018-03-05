@@ -449,7 +449,6 @@ var InputComponent = (function () {
         this.ipfsService = ipfsService;
         this.color = '#168ccc';
         this.mode = 'indeterminate';
-        // this.value = (this.progress / this.parentSize *100).toFixed(1);
         //Verifies email inputs
         this.toEmailFormControl = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [
             __WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* Validators */].required,
@@ -479,9 +478,9 @@ var InputComponent = (function () {
                     var reader = new FileReader();
                     reader.onload = function (e) {
                         _this.ipfsService.uploadIPFS(reader.result)
-                            .then(function (torrent) {
+                            .then(function (ipfsObject) {
                             try {
-                                _this.hashes.push(torrent);
+                                _this.hashes.push(ipfsObject);
                                 _this.file.push('https://ipfs.io/ipfs/' + _this.hashes[key].hash);
                                 _this.data.hashes = (_this.file);
                             }
@@ -540,7 +539,7 @@ var InputComponent = (function () {
                 setTimeout(function () {
                     _this.submit = false;
                     _this.submitResponse = true;
-                }, 2500);
+                }, 3500);
                 this.emailService.sendEmail(this.data.to, this.data.from, this.data.message, this.data.hashes)
                     .subscribe(function (data) {
                     _this.postData = JSON.stringify(data),
@@ -564,9 +563,6 @@ var InputComponent = (function () {
         var _this = this;
         setInterval(function () { return _this.progress = _this.ipfsService.progress; }), 500;
     };
-    // getSpinnerProgress() {
-    //   this.progress / this.parentSize *100).toFixed(1);
-    // }
     //Called when user opts to upload / send another file
     InputComponent.prototype.refresh = function () {
         this.totalFiles = 0;
@@ -632,7 +628,7 @@ var IpfsService = (function () {
             return new Promise(function (resolve, reject) {
                 _this.progress = 0;
                 var myReadableStreamBuffer = new __WEBPACK_IMPORTED_MODULE_4_stream_buffers___default.a.ReadableStreamBuffer({
-                    chunkSize: 100000 //determines data transfer rate
+                    chunkSize: 25000 //determines data transfer rate
                 });
                 _this.stream = _this.node.files.addReadableStream();
                 _this.stream.on('data', function (file) {
@@ -856,9 +852,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ }),
 
 /***/ 1:
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-/* (ignored) */
+module.exports = __webpack_require__("./src/main.ts");
+
 
 /***/ }),
 
@@ -897,11 +894,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
+/***/ 15:
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
 /***/ 2:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__("./src/main.ts");
-
+/* (ignored) */
 
 /***/ }),
 
@@ -954,5 +957,5 @@ module.exports = __webpack_require__("./src/main.ts");
 
 /***/ })
 
-},[2]);
+},[1]);
 //# sourceMappingURL=main.bundle.js.map
