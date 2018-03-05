@@ -66,8 +66,6 @@ export class InputComponent {
     this.animated = true;
   }
 
-  // this.value = (this.progress / this.parentSize *100).toFixed(1);
-
 
   //Verifies email inputs
   toEmailFormControl = new FormControl('', [
@@ -92,7 +90,7 @@ export class InputComponent {
           setTimeout(()=> {
             this.submit = false;
             this.submitResponse = true;
-          }, 2500);
+          }, 3500);
           this.emailService.sendEmail(this.data.to, this.data.from, this.data.message, this.data.hashes)
           .subscribe(
             data => {
@@ -114,15 +112,11 @@ export class InputComponent {
       this.hashes = [];
       this.file.length = [];
       this.showUpdate = false;
-
     }
 
     getTransfer() {
       setInterval( ()=>this.progress = this.ipfsService.progress), 500;
     }
-    // getSpinnerProgress() {
-    //   this.progress / this.parentSize *100).toFixed(1);
-    // }
 
     //Called when user opts to upload / send another file
     refresh() {
@@ -155,9 +149,9 @@ export class InputComponent {
         var reader = new FileReader();
         reader.onload = (e) => {
           this.ipfsService.uploadIPFS(reader.result)
-          .then((torrent) => {
+          .then((ipfsObject) => {
             try {
-              this.hashes.push(torrent);
+              this.hashes.push(ipfsObject);
               this.file.push('https://ipfs.io/ipfs/' + this.hashes[key].hash);
               this.data.hashes = (this.file)
             } catch (e) {
