@@ -24,7 +24,7 @@
     "@angular/platform-browser": "^4.4.1",
     "@angular/platform-browser-dynamic": "^4.4.1",
     "@angular/router": "^4.4.1",
-    "@ngtools/webpack": "^1.10.1",
+    "@ngtools/webpack": "^1.10.2",
     "angular-material": "^1.1.7",
     "buffer": "^5.1.0",
     "gsap": "^1.20.4",
@@ -36,7 +36,7 @@
     "zone.js": "^0.8.20"
   },
   "devDependencies": {
-    "@angular/cli": "^1.7.2",
+    "@angular/cli": "^1.7.3",
     "@angular/compiler-cli": "^4.4.1",
     "@angular/language-service": "^4.4.1",
     "@types/jasmine": "^2.8.6",
