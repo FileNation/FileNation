@@ -10,7 +10,9 @@
   background-color: white;
 }
 
-
+.text-mobile {
+  display: none;
+}
 
 h1 {
   font-size: 3em;
@@ -267,8 +269,17 @@ h2 {
   .body {
     display: none;
   }
+  img {
+    padding-bottom: 300px;
+  }
+
   h2 {
-    display: none;
+    margin-left: 0px;
+  }
+
+  .text-mobile {
+    position: absolute;
+    display: inherit;
   }
   .github-mobile-button {
     display: inline-block;
