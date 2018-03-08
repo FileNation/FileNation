@@ -260,6 +260,13 @@ h2 {
   .feedback {
     display: none;
   }
+  .container {
+      height: 100vh;
+  }
+
+  .body {
+    display: none;
+  }
   h2 {
     display: none;
   }
