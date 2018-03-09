@@ -9,6 +9,7 @@ import {MatButtonModule, MatCheckboxModule, MatInputModule, MatListModule, MatPr
 
 import { Angulartics2Module } from 'angulartics2';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+import { Angulartics2RouterlessModule } from 'angulartics2/routerlessmodule';
 
 import { IpfsService } from './ipfs.service'
 
@@ -43,9 +44,7 @@ import { TransferComponent } from './transfer/transfer.component';
     [FormsModule, ReactiveFormsModule],
     [MatButtonModule, MatCheckboxModule, MatInputModule, MatListModule, MatProgressBarModule, MatProgressSpinnerModule],
     RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules}),
-    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics])
-
-
+    Angulartics2RouterlessModule.forRoot([Angulartics2GoogleAnalytics]),
   ],
   providers: [
     IpfsService
