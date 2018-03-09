@@ -26,6 +26,7 @@
     "@angular/router": "^4.4.1",
     "@ngtools/webpack": "^1.10.2",
     "angular-material": "^1.1.7",
+    "angulartics2": "^5.1.2",
     "buffer": "^5.1.0",
     "gsap": "^1.20.4",
     "ipfs": "^0.28.0",

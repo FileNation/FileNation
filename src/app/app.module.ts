@@ -7,6 +7,9 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 // import {MaterialModule} from '@angular/material';
 import {MatButtonModule, MatCheckboxModule, MatInputModule, MatListModule, MatProgressBarModule, MatProgressSpinnerModule} from '@angular/material';
 
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+
 import { IpfsService } from './ipfs.service'
 
 import { AppComponent } from './app.component';
@@ -39,7 +42,9 @@ import { TransferComponent } from './transfer/transfer.component';
     NoopAnimationsModule,
     [FormsModule, ReactiveFormsModule],
     [MatButtonModule, MatCheckboxModule, MatInputModule, MatListModule, MatProgressBarModule, MatProgressSpinnerModule],
-    RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules})
+    RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules}),
+    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics])
+
 
   ],
   providers: [
