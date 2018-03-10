@@ -4,8 +4,8 @@ import { EmailService } from './../email.service';
 import { IpfsService } from '../ipfs.service';
 import { TweenMax } from 'gsap';
 import { DOCUMENT } from '@angular/platform-browser';
+import { Buffer } from 'buffer';
 
-import { Angulartics2 } from 'angulartics2';
 import {DragZoneComponent } from '../dragzone/dragzone.component'
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+$/;
@@ -35,8 +35,9 @@ export class InputComponent {
   size: any;
   color = '#168ccc';
   mode = 'indeterminate';
+  node: any;
 
-  constructor(@Inject(DOCUMENT) private document: any, private emailService: EmailService, private ipfsService: IpfsService, private angulartics2: Angulartics2) {
+  constructor(@Inject(DOCUMENT) private document: any, private emailService: EmailService, private ipfsService: IpfsService) {
 
     this.data = {
       to: '',
@@ -135,11 +136,6 @@ export class InputComponent {
   }
 
   upload = ($event) => {
-    this.angulartics2.eventTrack.next({
-      action: 'file-upload',
-      properties: { category: 'Outbound Link' },
-    });
-
     if (!this.file.length) {
       this.showUpdate = true;
       let concatSize = 0;
