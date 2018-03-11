@@ -104,11 +104,11 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser/animations.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__("./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ipfs_service__ = __webpack_require__("./src/app/ipfs.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__input_input_component__ = __webpack_require__("./src/app/input/input.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_routes__ = __webpack_require__("./src/app/app.routes.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_routes__ = __webpack_require__("./src/app/app.routes.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ipfs_service__ = __webpack_require__("./src/app/ipfs.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__input_input_component__ = __webpack_require__("./src/app/input/input.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__home_home_component__ = __webpack_require__("./src/app/home/home.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__dragzone_dragzone_component__ = __webpack_require__("./src/app/dragzone/dragzone.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__transfer_transfer_component__ = __webpack_require__("./src/app/transfer/transfer.component.ts");
@@ -126,12 +126,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 // import {MaterialModule} from '@angular/material';
 
-
-
-
 // get use with routes and modular
 
 // import your router file
+
+// import { Angulartics2Module } from 'angulartics2';
+// import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+
+
 
 
 
@@ -144,8 +146,8 @@ var AppModule = (function () {
 AppModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["M" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__input_input_component__["a" /* InputComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__input_input_component__["a" /* InputComponent */],
             __WEBPACK_IMPORTED_MODULE_11__home_home_component__["a" /* HomeComponent */],
             __WEBPACK_IMPORTED_MODULE_12__dragzone_dragzone_component__["a" /* DragZoneComponent */],
             __WEBPACK_IMPORTED_MODULE_13__transfer_transfer_component__["a" /* TransferComponent */],
@@ -157,12 +159,12 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__["b" /* NoopAnimationsModule */],
             [__WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* FormsModule */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["i" /* ReactiveFormsModule */]],
             [__WEBPACK_IMPORTED_MODULE_5__angular_material__["a" /* MatButtonModule */], __WEBPACK_IMPORTED_MODULE_5__angular_material__["b" /* MatCheckboxModule */], __WEBPACK_IMPORTED_MODULE_5__angular_material__["c" /* MatInputModule */], __WEBPACK_IMPORTED_MODULE_5__angular_material__["d" /* MatListModule */], __WEBPACK_IMPORTED_MODULE_5__angular_material__["e" /* MatProgressBarModule */], __WEBPACK_IMPORTED_MODULE_5__angular_material__["f" /* MatProgressSpinnerModule */]],
-            __WEBPACK_IMPORTED_MODULE_9__angular_router__["b" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_10__app_routes__["a" /* ROUTES */], { preloadingStrategy: __WEBPACK_IMPORTED_MODULE_9__angular_router__["a" /* PreloadAllModules */] })
+            __WEBPACK_IMPORTED_MODULE_6__angular_router__["b" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_7__app_routes__["a" /* ROUTES */], { preloadingStrategy: __WEBPACK_IMPORTED_MODULE_6__angular_router__["a" /* PreloadAllModules */] }),
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_6__ipfs_service__["a" /* IpfsService */]
+            __WEBPACK_IMPORTED_MODULE_8__ipfs_service__["a" /* IpfsService */]
         ],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -895,34 +897,6 @@ module.exports = __webpack_require__("./src/main.ts");
 /***/ }),
 
 /***/ 15:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 16:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 17:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 18:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 19:
 /***/ (function(module, exports) {
 
 /* (ignored) */
