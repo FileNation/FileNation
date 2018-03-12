@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { IpfsService } from './ipfs.service';
 import { TweenMax } from 'gsap';
 import { DOCUMENT } from '@angular/platform-browser';
-
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,7 @@ import { DOCUMENT } from '@angular/platform-browser';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(@Inject(DOCUMENT) private document: any, private ipfsService: IpfsService) {}
+  constructor(@Inject(DOCUMENT) angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics, private document: any, private ipfsService: IpfsService) {}
 
   ngOnInit() {
     TweenMax.to(this.document.getElementById('title'),
