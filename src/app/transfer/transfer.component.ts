@@ -29,8 +29,6 @@ export class TransferComponent implements OnInit {
     this.name = file.name;
     this.parentSize = file.size;
 
-
-
     this.ipfsService.uploadIPFS(file)
     .then((torrent) => {
       this.hashes.push(torrent);
