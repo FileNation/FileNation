@@ -1,19 +1,4 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<!-- this is the loading to the ipfs spinner stuff -->
-<!-- <div class="spinner-container" *ngIf="(!form && !submitResponse)">
-<div class="spinner-background"></div>
-<img class="spinner-anim1 spinner-pos" src="../assets/snapcloud-logo-background2.png" alt="" style="height: 30vh; position: absolute;"/>
-<img class="spinner-anim2 spinner-pos" src="../assets/snapcloud-logo-background-pink.png" alt="" style="height: 30vh; position: absolute;"/>
-<div id="animatedLoader" class="sequencer">{{animateStyles()}}initiating sequence</div>
-</div>
-
-
-<div class="spinner-container-out" *ngIf="(!form && submitResponse)">
-<div class="spinner-background"></div>
-<img class="spinner-anim1 spinner-pos" src="../assets/snapcloud-logo-background2.png" alt="" style="height: 30vh; position: absolute;"/>
-<img class="spinner-anim2 spinner-pos" src="../assets/snapcloud-logo-background-pink.png" alt="" style="height: 30vh; position: absolute;"/>
-<h1 id="animatedLoader" class="spinner-pos"></h1>
-</div> -->
 
 <div class="container" *ngIf="form">
 
@@ -29,8 +14,6 @@
       <app-dragzone #file [onUpload]='upload'></app-dragzone>
     </div>
 
-
-
     <!-- Displays progress of file upload-->
     <div class="progressBarTitle" *ngIf="!progress && showUpdate && !this.completed">Checking Files...</div>
     <div class="progressBar" *ngIf="progress && showUpdate && this.completed < this.totalFiles">
@@ -42,7 +25,6 @@
     </mat-progress-spinner>
     {{(this.progress / this.parentSize *100).toFixed(1)}} %
   </div>
-
 
     <!-- Displays file name once uploaded and allows user to change selection -->
     <div  class="fileFeedback" *ngIf="file.length > 0">
@@ -87,11 +69,6 @@
   </div>
 </div>
 
-<!-- <div class="g-recaptcha" data-sitekey="6LcokjIUAAAAAJnGe8_lM3HlcQktt1Wg7gMYib-N"> </div> -->
-
-
-
-
 <!-- Placeholder -->
 <div *ngIf="submit">
   <h2></h2>
@@ -105,15 +82,3 @@
   <span class="fileName">{{this.name}}</span>
   <button class="successButton" mat-raised-button color="accent" (click)="refresh()">Send another file</button>
 </div>
-
-
-<!-- <br>
-<div class="center" >
-<mat-nav-list>
-<mat-list-item *ngFor="let link of hashes">
-<a mat-line href="https://ipfs.io/ipfs/{{link[0].hash}}" target="_blank">{{link[0].hash}}</a>
-<button mat-icon-button (click)="showInfo(link)">
-<i class="material-icons">note</i></button>
-</mat-list-item>
-</mat-nav-list>
-</div> -->

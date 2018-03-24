@@ -4,7 +4,6 @@ import { HttpModule } from '@angular/http';
 import { FormsModule, FormControl, ReactiveFormsModule, FormArray } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-// import {MaterialModule} from '@angular/material';
 import {MatButtonModule, MatCheckboxModule, MatInputModule, MatListModule, MatProgressBarModule, MatProgressSpinnerModule} from '@angular/material';
 
 // get use with routes and modular
@@ -20,9 +19,6 @@ import { IpfsService } from './ipfs.service';
 
 import { AppComponent } from './app.component';
 import { InputComponent } from './input/input.component';
-
-
-
 
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 import { HomeComponent } from './home/home.component'
