@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"body\">\n    <div class=\"title-bar\">\n      <div class=\"title-bar-left-container\">\n        <div class=\"title-bar-logo\">\n        <img src=\"../assets/logo.png\" id=\"title\" alt=\"\" style=\"height: 5vh; position: absolute;\"/>\n      </div>\n      <p id=\"title\" class=\"title-bar-title\">\n        {{title}}\n      </p>\n    </div>\n      <div class=\"title-bar-right-container\">\n\n        <div class=\"base-buttons\">\n          <h1 class=\"dot-color\"></h1>\n            <a href=\"https://github.com/FileNation/docs\" class=\"about-link\" target=\"_blank\"><h1 class=\"about-button\">About</h1></a>\n            <h1 class=\"dot-color\"></h1>\n          <a href=\"https://twitter.com/Filenation_io\" target=\"_blank\"><img class=\"img-twitter\" src=\"../assets/twitter.png\" /></a>\n          <a href=\"https://github.com/FileNation/FileNation\" class=\"about-link\" target=\"_blank\"><h2> v0.3 Alpha </h2></a>\n          <div class=\"spacer\"></div>\n          <div class=\"spacer\"></div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"body-container\">\n    <router-outlet></router-outlet>\n  </div>\n\n</div>\n<div class=\"body-2\">\n  <a href=\"https://medium.com/filenation\"><img src=\"../assets/logo2.png\"  /></a>\n  <h2 class=\"text-mobile\"> Please take a look from your computer </h2>\n\n</div>\n</div>\n"
+module.exports = "<div class=\"container\">\n  <div class=\"body\">\n    <div class=\"title-bar\">\n      <div class=\"title-bar-left-container\">\n        <div class=\"title-bar-logo\">\n          <img src=\"../assets/logo.png\" id=\"title\" alt=\"\" style=\"height: 5vh; position: absolute;\"/>\n        </div>\n        <p id=\"title\" class=\"title-bar-title\">\n          {{title}}\n        </p>\n      </div>\n      <div class=\"title-bar-right-container\">\n        <div class=\"base-buttons\">\n          <h1 class=\"dot-color\"></h1>\n          <a href=\"https://github.com/FileNation/docs\" class=\"about-link\" target=\"_blank\"><h1 class=\"about-button\"> {{about}} </h1></a>\n          <h1 class=\"dot-color\"></h1>\n          <a href=\"https://twitter.com/Filenation_io\" target=\"_blank\"><img class=\"img-twitter\" src=\"../assets/twitter.png\" /></a>\n          <a href=\"https://github.com/FileNation/FileNation\" class=\"about-link\" target=\"_blank\"><h2> {{alpha}} </h2></a>\n          <div class=\"spacer\"></div>\n          <div class=\"spacer\"></div>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"body-container\">\n      <router-outlet></router-outlet>\n    </div>\n\n  </div>\n  <div class=\"body-2\">\n    <a href=\"https://medium.com/filenation\"><img src=\"../assets/logo2.png\"  /></a>\n    <h2 class=\"text-mobile\"> Please take a look from your computer </h2>\n\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -73,6 +73,8 @@ var AppComponent = (function () {
         this.document = document;
         this.ipfsService = ipfsService;
         this.title = "FileNation";
+        this.alpha = "v0.3 Alpha";
+        this.about = "About";
     }
     AppComponent.prototype.ngOnInit = function () {
         __WEBPACK_IMPORTED_MODULE_2_gsap__["TweenMax"].to(this.document.getElementById('title'), 2, { scrambleText: { text: 'Filenation.io', chars: ' ', revealDelay: 0.5, speed: 0.1 } });
