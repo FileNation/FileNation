@@ -1,9 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { IpfsService } from './ipfs.service';
 import { TweenMax } from 'gsap';
-import { DOCUMENT } from '@angular/common';
+import { DOCUMENT } from '@angular/platform-browser';
 
-import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +10,10 @@ import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  document: any;
-  title = "FileNation";
-  constructor(@Inject(DOCUMENT) angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics) {}
+  constructor(@Inject(DOCUMENT) private document: any, private ipfsService: IpfsService) {}
 
+  ngOnInit() {
+    TweenMax.to(this.document.getElementById('title'),
+      2, {scrambleText:{text:'Filenation.io', chars:' ', revealDelay:0.5, speed:0.1}});
+  }
 }

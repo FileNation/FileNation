@@ -6,8 +6,6 @@ import { TweenMax } from 'gsap';
 import { DOCUMENT } from '@angular/common';
 import { Buffer } from 'buffer';
 
-import { Angulartics2 } from 'angulartics2';
-
 import {DragZoneComponent } from '../dragzone/dragzone.component'
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+$/;
@@ -40,7 +38,7 @@ export class InputComponent {
   node: any;
   document: any;
 
-  constructor(@Inject(DOCUMENT) private angulartics2: Angulartics2, private emailService: EmailService, private ipfsService: IpfsService) {
+  constructor(@Inject(DOCUMENT)  private emailService: EmailService, private ipfsService: IpfsService) {
 
     this.data = {
       to: '',

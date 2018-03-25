@@ -13,8 +13,6 @@ import { RouterModule, PreloadAllModules, Routes } from '@angular/router';
 // import your router file
 import {ROUTES} from './app.routes';
 
-import { Angulartics2Module } from 'angulartics2';
-import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 
 import { IpfsService } from './ipfs.service';
 
@@ -45,7 +43,6 @@ import { TransferComponent } from './transfer/transfer.component';
     [FormsModule, ReactiveFormsModule],
     [MatButtonModule, MatCheckboxModule, MatInputModule, MatListModule, MatProgressBarModule, MatProgressSpinnerModule],
     RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules}),
-    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
     ],
   providers: [
     IpfsService

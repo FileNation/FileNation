@@ -9,9 +9,7 @@
     <!-- Upload icon and button-->
     <div class="image-upload" *ngIf="!showUpdate">
       <label for="file-input">
-        <button title ="Add Your Files"  angulartics2On="click"
-      angularticsAction="fileUpload"
-      [angularticsCategory]="file" (click)="file.click()" id="uploadCircle"mat-fab><img id="upload-img" src="../../assets/add-plus-button.png"/></button>
+        <button title ="Add Your Files" (click)="file.click()" id="uploadCircle"mat-fab><img id="upload-img" src="../../assets/add-plus-button.png"/></button>
       </label><p id="addYourFiles">Upload your files</p>
       <app-dragzone #file [onUpload]='upload'></app-dragzone>
     </div>
