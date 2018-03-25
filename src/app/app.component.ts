@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { IpfsService } from './ipfs.service';
 import { TweenMax } from 'gsap';
-import { DOCUMENT } from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/common';
 
 
 @Component({
@@ -13,6 +13,7 @@ export class AppComponent {
   title = "FileNation";
   alpha = "v0.3 Alpha";
   about = "About";
+
   constructor(@Inject(DOCUMENT) private document: any, private ipfsService: IpfsService) {}
 
   ngOnInit() {
