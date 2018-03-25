@@ -11,6 +11,8 @@ import { DOCUMENT } from '@angular/platform-browser';
 })
 export class AppComponent {
   title = "FileNation";
+  alpha = "v0.3 Alpha";
+  about = "About";
   constructor(@Inject(DOCUMENT) private document: any, private ipfsService: IpfsService) {}
 
   ngOnInit() {

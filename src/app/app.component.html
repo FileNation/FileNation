@@ -3,34 +3,33 @@
     <div class="title-bar">
       <div class="title-bar-left-container">
         <div class="title-bar-logo">
-        <img src="../assets/logo.png" id="title" alt="" style="height: 5vh; position: absolute;"/>
+          <img src="../assets/logo.png" id="title" alt="" style="height: 5vh; position: absolute;"/>
+        </div>
+        <p id="title" class="title-bar-title">
+          {{title}}
+        </p>
       </div>
-      <p id="title" class="title-bar-title">
-        {{title}}
-      </p>
-    </div>
       <div class="title-bar-right-container">
-
         <div class="base-buttons">
           <h1 class="dot-color"></h1>
-            <a href="https://github.com/FileNation/docs" class="about-link" target="_blank"><h1 class="about-button">About</h1></a>
-            <h1 class="dot-color"></h1>
+          <a href="https://github.com/FileNation/docs" class="about-link" target="_blank"><h1 class="about-button"> {{about}} </h1></a>
+          <h1 class="dot-color"></h1>
           <a href="https://twitter.com/Filenation_io" target="_blank"><img class="img-twitter" src="../assets/twitter.png" /></a>
-          <a href="https://github.com/FileNation/FileNation" class="about-link" target="_blank"><h2> v0.3 Alpha </h2></a>
+          <a href="https://github.com/FileNation/FileNation" class="about-link" target="_blank"><h2> {{alpha}} </h2></a>
           <div class="spacer"></div>
           <div class="spacer"></div>
+        </div>
       </div>
     </div>
+
+    <div class="body-container">
+      <router-outlet></router-outlet>
+    </div>
+
   </div>
+  <div class="body-2">
+    <a href="https://medium.com/filenation"><img src="../assets/logo2.png"  /></a>
+    <h2 class="text-mobile"> Please take a look from your computer </h2>
 
-  <div class="body-container">
-    <router-outlet></router-outlet>
   </div>
-
-</div>
-<div class="body-2">
-  <a href="https://medium.com/filenation"><img src="../assets/logo2.png"  /></a>
-  <h2 class="text-mobile"> Please take a look from your computer </h2>
-
-</div>
 </div>
