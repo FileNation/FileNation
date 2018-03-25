@@ -72,6 +72,7 @@ var AppComponent = (function () {
     function AppComponent(document, ipfsService) {
         this.document = document;
         this.ipfsService = ipfsService;
+        this.title = "FileNation";
     }
     AppComponent.prototype.ngOnInit = function () {
         __WEBPACK_IMPORTED_MODULE_2_gsap__["TweenMax"].to(this.document.getElementById('title'), 2, { scrambleText: { text: 'Filenation.io', chars: ' ', revealDelay: 0.5, speed: 0.1 } });
