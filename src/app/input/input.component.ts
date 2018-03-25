@@ -3,8 +3,10 @@ import {FormControl, Validators} from '@angular/forms';
 import { EmailService } from './../email.service';
 import { IpfsService } from '../ipfs.service';
 import { TweenMax } from 'gsap';
-import { DOCUMENT } from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/common';
 import { Buffer } from 'buffer';
+
+import { Angulartics2 } from 'angulartics2';
 
 import {DragZoneComponent } from '../dragzone/dragzone.component'
 
@@ -36,8 +38,9 @@ export class InputComponent {
   color = '#168ccc';
   mode = 'indeterminate';
   node: any;
+  document: any;
 
-  constructor(@Inject(DOCUMENT) private document: any, private emailService: EmailService, private ipfsService: IpfsService) {
+  constructor(@Inject(DOCUMENT) private angulartics2: Angulartics2, private emailService: EmailService, private ipfsService: IpfsService) {
 
     this.data = {
       to: '',
@@ -136,37 +139,38 @@ export class InputComponent {
   }
 
   upload = ($event) => {
-    if (!this.file.length) {
-      this.showUpdate = true;
-      let concatSize = 0;
-      let file = Object.keys($event.target.files).map(key => $event.target.files[key]);
-      let concatName = file.map(el => {
-        concatSize += el.size;
-        this.totalFiles++;
-        return el.name;
-      }).join(' and ');
-      this.name = concatName;
-      this.parentSize = concatSize;
-      file.forEach( (el, key) => {
-        var reader = new FileReader();
-        reader.onload = (e) => {
-          this.ipfsService.uploadIPFS(reader.result)
-          .then((ipfsObject) => {
-            try {
-              this.hashes.push(ipfsObject);
-              this.file.push('https://ipfs.io/ipfs/' + this.hashes[key].hash);
-              this.data.hashes = (this.file)
-            } catch (e) {
-            }
-          }).then(() => {
-            this.completed++
-          });
-        }
-        reader.readAsArrayBuffer(el);
-      })
-    }
-    else {
-      alert("Sorry, still uploading previous file!")
-    }
+
+  if (!this.file.length) {
+    this.showUpdate = true;
+    let concatSize = 0;
+    let file = Object.keys($event.target.files).map(key => $event.target.files[key]);
+    let concatName = file.map(el => {
+      concatSize += el.size;
+      this.totalFiles++;
+      return el.name;
+    }).join(' and ');
+    this.name = concatName;
+    this.parentSize = concatSize;
+    file.forEach( (el, key) => {
+      var reader = new FileReader();
+      reader.onload = (e) => {
+        this.ipfsService.uploadIPFS(reader.result)
+        .then((ipfsObject) => {
+          try {
+            this.hashes.push(ipfsObject);
+            this.file.push('https://ipfs.io/ipfs/' + this.hashes[key].hash);
+            this.data.hashes = (this.file)
+          } catch (e) {
+          }
+        }).then(() => {
+          this.completed++
+        });
+      }
+      reader.readAsArrayBuffer(el);
+    })
   }
+  else {
+    alert("Sorry, still uploading previous file!")
+  }
+}
 }
