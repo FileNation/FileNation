@@ -10,6 +10,7 @@ import { DOCUMENT } from '@angular/platform-browser';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title = "FileNation";
   constructor(@Inject(DOCUMENT) private document: any, private ipfsService: IpfsService) {}
 
   ngOnInit() {
