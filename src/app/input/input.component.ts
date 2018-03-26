@@ -144,7 +144,7 @@ export class InputComponent {
         concatSize += el.size;
         this.totalFiles++;
         return el.name;
-      }).join(' and ');
+      }).join(' ');
       this.name = concatName;
       this.parentSize = concatSize;
       file.forEach( (el, key) => {
