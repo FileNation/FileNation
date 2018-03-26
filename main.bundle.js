@@ -474,7 +474,7 @@ var InputComponent = (function () {
                     concatSize_1 += el.size;
                     _this.totalFiles++;
                     return el.name;
-                }).join(' and ');
+                }).join(' ');
                 _this.name = concatName;
                 _this.parentSize = concatSize_1;
                 file.forEach(function (el, key) {
