@@ -40,6 +40,12 @@ export class IpfsService {
           }
           console.log('Peers: ', peerInfos);
         })
+        this.node.id((err, id) => {
+          if (err) {
+
+          }
+          console.log(id);
+        });
         resolve(file);
       })
       myReadableStreamBuffer.on('data', (chunk) => {
