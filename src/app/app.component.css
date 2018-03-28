@@ -147,6 +147,11 @@ h2 {
   width:60px;
   height:50px;
 }
+
+.mat-fab.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent {
+    background-color: #008bcd !important;
+}
+
 /*SAVING THESE ANIMATIONS FOR LATER. THEY ARE COOL*/
 @keyframes spin {
   0% { transform: rotate(0deg); }
