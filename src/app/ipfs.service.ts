@@ -42,7 +42,7 @@ export class IpfsService {
         })
         this.node.id((err, id) => {
           if (err) {
-
+            throw err;
           }
           console.log(id);
         });
