@@ -137,7 +137,7 @@ h2 {
   align-items: center;
 }
 .spacer {
-  width:3vw;
+  width:2vw;
   height: 3vw;
 }
 .title-bar-logo {
@@ -148,8 +148,14 @@ h2 {
   height:50px;
 }
 
+.download-button {
+    font-size: 15px;
+    color: black;
+    filter:drop-shadow(5px 5px 5px black);
+}
+
 .mat-fab.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent {
-    background-color: #008bcd !important;
+    background-color: #FFF !important;
 }
 
 /*SAVING THESE ANIMATIONS FOR LATER. THEY ARE COOL*/
