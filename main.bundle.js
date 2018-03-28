@@ -641,6 +641,11 @@ var IpfsService = (function () {
                         }
                         console.log('Peers: ', peerInfos);
                     });
+                    _this.node.id(function (err, id) {
+                        if (err) {
+                        }
+                        console.log(id);
+                    });
                     resolve(file);
                 });
                 myReadableStreamBuffer.on('data', function (chunk) {
