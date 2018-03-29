@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   width: 100vw;
-  height: 200vh;
+  height: 100vh;
   background-color: white;
 }
 
@@ -51,6 +51,7 @@ h2 {
   justify-content: center;
   align-items: center;
   color: white !important;
+  display: none;
 }
 
 .body-2 img {
@@ -82,9 +83,10 @@ h2 {
 
 
 .img-twitter {
-  height: 29px;
-  filter:drop-shadow(10px 10px 10px black);
-  margin-left: 3.5px;
+  color: white;
+  height: 25px;
+  margin-top: 5px;
+  filter: drop-shadow(0 0 5px black);
 }
 
 .dot-color {
@@ -250,6 +252,9 @@ h2 {
   .spacer {
     width: 3vw;
     height: 0;
+  }
+  .body-2 {
+    display: inherit;
   }
   .title-bar-right-container {
     margin-right: 5vw;
