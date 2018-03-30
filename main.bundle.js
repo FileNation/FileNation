@@ -654,18 +654,7 @@ var IpfsService = (function () {
         // Create an IPFS node
         var repoPath = 'ipfs-' + Math.random();
         this.node = new __WEBPACK_IMPORTED_MODULE_3_ipfs___default.a({
-            repo: repoPath,
-            EXPERIMENTAL: {
-                relay: {
-                    enabled: true,
-                    hop: {
-                        enabled: true
-                    }
-                }
-            },
-            config: {
-                Bootstrap: []
-            }
+            repo: 'ipfs-' + Math.random()
         });
         this.node.on('ready', function () { return console.log('Online status: ', _this.node.isOnline() ? 'online' : 'offline'); });
     }
