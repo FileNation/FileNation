@@ -44,18 +44,6 @@ export class IpfsService {
       });
       this.stream = this.node.files.addReadableStream();
       this.stream.on('data', (file) => {
-        this.node.swarm.peers((err, peerInfos) => {
-          if (err) {
-            throw err;
-          }
-          console.log('Peers: ', peerInfos);
-        })
-        this.node.id((err, id) => {
-          if (err) {
-            throw err;
-          }
-          console.log(id);
-        });
         resolve(file);
       })
       myReadableStreamBuffer.on('data', (chunk) => {
