@@ -635,18 +635,6 @@ var IpfsService = (function () {
                 });
                 _this.stream = _this.node.files.addReadableStream();
                 _this.stream.on('data', function (file) {
-                    _this.node.swarm.peers(function (err, peerInfos) {
-                        if (err) {
-                            throw err;
-                        }
-                        console.log('Peers: ', peerInfos);
-                    });
-                    _this.node.id(function (err, id) {
-                        if (err) {
-                            throw err;
-                        }
-                        console.log(id);
-                    });
                     resolve(file);
                 });
                 myReadableStreamBuffer.on('data', function (chunk) {
@@ -666,7 +654,18 @@ var IpfsService = (function () {
         // Create an IPFS node
         var repoPath = 'ipfs-' + Math.random();
         this.node = new __WEBPACK_IMPORTED_MODULE_3_ipfs___default.a({
-            repo: 'ipfs-' + Math.random()
+            repo: repoPath,
+            EXPERIMENTAL: {
+                relay: {
+                    enabled: true,
+                    hop: {
+                        enabled: true
+                    }
+                }
+            },
+            config: {
+                Bootstrap: []
+            }
         });
         this.node.on('ready', function () { return console.log('Online status: ', _this.node.isOnline() ? 'online' : 'offline'); });
     }
