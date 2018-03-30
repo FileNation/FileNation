@@ -20,11 +20,21 @@ export class IpfsService {
     const repoPath = 'ipfs-' + Math.random()
 
     this.node = new IPFS({
-      repo: 'ipfs-' + Math.random()
+      repo: repoPath,
+      EXPERIMENTAL: {
+        relay: {
+          enabled: true,
+          hop: {
+            enabled: true
+          }
+        }
+      },
+      config: {
+        Bootstrap: []
+      }
     })
 
     this.node.on('ready', () => console.log('Online status: ', this.node.isOnline() ? 'online' : 'offline'))
-
   }
   uploadIPFS = (fileObj) => {
     return new Promise((resolve, reject) => {
