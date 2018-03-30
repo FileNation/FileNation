@@ -20,18 +20,7 @@ export class IpfsService {
     const repoPath = 'ipfs-' + Math.random()
 
     this.node = new IPFS({
-      repo: repoPath,
-      EXPERIMENTAL: {
-        relay: {
-          enabled: true,
-          hop: {
-            enabled: true
-          }
-        }
-      },
-      config: {
-        Bootstrap: []
-      }
+      repo: 'ipfs-' + Math.random()
     })
 
     this.node.on('ready', () => console.log('Online status: ', this.node.isOnline() ? 'online' : 'offline'))
