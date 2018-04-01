@@ -1,7 +1,5 @@
 
 .transferHolder {
-  /*width: 50%;*/
-  /*height: 100%;*/
   border-radius: 5px;
   margin: 10%;
   display: flex;
@@ -30,5 +28,11 @@
   }
   .file-box {
     justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .transferHolder {
+    margin: 0%;
   }
 }

@@ -331,3 +331,11 @@ input[type="file"] {
     display: none;
   }
 }
+
+@media screen and (max-height: 640px) {
+  .topHolder {
+    height: 400px;
+    width: 280px;
+
+  }
+}
