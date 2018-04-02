@@ -15,7 +15,7 @@
   height: 100vh !important;
 }
 .overlay {
-  background: rgba(252, 68, 130, 0.2);
+  background: rgba(0, 139, 205, 0.2);
   position: absolute;
   top: 0;
   left: 0;
