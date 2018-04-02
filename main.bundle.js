@@ -484,7 +484,7 @@ var InputComponent = (function () {
                             .then(function (ipfsObject) {
                             try {
                                 _this.hashes.push(ipfsObject);
-                                _this.file.push('https://www.gateway.ipfs.io/ipfs/' + _this.hashes[key].hash);
+                                _this.file.push('https://gateway.ipfs.io/ipfs/' + _this.hashes[key].hash);
                                 _this.data.hashes = (_this.file);
                             }
                             catch (e) {
