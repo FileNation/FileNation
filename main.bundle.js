@@ -195,7 +195,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".dropin {\n  top: 0;\n  left: 0;\n  position: absolute;\n  width: 100vw !important;\n  height: 100vh !important;\n  visibility: hidden;\n}\n.nonopaque {\n  position: absolute;\n  opacity: 0.0;\n  color: rgba(0,0,0,0);\n  z-index: 666 !important;\n  width: 100vw !important;\n  height: 100vh !important;\n}\n.overlay {\n  background: rgba(252, 68, 130, 0.2);\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100vw !important;\n  height: 100vh !important;\n  visibility: visible;\n  z-index: 1000;\n}\n.dropin2 {\n  position: absolute;\n  visibility: hidden;\n}\ninput {\n  position: absolute;\n  visibility: visible !important;\n  opacity: 0;\n}\n", ""]);
+exports.push([module.i, ".dropin {\n  top: 0;\n  left: 0;\n  position: absolute;\n  width: 100vw !important;\n  height: 100vh !important;\n  visibility: hidden;\n}\n.nonopaque {\n  position: absolute;\n  opacity: 0.0;\n  color: rgba(0,0,0,0);\n  z-index: 666 !important;\n  width: 100vw !important;\n  height: 100vh !important;\n}\n.overlay {\n  background: rgba(0, 139, 205, 0.2);\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100vw !important;\n  height: 100vh !important;\n  visibility: visible;\n  z-index: 1000;\n}\n.dropin2 {\n  position: absolute;\n  visibility: hidden;\n}\ninput {\n  position: absolute;\n  visibility: visible !important;\n  opacity: 0;\n}\n", ""]);
 
 // exports
 
@@ -484,7 +484,7 @@ var InputComponent = (function () {
                             .then(function (ipfsObject) {
                             try {
                                 _this.hashes.push(ipfsObject);
-                                _this.file.push('https://gateway.ipfs.io/ipfs/' + _this.hashes[key].hash);
+                                _this.file.push('https://www.eternum.io/ipfs/' + _this.hashes[key].hash);
                                 _this.data.hashes = (_this.file);
                             }
                             catch (e) {
