@@ -29,7 +29,7 @@ export class IpfsService {
     return new Promise((resolve, reject) => {
       this.progress = 0;
       let myReadableStreamBuffer = new streamBuffers.ReadableStreamBuffer({
-        chunkSize: 250000   //determines data transfer rate
+        chunkSize: 25000   //determines data transfer rate
       });
       this.stream = this.node.files.addReadableStream();
       this.stream.on('data', (file) => {
