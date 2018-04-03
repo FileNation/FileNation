@@ -631,7 +631,7 @@ var IpfsService = (function () {
             return new Promise(function (resolve, reject) {
                 _this.progress = 0;
                 var myReadableStreamBuffer = new __WEBPACK_IMPORTED_MODULE_4_stream_buffers___default.a.ReadableStreamBuffer({
-                    chunkSize: 250000 //determines data transfer rate
+                    chunkSize: 25000 //determines data transfer rate
                 });
                 _this.stream = _this.node.files.addReadableStream();
                 _this.stream.on('data', function (file) {
