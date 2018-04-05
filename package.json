@@ -30,11 +30,11 @@
     "buffer": "^5.1.0",
     "gsap": "^1.20.4",
     "ipfs": "^0.28.2",
-    "readable-stream": "^2.3.5",
+    "readable-stream": "^2.3.6",
     "rxjs": "^5.5.8",
     "stream": "0.0.2",
     "stream-buffers": "^3.0.1",
-    "zone.js": "^0.8.23"
+    "zone.js": "^0.8.25"
   },
   "devDependencies": {
     "@angular/cli": "^1.7.3",
@@ -42,7 +42,7 @@
     "@angular/language-service": "^4.4.1",
     "@types/jasmine": "^2.8.6",
     "@types/jasminewd2": "^2.0.3",
-    "@types/node": "^6.0.103",
+    "@types/node": "^6.0.104",
     "autoprefixer": "^6.5.3",
     "circular-dependency-plugin": "^3.0.0",
     "codelyzer": "~3.0.1",
