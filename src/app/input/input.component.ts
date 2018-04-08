@@ -92,7 +92,7 @@ export class InputComponent {
           setTimeout(()=> {
             this.submit = false;
             this.submitResponse = true;
-          }, 3500);
+          }, 4000);
           this.emailService.sendEmail(this.data.to, this.data.from, this.data.message, this.data.hashes)
           .subscribe(
             data => {
@@ -157,6 +157,7 @@ export class InputComponent {
               this.file.push('https://www.eternum.io/ipfs/' + this.hashes[key].hash);
               this.data.hashes = (this.file)
             } catch (e) {
+              console.log(e)
             }
           }).then(() => {
             this.completed++

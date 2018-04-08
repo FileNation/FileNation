@@ -32,8 +32,9 @@ export class IpfsService {
         chunkSize: 25000   //determines data transfer rate
       });
       this.stream = this.node.files.addReadableStream();
+
       this.stream.on('data', (file) => {
-        resolve(file);
+          resolve(file);
       })
       myReadableStreamBuffer.on('data', (chunk) => {
         this.progress += chunk.byteLength

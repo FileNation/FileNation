@@ -81,12 +81,25 @@ h2 {
   margin: 10px;
 }
 
+#social {
+  margin-top: 2px;
+  text-align: center;
+}
 
-.img-twitter {
+#social a {
+  margin-top: 4px;
+  margin: 2px;
+}
+
+#social i:before {
   color: white;
-  height: 25px;
-  margin-top: 5px;
+  margin-top: 2px;
+  font-size: 1.9rem;
   filter: drop-shadow(0 0 5px black);
+}
+
+#social a:hover {
+  filter: drop-shadow(0 0 5px #AAAAAA);
 }
 
 .dot-color {
