@@ -36,17 +36,17 @@ export class InputComponent {
   color = '#168ccc';
   mode = 'indeterminate';
   node: any;
-  names: any;
-
+  cards: any;
   constructor(@Inject(DOCUMENT) private document: any, private emailService: EmailService, private ipfsService: IpfsService) {
 
     this.data = {
       to: '',
       from: '',
       message: '',
-      hashes: '',
-      names: ''
+      hashes: ''
     }
+
+    this.cards = []
 
   }
 
@@ -148,7 +148,6 @@ export class InputComponent {
         return el.name;
       }).join(' ');
       this.name = concatName;
-      this.data.names = (this.name)
       this.parentSize = concatSize;
       file.forEach( (el, key) => {
         var reader = new FileReader();
@@ -159,6 +158,7 @@ export class InputComponent {
               this.hashes.push(ipfsObject);
               this.file.push('https://www.eternum.io/ipfs/' + this.hashes[key].hash);
               this.data.hashes = (this.file)
+              this.cards.push({hash: this.hashes[key].hash})
             } catch (e) {
               console.log(e)
             }

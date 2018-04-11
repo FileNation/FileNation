@@ -79,14 +79,13 @@
   <h2>The file below has been added to IPFS and sent to: <br/>
     <span class="senderEmail" style="color:#0099cc">{{this.data.to}} </span>
   </h2>
-  <mat-card class="card">
+  <mat-card class="card" *ngFor="let card of cards">
     <mat-card-header>
           <div mat-card-avatar class="card-header-image"></div>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{this.name}}</mat-card-title>
+      <!-- <mat-card-title>{{card.name}}</mat-card-title> -->
     </mat-card-header>
     <mat-card-content>
-      <a target="_blank" href="{{this.file}}">{{this.file}}</a>
+      <a target="_blank" href="{{card.hash}}">{{card.hash}}</a>
     </mat-card-content>
   </mat-card>
 
