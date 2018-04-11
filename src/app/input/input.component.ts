@@ -36,6 +36,7 @@ export class InputComponent {
   color = '#168ccc';
   mode = 'indeterminate';
   node: any;
+  names: any;
 
   constructor(@Inject(DOCUMENT) private document: any, private emailService: EmailService, private ipfsService: IpfsService) {
 
@@ -43,7 +44,8 @@ export class InputComponent {
       to: '',
       from: '',
       message: '',
-      hashes: ''
+      hashes: '',
+      names: ''
     }
 
   }
@@ -146,6 +148,7 @@ export class InputComponent {
         return el.name;
       }).join(' ');
       this.name = concatName;
+      this.data.names = (this.name)
       this.parentSize = concatSize;
       file.forEach( (el, key) => {
         var reader = new FileReader();

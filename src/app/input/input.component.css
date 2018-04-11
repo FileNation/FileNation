@@ -248,6 +248,15 @@ input[type="file"] {
   weight: 7px;
 }
 
+.card {
+  max-width: 400px;
+}
+
+.card-header-image {
+  background-image: url('https://filenation.io/assets/logo.png');
+  background-size: cover;
+}
+
 /*Spinner animation*/
 @keyframes scaler {
   0% { width: 50px; height: 50px;}

@@ -79,6 +79,16 @@
   <h2>The file below has been added to IPFS and sent to: <br/>
     <span class="senderEmail" style="color:#0099cc">{{this.data.to}} </span>
   </h2>
-  <span class="fileName">{{this.name}}</span>
+  <mat-card class="card">
+    <mat-card-header>
+          <div mat-card-avatar class="card-header-image"></div>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{this.name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <a target="_blank" href="{{this.file}}">{{this.file}}</a>
+    </mat-card-content>
+  </mat-card>
+
   <button class="successButton" mat-raised-button color="accent" (click)="refresh()">Send another file</button>
 </div>
