@@ -10,7 +10,7 @@
     <div class="image-upload" *ngIf="!showUpdate">
       <label for="file-input">
         <button title ="Add Your Files" (click)="file.click()" id="uploadCircle"mat-fab><img id="upload-img" src="../../assets/add-plus-button.png"/></button>
-      </label><p id="addYourFiles">Upload your files</p>
+      </label><p id="addYourFiles">Upload your file</p>
       <app-dragzone #file [onUpload]='upload'></app-dragzone>
     </div>
 
