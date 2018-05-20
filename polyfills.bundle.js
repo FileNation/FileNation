@@ -621,7 +621,7 @@ module.exports = function (NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
 /***/ "./node_modules/core-js/modules/_core.js":
 /***/ (function(module, exports) {
 
-var core = module.exports = { version: '2.5.4' };
+var core = module.exports = { version: '2.5.3' };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 
@@ -994,6 +994,7 @@ var LIBRARY = __webpack_require__("./node_modules/core-js/modules/_library.js");
 var $export = __webpack_require__("./node_modules/core-js/modules/_export.js");
 var redefine = __webpack_require__("./node_modules/core-js/modules/_redefine.js");
 var hide = __webpack_require__("./node_modules/core-js/modules/_hide.js");
+var has = __webpack_require__("./node_modules/core-js/modules/_has.js");
 var Iterators = __webpack_require__("./node_modules/core-js/modules/_iterators.js");
 var $iterCreate = __webpack_require__("./node_modules/core-js/modules/_iter-create.js");
 var setToStringTag = __webpack_require__("./node_modules/core-js/modules/_set-to-string-tag.js");
@@ -1020,7 +1021,7 @@ module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE
   var VALUES_BUG = false;
   var proto = Base.prototype;
   var $native = proto[ITERATOR] || proto[FF_ITERATOR] || DEFAULT && proto[DEFAULT];
-  var $default = $native || getMethod(DEFAULT);
+  var $default = (!BUGGY && $native) || getMethod(DEFAULT);
   var $entries = DEFAULT ? !DEF_VALUES ? $default : getMethod('entries') : undefined;
   var $anyNative = NAME == 'Array' ? proto.entries || $native : $native;
   var methods, key, IteratorPrototype;
@@ -1031,7 +1032,7 @@ module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE
       // Set @@toStringTag to native iterators
       setToStringTag(IteratorPrototype, TAG, true);
       // fix for some old engines
-      if (!LIBRARY && typeof IteratorPrototype[ITERATOR] != 'function') hide(IteratorPrototype, ITERATOR, returnThis);
+      if (!LIBRARY && !has(IteratorPrototype, ITERATOR)) hide(IteratorPrototype, ITERATOR, returnThis);
     }
   }
   // fix Array#{values, @@iterator}.name in V8 / FF
