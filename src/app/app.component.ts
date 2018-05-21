@@ -3,7 +3,6 @@ import { IpfsService } from './ipfs.service';
 import { TweenMax } from 'gsap';
 import { DOCUMENT } from '@angular/common';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,10 +13,10 @@ export class AppComponent {
   alpha = "v0.3 Alpha";
   about = "About";
 
-  constructor(@Inject(DOCUMENT) private document: any, private ipfsService: IpfsService) {}
+  constructor(@Inject(DOCUMENT) private document: any, private ipfsService: IpfsService) { }
 
   ngOnInit() {
     TweenMax.to(this.document.getElementById('title'),
-      2, {scrambleText:{text:'Filenation.io', chars:' ', revealDelay:0.5, speed:0.1}});
+      2, { scrambleText: { text: 'Filenation.io', chars: ' ', revealDelay: 0.5, speed: 0.1 } });
   }
 }

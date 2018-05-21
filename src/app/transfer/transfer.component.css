@@ -15,7 +15,6 @@ label button{
   border-radius: 50%;
 }
 
-
 input[type="file"]{
   position: fixed;
   top: 5px;
@@ -25,13 +24,11 @@ input[type="file"]{
   cursor: inherit;
 }
 
-
 #text {
   text-align: left;
   vertical-align: middle;
   font-size: 60px;
 }
-
 
 #file-input:hover {
   filter: drop-shadow(0 0 10px white);

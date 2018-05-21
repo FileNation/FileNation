@@ -61,7 +61,6 @@ h2 {
   filter: drop-shadow(0 0 30px white);
 }
 
-
 .body-container {
   position: relative;
   overflow: hidden;
@@ -71,7 +70,6 @@ h2 {
   display: flex;
   margin-top: 50px;
 }
-
 
 .feedback {
   display: flex;
@@ -143,18 +141,22 @@ h2 {
   margin: 8px !important;
   font-weight: 600;
 }
+
 .base-twitter-follow-button {
   margin-left: 60px
 }
+
 .feedback {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
 }
+
 .spacer {
   width:2vw;
   height: 3vw;
 }
+
 .title-bar-logo {
   display: flex;
   align-items: center;
@@ -164,9 +166,9 @@ h2 {
 }
 
 .download-button {
-    font-size: 15px;
-    color: black;
-    filter:drop-shadow(5px 5px 5px black);
+  font-size: 15px;
+  color: black;
+  filter:drop-shadow(5px 5px 5px black);
 }
 
 .mat-fab.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent {
@@ -205,12 +207,15 @@ h2 {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
+
 .logo-anim2 {
   animation: scaler ease 2.5s infinite;
 }
+
 .logo-anim {
   animation: spin1 linear 8s infinite;
 }
+
 .title-bar {
   top:0;
   display: flex;
@@ -222,6 +227,7 @@ h2 {
   /* box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12); */
   z-index: 1000;
 }
+
 .title-bar-title {
   display: flex;
   flex-wrap: wrap;
@@ -252,11 +258,13 @@ h2 {
   border-style: dashed;
   height: 40px;
 }
+
 .title-bar-right-container {
   display: flex;
   align-items: center;
   margin-right: 5%;
 }
+
 .github-mobile-button {
   display: none;
 }
