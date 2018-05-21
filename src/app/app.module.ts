@@ -5,7 +5,7 @@ import { FormsModule, FormControl, ReactiveFormsModule, FormArray } from '@angul
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {
-  MatButtonModule, MatCheckboxModule, MatInputModule, MatListModule,
+  MatButtonModule, MatCheckboxModule, MatInputModule, MatListModule, MatFormFieldModule,
   MatProgressBarModule, MatProgressSpinnerModule
 } from '@angular/material';
 
@@ -39,7 +39,8 @@ import { TransferComponent } from './transfer/transfer.component';
     BrowserAnimationsModule,
     NoopAnimationsModule,
     [FormsModule, ReactiveFormsModule],
-    [MatButtonModule, MatCheckboxModule, MatInputModule, MatListModule, MatProgressBarModule, MatProgressSpinnerModule],
+    [MatButtonModule, MatCheckboxModule, MatInputModule, MatListModule, MatFormFieldModule,
+    MatProgressBarModule, MatProgressSpinnerModule],
     RouterModule.forRoot(ROUTES, { preloadingStrategy: PreloadAllModules }),
   ],
   providers: [

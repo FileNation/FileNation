@@ -5,7 +5,6 @@
   justify-content: space-around;
   margin-left: 13%;
 }
-
 .sequencer {
   position: absolute;
   display: flex;
@@ -15,6 +14,7 @@
   width: 100vw;
   height: 100vh;
   z-index: 9999;
+
   font-size: 20px;
 }
 
@@ -30,7 +30,6 @@
 .mat-fab.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent, .mat-raised-button .mat-primary .mat-fab.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
   background-color: #168ccc !important;
 }
-
 @media screen and (max-width: 500px) {
   .container {
     display: flex;
@@ -136,6 +135,7 @@ display: flex;
 flex-direction: column;
 margin-bottom: 22px;
 }
+
 
 .changeButton {
   margin: auto;
@@ -246,7 +246,7 @@ input[type="file"] {
 
 #upload-img {
   height: 19px;
-  weight: 7px;
+  margin: -7px 0 0 0;
 }
 
 /*Spinner animation*/
