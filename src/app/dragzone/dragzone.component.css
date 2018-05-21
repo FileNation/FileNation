@@ -6,6 +6,7 @@
   height: 100vh !important;
   visibility: hidden;
 }
+
 .nonopaque {
   position: absolute;
   opacity: 0.0;
@@ -14,6 +15,7 @@
   width: 100vw !important;
   height: 100vh !important;
 }
+
 .overlay {
   background: rgba(0, 139, 205, 0.2);
   position: absolute;
@@ -24,10 +26,12 @@
   visibility: visible;
   z-index: 1000;
 }
+
 .dropin2 {
   position: absolute;
   visibility: hidden;
 }
+
 input {
   position: absolute;
   visibility: visible !important;

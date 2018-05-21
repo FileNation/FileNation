@@ -2,60 +2,64 @@
 
 <div class="container" *ngIf="form">
 
-
   <div class="topHolder">
     <!-- Loading spinner -->
 
     <!-- Upload icon and button-->
     <div class="image-upload" *ngIf="!showUpdate">
       <label for="file-input">
-        <button title ="Add Your Files" (click)="file.click()" id="uploadCircle"mat-fab><img id="upload-img" src="../../assets/add-plus-button.png"/></button>
-      </label><p id="addYourFiles">Upload your file</p>
+        <button title="Add Your Files" (click)="file.click()" id="uploadCircle" mat-fab>
+          <img id="upload-img" src="../../assets/add-plus-button.png" />
+        </button>
+      </label>
+      <p id="addYourFiles">Upload your file</p>
       <app-dragzone #file [onUpload]='upload'></app-dragzone>
     </div>
 
     <!-- Displays progress of file upload-->
     <div class="progressBarTitle" *ngIf="!progress && showUpdate && !this.completed">Checking Files...</div>
     <div class="progressBar" *ngIf="progress && showUpdate && this.completed < this.totalFiles">
-      <mat-progress-spinner
-      class="spinner-margin"
-      [color]="color"
-      [mode]="mode"
-      [value]= "value">
-    </mat-progress-spinner>
-    {{(this.progress / this.parentSize *100).toFixed(1)}} %
-  </div>
+      <mat-progress-spinner class="spinner-margin" [color]="color" [mode]="mode" [value]="value">
+      </mat-progress-spinner>
+      {{(this.progress / this.parentSize *100).toFixed(1)}} %
+    </div>
 
     <!-- Displays file name once uploaded and allows user to change selection -->
-    <div  class="fileFeedback" *ngIf="file.length > 0">
-      <p class="selectedFile"><strong>Files Selected:</strong><br> <span class="fileName2" style="color:#0099cc">{{this.name}}</span></p>
+    <div class="fileFeedback" *ngIf="file.length > 0">
+      <p class="selectedFile">
+        <strong>Files Selected:</strong>
+        <br>
+        <span class="fileName2" style="color:#0099cc">{{this.name}}</span>
+      </p>
       <button class="changeButton" mat-raised-button color="accent" (click)="toggleFile()">Change files</button>
     </div>
 
     <div class="form-input">
-      <form class="example-form" (ngSubmit)="onTestPost()" >
-        <mat-input-container class="example-full-width">
+      <form class="example-form" (ngSubmit)="onTestPost()">
+        <mat-form-field class="example-full-width">
           <input matInput placeholder="Send Files to" [(ngModel)]="data.to" [formControl]="toEmailFormControl" required>
           <mat-error *ngIf="toEmailFormControl.hasError('pattern')">
             Please enter a valid email address
           </mat-error>
           <mat-error *ngIf="toEmailFormControl.hasError('required')">
-            Email is <strong>required</strong>
+            Email is
+            <strong>required</strong>
           </mat-error>
-        </mat-input-container>
-        <mat-input-container class="example-full-width">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
           <input matInput placeholder="Your Email" [(ngModel)]="data.from" [formControl]="fromEmailFormControl" required>
           <mat-error *ngIf="fromEmailFormControl.hasError('pattern')">
             Please enter a valid email address
           </mat-error>
           <mat-error *ngIf="fromEmailFormControl.hasError('required')">
-            Email is <strong>required</strong>
+            Email is
+            <strong>required</strong>
           </mat-error>
-        </mat-input-container>
+        </mat-form-field>
 
         <mat-form-field class="example-full-width" hintLabel="Max 250 characters">
-          <textarea matInput placeholder="Message" matTextareaAutosize matAutosizeMinRows="2"
-          matAutosizeMaxRows="3" maxlength="250" [(ngModel)]="data.message" [formControl]="messageFormControl">
+          <textarea matInput placeholder="Message" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="3" maxlength="250"
+            [(ngModel)]="data.message" [formControl]="messageFormControl">
           <mat-error *ngIf="messageFormControl.hasError('pattern')">
             Please enter a valid message
           </mat-error>
@@ -76,7 +80,8 @@
 
 <!-- Displays once file has been uploaded and sent -->
 <div class="successMessage" *ngIf="submitResponse">
-  <h2>The file below has been added to IPFS and sent to: <br/>
+  <h2>The file below has been added to IPFS and sent to:
+    <br/>
     <span class="senderEmail" style="color:#0099cc">{{this.data.to}} </span>
   </h2>
   <span class="fileName">{{this.name}}</span>

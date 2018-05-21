@@ -1,3 +1,4 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 /* You can add global styles to this file, and also import other style files */
 html {
   overflow: hidden; /*hacky but it works to solve the wierd screen margins...*/
@@ -6,4 +7,3 @@ html {
     stroke: #168ccc !important;
 }
 
-@import "~@angular/material/prebuilt-themes/indigo-pink.css"

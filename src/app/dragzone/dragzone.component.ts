@@ -14,26 +14,28 @@ export class DragZoneComponent implements OnInit {
   @ViewChild('overlay')
   overlay;
   @Input() onUpload;
-  click() {this.dropin2.nativeElement.click()}
+  click() { this.dropin2.nativeElement.click() }
+
   constructor() {
   }
+
   ngOnInit() {
-    this.dropin.nativeElement.addEventListener('dragover', function($event) {
+    this.dropin.nativeElement.addEventListener('dragover', function ($event) {
       this.disabled = false;
       this.classList.add('nonopaque');
     })
-    this.dropin.nativeElement.addEventListener('dragon', function($event) {
+    this.dropin.nativeElement.addEventListener('dragon', function ($event) {
       this.disabled = false;
       this.classList.add('nonopaque');
     })
-    this.dropin.nativeElement.addEventListener('dragleave', function($event) {
+    this.dropin.nativeElement.addEventListener('dragleave', function ($event) {
       this.disabled = true;
       this.classList.remove('nonopaque');
     })
-    this.overlay.nativeElement.addEventListener('dragover', function($event) {
+    this.overlay.nativeElement.addEventListener('dragover', function ($event) {
       this.classList.add('overlay');
     })
-    this.overlay.nativeElement.addEventListener('dragleave', function($event) {
+    this.overlay.nativeElement.addEventListener('dragleave', function ($event) {
       this.classList.remove('overlay');
     })
   }
