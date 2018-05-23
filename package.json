@@ -29,12 +29,12 @@
     "angular-material": "^1.1.9",
     "angulartics2": "^5.4.0",
     "buffer": "^5.1.0",
-    "gsap": "^1.20.4",
+    "gsap": "^1.20.5",
     "ipfs": "^0.28.2",
     "readable-stream": "^2.3.6",
-    "rxjs": "^5.5.10",
+    "rxjs": "^5.5.11",
     "stream": "0.0.2",
-    "stream-buffers": "^3.0.1",
+    "stream-buffers": "^3.0.2",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
