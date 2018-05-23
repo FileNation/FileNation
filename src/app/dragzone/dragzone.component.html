@@ -1,10 +1,8 @@
-
-  <script src="./dropzone.js"></script>
+<script src="../../lib/dropzone"></script>
 
 <div #overlay>
   <form action="/file-upload" class="dropzone" uploadMultiple="true">
     <input #dropin class="dropin" id="file-input" type="file" (change)="onUpload($event)" disabled="disabled" multiple />
     <input #dropin2 class="dropin2" id="file-input" type="file" (change)="onUpload($event)" multiple />
   </form>
-
 </div>

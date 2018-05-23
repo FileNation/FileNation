@@ -14,9 +14,8 @@ export class TransferComponent implements OnInit {
   hashes: any;
   name: string;
   magnetURI: string;
-  postData:string;
+  postData: string;
   data: any;
-
 
   constructor(private ipfsService: IpfsService, private emailService: EmailService) { }
 
@@ -25,14 +24,13 @@ export class TransferComponent implements OnInit {
   }
 
   upload = ($event) => {
-    var file = $event.target.files[0];
+    const file = $event.target.files[0];
     this.name = file.name;
     this.parentSize = file.size;
 
     this.ipfsService.uploadIPFS(file)
-    .then((torrent) => {
-      this.hashes.push(torrent);
-    });
-
+      .then((torrent) => {
+        this.hashes.push(torrent);
+      });
   }
 }

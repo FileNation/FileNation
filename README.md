@@ -35,7 +35,12 @@ Testrun the the App on http://localhost:4200 with:
 
 There you go. If you later wish to build the code for production please run:
 
-    npm run build --prod
+    npm run prod or npm run prod:hashless
+
+
+For automated angular documentation, please use:
+
+    npm run compodoc:w
 
 
 

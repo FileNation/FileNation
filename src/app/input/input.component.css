@@ -22,6 +22,7 @@
   color: #008bcd !important;
   font-weight: 500 !important;
 }
+
 .mat-form-field {
     font-family: 'Josefin Sans', sans-serif !important;
 }
@@ -245,7 +246,7 @@ input[type="file"] {
 
 #upload-img {
   height: 19px;
-  weight: 7px;
+  margin: -7px 0 0 0;
 }
 
 /*Spinner animation*/

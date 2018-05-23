@@ -1,13 +1,19 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
     "outDir": "../out-tsc/app",
-    "baseUrl": "./",
-    "module": "es2015",
+    "module": "es6",
     "types": []
   },
+  "include": [
+    "main.ts",
+    "polyfills.ts"
+  ],
   "exclude": [
-    "test.ts",
     "**/*.spec.ts"
   ]
 }
