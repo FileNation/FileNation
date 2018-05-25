@@ -34,19 +34,12 @@
     "angular-filepond": "^1.0.5",
     "angulartics2": "^5.4.0",
     "buffer": "^5.1.0",
-<<<<<<< HEAD
-    "gsap": "^1.20.5",
-    "ipfs": "^0.28.2",
-    "readable-stream": "^2.3.6",
-    "rxjs": "^5.5.11",
-=======
     "core-js": "^2.5.6",
-    "gsap": "^1.20.4",
+    "gsap": "^1.20.6",
     "ipfs": "^0.28.2",
     "readable-stream": "^2.3.6",
     "rxjs": "^6.1.0",
     "rxjs-compat": "^6.1.0",
->>>>>>> 200243d90f0deafc3ed245f42d11e6f15e0c0ca6
     "stream": "0.0.2",
     "stream-buffers": "^3.0.2",
     "zone.js": "^0.8.26"
