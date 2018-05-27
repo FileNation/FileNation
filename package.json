@@ -34,7 +34,7 @@
     "angular-filepond": "^1.0.5",
     "angulartics2": "^5.4.0",
     "buffer": "^5.1.0",
-    "core-js": "^2.5.6",
+    "core-js": "^2.5.7",
     "gsap": "^1.20.6",
     "ipfs": "^0.28.2",
     "readable-stream": "^2.3.6",
@@ -66,6 +66,6 @@
     "ts-node": "^3.3.0",
     "tslint": "^5.10.0",
     "typescript": "2.7.2",
-    "webpack": "^4.8.3"
+    "webpack": "^4.9.1"
   }
 }
