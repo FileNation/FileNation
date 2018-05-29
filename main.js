@@ -1,6 +1,6 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
 
-/***/ "./node_modules/webpack/buildin/global.js":
+/***/ "./node_modules/@angular-devkit/build-angular/node_modules/webpack/buildin/global.js":
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
   \***********************************/
@@ -870,17 +870,6 @@ module.exports = __webpack_require__(/*! /Users/unicorn/FileNation/src/main.ts *
 /***/ }),
 
 /***/ 11:
-/*!********************************!*\
-  !*** pull-ws/server (ignored) ***!
-  \********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 12:
 /*!********************!*\
   !*** ws (ignored) ***!
   \********************/
@@ -891,32 +880,10 @@ module.exports = __webpack_require__(/*! /Users/unicorn/FileNation/src/main.ts *
 
 /***/ }),
 
-/***/ 13:
+/***/ 12:
 /*!********************!*\
   !*** fs (ignored) ***!
   \********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 14:
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 15:
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -936,9 +903,9 @@ module.exports = __webpack_require__(/*! /Users/unicorn/FileNation/src/main.ts *
 /***/ }),
 
 /***/ 3:
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
+/*!************************!*\
+  !*** buffer (ignored) ***!
+  \************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -947,9 +914,9 @@ module.exports = __webpack_require__(/*! /Users/unicorn/FileNation/src/main.ts *
 /***/ }),
 
 /***/ 4:
-/*!*****************************!*\
-  !*** ./leveldown (ignored) ***!
-  \*****************************/
+/*!************************!*\
+  !*** crypto (ignored) ***!
+  \************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -959,7 +926,7 @@ module.exports = __webpack_require__(/*! /Users/unicorn/FileNation/src/main.ts *
 
 /***/ 5:
 /*!************************!*\
-  !*** buffer (ignored) ***!
+  !*** crypto (ignored) ***!
   \************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -980,9 +947,9 @@ module.exports = __webpack_require__(/*! /Users/unicorn/FileNation/src/main.ts *
 /***/ }),
 
 /***/ 7:
-/*!************************!*\
-  !*** crypto (ignored) ***!
-  \************************/
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -991,9 +958,9 @@ module.exports = __webpack_require__(/*! /Users/unicorn/FileNation/src/main.ts *
 /***/ }),
 
 /***/ 8:
-/*!************************!*\
-  !*** crypto (ignored) ***!
-  \************************/
+/*!*****************************!*\
+  !*** ./leveldown (ignored) ***!
+  \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
