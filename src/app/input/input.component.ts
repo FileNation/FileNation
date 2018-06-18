@@ -38,13 +38,17 @@ export class InputComponent implements OnInit {
   mode = 'indeterminate';
   node: any;
 
-  constructor(@Inject(DOCUMENT) private document: any, private emailService: EmailService, private ipfsService: IpfsService) {
+  constructor(@Inject(DOCUMENT)
+    private document: any,
+    private emailService: EmailService,
+    private ipfsService: IpfsService) {
 
     this.data = {
-      to: '',
-      from: '',
-      message: '',
-      hashes: ''
+      to: 'h@h.com',
+      from: 't@t.com',
+      message: 'hello',
+      hashes: '',
+      expiry: ''
     }
   }
 
@@ -136,7 +140,7 @@ export class InputComponent implements OnInit {
     this.showUpdate = false;
   }
 
-  upload = ($event) => {
+  upload = async ($event) => {
     if (!this.file.length) {
       this.showUpdate = true;
       let concatSize = 0;
@@ -148,6 +152,7 @@ export class InputComponent implements OnInit {
       }).join(' ');
       this.name = concatName;
       this.parentSize = concatSize;
+      console.log(file)
       file.forEach((el, key) => {
         var reader = new FileReader();
         reader.onload = (e) => {
@@ -155,17 +160,38 @@ export class InputComponent implements OnInit {
             .then((ipfsObject) => {
               try {
                 this.hashes.push(ipfsObject);
+                console.log('hash: ', this.hashes, 'key: ', key, 'error: ', this.hashes[key].hash)
                 this.file.push('https://www.eternum.io/ipfs/' + this.hashes[key].hash);
                 this.data.hashes = (this.file)
               } catch (e) {
                 console.log(e)
               }
-            }).then(() => {
+            })
+            .then(() => {
               this.completed++
+              if(file.length == this.completed) {
+                let data = {
+                  'senderEmail': this.data.from,
+                  'receiverEmail': this.data.to,
+                  'message': this.data.message,
+                  'hashes': this.hashes
+                }
+                fetch('http://localhost:3000/test', {
+                  method: 'POST',
+                  headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(data)
+                })
+              }
             });
         }
         reader.readAsArrayBuffer(el);
       })
+
+      // })
+
     }
     else {
       alert("Sorry, still uploading previous file!")
