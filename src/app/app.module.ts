@@ -22,6 +22,7 @@ import { InputComponent } from './input/input.component';
 
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { HomeComponent } from './home/home.component';
+import { DownloadComponent } from './download/download.component';
 import { DragZoneComponent } from './dragzone/dragzone.component';
 import { TransferComponent } from './transfer/transfer.component';
 

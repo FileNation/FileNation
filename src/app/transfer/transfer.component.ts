@@ -5,7 +5,7 @@ import { EmailService } from './../email.service';
 @Component({
   selector: 'app-transfer',
   templateUrl: './transfer.component.html',
-  styleUrls: ['./transfer.component.css'],
+  styleUrls: ['./transfer.component.scss'],
   providers: [EmailService]
 })
 export class TransferComponent implements OnInit {
