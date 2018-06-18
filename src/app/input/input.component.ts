@@ -5,6 +5,7 @@ import { IpfsService } from '../ipfs.service';
 import { TweenMax } from 'gsap';
 import { DOCUMENT } from '@angular/platform-browser';
 import { Buffer } from 'buffer';
+import { environment } from '../../environments/environment'
 
 import { DragZoneComponent } from '../dragzone/dragzone.component';
 
@@ -21,7 +22,7 @@ export class InputComponent implements OnInit {
   postData: string;
   data: any;
   hashes: any;
-  name: string;
+  name: Array;
   parentSize: any;
   file: any;
   temp: any;
@@ -148,9 +149,10 @@ export class InputComponent implements OnInit {
       let concatName = file.map(el => {
         concatSize += el.size;
         this.totalFiles++;
+        console.log(el.name)
         return el.name;
-      }).join(' ');
-      this.name = concatName;
+      });
+      this.name = concatName.slice();
       this.parentSize = concatSize;
       file.forEach((el, key) => {
         var reader = new FileReader();
@@ -173,8 +175,9 @@ export class InputComponent implements OnInit {
                   'receiverEmail': this.data.to,
                   'message': this.data.message,
                   'hashes': this.hashes
+                  'names': this.name
                 }
-                fetch('http://localhost:3000/test', {
+                fetch(environment.postHash, {
                   method: 'POST',
                   headers: {
                     'Accept': 'application/json',
