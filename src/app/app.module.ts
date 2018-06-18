@@ -31,6 +31,7 @@ import { TransferComponent } from './transfer/transfer.component';
     AppComponent,
     InputComponent,
     HomeComponent,
+    DownloadComponent,
     DragZoneComponent,
     TransferComponent,
   ],
@@ -45,7 +46,7 @@ import { TransferComponent } from './transfer/transfer.component';
     RouterModule.forRoot(ROUTES, { preloadingStrategy: PreloadAllModules }),
   ],
   providers: [
-    IpfsService
+    IpfsService,
   ],
   bootstrap: [AppComponent]
 })

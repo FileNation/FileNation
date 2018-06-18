@@ -1,0 +1,336 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+* {
+  font-family: 'Josefin Sans', sans-serif !important;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.text-mobile {
+  display: none;
+}
+
+h1 {
+  font-size: 3em;
+  color: white;
+  padding-left: 5px;
+  margin: 10px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.4em;
+  color: white;
+  text-align: center;
+  margin-left: 20px;
+  filter: drop-shadow(10px 10px 10px black);
+}
+
+.body {
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-image: url('https://source.unsplash.com/collection/168902/1600x900');
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.body-2 {
+  background-image: linear-gradient(to bottom left, #00c5ccff, #0063ccff);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white !important;
+  display: none;
+}
+
+.body-2 img {
+  height: 195px;
+}
+.body-2 img:hover {
+  filter: drop-shadow(0 0 30px white);
+}
+
+.body-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  margin-top: 50px;
+}
+
+.feedback {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+}
+
+#social {
+  margin-top: 2px;
+  text-align: center;
+}
+
+#social a {
+  margin-top: 4px;
+  margin: 2px;
+}
+
+#social i:before {
+  color: white;
+  margin-top: 2px;
+  font-size: 1.9rem;
+  filter: drop-shadow(0 0 5px black);
+}
+
+#social a:hover {
+  filter: drop-shadow(0 0 5px #AAAAAA);
+}
+
+.dot-color {
+  color: white;
+}
+
+.about-button {
+  color: white;
+  font-size: 1.5em;
+  -webkit-filter: drop-shadow(0 0 10px black);
+  filter: drop-shadow(0 0 10px black);
+}
+
+.about-link {
+  text-decoration: none;
+}
+
+.base {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 5vw;
+  padding-top: 5px;
+  padding-bottom: 36px;
+  /* box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12); */
+  z-index: 1000;
+  bottom: 0px;
+  position:relative;
+}
+.base-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row;
+}
+
+.base-buttons h1 {
+  padding-left: 0px !important;
+  margin: 8px !important;
+  font-weight: 600;
+}
+
+.base-twitter-follow-button {
+  margin-left: 60px
+}
+
+.feedback {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.spacer {
+  width:2vw;
+  height: 3vw;
+}
+
+.title-bar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:60px;
+  height:50px;
+}
+
+.download-button {
+  font-size: 15px;
+  color: black;
+}
+
+.mat-fab.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent {
+    background-color: #FFF !important;
+    @include basic-shadow($color-black);
+}
+
+/*SAVING THESE ANIMATIONS FOR LATER. THEY ARE COOL*/
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(-22deg);}
+  100% { transform: rotate(-44deg); }
+}
+@keyframes scaler {
+  0% { transform: scale(1); opacity:1; }
+  50% { transform: scale(1.3); opacity:1; }
+  100% { transform: scale(1); opacity:1; }
+}
+@keyframes spin2 {
+  0% { transform: rotate(0deg); filter: hue-rotate(0deg);}
+  10% { transform: rotate(-90deg); filter: hue-rotate(100deg);}
+  20% { transform: rotate(0deg); filter: hue-rotate(100deg);}
+  30% { transform: rotate(90deg); filter: hue-rotate(100deg);}
+  40% { transform: rotate(0deg); filter: hue-rotate(0deg);}
+  50% { transform: rotate(0deg); filter: hue-rotate(0deg);}
+  60% { transform: rotate(-90deg); filter: hue-rotate(100deg);}
+  70% { transform: rotate(0deg); filter: hue-rotate(100deg);}
+  80% { transform: rotate(90deg); filter: hue-rotate(100deg);}
+  90% { transform: rotate(0deg); filter: hue-rotate(0deg);}
+  100% { transform: rotate(0deg); filter: hue-rotate(0deg);}
+}
+@keyframes spin1 {
+  0% { transform: rotate(0deg); filter: hue-rotate(0deg);}
+  100% { transform: rotate(359deg); filter: hue-rotate(0deg);}
+}
+@keyframes fader {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.logo-anim2 {
+  animation: scaler ease 2.5s infinite;
+}
+
+.logo-anim {
+  animation: spin1 linear 8s infinite;
+}
+
+.title-bar {
+  top:0;
+  display: flex;
+  position: sticky;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  /* box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12); */
+  z-index: 1000;
+}
+
+.title-bar-title {
+  display: flex;
+  flex-wrap: wrap;
+  white-space: wrap;
+  font-size: 1.6em;
+  filter:drop-shadow(10px 10px 10px black);
+  color: white;
+}
+
+#title:hover {
+  cursor: pointer;
+  border-style: none !important;
+  filter: drop-shadow(0 0 10px white);
+}
+
+.title-bar-left-container {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.title-bar-theme-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-style: dashed;
+  height: 40px;
+}
+
+.title-bar-right-container {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.github-mobile-button {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .spacer {
+    width: 3vw;
+    height: 0;
+  }
+  .body-2 {
+    display: inherit;
+  }
+  .title-bar-right-container {
+    margin-right: 5vw;
+    transform: scale(0.9);
+  }
+  .body-container {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .base-buttons {
+    transform: scale(0.9);
+    margin-right: 6vw;
+  }
+  .feedback {
+    transform: scale(0.9);
+  }
+}
+@media screen and (max-width: 491px) {
+  .feedback {
+    display: none;
+  }
+  .container {
+      height: 100vh;
+  }
+
+  .body {
+    display: none;
+  }
+  img {
+    padding-bottom: 300px;
+  }
+
+  h2 {
+    margin-left: 0px;
+  }
+
+  .text-mobile {
+    position: absolute;
+    display: inherit;
+  }
+  .github-mobile-button {
+    display: inline-block;
+  }
+  .base-buttons {
+    justify-content: space-around;
+    width: 100%;
+    margin-right: 6vw;
+  }
+}
+
+.mat-raised-button {
+  font-weight: 300;
+}
