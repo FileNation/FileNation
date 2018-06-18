@@ -44,9 +44,9 @@ export class InputComponent implements OnInit {
     private ipfsService: IpfsService) {
 
     this.data = {
-      to: 'h@h.com',
-      from: 't@t.com',
-      message: 'hello',
+      to: '',
+      from: '',
+      message: '',
       hashes: '',
       expiry: ''
     }
@@ -140,7 +140,7 @@ export class InputComponent implements OnInit {
     this.showUpdate = false;
   }
 
-  upload = async ($event) => {
+  upload = ($event) => {
     if (!this.file.length) {
       this.showUpdate = true;
       let concatSize = 0;
@@ -152,7 +152,6 @@ export class InputComponent implements OnInit {
       }).join(' ');
       this.name = concatName;
       this.parentSize = concatSize;
-      console.log(file)
       file.forEach((el, key) => {
         var reader = new FileReader();
         reader.onload = (e) => {
@@ -190,7 +189,6 @@ export class InputComponent implements OnInit {
         reader.readAsArrayBuffer(el);
       })
 
-      // })
 
     }
     else {
