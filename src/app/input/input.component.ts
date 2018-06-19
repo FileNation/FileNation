@@ -22,7 +22,7 @@ export class InputComponent implements OnInit {
   postData: string;
   data: any;
   hashes: any;
-  name: Array;
+  name: Array<any[]>;
   parentSize: any;
   file: any;
   temp: any;
@@ -149,7 +149,6 @@ export class InputComponent implements OnInit {
       let concatName = file.map(el => {
         concatSize += el.size;
         this.totalFiles++;
-        console.log(el.name)
         return el.name;
       });
       this.name = concatName.slice();
@@ -174,8 +173,8 @@ export class InputComponent implements OnInit {
                   'senderEmail': this.data.from,
                   'receiverEmail': this.data.to,
                   'message': this.data.message,
-                  'hashes': this.hashes
-                  'names': this.name
+                  'hashes': this.hashes,
+                  'names': this.name,
                 }
                 fetch(environment.postHash, {
                   method: 'POST',
