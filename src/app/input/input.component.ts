@@ -6,7 +6,6 @@ import { TweenMax } from 'gsap';
 import { DOCUMENT } from '@angular/platform-browser';
 import { Buffer } from 'buffer';
 import { environment } from '../../environments/environment'
-
 import { DragZoneComponent } from '../dragzone/dragzone.component';
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+$/;
@@ -49,7 +48,7 @@ export class InputComponent implements OnInit {
       from: '',
       message: '',
       hashes: '',
-      expiry: ''
+      expiry: Date
     }
   }
 
@@ -138,6 +137,7 @@ export class InputComponent implements OnInit {
     this.data.to = '';
     this.data.from = '';
     this.data.message = '';
+    this.data.expiry = Date;
     this.showUpdate = false;
   }
 

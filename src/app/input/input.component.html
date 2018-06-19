@@ -56,6 +56,18 @@
           </mat-error>
         </mat-form-field>
 
+
+
+
+
+        <mat-form-field class="example-full-width">
+          <input matInput [matDatepicker]="picker" placeholder="Set Expiry Date" [(ngModel)]="data.expiry" required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+
+
         <mat-form-field class="example-full-width" hintLabel="Max 250 characters">
           <textarea matInput placeholder="Message" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="3" maxlength="250"
             [(ngModel)]="data.message" [formControl]="messageFormControl">

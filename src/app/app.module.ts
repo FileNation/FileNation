@@ -6,7 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatButtonModule, MatCheckboxModule, MatInputModule, MatListModule, MatFormFieldModule,
-  MatProgressBarModule, MatProgressSpinnerModule
+  MatProgressBarModule, MatProgressSpinnerModule, MatDatepickerModule,
+  MatNativeDateModule
 } from '@angular/material';
 
 // get use with routes and modular
@@ -42,11 +43,13 @@ import { TransferComponent } from './transfer/transfer.component';
     NoopAnimationsModule,
     [FormsModule, ReactiveFormsModule],
     [MatButtonModule, MatCheckboxModule, MatInputModule, MatListModule, MatFormFieldModule,
-    MatProgressBarModule, MatProgressSpinnerModule],
+    MatProgressBarModule, MatProgressSpinnerModule, MatDatepickerModule, MatNativeDateModule,
+    ]
     RouterModule.forRoot(ROUTES, { preloadingStrategy: PreloadAllModules }),
   ],
   providers: [
     IpfsService,
+    MatDatepickerModule
   ],
   bootstrap: [AppComponent]
 })
