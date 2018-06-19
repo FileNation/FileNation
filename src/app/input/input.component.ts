@@ -5,6 +5,7 @@ import { IpfsService } from '../ipfs.service';
 import { TweenMax } from 'gsap';
 import { DOCUMENT } from '@angular/platform-browser';
 import { Buffer } from 'buffer';
+import { environment } from '../../environments/environment'
 
 import { DragZoneComponent } from '../dragzone/dragzone.component';
 
@@ -21,7 +22,7 @@ export class InputComponent implements OnInit {
   postData: string;
   data: any;
   hashes: any;
-  name: string;
+  name: Array<any[]>;
   parentSize: any;
   file: any;
   temp: any;
@@ -38,13 +39,17 @@ export class InputComponent implements OnInit {
   mode = 'indeterminate';
   node: any;
 
-  constructor(@Inject(DOCUMENT) private document: any, private emailService: EmailService, private ipfsService: IpfsService) {
+  constructor(@Inject(DOCUMENT)
+    private document: any,
+    private emailService: EmailService,
+    private ipfsService: IpfsService) {
 
     this.data = {
       to: '',
       from: '',
       message: '',
-      hashes: ''
+      hashes: '',
+      expiry: ''
     }
   }
 
@@ -145,8 +150,8 @@ export class InputComponent implements OnInit {
         concatSize += el.size;
         this.totalFiles++;
         return el.name;
-      }).join(' ');
-      this.name = concatName;
+      });
+      this.name = concatName.slice();
       this.parentSize = concatSize;
       file.forEach((el, key) => {
         var reader = new FileReader();
@@ -160,12 +165,32 @@ export class InputComponent implements OnInit {
               } catch (e) {
                 console.log(e)
               }
-            }).then(() => {
+            })
+            .then(() => {
               this.completed++
+              if(file.length == this.completed) {
+                let data = {
+                  'senderEmail': this.data.from,
+                  'receiverEmail': this.data.to,
+                  'message': this.data.message,
+                  'hashes': this.hashes,
+                  'names': this.name,
+                }
+                fetch(environment.postHash, {
+                  method: 'POST',
+                  headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(data)
+                })
+              }
             });
         }
         reader.readAsArrayBuffer(el);
       })
+
+
     }
     else {
       alert("Sorry, still uploading previous file!")
