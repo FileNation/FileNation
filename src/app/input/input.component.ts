@@ -1,13 +1,12 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { EmailService } from './../email.service';
 import { IpfsService } from '../ipfs.service';
 import { TweenMax } from 'gsap';
 import { DOCUMENT } from '@angular/platform-browser';
 import { Buffer } from 'buffer';
 import { environment } from '../../environments/environment'
-
 import { DragZoneComponent } from '../dragzone/dragzone.component';
+import { MatDatepickerInputEvent } from '@angular/material/datepicker'
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+$/;
 const MULTIPLE_REGEX = /^([a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+(,+ )?)+$/;
@@ -41,15 +40,14 @@ export class InputComponent implements OnInit {
 
   constructor(@Inject(DOCUMENT)
     private document: any,
-    private emailService: EmailService,
     private ipfsService: IpfsService) {
 
     this.data = {
-      to: '',
-      from: '',
+      to: 'h@h.com',
+      from: 't@t.com',
       message: '',
       hashes: '',
-      expiry: ''
+      dateExpiry: Date;
     }
   }
 
@@ -85,8 +83,13 @@ export class InputComponent implements OnInit {
     Validators.required,
     Validators.pattern(TEXT_REGEX)]);
 
+  addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
+    this.data.dateExpiry = event.value.toDate()
+  }
+
   //Called when form is submitted
   onTestPost() {
+  console.log('>>>>>>>>>>>',this.data)
     if (!this.data.to.match(MULTIPLE_REGEX)) alert(`Invalid Recipient, please verify recpient's email!`);
     else if (!this.data.from.match(EMAIL_REGEX)) alert(`Invalid Sender, please verify senders's email!`);
     else if (!(this.data.message.length === 0) && (!this.data.message.match(TEXT_REGEX))) alert(`Invalid message.`);
@@ -98,14 +101,6 @@ export class InputComponent implements OnInit {
           this.submit = false;
           this.submitResponse = true;
         }, 4000);
-        this.emailService.sendEmail(this.data.to, this.data.from, this.data.message, this.data.hashes)
-          .subscribe(
-            data => {
-              this.postData = JSON.stringify(data),
-                console.log('POST', this.postData)
-            },
-            error => console.log("Error 123", error)
-          );
       }
       else {
         alert("No file selected");
@@ -138,6 +133,7 @@ export class InputComponent implements OnInit {
     this.data.to = '';
     this.data.from = '';
     this.data.message = '';
+    this.data.dateExpiry = new Date();
     this.showUpdate = false;
   }
 
@@ -175,6 +171,7 @@ export class InputComponent implements OnInit {
                   'message': this.data.message,
                   'hashes': this.hashes,
                   'names': this.name,
+                  'dateExpiry': this.data.dateExpiry
                 }
                 fetch(environment.postHash, {
                   method: 'POST',

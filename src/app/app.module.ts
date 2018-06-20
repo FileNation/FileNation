@@ -6,9 +6,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatButtonModule, MatCheckboxModule, MatInputModule, MatListModule, MatFormFieldModule,
-  MatProgressBarModule, MatProgressSpinnerModule
+  MatProgressBarModule, MatProgressSpinnerModule, MatDatepickerModule,
+  MatNativeDateModule
 } from '@angular/material';
-
+import { MatDatetimepickerModule, MatNativeDatetimeModule, } from '@mat-datetimepicker/core';
+import { MatMomentDatetimeModule } from '@mat-datetimepicker/moment'
 // get use with routes and modular
 import { RouterModule, PreloadAllModules, Routes } from '@angular/router';
 
@@ -25,6 +27,7 @@ import { HomeComponent } from './home/home.component';
 import { DownloadComponent } from './download/download.component';
 import { DragZoneComponent } from './dragzone/dragzone.component';
 import { TransferComponent } from './transfer/transfer.component';
+import * as moment from 'moment';
 
 @NgModule({
   declarations: [
@@ -42,11 +45,15 @@ import { TransferComponent } from './transfer/transfer.component';
     NoopAnimationsModule,
     [FormsModule, ReactiveFormsModule],
     [MatButtonModule, MatCheckboxModule, MatInputModule, MatListModule, MatFormFieldModule,
-    MatProgressBarModule, MatProgressSpinnerModule],
+    MatProgressBarModule, MatProgressSpinnerModule, MatDatepickerModule, MatNativeDateModule,
+    ],
+    [MatDatetimepickerModule, MatNativeDatetimeModule],
+    MatMomentDatetimeModule,
     RouterModule.forRoot(ROUTES, { preloadingStrategy: PreloadAllModules }),
   ],
   providers: [
     IpfsService,
+    MatDatepickerModule,
   ],
   bootstrap: [AppComponent]
 })

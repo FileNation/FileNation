@@ -1,8 +1,21 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@mat-datetimepicker/core/datetimepicker/datetimepicker-theme.scss';
 /* You can add global styles to this file, and also import other style files */
 html {
   overflow: hidden; /*hacky but it works to solve the wierd screen margins...*/
 }
 .mat-progress-spinner circle, .mat-spinner circle {
     stroke: #168ccc !important;
+}
+
+.mat-form-field-flex {
+  width: 180px !important
+}
+
+.mat-form-field-infix {
+  width: auto !important
+}
+
+.mat-datetimepicker-calendar-header {
+  color: #212121 !important;
 }

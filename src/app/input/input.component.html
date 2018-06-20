@@ -55,7 +55,16 @@
             <strong>required</strong>
           </mat-error>
         </mat-form-field>
-
+        <mat-form-field>
+          <mat-placeholder>Set Expiry Date</mat-placeholder>
+          <mat-datetimepicker-toggle [for]="datetimePicker" matSuffix></mat-datetimepicker-toggle>
+          <mat-datetimepicker #datetimePicker type="datetime" openOnFocus="true" timeInterval="5"></mat-datetimepicker>
+          <input matInput formControlName="start"
+          (dateInput)="addEvent('input', $event)"
+          (dateChange)="addEvent('change', $event)"
+          [matDatetimepicker]="datetimePicker"
+          required autocomplete="false">
+        </mat-form-field>
         <mat-form-field class="example-full-width" hintLabel="Max 250 characters">
           <textarea matInput placeholder="Message" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="3" maxlength="250"
             [(ngModel)]="data.message" [formControl]="messageFormControl">
