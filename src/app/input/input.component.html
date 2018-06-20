@@ -45,6 +45,7 @@
             <strong>required</strong>
           </mat-error>
         </mat-form-field>
+
         <mat-form-field class="example-full-width">
           <input matInput placeholder="Your Email" [(ngModel)]="data.from" [formControl]="fromEmailFormControl" required>
           <mat-error *ngIf="fromEmailFormControl.hasError('pattern')">
@@ -56,12 +57,8 @@
           </mat-error>
         </mat-form-field>
 
-
-
-
-
         <mat-form-field class="example-full-width">
-          <input matInput [matDatepicker]="picker" placeholder="Set Expiry Date" [(ngModel)]="data.expiry" required>
+          <input matInput [matDatepicker]="picker" placeholder="Set Expiry Date" [(ngModel)]="data.dateExpiry" required>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>

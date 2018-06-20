@@ -1,6 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { EmailService } from './../email.service';
 import { IpfsService } from '../ipfs.service';
 import { TweenMax } from 'gsap';
 import { DOCUMENT } from '@angular/platform-browser';
@@ -40,7 +39,6 @@ export class InputComponent implements OnInit {
 
   constructor(@Inject(DOCUMENT)
     private document: any,
-    private emailService: EmailService,
     private ipfsService: IpfsService) {
 
     this.data = {
@@ -48,7 +46,7 @@ export class InputComponent implements OnInit {
       from: '',
       message: '',
       hashes: '',
-      expiry: Date
+      dateExpiry: Date
     }
   }
 
@@ -97,14 +95,6 @@ export class InputComponent implements OnInit {
           this.submit = false;
           this.submitResponse = true;
         }, 4000);
-        this.emailService.sendEmail(this.data.to, this.data.from, this.data.message, this.data.hashes)
-          .subscribe(
-            data => {
-              this.postData = JSON.stringify(data),
-                console.log('POST', this.postData)
-            },
-            error => console.log("Error 123", error)
-          );
       }
       else {
         alert("No file selected");
@@ -137,7 +127,7 @@ export class InputComponent implements OnInit {
     this.data.to = '';
     this.data.from = '';
     this.data.message = '';
-    this.data.expiry = Date;
+    this.data.dateExpiry = Date;
     this.showUpdate = false;
   }
 
@@ -175,6 +165,7 @@ export class InputComponent implements OnInit {
                   'message': this.data.message,
                   'hashes': this.hashes,
                   'names': this.name,
+                  'dateExpiry': this.data.dateExpiry
                 }
                 fetch(environment.postHash, {
                   method: 'POST',

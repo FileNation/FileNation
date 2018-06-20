@@ -44,12 +44,12 @@ import { TransferComponent } from './transfer/transfer.component';
     [FormsModule, ReactiveFormsModule],
     [MatButtonModule, MatCheckboxModule, MatInputModule, MatListModule, MatFormFieldModule,
     MatProgressBarModule, MatProgressSpinnerModule, MatDatepickerModule, MatNativeDateModule,
-    ]
+  ],
     RouterModule.forRoot(ROUTES, { preloadingStrategy: PreloadAllModules }),
   ],
   providers: [
     IpfsService,
-    MatDatepickerModule
+    MatDatepickerModule,
   ],
   bootstrap: [AppComponent]
 })
