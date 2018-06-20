@@ -59,7 +59,7 @@
           <mat-placeholder>Set Expiry Date</mat-placeholder>
           <mat-datetimepicker-toggle [for]="datetimePicker" matSuffix></mat-datetimepicker-toggle>
           <mat-datetimepicker #datetimePicker type="datetime" openOnFocus="true" timeInterval="5"></mat-datetimepicker>
-          <input matInput formControlName="start"
+          <input matInput
           (dateInput)="addEvent('input', $event)"
           (dateChange)="addEvent('change', $event)"
           [matDatetimepicker]="datetimePicker"

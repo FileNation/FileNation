@@ -7,7 +7,6 @@ import { Buffer }                     from 'buffer';
 
 import { DragZoneComponent }  from '../dragzone/dragzone.component';
 import { environment }        from '../../environments/environment';
-import { EmailService }       from './../email.service';
 import { IpfsService }        from '../ipfs.service';
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+$/;
@@ -39,14 +38,15 @@ export class InputComponent implements OnInit {
   color = '#168ccc';
   mode = 'indeterminate';
   node: any;
+  filesData: Array<any[]>;
 
   constructor(@Inject(DOCUMENT)
     private document: any,
     private ipfsService: IpfsService) {
 
     this.data = {
-      to: 'h@h.com',
-      from: 't@t.com',
+      to: 'marlon.mbs@gmail.com',
+      from: 'marlon.mbs@gmail.com',
       message: '',
       hashes: '',
       dateExpiry: Date.now()
@@ -64,6 +64,7 @@ export class InputComponent implements OnInit {
     this.form = true;
     this.progress = this.ipfsService.progress;
     this.showUpdate = false;
+    this.filesData = [];
     this.getTransfer();
   }
 
@@ -84,7 +85,7 @@ export class InputComponent implements OnInit {
     Validators.required,
     Validators.pattern(TEXT_REGEX)]);
 
-  addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
+  addEvent(type: string, event: MatDatepickerInputEvent<any>) {
     this.data.dateExpiry = event.value.toDate()
   }
 
@@ -97,10 +98,27 @@ export class InputComponent implements OnInit {
       if (this.file.length && this.data.to) {
         this.form = false;
         this.submit = true;
-        setTimeout(() => {
+
+        console.log(this.filesData);
+        let data = {
+          'senderEmail': this.data.from,
+          'receiverEmail': this.data.to,
+          'message': this.data.message,
+          'files': this.filesData,
+          'dateExpiry': this.data.dateExpiry
+        }
+
+        fetch(environment.backendUrl+'/hash', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        }).then(() => {
           this.submit = false;
           this.submitResponse = true;
-        }, 4000);
+        })
       }
       else {
         alert("No file selected");
@@ -135,6 +153,7 @@ export class InputComponent implements OnInit {
     this.data.message = '';
     this.data.dateExpiry = new Date();
     this.showUpdate = false;
+    this.filesData = [];
   }
 
   upload = ($event) => {
@@ -149,45 +168,28 @@ export class InputComponent implements OnInit {
       });
       this.name = concatName.slice();
       this.parentSize = concatSize;
+
       file.forEach((el, key) => {
         var reader = new FileReader();
         reader.onload = (e) => {
           this.ipfsService.uploadIPFS(reader.result)
             .then((ipfsObject) => {
               try {
-                this.hashes.push(ipfsObject);
-                this.file.push('https://www.eternum.io/ipfs/' + this.hashes[key].hash);
-                this.data.hashes = (this.file)
+                this.file.push(ipfsObject.hash);
+                // this.data.hashes =
+                this.filesData.push({hash: ipfsObject.hash, name: el.name, filetype: el.name.substr(el.name.lastIndexOf('.')+1) });
               } catch (e) {
                 console.log(e)
               }
             })
             .then(() => {
-              this.completed++
-              if(file.length == this.completed) {
-                let data = {
-                  'senderEmail': this.data.from,
-                  'receiverEmail': this.data.to,
-                  'message': this.data.message,
-                  'hashes': this.hashes,
-                  'names': this.name,
-                  'dateExpiry': this.data.dateExpiry
-                }
-                fetch(environment.backendUrl+'/hash', {
-                  method: 'POST',
-                  headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                  },
-                  body: JSON.stringify(data)
-                })
-              }
+              this.completed++;
+              this.submit = true;
+              console.log(this.filesData);
             });
         }
         reader.readAsArrayBuffer(el);
       })
-
-
     }
     else {
       alert("Sorry, still uploading previous file!")

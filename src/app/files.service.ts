@@ -33,7 +33,7 @@ export class FilesService {
 
   downloadFiles = (files) => {
     let count = 0;
-    console.log(files);
+    console.log('FILES TO DOWNLOAD: ', files);
     const zipFilename = "download.zip";
     const filesLength = files.length;
     files.forEach((file, el) => {
@@ -42,7 +42,7 @@ export class FilesService {
          if(err) {
             throw err; // or handle the error
          }
-         var filename = this.getFileName(file.type, count);
+         let filename = this.getFileName(file.type, count.toString());
          zip.file(filename, data, {binary:true});
          count++;
          if (count === filesLength) {
@@ -55,27 +55,24 @@ export class FilesService {
   }
 
   getFileName (filetype, count = '0') {
-    count = count > 0 ? count : '';
     return `filename${count}.${filetype}`;
   }
 
-  downloadFile = (file) => {
-    var blob = null;
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", file.url);
-    xhr.file = file;
-    xhr.getFileName = this.getFileName;
-    xhr.getMimeType = this.getMimeType;
-    xhr.responseType = "blob";//force the HTTP response, response-type header to be blob
-    xhr.onload = function()
-    {
-      var file = this.file;
-      const filename = this.getFileName(file.type);
-      var blob = new Blob([xhr.response], {type: this.getMimeType(file.type)});
-      saveAs(blob, filename);
-    }
-    xhr.send();
+  downloadFile(file) {
+    const filename = this.getFileName(file.type);
+    const mimetype = this.getMimeType(file.type);
+
+    this.http.get(file.url,
+     { responseType: ResponseContentType.Blob })
+    .pipe(map(res => res))
+    .subscribe(res => {
+        const blob = new Blob([res.blob()], { type: mimetype });
+        saveAs(blob, filename);
+      }
+    );
   }
+
+
 
   getMimeType(fileType) {
     const mimeTypes = {

@@ -10,17 +10,14 @@ import { FilesService }       from '../files.service';
 })
 export class DownloadfileComponent implements OnInit {
 
-  @Input() file: object;
+  @Input() file: any;
   private icon = 'mdi-file';
   private name = 'Document';
-
-  downloadFile() {
-
-  }
 
   constructor(private filesService: FilesService) { }
 
   downloadFile() {
+
     const file = {
       url: `${environment.ipfsGateway}/${this.file.hash}`,
       type: this.file.filetype

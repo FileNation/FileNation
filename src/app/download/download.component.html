@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class="page-container flexbox-parent">
   <div layout="row" layout-align="center center">
     <div *ngIf="!expiredDownload">
@@ -57,11 +56,5 @@
     <hr>
     <button routerLink="/" mat-raised-button color="accent" type="button">Send new files</button>
   </div>
-=======
-<!-- Upload icon and button-->
-<div class="image-upload" *ngIf="downloadDataObservable | async as data; else loading">
-  This are your files to download
->>>>>>> 5b9117996005d674a36497d484299ccb26ca1bfb
-</div>
 
 <ng-template #loading>Checking the download data....</ng-template>
