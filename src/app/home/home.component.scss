@@ -1,4 +1,4 @@
-.transferHolder {
+.transfer-holder {
   border-radius: 5px;
   margin: 10%;
   display: flex;
@@ -6,21 +6,20 @@
   justify-content: space-around;
   min-height: 400px;
   align-items: center;
-  /*margin-left: 150px !important;*/
 }
 
 .file-box {
+  align-items: center;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  align-items: center;
+  height: 100vh;
   justify-content: flex-start;
   width: 100vw;
-  height: 100vh;
 }
 
 @media screen and (max-width: 500px) {
-  .transferHolder {
+  .transfer-holder {
     transform: scale(0.75);
     margin: 0;
     align-items: flex-start;
@@ -32,7 +31,7 @@
 }
 
 @media screen and (max-width: 700px) {
-  .transferHolder {
+  .transfer-holder {
     margin: 0%;
   }
 }

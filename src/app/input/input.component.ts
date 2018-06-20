@@ -1,12 +1,13 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
-import { EmailService } from './../email.service';
-import { IpfsService } from '../ipfs.service';
-import { TweenMax } from 'gsap';
-import { DOCUMENT } from '@angular/platform-browser';
-import { Buffer } from 'buffer';
+import { Component, OnInit, Inject }  from '@angular/core';
+import { FormControl, Validators }    from '@angular/forms';
+import { MatDatepickerInputEvent }    from '@angular/material/datepicker'
+import { DOCUMENT }                   from '@angular/platform-browser';
+import { TweenMax }                   from 'gsap';
+import { Buffer }                     from 'buffer';
 
-import { DragZoneComponent } from '../dragzone/dragzone.component';
+import { DragZoneComponent }  from '../dragzone/dragzone.component';
+import { environment }        from '../../environments/environment';
+import { IpfsService }        from '../ipfs.service';
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+$/;
 const MULTIPLE_REGEX = /^([a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+(,+ )?)+$/;
@@ -15,13 +16,13 @@ const TEXT_REGEX = /^[a-zA-Z0-9-]/;
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
-  styleUrls: ['./input.component.css']
+  styleUrls: ['./input.component.scss']
 })
 export class InputComponent implements OnInit {
   postData: string;
   data: any;
   hashes: any;
-  name: string;
+  name: Array<any[]>;
   parentSize: any;
   file: any;
   temp: any;
@@ -37,20 +38,23 @@ export class InputComponent implements OnInit {
   color = '#168ccc';
   mode = 'indeterminate';
   node: any;
+  filesData: Array<any[]>;
 
-  constructor(@Inject(DOCUMENT) private document: any, private emailService: EmailService, private ipfsService: IpfsService) {
+  constructor(@Inject(DOCUMENT)
+    private document: any,
+    private ipfsService: IpfsService) {
 
     this.data = {
-      to: '',
-      from: '',
+      to: 'marlon.mbs@gmail.com',
+      from: 'marlon.mbs@gmail.com',
       message: '',
-      hashes: ''
+      hashes: '',
+      dateExpiry: Date.now()
     }
   }
 
   ngOnInit() {
     this.animated = false;
-    // change to upload maybe?
     this.totalFiles = 0;
     this.completed = 0;
     this.hashes = [];
@@ -60,6 +64,7 @@ export class InputComponent implements OnInit {
     this.form = true;
     this.progress = this.ipfsService.progress;
     this.showUpdate = false;
+    this.filesData = [];
     this.getTransfer();
   }
 
@@ -80,6 +85,10 @@ export class InputComponent implements OnInit {
     Validators.required,
     Validators.pattern(TEXT_REGEX)]);
 
+  addEvent(type: string, event: MatDatepickerInputEvent<any>) {
+    this.data.dateExpiry = event.value.toDate()
+  }
+
   //Called when form is submitted
   onTestPost() {
     if (!this.data.to.match(MULTIPLE_REGEX)) alert(`Invalid Recipient, please verify recpient's email!`);
@@ -89,18 +98,27 @@ export class InputComponent implements OnInit {
       if (this.file.length && this.data.to) {
         this.form = false;
         this.submit = true;
-        setTimeout(() => {
+
+        console.log(this.filesData);
+        let data = {
+          'senderEmail': this.data.from,
+          'receiverEmail': this.data.to,
+          'message': this.data.message,
+          'files': this.filesData,
+          'dateExpiry': this.data.dateExpiry
+        }
+
+        fetch(environment.backendUrl+'/hash', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        }).then(() => {
           this.submit = false;
           this.submitResponse = true;
-        }, 4000);
-        this.emailService.sendEmail(this.data.to, this.data.from, this.data.message, this.data.hashes)
-          .subscribe(
-            data => {
-              this.postData = JSON.stringify(data),
-                console.log('POST', this.postData)
-            },
-            error => console.log("Error 123", error)
-          );
+        })
       }
       else {
         alert("No file selected");
@@ -133,7 +151,9 @@ export class InputComponent implements OnInit {
     this.data.to = '';
     this.data.from = '';
     this.data.message = '';
+    this.data.dateExpiry = new Date();
     this.showUpdate = false;
+    this.filesData = [];
   }
 
   upload = ($event) => {
@@ -145,23 +165,27 @@ export class InputComponent implements OnInit {
         concatSize += el.size;
         this.totalFiles++;
         return el.name;
-      }).join(' ');
-      this.name = concatName;
+      });
+      this.name = concatName.slice();
       this.parentSize = concatSize;
+
       file.forEach((el, key) => {
         var reader = new FileReader();
         reader.onload = (e) => {
           this.ipfsService.uploadIPFS(reader.result)
             .then((ipfsObject) => {
               try {
-                this.hashes.push(ipfsObject);
-                this.file.push('https://www.eternum.io/ipfs/' + this.hashes[key].hash);
-                this.data.hashes = (this.file)
+                this.file.push(ipfsObject.hash);
+                // this.data.hashes =
+                this.filesData.push({hash: ipfsObject.hash, name: el.name, filetype: el.name.substr(el.name.lastIndexOf('.')+1) });
               } catch (e) {
                 console.log(e)
               }
-            }).then(() => {
-              this.completed++
+            })
+            .then(() => {
+              this.completed++;
+              this.submit = true;
+              console.log(this.filesData);
             });
         }
         reader.readAsArrayBuffer(el);

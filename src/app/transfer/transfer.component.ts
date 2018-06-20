@@ -1,12 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IpfsService } from './../ipfs.service';
-import { EmailService } from './../email.service';
 
 @Component({
   selector: 'app-transfer',
   templateUrl: './transfer.component.html',
-  styleUrls: ['./transfer.component.css'],
-  providers: [EmailService]
+  styleUrls: ['./transfer.component.scss'],
+  providers: []
 })
 export class TransferComponent implements OnInit {
   @Input() parentSize: number;
@@ -17,7 +16,7 @@ export class TransferComponent implements OnInit {
   postData: string;
   data: any;
 
-  constructor(private ipfsService: IpfsService, private emailService: EmailService) { }
+  constructor(private ipfsService: IpfsService) { }
 
   ngOnInit() {
     this.hashes = [];

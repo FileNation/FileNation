@@ -1,0 +1,124 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@mat-datetimepicker/core/datetimepicker/datetimepicker-theme.scss';
+
+@import "./app/variables.scss";
+@import "./app/layout.scss";
+@import "./app/mixins.scss";
+@import "./app/buttons.scss";
+
+/* You can add global styles to this file, and also import other style files */
+html {
+  overflow: hidden; /*hacky but it works to solve the wierd screen margins...*/
+}
+
+h1 {
+  font-weight: lighter;
+}
+h2, h3 {
+  color: $color-grey;
+  font-weight: lighter;
+  margin-bottom: 1rem;
+}
+
+.mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #168ccc !important;
+}
+
+.mat-raised-button {
+  border-radius: $border-radius !important;
+}
+
+.page-container {
+  background: rgba($color-white, .9);
+  border-radius: 10px;
+  @include basic-shadow($color-black);
+  margin: 0 auto;
+  width: 60vw;
+  padding: $padding-size;
+}
+
+.page-container h1 {
+  margin-top: 0;
+  color: $color-black;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: $font-size-big;
+  color: $color-grey;
+  min-height: 200px;
+}
+
+.loader svg {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.msg {
+  font-size: $font-size-very-big;
+  color: $color-grey;
+}
+
+// Here is where the magic happens
+
+$offset: 187;
+$duration: 1.4s;
+
+.spinner {
+  animation: rotator $duration linear infinite;
+}
+
+@keyframes rotator {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(270deg); }
+}
+
+.path {
+  stroke-dasharray: $offset;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation:
+    dash $duration ease-in-out infinite,
+    colors ($duration*4) ease-in-out infinite;
+}
+
+@keyframes colors {
+	0% { stroke: $color-primary; }
+	25% { stroke: darken($color-primary, 5); }
+	50% { stroke: darken($color-primary-light, 20); }
+	75% { stroke: $color-primary-light }
+  100% { stroke: $color-grey }
+}
+
+@keyframes dash {
+ 0% { stroke-dashoffset: $offset; }
+ 50% {
+   stroke-dashoffset: $offset/4;
+   transform:rotate(135deg);
+ }
+ 100% {
+   stroke-dashoffset: $offset;
+   transform:rotate(450deg);
+ }
+}
+
+.mat-raised-button.mat-accent {
+  background: $color-primary-light;
+}
+
+.mat-form-field-flex {
+  width: 180px !important
+}
+
+.mat-form-field-infix {
+  width: auto !important
+}
+
+.mat-datetimepicker-calendar-header {
+  color: #212121 !important;
+}
