@@ -6,7 +6,7 @@ import { DOCUMENT } from '@angular/platform-browser';
 import { Buffer } from 'buffer';
 import { environment } from '../../environments/environment'
 import { DragZoneComponent } from '../dragzone/dragzone.component';
-import {MatDatepickerInputEvent} from '@angular/material/datepicker'
+import { MatDatepickerInputEvent } from '@angular/material/datepicker'
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+$/;
 const MULTIPLE_REGEX = /^([a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+(,+ )?)+$/;
