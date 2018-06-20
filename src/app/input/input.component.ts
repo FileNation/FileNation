@@ -6,6 +6,7 @@ import { DOCUMENT } from '@angular/platform-browser';
 import { Buffer } from 'buffer';
 import { environment } from '../../environments/environment'
 import { DragZoneComponent } from '../dragzone/dragzone.component';
+import {MatDatepickerInputEvent} from '@angular/material/datepicker'
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+$/;
 const MULTIPLE_REGEX = /^([a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+(,+ )?)+$/;
@@ -42,11 +43,11 @@ export class InputComponent implements OnInit {
     private ipfsService: IpfsService) {
 
     this.data = {
-      to: '',
-      from: '',
+      to: 'h@h.com',
+      from: 't@t.com',
       message: '',
       hashes: '',
-      dateExpiry: Date
+      dateExpiry: Date;
     }
   }
 
@@ -82,8 +83,13 @@ export class InputComponent implements OnInit {
     Validators.required,
     Validators.pattern(TEXT_REGEX)]);
 
+  addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
+    this.data.dateExpiry = event.value.toDate()
+  }
+
   //Called when form is submitted
   onTestPost() {
+  console.log('>>>>>>>>>>>',this.data)
     if (!this.data.to.match(MULTIPLE_REGEX)) alert(`Invalid Recipient, please verify recpient's email!`);
     else if (!this.data.from.match(EMAIL_REGEX)) alert(`Invalid Sender, please verify senders's email!`);
     else if (!(this.data.message.length === 0) && (!this.data.message.match(TEXT_REGEX))) alert(`Invalid message.`);
@@ -127,7 +133,7 @@ export class InputComponent implements OnInit {
     this.data.to = '';
     this.data.from = '';
     this.data.message = '';
-    this.data.dateExpiry = Date;
+    this.data.dateExpiry = new Date();
     this.showUpdate = false;
   }
 
