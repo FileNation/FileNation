@@ -1,3 +1,6 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
 * {
   font-family: 'Josefin Sans', sans-serif !important;
 }
@@ -60,6 +63,10 @@ h2 {
 .body-2 img:hover {
   filter: drop-shadow(0 0 30px white);
 }
+
+
+
+
 
 .body-container {
   position: relative;
@@ -168,11 +175,11 @@ h2 {
 .download-button {
   font-size: 15px;
   color: black;
-  filter:drop-shadow(5px 5px 5px black);
 }
 
 .mat-fab.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent {
     background-color: #FFF !important;
+    @include basic-shadow($color-black);
 }
 
 /*SAVING THESE ANIMATIONS FOR LATER. THEY ARE COOL*/
@@ -246,7 +253,7 @@ h2 {
 .title-bar-left-container {
   display: flex;
   align-items: center;
-  margin-left: 5%;
+  margin-left: 1rem;
 }
 
 .title-bar-theme-button {
@@ -262,7 +269,7 @@ h2 {
 .title-bar-right-container {
   display: flex;
   align-items: center;
-  margin-right: 5%;
+  margin-right: 1rem;
 }
 
 .github-mobile-button {

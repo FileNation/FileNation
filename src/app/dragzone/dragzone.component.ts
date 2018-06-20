@@ -4,7 +4,7 @@ import { trigger } from '@angular/animations';
 @Component({
   selector: 'app-dragzone',
   templateUrl: './dragzone.component.html',
-  styleUrls: ['./dragzone.component.css']
+  styleUrls: ['./dragzone.component.scss']
 })
 export class DragZoneComponent implements OnInit {
   @ViewChild('dropin')

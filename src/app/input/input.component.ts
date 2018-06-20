@@ -1,11 +1,10 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { EmailService } from './../email.service';
 import { IpfsService } from '../ipfs.service';
 import { TweenMax } from 'gsap';
 import { DOCUMENT } from '@angular/platform-browser';
 import { Buffer } from 'buffer';
-
+import { environment } from '../../environments/environment'
 import { DragZoneComponent } from '../dragzone/dragzone.component';
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+$/;
@@ -15,13 +14,13 @@ const TEXT_REGEX = /^[a-zA-Z0-9-]/;
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
-  styleUrls: ['./input.component.css']
+  styleUrls: ['./input.component.scss']
 })
 export class InputComponent implements OnInit {
   postData: string;
   data: any;
   hashes: any;
-  name: string;
+  name: Array<any[]>;
   parentSize: any;
   file: any;
   temp: any;
@@ -38,13 +37,16 @@ export class InputComponent implements OnInit {
   mode = 'indeterminate';
   node: any;
 
-  constructor(@Inject(DOCUMENT) private document: any, private emailService: EmailService, private ipfsService: IpfsService) {
+  constructor(@Inject(DOCUMENT)
+    private document: any,
+    private ipfsService: IpfsService) {
 
     this.data = {
       to: '',
       from: '',
       message: '',
-      hashes: ''
+      hashes: '',
+      dateExpiry: Date
     }
   }
 
@@ -93,14 +95,6 @@ export class InputComponent implements OnInit {
           this.submit = false;
           this.submitResponse = true;
         }, 4000);
-        this.emailService.sendEmail(this.data.to, this.data.from, this.data.message, this.data.hashes)
-          .subscribe(
-            data => {
-              this.postData = JSON.stringify(data),
-                console.log('POST', this.postData)
-            },
-            error => console.log("Error 123", error)
-          );
       }
       else {
         alert("No file selected");
@@ -133,6 +127,7 @@ export class InputComponent implements OnInit {
     this.data.to = '';
     this.data.from = '';
     this.data.message = '';
+    this.data.dateExpiry = Date;
     this.showUpdate = false;
   }
 
@@ -145,8 +140,8 @@ export class InputComponent implements OnInit {
         concatSize += el.size;
         this.totalFiles++;
         return el.name;
-      }).join(' ');
-      this.name = concatName;
+      });
+      this.name = concatName.slice();
       this.parentSize = concatSize;
       file.forEach((el, key) => {
         var reader = new FileReader();
@@ -160,12 +155,33 @@ export class InputComponent implements OnInit {
               } catch (e) {
                 console.log(e)
               }
-            }).then(() => {
+            })
+            .then(() => {
               this.completed++
+              if(file.length == this.completed) {
+                let data = {
+                  'senderEmail': this.data.from,
+                  'receiverEmail': this.data.to,
+                  'message': this.data.message,
+                  'hashes': this.hashes,
+                  'names': this.name,
+                  'dateExpiry': this.data.dateExpiry
+                }
+                fetch(environment.postHash, {
+                  method: 'POST',
+                  headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(data)
+                })
+              }
             });
         }
         reader.readAsArrayBuffer(el);
       })
+
+
     }
     else {
       alert("Sorry, still uploading previous file!")

@@ -6,17 +6,16 @@
   justify-content: space-around;
   min-height: 400px;
   align-items: center;
-  /*margin-left: 150px !important;*/
 }
 
 .file-box {
+  align-items: center;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  align-items: center;
+  height: 100vh;
   justify-content: flex-start;
   width: 100vw;
-  height: 100vh;
 }
 
 @media screen and (max-width: 500px) {
