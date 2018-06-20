@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute }               from '@angular/router';
+import { JSZip }                        from 'jszip';
 
 import { Subject }                      from 'rxjs';
 
@@ -69,7 +70,7 @@ export class DownloadComponent implements OnInit {
     var delta = expireDate.getTime() - Date.now();
     if(delta < 0) {
       this.expiredDownload = true;
-      this.stopExpiresTimer():
+      this.stopExpiresTimer();
     } else {
       delta = Math.abs(delta) / 1000;
     }

@@ -49,7 +49,7 @@ export class InputComponent implements OnInit {
       from: 't@t.com',
       message: '',
       hashes: '',
-      dateExpiry: Date;
+      dateExpiry: Date.now()
     }
   }
 
