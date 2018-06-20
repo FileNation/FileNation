@@ -37,9 +37,7 @@ export class IpfsService {
       });
       myReadableStreamBuffer.on('data', (chunk) => {
         this.progress += chunk.byteLength;
-
         myReadableStreamBuffer.resume();
-
       });
 
       this.stream.write(myReadableStreamBuffer);
@@ -51,7 +49,6 @@ export class IpfsService {
         this.stream.end();
       });
       myReadableStreamBuffer.resume();
-
     });
   }
 

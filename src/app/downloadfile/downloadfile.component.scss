@@ -1,0 +1,29 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+:host {
+  width: 100%;
+}
+
+.filenation-download-file {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.filenation-download-file__name {
+  flex: 1;
+}
+.filenation-download-file__name .mdi {
+  color: $color-grey;
+  vertical-align: middle;
+}
+
+.filenation-download-file__actions {
+  width: 100px;
+  text-align: right;
+}
+
+.filenation-download-file__actions .mdi {
+  color: $color-primary-light;
+}

@@ -1,3 +1,67 @@
-<div class="transferHolder">
-  <app-transfer></app-transfer>
+<<<<<<< HEAD
+<div class="page-container flexbox-parent">
+  <div layout="row" layout-align="center center">
+    <div *ngIf="!expiredDownload">
+      <!-- Upload icon and button-->
+      <h1 class="image-upload__title">Download now</h1>
+      <div class="image-upload" *ngIf="timeLeft">
+        <div *ngIf="timeLeft" class="timeLeft-container">
+          <h3>Time left</h3>
+          <div class="image-upload__time">
+            <div *ngIf="timeLeft.days>0" class="image-upload__time--days">
+              <div class="upload-time">{{timeLeft.daysFormat}}</div>
+              <span>Days</span>
+            </div>
+            <div *ngIf="timeLeft.hours>0" class="image-upload__time--hours">
+              <div class="upload-time">{{timeLeft.hoursFormat}}</div>
+              <span>Hours</span>
+            </div>
+            <div *ngIf="timeLeft.minutes>0" class="image-upload__time--minutes">
+              <div class="upload-time">{{timeLeft.minutesFormat}}</div>
+              <span>Minutes</span>
+            </div>
+            <div *ngIf="timeLeft.seconds>=0" class="image-upload__time--seconds">
+              <div class="upload-time">{{timeLeft.secondsFormat}}</div>
+              <span>Seconds</span>
+            </div>
+          </div>
+        </div>
+        <br>
+        <p>
+          <span class="sender">
+            <span class="mdi-18px mdi mdi-account"></span> <b>{{data.senderEmail}}</b>&nbsp;has sent you this files
+          </span>
+        </p>
+
+        <mat-list *ngFor="let file of data.files">
+          <mat-list-item> {{file.url}}
+            <app-downloadfile [file]="file"></app-downloadfile>
+          <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+          </mat-list-item>
+        </mat-list>
+
+        <div class="container-button-submit">
+          <button class="mat-raised-button filenation-button-download" (click)="downloadFiles()"><span class="mdi-24px mdi mdi-file-multiple"></span> Download all</button>
+        </div>
+      </div>
+      <div *ngIf="!timeLeft" class="loader">
+        <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+         <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+        </svg>
+        Preparing files
+    </div>
+    </div>
+  </div>
+  <div *ngIf="expiredDownload" class="msg">
+    Sorry, the download for this files has expired
+    <hr>
+    <button routerLink="/" mat-raised-button color="accent" type="button">Send new files</button>
+  </div>
+=======
+<!-- Upload icon and button-->
+<div class="image-upload" *ngIf="downloadDataObservable | async as data; else loading">
+  This are your files to download
+>>>>>>> 5b9117996005d674a36497d484299ccb26ca1bfb
 </div>
+
+<ng-template #loading>Checking the download data....</ng-template>

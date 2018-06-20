@@ -1,0 +1,10 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.filenation-button-download {
+  font-size: $font-size-big;
+  background: $color-primary-light;
+  color: $color-white;
+  padding: $padding-size;
+  height: 3rem;
+}

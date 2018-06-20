@@ -28,7 +28,7 @@
 }
 
 .mat-fab.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent, .mat-raised-button .mat-primary .mat-fab.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
-  background-color: $color-blue-light !important;
+  background-color: $color-primary-light !important;
 }
 
 @media screen and (max-width: 500px) {
@@ -78,7 +78,7 @@
 .progressBarTitle {
   text-align: center;
   font-size: 1.7em;
-  color: $color-blue-light;
+  color: $color-primary-light;
   font-family: $font-family-primary;
   margin-bottom: 23px;
 }
@@ -86,7 +86,7 @@
 .selectedFile {
   text-align: center;
   font-size: 1em;
-  color: $color-blue;
+  color: $color-primary;
   font-weight: 500;
   max-height: 70px;
   overflow: scroll;
@@ -172,7 +172,7 @@ button {
 }
 
 .fileName {
-  border: 1px double $color-blue;
+  border: 1px double $color-primary;
   border-radius: 5px;
   padding: 10px 20px;
 }
@@ -184,7 +184,7 @@ button {
 }
 
 h2 {
-  color: $color-blue;
+  color: $color-primary;
 }
 
 #file-input {

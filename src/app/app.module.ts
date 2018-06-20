@@ -6,8 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatButtonModule, MatCheckboxModule, MatInputModule, MatListModule, MatFormFieldModule,
-  MatProgressBarModule, MatProgressSpinnerModule, MatDatepickerModule,
-  MatNativeDateModule
+  MatProgressBarModule, MatProgressSpinnerModule, MatDatepickerModule, MatNativeDateModule
 } from '@angular/material';
 import { MatDatetimepickerModule, MatNativeDatetimeModule, } from '@mat-datetimepicker/core';
 import { MatMomentDatetimeModule } from '@mat-datetimepicker/moment'
@@ -18,6 +17,7 @@ import { RouterModule, PreloadAllModules, Routes } from '@angular/router';
 import { ROUTES } from './app.routes';
 
 import { IpfsService } from './ipfs.service';
+import { FilesService } from './files.service';
 
 import { AppComponent } from './app.component';
 import { InputComponent } from './input/input.component';
@@ -27,7 +27,10 @@ import { HomeComponent } from './home/home.component';
 import { DownloadComponent } from './download/download.component';
 import { DragZoneComponent } from './dragzone/dragzone.component';
 import { TransferComponent } from './transfer/transfer.component';
+import { DownloadfileComponent } from './downloadfile/downloadfile.component';
+
 import * as moment from 'moment';
+
 
 @NgModule({
   declarations: [
@@ -37,6 +40,7 @@ import * as moment from 'moment';
     DownloadComponent,
     DragZoneComponent,
     TransferComponent,
+    DownloadfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,12 +53,15 @@ import * as moment from 'moment';
     ],
     [MatDatetimepickerModule, MatNativeDatetimeModule],
     MatMomentDatetimeModule,
+
     RouterModule.forRoot(ROUTES, { preloadingStrategy: PreloadAllModules }),
   ],
   providers: [
     IpfsService,
+    FilesService,
     MatDatepickerModule,
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

@@ -1,8 +1,17 @@
 @import "./variables.scss";
 @import "./mixins.scss";
 
-* {
-  font-family: 'Josefin Sans', sans-serif !important;
+body {
+  font-family: $font-family-secondary;
+  font-size: $font-size;
+}
+
+h1, h2, h3, h4, h5, h6, #title {
+  font-family: $font-family-primary;
+}
+
+div, span, div, input, textarea, select, b, strong, p {
+  font-family: $font-family-secondary;
 }
 
 .container {
@@ -18,7 +27,7 @@
 }
 
 h1 {
-  font-size: 3em;
+  font-size: $font-size-very-big;
   color: white;
   padding-left: 5px;
   margin: 10px;
@@ -26,7 +35,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.4em;
+  font-size: $font-size-big;
   color: white;
   text-align: center;
   margin-left: 20px;

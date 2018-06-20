@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  postHash: 'http://localhost:3000/hash'
+  backendUrl: 'http://localhost:3000',
+  ipfsGateway: 'http://127.0.0.1:8080/ipfs',
 };

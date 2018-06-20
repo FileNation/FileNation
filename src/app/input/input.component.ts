@@ -1,12 +1,14 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
-import { IpfsService } from '../ipfs.service';
-import { TweenMax } from 'gsap';
-import { DOCUMENT } from '@angular/platform-browser';
-import { Buffer } from 'buffer';
-import { environment } from '../../environments/environment'
-import { DragZoneComponent } from '../dragzone/dragzone.component';
-import { MatDatepickerInputEvent } from '@angular/material/datepicker'
+import { Component, OnInit, Inject }  from '@angular/core';
+import { FormControl, Validators }    from '@angular/forms';
+import { MatDatepickerInputEvent }    from '@angular/material/datepicker'
+import { DOCUMENT }                   from '@angular/platform-browser';
+import { TweenMax }                   from 'gsap';
+import { Buffer }                     from 'buffer';
+
+import { DragZoneComponent }  from '../dragzone/dragzone.component';
+import { environment }        from '../../environments/environment';
+import { EmailService }       from './../email.service';
+import { IpfsService }        from '../ipfs.service';
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+$/;
 const MULTIPLE_REGEX = /^([a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+(,+ )?)+$/;
@@ -53,7 +55,6 @@ export class InputComponent implements OnInit {
 
   ngOnInit() {
     this.animated = false;
-    // change to upload maybe?
     this.totalFiles = 0;
     this.completed = 0;
     this.hashes = [];
@@ -89,7 +90,6 @@ export class InputComponent implements OnInit {
 
   //Called when form is submitted
   onTestPost() {
-  console.log('>>>>>>>>>>>',this.data)
     if (!this.data.to.match(MULTIPLE_REGEX)) alert(`Invalid Recipient, please verify recpient's email!`);
     else if (!this.data.from.match(EMAIL_REGEX)) alert(`Invalid Sender, please verify senders's email!`);
     else if (!(this.data.message.length === 0) && (!this.data.message.match(TEXT_REGEX))) alert(`Invalid message.`);
@@ -173,7 +173,7 @@ export class InputComponent implements OnInit {
                   'names': this.name,
                   'dateExpiry': this.data.dateExpiry
                 }
-                fetch(environment.postHash, {
+                fetch(environment.backendUrl+'/hash', {
                   method: 'POST',
                   headers: {
                     'Accept': 'application/json',
