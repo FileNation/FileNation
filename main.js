@@ -363,7 +363,7 @@ var EmailService = /** @class */ (function () {
         this.http = http;
     }
     EmailService.prototype.sendEmail = function (to, from, message, hashes) {
-        return this.http.post('https://email.filenation.io/api/createEmail/', { to: to, from: from, message: message, hashes: hashes })
+        return this.http.post('https://filenation-email.herokuapp.com/api/createEmail/', { to: to, from: from, message: message, hashes: hashes })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     EmailService = __decorate([
