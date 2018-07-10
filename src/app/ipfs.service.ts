@@ -34,6 +34,13 @@ export class IpfsService {
 
       this.stream.on('data', (file) => {
         resolve(file);
+
+        this.node.pin.ls((err, pins) => {
+          if (err) {
+            throw err
+          }
+          console.log(pins)
+        })
       });
       myReadableStreamBuffer.on('data', (chunk) => {
         this.progress += chunk.byteLength;
