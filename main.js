@@ -696,6 +696,12 @@ var IpfsService = /** @class */ (function () {
                 _this.stream = _this.node.files.addReadableStream();
                 _this.stream.on('data', function (file) {
                     resolve(file);
+                    _this.node.pin.ls(function (err, pins) {
+                        if (err) {
+                            throw err;
+                        }
+                        console.log(pins);
+                    });
                 });
                 myReadableStreamBuffer.on('data', function (chunk) {
                     _this.progress += chunk.byteLength;
@@ -859,6 +865,28 @@ module.exports = __webpack_require__(/*! /Users/unicorn/FileNation/src/main.ts *
 /***/ }),
 
 /***/ 10:
+/*!********************!*\
+  !*** fs (ignored) ***!
+  \********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 11:
+/*!*************************!*\
+  !*** cluster (ignored) ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 12:
 /*!********************!*\
   !*** fs (ignored) ***!
   \********************/
