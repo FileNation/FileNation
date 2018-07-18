@@ -848,7 +848,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_0__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/unicorn/FileNation/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/unicorn/Projects/FileNation/FileNation/src/main.ts */"./src/main.ts");
 
 
 /***/ }),
@@ -866,7 +866,7 @@ module.exports = __webpack_require__(/*! /Users/unicorn/FileNation/src/main.ts *
 
 /***/ 10:
 /*!********************!*\
-  !*** fs (ignored) ***!
+  !*** ws (ignored) ***!
   \********************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -876,9 +876,9 @@ module.exports = __webpack_require__(/*! /Users/unicorn/FileNation/src/main.ts *
 /***/ }),
 
 /***/ 11:
-/*!*************************!*\
-  !*** cluster (ignored) ***!
-  \*************************/
+/*!********************!*\
+  !*** ws (ignored) ***!
+  \********************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -887,9 +887,86 @@ module.exports = __webpack_require__(/*! /Users/unicorn/FileNation/src/main.ts *
 /***/ }),
 
 /***/ 12:
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 13:
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 14:
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 15:
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 16:
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 17:
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 18:
 /*!********************!*\
   !*** fs (ignored) ***!
   \********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 19:
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -908,10 +985,65 @@ module.exports = __webpack_require__(/*! /Users/unicorn/FileNation/src/main.ts *
 
 /***/ }),
 
+/***/ 20:
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 21:
+/*!*************************!*\
+  !*** cluster (ignored) ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 22:
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 23:
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 24:
+/*!********************!*\
+  !*** fs (ignored) ***!
+  \********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
 /***/ 3:
-/*!************************!*\
-  !*** buffer (ignored) ***!
-  \************************/
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -920,9 +1052,9 @@ module.exports = __webpack_require__(/*! /Users/unicorn/FileNation/src/main.ts *
 /***/ }),
 
 /***/ 4:
-/*!************************!*\
-  !*** crypto (ignored) ***!
-  \************************/
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -932,7 +1064,7 @@ module.exports = __webpack_require__(/*! /Users/unicorn/FileNation/src/main.ts *
 
 /***/ 5:
 /*!************************!*\
-  !*** crypto (ignored) ***!
+  !*** buffer (ignored) ***!
   \************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -953,9 +1085,9 @@ module.exports = __webpack_require__(/*! /Users/unicorn/FileNation/src/main.ts *
 /***/ }),
 
 /***/ 7:
-/*!*******************************!*\
-  !*** ./init-assets (ignored) ***!
-  \*******************************/
+/*!************************!*\
+  !*** crypto (ignored) ***!
+  \************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -964,9 +1096,9 @@ module.exports = __webpack_require__(/*! /Users/unicorn/FileNation/src/main.ts *
 /***/ }),
 
 /***/ 8:
-/*!********************!*\
-  !*** ws (ignored) ***!
-  \********************/
+/*!************************!*\
+  !*** crypto (ignored) ***!
+  \************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -975,9 +1107,9 @@ module.exports = __webpack_require__(/*! /Users/unicorn/FileNation/src/main.ts *
 /***/ }),
 
 /***/ 9:
-/*!********************!*\
-  !*** ws (ignored) ***!
-  \********************/
+/*!*******************************!*\
+  !*** ./init-assets (ignored) ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
