@@ -155,7 +155,7 @@ export class InputComponent implements OnInit {
             .then((ipfsObject) => {
               try {
                 this.hashes.push(ipfsObject);
-                this.file.push('https://www.eternum.io/ipfs/' + this.hashes[key].hash);
+                this.file.push('https://ipfs.io/ipfs/' + this.hashes[key].hash);
                 this.data.hashes = (this.file)
               } catch (e) {
                 console.log(e)
