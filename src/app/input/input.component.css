@@ -46,7 +46,6 @@
   height: 470px;
   width: 300px;
   background-color: white;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;

@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { EmailService } from './../email.service';
 import { IpfsService } from '../ipfs.service';
@@ -24,6 +24,7 @@ export class InputComponent implements OnInit {
   name: string;
   parentSize: any;
   file: any;
+  files: any;
   temp: any;
   submit: boolean;
   submitResponse: boolean;
@@ -53,8 +54,10 @@ export class InputComponent implements OnInit {
     // change to upload maybe?
     this.totalFiles = 0;
     this.completed = 0;
+    this.hashesNum = 0;
     this.hashes = [];
     this.file = [];
+    this.files = [];
     this.submit = false;
     this.submitResponse = false;
     this.form = true;
@@ -68,6 +71,18 @@ export class InputComponent implements OnInit {
       1, { scrambleText: { text: 'sending through IPFS', chars: '10', revealDelay: 0.1, speed: 0.3 } }),
       this.animated = true;
   }
+  @ViewChild('pond') pond: any;
+
+  pondOptions = {
+  class: 'my-filepond',
+  multiple: true,
+  labelIdle: 'Drop files here',
+  acceptedFileTypes: 'image/jpeg, image/png'
+}
+
+pondHandleInit() {
+  console.log('FilePond has initialised', this.pond);
+}
 
   //Verifies email inputs
   toEmailFormControl = new FormControl('', [
@@ -82,6 +97,25 @@ export class InputComponent implements OnInit {
 
   //Called when form is submitted
   onTestPost() {
+
+  this.files.map(el => {
+  var reader = new FileReader();
+  reader.onload = (e) => {
+    this.ipfsService.uploadIPFS(reader.result)
+      .then((ipfsObject) => {
+        try {
+          this.file.push('https://ipfs.io/ipfs/' + ipfsObject.hash);
+          this.data.hashes = (this.file)
+        } catch (e) {
+          console.log(e)
+        }
+      }).then(() => {
+        this.completed++
+      });
+  }
+  reader.readAsArrayBuffer(el);
+    })
+
     if (!this.data.to.match(MULTIPLE_REGEX)) alert(`Invalid Recipient, please verify recpient's email!`);
     else if (!this.data.from.match(EMAIL_REGEX)) alert(`Invalid Sender, please verify senders's email!`);
     else if (!(this.data.message.length === 0) && (!this.data.message.match(TEXT_REGEX))) alert(`Invalid message.`);
@@ -103,7 +137,7 @@ export class InputComponent implements OnInit {
           );
       }
       else {
-        alert("No file selected");
+        alert("No files selected");
       }
     }
   }
@@ -127,6 +161,7 @@ export class InputComponent implements OnInit {
     this.completed = 0;
     this.hashes = [];
     this.file = [];
+    this.files = []
     this.submit = false;
     this.submitResponse = false;
     this.form = true;
@@ -136,39 +171,10 @@ export class InputComponent implements OnInit {
     this.showUpdate = false;
   }
 
-  upload = ($event) => {
-    if (!this.file.length) {
-      this.showUpdate = true;
-      let concatSize = 0;
-      let file = Object.keys($event.target.files).map(key => $event.target.files[key]);
-      let concatName = file.map(el => {
-        concatSize += el.size;
-        this.totalFiles++;
-        return el.name;
-      }).join(' ');
-      this.name = concatName;
-      this.parentSize = concatSize;
-      file.forEach((el, key) => {
-        var reader = new FileReader();
-        reader.onload = (e) => {
-          this.ipfsService.uploadIPFS(reader.result)
-            .then((ipfsObject) => {
-              try {
-                this.hashes.push(ipfsObject);
-                this.file.push('https://ipfs.io/ipfs/' + this.hashes[key].hash);
-                this.data.hashes = (this.file)
-              } catch (e) {
-                console.log(e)
-              }
-            }).then(() => {
-              this.completed++
-            });
-        }
-        reader.readAsArrayBuffer(el);
-      })
-    }
-    else {
-      alert("Sorry, still uploading previous file!")
-    }
+  upload(event: any) {
+      console.log(event)
+       let file = event.file.file;
+       this.files.push(file)
+
   }
 }

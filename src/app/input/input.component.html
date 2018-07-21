@@ -6,14 +6,12 @@
     <!-- Loading spinner -->
 
     <!-- Upload icon and button-->
-    <div class="image-upload" *ngIf="!showUpdate">
-      <label for="file-input">
-        <button title="Add Your Files" (click)="file.click()" id="uploadCircle" mat-fab>
-          <img id="upload-img" src="../../assets/add-plus-button.png" />
-        </button>
-      </label>
-      <p id="addYourFiles">Upload your file</p>
-      <app-dragzone #file [onUpload]='upload'></app-dragzone>
+    <div *ngIf="!showUpdate">
+      <file-pond #pond
+    [options]="pondOptions"
+    (oninit)="pondHandleInit()"
+    (onaddfile)="upload($event)">
+</file-pond>
     </div>
 
     <!-- Displays progress of file upload-->
@@ -24,15 +22,6 @@
       {{(this.progress / this.parentSize *100).toFixed(1)}} %
     </div>
 
-    <!-- Displays file name once uploaded and allows user to change selection -->
-    <div class="fileFeedback" *ngIf="file.length > 0">
-      <p class="selectedFile">
-        <strong>Files Selected:</strong>
-        <br>
-        <span class="fileName2" style="color:#0099cc">{{this.name}}</span>
-      </p>
-      <button class="changeButton" mat-raised-button color="accent" (click)="toggleFile()">Change files</button>
-    </div>
 
     <div class="form-input">
       <form class="example-form" (ngSubmit)="onTestPost()">
@@ -80,10 +69,8 @@
 
 <!-- Displays once file has been uploaded and sent -->
 <div class="successMessage" *ngIf="submitResponse">
-  <h2>The file below has been added to IPFS and sent to:
-    <br/>
+  <h2>The files has been added to IPFS and sent to:
     <span class="senderEmail" style="color:#0099cc">{{this.data.to}} </span>
   </h2>
-  <span class="fileName">{{this.name}}</span>
-  <button class="successButton" mat-raised-button color="accent" (click)="refresh()">Send another file</button>
+  <button class="successButton" mat-raised-button color="accent" (click)="refresh()">Send another files</button>
 </div>
