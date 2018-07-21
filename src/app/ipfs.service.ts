@@ -33,7 +33,7 @@ export class IpfsService {
       this.stream = this.node.files.addReadableStream();
 
       this.stream.on('data', (file) => {
-        resolve(file);
+        resolve(file.hash);
 
         this.node.pin.ls((err, pins) => {
           if (err) {

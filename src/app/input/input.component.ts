@@ -20,6 +20,7 @@ const TEXT_REGEX = /^[a-zA-Z0-9-]/;
 export class InputComponent implements OnInit {
   postData: string;
   data: any;
+  hash: any;
   hashes: any;
   name: string;
   parentSize: any;
@@ -148,14 +149,13 @@ export class InputComponent implements OnInit {
       }).join(' ');
       this.name = concatName;
       this.parentSize = concatSize;
-      file.forEach((el, key) => {
+      file.forEach((el) => {
         var reader = new FileReader();
         reader.onload = (e) => {
           this.ipfsService.uploadIPFS(reader.result)
-            .then((ipfsObject) => {
+            .then((hash) => {
               try {
-                this.hashes.push(ipfsObject);
-                this.file.push('https://ipfs.io/ipfs/' + this.hashes[key].hash);
+                this.file.push('https://ipfs.io/ipfs/' + hash );
                 this.data.hashes = (this.file)
               } catch (e) {
                 console.log(e)
