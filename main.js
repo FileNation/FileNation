@@ -539,7 +539,7 @@ var InputComponent = /** @class */ (function () {
                             .then(function (ipfsObject) {
                             try {
                                 _this.hashes.push(ipfsObject);
-                                _this.file.push('https://www.eternum.io/ipfs/' + _this.hashes[key].hash);
+                                _this.file.push('https://ipfs.io/ipfs/' + _this.hashes[key].hash);
                                 _this.data.hashes = (_this.file);
                             }
                             catch (e) {
