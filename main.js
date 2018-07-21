@@ -532,14 +532,13 @@ var InputComponent = /** @class */ (function () {
                 }).join(' ');
                 _this.name = concatName;
                 _this.parentSize = concatSize_1;
-                file.forEach(function (el, key) {
+                file.forEach(function (el) {
                     var reader = new FileReader();
                     reader.onload = function (e) {
                         _this.ipfsService.uploadIPFS(reader.result)
-                            .then(function (ipfsObject) {
+                            .then(function (hash) {
                             try {
-                                _this.hashes.push(ipfsObject);
-                                _this.file.push('https://ipfs.io/ipfs/' + _this.hashes[key].hash);
+                                _this.file.push('https://ipfs.io/ipfs/' + hash);
                                 _this.data.hashes = (_this.file);
                             }
                             catch (e) {
@@ -695,7 +694,7 @@ var IpfsService = /** @class */ (function () {
                 });
                 _this.stream = _this.node.files.addReadableStream();
                 _this.stream.on('data', function (file) {
-                    resolve(file);
+                    resolve(file.hash);
                     _this.node.pin.ls(function (err, pins) {
                         if (err) {
                             throw err;
@@ -866,94 +865,6 @@ module.exports = __webpack_require__(/*! /Users/unicorn/Projects/FileNation/File
 
 /***/ 10:
 /*!********************!*\
-  !*** ws (ignored) ***!
-  \********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 11:
-/*!********************!*\
-  !*** ws (ignored) ***!
-  \********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 12:
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 13:
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 14:
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 15:
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 16:
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 17:
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 18:
-/*!********************!*\
   !*** fs (ignored) ***!
   \********************/
 /*! no static exports found */
@@ -963,10 +874,21 @@ module.exports = __webpack_require__(/*! /Users/unicorn/Projects/FileNation/File
 
 /***/ }),
 
-/***/ 19:
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
+/***/ 11:
+/*!*************************!*\
+  !*** cluster (ignored) ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 12:
+/*!********************!*\
+  !*** fs (ignored) ***!
+  \********************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -985,65 +907,10 @@ module.exports = __webpack_require__(/*! /Users/unicorn/Projects/FileNation/File
 
 /***/ }),
 
-/***/ 20:
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 21:
-/*!*************************!*\
-  !*** cluster (ignored) ***!
-  \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 22:
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 23:
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 24:
-/*!********************!*\
-  !*** fs (ignored) ***!
-  \********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
 /***/ 3:
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
+/*!************************!*\
+  !*** buffer (ignored) ***!
+  \************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -1052,9 +919,9 @@ module.exports = __webpack_require__(/*! /Users/unicorn/Projects/FileNation/File
 /***/ }),
 
 /***/ 4:
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
+/*!************************!*\
+  !*** crypto (ignored) ***!
+  \************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -1064,7 +931,7 @@ module.exports = __webpack_require__(/*! /Users/unicorn/Projects/FileNation/File
 
 /***/ 5:
 /*!************************!*\
-  !*** buffer (ignored) ***!
+  !*** crypto (ignored) ***!
   \************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -1085,9 +952,9 @@ module.exports = __webpack_require__(/*! /Users/unicorn/Projects/FileNation/File
 /***/ }),
 
 /***/ 7:
-/*!************************!*\
-  !*** crypto (ignored) ***!
-  \************************/
+/*!*******************************!*\
+  !*** ./init-assets (ignored) ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -1096,9 +963,9 @@ module.exports = __webpack_require__(/*! /Users/unicorn/Projects/FileNation/File
 /***/ }),
 
 /***/ 8:
-/*!************************!*\
-  !*** crypto (ignored) ***!
-  \************************/
+/*!********************!*\
+  !*** ws (ignored) ***!
+  \********************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -1107,9 +974,9 @@ module.exports = __webpack_require__(/*! /Users/unicorn/Projects/FileNation/File
 /***/ }),
 
 /***/ 9:
-/*!*******************************!*\
-  !*** ./init-assets (ignored) ***!
-  \*******************************/
+/*!********************!*\
+  !*** ws (ignored) ***!
+  \********************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
