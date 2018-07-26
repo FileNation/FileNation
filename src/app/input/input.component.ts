@@ -54,7 +54,6 @@ export class InputComponent implements OnInit {
     // change to upload maybe?
     this.totalFiles = 0;
     this.completed = 0;
-    this.hashesNum = 0;
     this.hashes = [];
     this.file = [];
     this.files = [];
@@ -104,7 +103,7 @@ pondHandleInit() {
     this.ipfsService.uploadIPFS(reader.result)
       .then((ipfsObject) => {
         try {
-          this.file.push('https://ipfs.io/ipfs/' + ipfsObject.hash);
+          this.file.push('https://ipfs.io/ipfs/' + ipfsObject);
           this.data.hashes = (this.file)
         } catch (e) {
           console.log(e)
@@ -120,7 +119,7 @@ pondHandleInit() {
     else if (!this.data.from.match(EMAIL_REGEX)) alert(`Invalid Sender, please verify senders's email!`);
     else if (!(this.data.message.length === 0) && (!this.data.message.match(TEXT_REGEX))) alert(`Invalid message.`);
     else {
-      if (this.file.length && this.data.to) {
+      if (this.data.to) {
         this.form = false;
         this.submit = true;
         setTimeout(() => {
@@ -137,7 +136,7 @@ pondHandleInit() {
           );
       }
       else {
-        alert("No files selected");
+        alert("Files uploading...");
       }
     }
   }
