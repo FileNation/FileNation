@@ -36,7 +36,7 @@
     "buffer": "5.2.0",
     "core-js": "2.5.7",
     "gsap": "2.0.1",
-    "ipfs": "0.30.1",
+    "ipfs": "0.31.0",
     "readable-stream": "2.3.6",
     "rxjs": "6.2.2",
     "rxjs-compat": "6.2.2",
