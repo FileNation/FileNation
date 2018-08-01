@@ -94,27 +94,30 @@ pondHandleInit() {
     Validators.required,
     Validators.pattern(TEXT_REGEX)]);
 
+onFilePost() {
+    this.files.forEach(el => {
+      var reader = new FileReader();
+      reader.onload = (e) => {
+        this.submit = false;
+        this.submitResponse = true;
+        this.ipfsService.uploadIPFS(reader.result)
+        .then((ipfsObject) => {
+          try {
+            this.file.push('https://ipfs.io/ipfs/' + ipfsObject);
+            this.data.hashes = (this.file)
+          } catch (e) {
+            console.log(e)
+          }
+        }).then(() => {
+          console.log('hey')
+        });
+      }
+      reader.readAsArrayBuffer(el);
+    })
+  }
+
   //Called when form is submitted
   onTestPost() {
-
-  this.files.map(el => {
-  var reader = new FileReader();
-  reader.onload = (e) => {
-    this.ipfsService.uploadIPFS(reader.result)
-      .then((ipfsObject) => {
-        try {
-          this.file.push('https://ipfs.io/ipfs/' + ipfsObject);
-          this.data.hashes = (this.file)
-        } catch (e) {
-          console.log(e)
-        }
-      }).then(() => {
-        this.completed++
-      });
-  }
-  reader.readAsArrayBuffer(el);
-    })
-
     if (!this.data.to.match(MULTIPLE_REGEX)) alert(`Invalid Recipient, please verify recpient's email!`);
     else if (!this.data.from.match(EMAIL_REGEX)) alert(`Invalid Sender, please verify senders's email!`);
     else if (!(this.data.message.length === 0) && (!this.data.message.match(TEXT_REGEX))) alert(`Invalid message.`);
@@ -174,6 +177,5 @@ pondHandleInit() {
       console.log(event)
        let file = event.file.file;
        this.files.push(file)
-
   }
 }

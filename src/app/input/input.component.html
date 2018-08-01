@@ -8,58 +8,58 @@
     <!-- Upload icon and button-->
     <div *ngIf="!showUpdate">
       <file-pond #pond
-    [options]="pondOptions"
-    (oninit)="pondHandleInit()"
-    (onaddfile)="upload($event)">
-</file-pond>
-    </div>
-
-    <!-- Displays progress of file upload-->
-    <div class="progressBarTitle" *ngIf="!progress && showUpdate && !this.completed">Checking Files...</div>
-    <div class="progressBar" *ngIf="progress && showUpdate && this.completed < this.totalFiles">
-      <mat-progress-spinner class="spinner-margin" [color]="color" [mode]="mode" [value]="value">
-      </mat-progress-spinner>
-      {{(this.progress / this.parentSize *100).toFixed(1)}} %
-    </div>
-
-
-    <div class="form-input">
-      <form class="example-form" (ngSubmit)="onTestPost()">
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Send Files to" [(ngModel)]="data.to" [formControl]="toEmailFormControl" required>
-          <mat-error *ngIf="toEmailFormControl.hasError('pattern')">
-            Please enter a valid email address
-          </mat-error>
-          <mat-error *ngIf="toEmailFormControl.hasError('required')">
-            Email is
-            <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Your Email" [(ngModel)]="data.from" [formControl]="fromEmailFormControl" required>
-          <mat-error *ngIf="fromEmailFormControl.hasError('pattern')">
-            Please enter a valid email address
-          </mat-error>
-          <mat-error *ngIf="fromEmailFormControl.hasError('required')">
-            Email is
-            <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
-
-        <mat-form-field class="example-full-width" hintLabel="Max 250 characters">
-          <textarea matInput placeholder="Message" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="3" maxlength="250"
-            [(ngModel)]="data.message" [formControl]="messageFormControl">
-          <mat-error *ngIf="messageFormControl.hasError('pattern')">
-            Please enter a valid message
-          </mat-error>
-          <mat-error *ngIf="messageFormControl.hasError('required')">
-            Message is <strong>required</strong>
-          </mat-error></textarea>
-        </mat-form-field>
-        <button mat-raised-button color="accent" type="submit">Send</button>
-      </form>
-    </div>
+      [options]="pondOptions"
+      (oninit)="pondHandleInit()"
+      (onaddfile)="upload($event)">
+    </file-pond>
   </div>
+
+  <!-- Displays progress of file upload-->
+  <div class="progressBarTitle" *ngIf="!progress && showUpdate && !this.completed">Checking Files...</div>
+  <div class="progressBar" *ngIf="progress && showUpdate && this.completed < this.totalFiles">
+    <mat-progress-spinner class="spinner-margin" [color]="color" [mode]="mode" [value]="value">
+    </mat-progress-spinner>
+    {{(this.progress / this.parentSize *100).toFixed(1)}} %
+  </div>
+
+
+  <div class="form-input">
+    <form class="example-form" (ngSubmit)="onFilePost()">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Send Files to" [(ngModel)]="data.to" [formControl]="toEmailFormControl" required>
+        <mat-error *ngIf="toEmailFormControl.hasError('pattern')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="toEmailFormControl.hasError('required')">
+          Email is
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Your Email" [(ngModel)]="data.from" [formControl]="fromEmailFormControl" required>
+        <mat-error *ngIf="fromEmailFormControl.hasError('pattern')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="fromEmailFormControl.hasError('required')">
+          Email is
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" hintLabel="Max 250 characters">
+        <textarea matInput placeholder="Message" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="3" maxlength="250"
+        [(ngModel)]="data.message" [formControl]="messageFormControl">
+        <mat-error *ngIf="messageFormControl.hasError('pattern')">
+          Please enter a valid message
+        </mat-error>
+        <mat-error *ngIf="messageFormControl.hasError('required')">
+          Message is <strong>required</strong>
+        </mat-error></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="accent" type="submit">Send</button>
+    </form>
+  </div>
+</div>
 </div>
 
 <!-- Placeholder -->
