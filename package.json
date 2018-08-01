@@ -32,7 +32,6 @@
     "@angular/platform-server": "6.1.0",
     "@angular/router": "6.1.0",
     "angular-filepond": "1.0.5",
-    "angulartics2": "6.2.0",
     "buffer": "5.2.0",
     "core-js": "2.5.7",
     "gsap": "2.0.1",
