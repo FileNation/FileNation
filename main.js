@@ -701,6 +701,12 @@ var IpfsService = /** @class */ (function () {
                         }
                         console.log(pins);
                     });
+                    _this.node.swarm.peers(function (err, peerInfos) {
+                        if (err) {
+                            throw err;
+                        }
+                        console.log(peerInfos);
+                    });
                 });
                 myReadableStreamBuffer.on('data', function (chunk) {
                     _this.progress += chunk.byteLength;
