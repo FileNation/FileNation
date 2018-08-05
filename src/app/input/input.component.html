@@ -8,6 +8,7 @@
     <!-- Upload icon and button-->
     <div *ngIf="!showUpdate">
       <file-pond #pond
+      class="file-box"
       [options]="pondOptions"
       (oninit)="pondHandleInit()"
       (onaddfile)="upload($event)">
@@ -72,5 +73,6 @@
   <h2>The files has been added to IPFS and sent to:
     <span class="senderEmail" style="color:#0099cc">{{this.data.to}} </span>
   </h2>
+  <span class="fileName">{{this.name}}</span>
   <button class="successButton" mat-raised-button color="accent" (click)="refresh()">Send another files</button>
 </div>

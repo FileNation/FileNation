@@ -80,7 +80,9 @@
   font-family: 'Raleway', sans-serif;
   margin-bottom: 23px;
 }
-
+.my-filepond {
+  max-height: 10px !important;
+}
 .selectedFile {
   text-align: center;
   font-size: 1em;
