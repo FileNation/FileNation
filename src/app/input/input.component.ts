@@ -73,7 +73,6 @@ export class InputComponent implements OnInit {
   @ViewChild('pond') pond: any;
 
   pondOptions = {
-    class: 'my-filepond',
     multiple: true,
     labelIdle: 'Drop files here',
     acceptedFileTypes: 'image/jpeg, image/png'
@@ -100,38 +99,38 @@ export class InputComponent implements OnInit {
 
       onFilePost() {
         if(this.files) {
-        return new Promise((resolve, reject) => {
-          let concatSize = 0;
-          let concatName = this.files.map(el => {
-            concatSize += el.size;
-            return el.name;
-          }).join(' ');
-          this.name = concatName;
-          this.parentSize = concatSize;
-          this.files.forEach(el => {
-            var reader = new FileReader();
-            reader.onload = (e) => {
-              this.ipfsService.uploadIPFS(reader.result)
-              .then((ipfsObject) => {
-                try {
-                  this.file.push('https://ipfs.io/ipfs/' + ipfsObject);
-                  this.data.hashes = (this.file)
-                  this.completed++;
-                } catch (e) {
-                  console.log(e)
-                }
-              }).then(() => {
-                if (this.totalFiles == this.completed) {
-                  resolve();
-                }
-              });
-            }
-            reader.readAsArrayBuffer(el);
+          return new Promise((resolve, reject) => {
+            let concatSize = 0;
+            let concatName = this.files.map(el => {
+              concatSize += el.size;
+              return el.name;
+            }).join(' ');
+            this.name = concatName;
+            this.parentSize = concatSize;
+            this.files.forEach(el => {
+              var reader = new FileReader();
+              reader.onload = (e) => {
+                this.ipfsService.uploadIPFS(reader.result)
+                .then((ipfsObject) => {
+                  try {
+                    this.file.push('https://ipfs.io/ipfs/' + ipfsObject);
+                    this.data.hashes = (this.file)
+                    this.completed++;
+                  } catch (e) {
+                    console.log(e)
+                  }
+                }).then(() => {
+                  if (this.totalFiles == this.completed) {
+                    resolve();
+                  }
+                });
+              }
+              reader.readAsArrayBuffer(el);
+            })
           })
-        })
-      } else {
-        alert('Upload files!')
-      }
+        } else {
+          alert('Upload files!')
+        }
       }
 
       //Called when form is submitted
