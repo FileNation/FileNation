@@ -75,6 +75,7 @@ export class InputComponent implements OnInit {
   pondOptions = {
     multiple: true,
     labelIdle: 'Drop files here',
+    maxFiles: 3,
     acceptedFileTypes: 'image/jpeg, image/png'
   }
 
@@ -98,8 +99,11 @@ export class InputComponent implements OnInit {
       }
 
       onFilePost() {
-        if(this.files) {
           return new Promise((resolve, reject) => {
+            setTimeout(() => {
+              this.progress = true;
+              this.showUpdate = true;
+            }, 10000);
             let concatSize = 0;
             let concatName = this.files.map(el => {
               concatSize += el.size;
@@ -128,10 +132,7 @@ export class InputComponent implements OnInit {
               reader.readAsArrayBuffer(el);
             })
           })
-        } else {
-          alert('Upload files!')
         }
-      }
 
       //Called when form is submitted
       onTestPost() {

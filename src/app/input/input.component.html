@@ -16,8 +16,8 @@
   </div>
 
   <!-- Displays progress of file upload-->
-  <div class="progressBarTitle" *ngIf="!progress && showUpdate && !this.completed">Checking Files...</div>
-  <div class="progressBar" *ngIf="progress && showUpdate && this.completed < this.totalFiles">
+  <div class="progressBarTitle" *ngIf="!progress && showUpdate && !this.completed">Uploading...</div>
+  <div class="progressBar" *ngIf="progress && showUpdate">
     <mat-progress-spinner class="spinner-margin" [color]="color" [mode]="mode" [value]="value">
     </mat-progress-spinner>
     {{(this.progress / this.parentSize *100).toFixed(1)}} %

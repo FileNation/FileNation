@@ -43,7 +43,7 @@
 }
 
 .topHolder {
-  height: 470px;
+  height: 420px;
   width: 300px;
   background-color: white;
   flex-direction: column;
@@ -57,6 +57,14 @@
   transition: -webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1),-webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.filepond--root {
+    max-height: 2em !important;
+}
+
+.form-input {
+  margin-top: 10px;
 }
 
 .image-upload {
@@ -80,9 +88,7 @@
   font-family: 'Raleway', sans-serif;
   margin-bottom: 23px;
 }
-.file-box {
-  max-height: 10px !important;
-}
+
 .selectedFile {
   text-align: center;
   font-size: 1em;
