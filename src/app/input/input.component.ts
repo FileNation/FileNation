@@ -62,90 +62,96 @@ export class InputComponent implements OnInit {
     this.form = true;
     this.progress = this.ipfsService.progress;
     this.showUpdate = false;
-    this.getTransfer();
   }
 
   animateStyles() {
     if (!this.animated) TweenMax.to(this.document.getElementById('animatedLoader'),
-      1, { scrambleText: { text: 'sending through IPFS', chars: '10', revealDelay: 0.1, speed: 0.3 } }),
-      this.animated = true;
+    1, { scrambleText: { text: 'sending through IPFS', chars: '10', revealDelay: 0.1, speed: 0.3 } }),
+    this.animated = true;
   }
   @ViewChild('pond') pond: any;
 
   pondOptions = {
-  class: 'my-filepond',
-  multiple: true,
-  labelIdle: 'Drop files here',
-  acceptedFileTypes: 'image/jpeg, image/png'
-}
+    class: 'my-filepond',
+    multiple: true,
+    labelIdle: 'Drop files here',
+    acceptedFileTypes: 'image/jpeg, image/png'
+  }
 
-pondHandleInit() {
-  console.log('FilePond has initialised', this.pond);
-}
+  pondHandleInit() {
+    console.log('FilePond has initialised', this.pond);
+  }
 
   //Verifies email inputs
   toEmailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.pattern(MULTIPLE_REGEX)]);
+  Validators.required,
+  Validators.pattern(MULTIPLE_REGEX)]);
   fromEmailFormControl = new FormControl('', [
     Validators.required,
     Validators.pattern(EMAIL_REGEX)]);
-  messageFormControl = new FormControl('', [
-    Validators.required,
-    Validators.pattern(TEXT_REGEX)]);
+    messageFormControl = new FormControl('', [
+      Validators.required,
+      Validators.pattern(TEXT_REGEX)]);
 
-onFilePost() {
-    this.files.forEach(el => {
-      var reader = new FileReader();
-      reader.onload = (e) => {
-        this.submit = false;
-        this.submitResponse = true;
-        this.ipfsService.uploadIPFS(reader.result)
-        .then((ipfsObject) => {
-          try {
-            this.file.push('https://ipfs.io/ipfs/' + ipfsObject);
-            this.data.hashes = (this.file)
-          } catch (e) {
-            console.log(e)
-          }
-        }).then(() => {
-          console.log('hey')
-        });
+      onPost() {
+        this.onFilePost().then(res => this.onTestPost());
       }
-      reader.readAsArrayBuffer(el);
-    })
-  }
 
-  //Called when form is submitted
-  onTestPost() {
-    if (!this.data.to.match(MULTIPLE_REGEX)) alert(`Invalid Recipient, please verify recpient's email!`);
-    else if (!this.data.from.match(EMAIL_REGEX)) alert(`Invalid Sender, please verify senders's email!`);
-    else if (!(this.data.message.length === 0) && (!this.data.message.match(TEXT_REGEX))) alert(`Invalid message.`);
-    else {
-      if (this.data.to) {
-        this.form = false;
-        this.submit = true;
-        setTimeout(() => {
-          this.submit = false;
-          this.submitResponse = true;
-        }, 4000);
-        this.emailService.sendEmail(this.data.to, this.data.from, this.data.message, this.data.hashes)
+      onFilePost() {
+        return new Promise((resolve, reject) => {
+          this.files.forEach(el => {
+            var reader = new FileReader();
+            reader.onload = (e) => {
+              this.ipfsService.uploadIPFS(reader.result)
+              .then((ipfsObject) => {
+                try {
+                  this.file.push('https://ipfs.io/ipfs/' + ipfsObject);
+                  this.data.hashes = (this.file)
+                  this.completed++;
+                } catch (e) {
+                  console.log(e)
+                }
+              }).then(() => {
+                if (this.totalFiles == this.completed) {
+                  resolve();
+                }
+              });
+            }
+            reader.readAsArrayBuffer(el);
+          })
+        })
+      }
+
+      //Called when form is submitted
+      onTestPost() {
+      if (!this.data.to.match(MULTIPLE_REGEX)) alert(`Invalid Recipient, please verify recpient's email!`);
+      else if (!this.data.from.match(EMAIL_REGEX)) alert(`Invalid Sender, please verify senders's email!`);
+      else if (!(this.data.message.length === 0) && (!this.data.message.match(TEXT_REGEX))) alert(`Invalid message.`);
+      else {
+        if (this.data.to) {
+          this.form = false;
+          this.submit = true;
+          setTimeout(() => {
+            this.submit = false;
+            this.submitResponse = true;
+          }, 4000);
+          this.emailService.sendEmail(this.data.to, this.data.from, this.data.message, this.data.hashes)
           .subscribe(
             data => {
               this.postData = JSON.stringify(data),
-                console.log('POST', this.postData)
+              console.log('POST', this.postData)
             },
             error => console.log("Error 123", error)
           );
-      }
-      else {
-        alert("Files uploading...");
+        }
+        else {
+          alert("Files uploading...");
+        }
       }
     }
-  }
 
-  //Called when user opts to change the selected file
-  toggleFile() {
+    //Called when user opts to change the selected file
+    toggleFile() {
     this.totalFiles = 0;
     this.completed = 0;
     this.hashes = [];
@@ -159,23 +165,24 @@ onFilePost() {
 
   //Called when user opts to upload / send another file
   refresh() {
-    this.totalFiles = 0;
-    this.completed = 0;
-    this.hashes = [];
-    this.file = [];
-    this.files = []
-    this.submit = false;
-    this.submitResponse = false;
-    this.form = true;
-    this.data.to = '';
-    this.data.from = '';
-    this.data.message = '';
-    this.showUpdate = false;
-  }
+  this.totalFiles = 0;
+  this.completed = 0;
+  this.hashes = [];
+  this.file = [];
+  this.files = []
+  this.submit = false;
+  this.submitResponse = false;
+  this.form = true;
+  this.data.to = '';
+  this.data.from = '';
+  this.data.message = '';
+  this.showUpdate = false;
+}
 
-  upload(event: any) {
-      console.log(event)
-       let file = event.file.file;
-       this.files.push(file)
-  }
+upload(event: any) {
+  console.log(event)
+  let file = event.file.file;
+  this.totalFiles++
+  this.files.push(file)
+}
 }

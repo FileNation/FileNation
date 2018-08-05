@@ -24,7 +24,7 @@
 
 
   <div class="form-input">
-    <form class="example-form" (ngSubmit)="onFilePost()">
+    <form class="example-form" (ngSubmit)="onPost()">
       <mat-form-field class="example-full-width">
         <input matInput placeholder="Send Files to" [(ngModel)]="data.to" [formControl]="toEmailFormControl" required>
         <mat-error *ngIf="toEmailFormControl.hasError('pattern')">
