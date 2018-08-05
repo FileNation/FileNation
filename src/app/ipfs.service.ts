@@ -41,6 +41,12 @@ export class IpfsService {
           }
           console.log(pins)
         })
+        this.node.swarm.peers((err, peerInfos) => {
+          if(err) {
+            throw err;
+          }
+          console.log(peerInfos);
+        })
       });
       myReadableStreamBuffer.on('data', (chunk) => {
         this.progress += chunk.byteLength;

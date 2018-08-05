@@ -20,6 +20,7 @@ const TEXT_REGEX = /^[a-zA-Z0-9-]/;
 export class InputComponent implements OnInit {
   postData: string;
   data: any;
+  hash: any;
   hashes: any;
   name: string;
   parentSize: any;
@@ -179,10 +180,47 @@ export class InputComponent implements OnInit {
   this.showUpdate = false;
 }
 
+<<<<<<< HEAD
 upload(event: any) {
   console.log(event)
   let file = event.file.file;
   this.totalFiles++
   this.files.push(file)
 }
+=======
+  upload = ($event) => {
+    if (!this.file.length) {
+      this.showUpdate = true;
+      let concatSize = 0;
+      let file = Object.keys($event.target.files).map(key => $event.target.files[key]);
+      let concatName = file.map(el => {
+        concatSize += el.size;
+        this.totalFiles++;
+        return el.name;
+      }).join(' ');
+      this.name = concatName;
+      this.parentSize = concatSize;
+      file.forEach((el) => {
+        var reader = new FileReader();
+        reader.onload = (e) => {
+          this.ipfsService.uploadIPFS(reader.result)
+            .then((hash) => {
+              try {
+                this.file.push('https://ipfs.io/ipfs/' + hash );
+                this.data.hashes = (this.file)
+              } catch (e) {
+                console.log(e)
+              }
+            }).then(() => {
+              this.completed++
+            });
+        }
+        reader.readAsArrayBuffer(el);
+      })
+    }
+    else {
+      alert("Sorry, still uploading previous file!")
+    }
+  }
+>>>>>>> develop
 }
