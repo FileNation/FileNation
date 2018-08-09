@@ -101,8 +101,6 @@ export class InputComponent implements OnInit {
       onFilePost() {
           return new Promise((resolve, reject) => {
             setTimeout(() => {
-              this.progress = true;
-              this.showUpdate = true;
             }, 10000);
             let concatSize = 0;
             let concatName = this.files.map(el => {
