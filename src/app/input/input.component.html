@@ -11,7 +11,8 @@
       class="file-box"
       [options]="pondOptions"
       (oninit)="pondHandleInit()"
-      (onaddfile)="upload($event)">
+      (onaddfile)="upload($event)"
+      (onremovefile)="delete($event)">
     </file-pond>
   </div>
 

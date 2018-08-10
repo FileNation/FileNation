@@ -74,9 +74,10 @@ export class InputComponent implements OnInit {
 
   pondOptions = {
     multiple: true,
+    allowRevert: false,
     labelIdle: 'Drop files here',
     maxFiles: 3,
-    acceptedFileTypes: 'image/jpeg, image/png'
+    acceptedFileTypes: ''
   }
 
   pondHandleInit() {
@@ -95,42 +96,44 @@ export class InputComponent implements OnInit {
       Validators.pattern(TEXT_REGEX)]);
 
       onPost() {
+        this.pond.getFiles().map(el =>
+          this.files.push(el.file));
         this.onFilePost().then(res => this.onTestPost());
       }
 
       onFilePost() {
-          return new Promise((resolve, reject) => {
-            setTimeout(() => {
-            }, 10000);
-            let concatSize = 0;
-            let concatName = this.files.map(el => {
-              concatSize += el.size;
-              return el.name;
-            }).join(' ');
-            this.name = concatName;
-            this.parentSize = concatSize;
-            this.files.forEach(el => {
-              var reader = new FileReader();
-              reader.onload = (e) => {
-                this.ipfsService.uploadIPFS(reader.result)
-                .then((ipfsObject) => {
-                  try {
-                    this.file.push('https://ipfs.io/ipfs/' + ipfsObject);
-                    this.data.hashes = (this.file)
-                    this.completed++;
-                  } catch (e) {
-                    console.log(e)
-                  }
-                }).then(() => {
-                  if (this.totalFiles == this.completed) {
-                    resolve();
-                  }
-                });
-              }
-              reader.readAsArrayBuffer(el);
-            })
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+          }, 10000);
+          let concatSize = 0;
+          let concatName = this.files.map(el => {
+            concatSize += el.size;
+            return el.name;
+          }).join(' ');
+          this.name = concatName;
+          this.parentSize = concatSize;
+          this.files.forEach(el => {
+            var reader = new FileReader();
+            reader.onload = (e) => {
+              this.ipfsService.uploadIPFS(reader.result)
+              .then((ipfsObject) => {
+                try {
+                  this.file.push('https://ipfs.io/ipfs/' + ipfsObject);
+                  this.data.hashes = (this.file)
+                  this.completed++;
+                } catch (e) {
+                  console.log(e)
+                }
+              }).then(() => {
+                if (this.totalFiles == this.completed) {
+                  resolve();
+                }
+              });
+            }
+            reader.readAsArrayBuffer(el);
           })
-        }
+        })
+      }
 
       //Called when form is submitted
       onTestPost() {
@@ -190,9 +193,10 @@ export class InputComponent implements OnInit {
 }
 
 upload(event: any) {
-  console.log(event)
-  let file = event.file.file;
   this.totalFiles++
-  this.files.push(file)
-}
+  }
+
+delete(event: any) {
+  this.totalFiles--
+  }
 }
