@@ -154,9 +154,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ipfs_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./ipfs.service */ "./src/app/ipfs.service.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _input_input_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./input/input.component */ "./src/app/input/input.component.ts");
-/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
-/* harmony import */ var _dragzone_dragzone_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./dragzone/dragzone.component */ "./src/app/dragzone/dragzone.component.ts");
-/* harmony import */ var _transfer_transfer_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./transfer/transfer.component */ "./src/app/transfer/transfer.component.ts");
+/* harmony import */ var ngx_filepond__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ngx-filepond */ "./node_modules/ngx-filepond/esm5/ngx-filepond.js");
+/* harmony import */ var filepond_plugin_file_validate_type__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! filepond-plugin-file-validate-type */ "./node_modules/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js");
+/* harmony import */ var filepond_plugin_file_validate_type__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(filepond_plugin_file_validate_type__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _dragzone_dragzone_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./dragzone/dragzone.component */ "./src/app/dragzone/dragzone.component.ts");
+/* harmony import */ var _transfer_transfer_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./transfer/transfer.component */ "./src/app/transfer/transfer.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -177,6 +180,11 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+// import filepond module
+
+// import and register filepond file type validation plugin
+
+Object(ngx_filepond__WEBPACK_IMPORTED_MODULE_11__["registerPlugin"])(filepond_plugin_file_validate_type__WEBPACK_IMPORTED_MODULE_12___default.a);
 
 
 
@@ -188,9 +196,9 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"],
                 _input_input_component__WEBPACK_IMPORTED_MODULE_10__["InputComponent"],
-                _home_home_component__WEBPACK_IMPORTED_MODULE_11__["HomeComponent"],
-                _dragzone_dragzone_component__WEBPACK_IMPORTED_MODULE_12__["DragZoneComponent"],
-                _transfer_transfer_component__WEBPACK_IMPORTED_MODULE_13__["TransferComponent"],
+                _home_home_component__WEBPACK_IMPORTED_MODULE_13__["HomeComponent"],
+                _dragzone_dragzone_component__WEBPACK_IMPORTED_MODULE_14__["DragZoneComponent"],
+                _transfer_transfer_component__WEBPACK_IMPORTED_MODULE_15__["TransferComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -200,6 +208,7 @@ var AppModule = /** @class */ (function () {
                 [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"]],
                 [_angular_material__WEBPACK_IMPORTED_MODULE_5__["MatButtonModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatCheckboxModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatInputModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatListModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatFormFieldModule"],
                     _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatProgressBarModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatProgressSpinnerModule"]],
+                ngx_filepond__WEBPACK_IMPORTED_MODULE_11__["FilePondModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"].forRoot(_app_routes__WEBPACK_IMPORTED_MODULE_7__["ROUTES"], { preloadingStrategy: _angular_router__WEBPACK_IMPORTED_MODULE_6__["PreloadAllModules"] }),
             ],
             providers: [
@@ -447,7 +456,7 @@ var HomeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".container {\n  display: flex;\n  flex-direction: column;\n  align-items: stretch;\n  justify-content: space-around;\n  margin-left: 13%;\n}\n.sequencer {\n  position: absolute;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  top:-15vh;\n  width: 100vw;\n  height: 100vh;\n  z-index: 9999;\n\n  font-size: 20px;\n}\n.mat-fab.mat-accent[_ngcontent-c3], .mat-mini-fab.mat-accent[_ngcontent-c3], .mat-raised-button.mat-accent[_ngcontent-c3], .mat-raised-button[_ngcontent-c3] .mat-primary[_ngcontent-c3] .mat-fab.mat-primary[_ngcontent-c3], .mat-mini-fab.mat-primary[_ngcontent-c3], .mat-raised-button.mat-primary[_ngcontent-c3]: hover {\n  color: #008bcd !important;\n  font-weight: 500 !important;\n}\n.mat-form-field {\n    font-family: 'Josefin Sans', sans-serif !important;\n}\n.mat-fab.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent, .mat-raised-button .mat-primary .mat-fab.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {\n  background-color: #168ccc !important;\n}\n@media screen and (max-width: 500px) {\n  .container {\n    display: flex;\n    position: fixed;\n    align-items: center;\n    justify-content: center;\n    padding-left: 40px;\n    padding-right: 50px;\n    margin-left: 0px !important;\n  }\n}\n.topHolder {\n  height: 470px;\n  width: 300px;\n  background-color: white;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  border-color: black;\n  border-width: thin;\n  border-radius: 10px;\n  box-shadow: 0 0 12px 0 rgba(0,0,0,0.1), 0 10px 30px 0 rgba(0,0,0,0.2);\n  transition: -webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);\n  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);\n  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1), -webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);\n  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1),-webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);\n}\n.image-upload {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  margin-left: 10px !important;\n}\n.image-upload>input {\n  border-radius: 5px;\n  width: 100px;\n  border: 1px solid #b5b5b5;\n}\n.progressBar,\n.progressBarTitle {\n  text-align: center;\n  font-size: 1.7em;\n  color: #168ccc;\n  font-family: 'Raleway', sans-serif;\n  margin-bottom: 23px;\n}\n.selectedFile {\n  text-align: center;\n  font-size: 1em;\n  color: blue;\n  color: #005b7a;\n  font-weight: 500;\n  max-height: 70px;\n  overflow: scroll;\n}\n.selectedFile .fileName2 {\n  font-weight: 300;\n  width: 20px;\n}\n.fileName2 {\n  margin: 5px;\n}\nform {\n  height: 100%;\n  background-color: white;\n  border-radius: 0 0 3px 3px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\nlabel button {\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  margin-bottom: 25px;\n}\nbutton {\n  border-radius: 3px;\n  width: 20%;\n  margin: 10px;\n  margin-top: 30px;\n  font-weight: 300;\n}\n.fileFeedback {\nwidth: 100%;\ndisplay: flex;\nflex-direction: column;\nmargin-bottom: 22px;\n}\n.changeButton {\n  margin: auto;\n  width: 105px;\n  text-align: center;\n}\n.successMessage {\n  display: flex;\n  background-color: white;\n  max-width: 500px;\n  flex-direction: column;\n  padding: 10px;\n  align-items: center;\n  justify-content: space-between;\n  text-align: center;\n  border-radius: 3px;\n  border-color: black;\n  padding: 30px;\n  border-radius: 10px;\n  box-shadow: 0 0 12px 0 rgba(0,0,0,0.1), 0 10px 30px 0 rgba(0,0,0,0.2);\n  transition: -webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);\n  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);\n  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1), -webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);\n  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1),-webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);\n}\n.successMessage h2 {\n  font-weight: 400;\n  font-size: 18px;\n}\n.successMessage .senderEmail {\n  font-weight: 300;\n}\n.successButton {\n  width: 150px;\n}\n.fileName {\n  border: 1px double #005b7a;\n  border-radius: 5px;\n  padding: 10px 20px;\n}\n#text {\n  text-align: left;\n  vertical-align: middle;\n  font-size: 1em;\n}\nh2 {\n  color: #005b7a;\n}\n#file-input {\n  cursor: pointer;\n  width: auto;\n  margin-top: -15px;\n}\n#file-input:hover {\n  -webkit-filter: drop-shadow(0 0 10px white);\n          filter: drop-shadow(0 0 10px white);\n  cursor: pointer;\n}\n.center {\n  overflow: auto;\n}\n.send svg {}\n.example-form {\n  width: auto;\n}\n.example-full-width {}\np {\n  font-size: 1.5em;\n}\n.spinner-margin {\n  margin-bottom: 15px;\n}\n.g-recaptcha {\n  margin: 25px;\n}\n#addYourFiles {\n  position: relative !important;\n  margin-top: 35px !important;\n  font-weight: 300;\n}\ninput[type=\"file\"] {\n  -webkit-appearance: none;\n  opacity: 0;\n}\n#uploadCircle {\n  cursor: pointer !important;\n  z-index: 1000;\n  margin-left: 16px;\n}\n#upload-img {\n  height: 19px;\n  margin: -7px 0 0 0;\n}\n/*Spinner animation*/\n@-webkit-keyframes scaler {\n  0% { width: 50px; height: 50px;}\n  50% { width: 100px; height: 100px;}\n  100% { width: 50px; height: 50px;}\n}\n@keyframes scaler {\n  0% { width: 50px; height: 50px;}\n  50% { width: 100px; height: 100px;}\n  100% { width: 50px; height: 50px;}\n}\n@-webkit-keyframes counterspin2 {\n  0% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  10% { -webkit-transform: rotate(0deg) scale(1.3); transform: rotate(0deg) scale(1.3); }\n  20% { -webkit-transform: rotate(90deg) scale(1.3); transform: rotate(90deg) scale(1.3); }\n  30% { -webkit-transform: rotate(90deg) scale(1.0); transform: rotate(90deg) scale(1.0); }\n  40% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  50% { -webkit-transform: rotate(0deg) scale(1.3); transform: rotate(0deg) scale(1.3); }\n  60% { -webkit-transform: rotate(45deg) scale(1.3); transform: rotate(45deg) scale(1.3); }\n  70% { -webkit-transform: rotate(45deg) scale(1.0); transform: rotate(45deg) scale(1.0); }\n  80% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  90% { -webkit-transform: rotate(0deg) scale(1.3); transform: rotate(0deg) scale(1.3); }\n  100% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n}\n@keyframes counterspin2 {\n  0% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  10% { -webkit-transform: rotate(0deg) scale(1.3); transform: rotate(0deg) scale(1.3); }\n  20% { -webkit-transform: rotate(90deg) scale(1.3); transform: rotate(90deg) scale(1.3); }\n  30% { -webkit-transform: rotate(90deg) scale(1.0); transform: rotate(90deg) scale(1.0); }\n  40% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  50% { -webkit-transform: rotate(0deg) scale(1.3); transform: rotate(0deg) scale(1.3); }\n  60% { -webkit-transform: rotate(45deg) scale(1.3); transform: rotate(45deg) scale(1.3); }\n  70% { -webkit-transform: rotate(45deg) scale(1.0); transform: rotate(45deg) scale(1.0); }\n  80% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  90% { -webkit-transform: rotate(0deg) scale(1.3); transform: rotate(0deg) scale(1.3); }\n  100% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n}\n@-webkit-keyframes spin2 {\n  0% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  10% { -webkit-transform: rotate(-90deg) scale(1.0); transform: rotate(-90deg) scale(1.0); }\n  20% { -webkit-transform: rotate(-90deg) scale(1.3); transform: rotate(-90deg) scale(1.3); }\n  30% { -webkit-transform: rotate(-45deg) scale(1.3); transform: rotate(-45deg) scale(1.3); }\n  40% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  50% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  60% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  70% { -webkit-transform: rotate(45deg) scale(1.0); transform: rotate(45deg) scale(1.0); }\n  80% { -webkit-transform: rotate(90deg) scale(1.3); transform: rotate(90deg) scale(1.3); }\n  90% { -webkit-transform: rotate(45deg) scale(1.0); transform: rotate(45deg) scale(1.0); }\n  100% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n}\n@keyframes spin2 {\n  0% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  10% { -webkit-transform: rotate(-90deg) scale(1.0); transform: rotate(-90deg) scale(1.0); }\n  20% { -webkit-transform: rotate(-90deg) scale(1.3); transform: rotate(-90deg) scale(1.3); }\n  30% { -webkit-transform: rotate(-45deg) scale(1.3); transform: rotate(-45deg) scale(1.3); }\n  40% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  50% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  60% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  70% { -webkit-transform: rotate(45deg) scale(1.0); transform: rotate(45deg) scale(1.0); }\n  80% { -webkit-transform: rotate(90deg) scale(1.3); transform: rotate(90deg) scale(1.3); }\n  90% { -webkit-transform: rotate(45deg) scale(1.0); transform: rotate(45deg) scale(1.0); }\n  100% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n}\n@-webkit-keyframes fader {\n  0% { opacity: 0; }\n  100% { opacity: 1; }\n}\n@keyframes fader {\n  0% { opacity: 0; }\n  100% { opacity: 1; }\n}\n@-webkit-keyframes fadeout {\n  0% { opacity: 1;}\n  100% { opacity: 0;}\n}\n@keyframes fadeout {\n  0% { opacity: 1;}\n  100% { opacity: 0;}\n}\n.spinner-container {\n  -webkit-animation: fader linear 0.5s;\n          animation: fader linear 0.5s;\n  position: absolute;\n  width: 100vw;\n  height: 100vh;\n  left:0;\n  top:0;\n}\n.spinner-background {\n  position: absolute;\n  width: 100vw;\n  height: 100vh;\n}\n.spinner-container-out {\n  opacity: 0;\n  -webkit-animation: fadeout linear 0.5s;\n          animation: fadeout linear 0.5s;\n  position: absolute;\n  width: 100vw;\n  height: 100vh;\n  left:0;\n  top:0;\n}\n.spinner-pos {\n  left: 42%;\n  top:42%;\n  opacity: 1.0;\n  -webkit-filter: drop-shadow(0 0 80px white);\n          filter: drop-shadow(0 0 80px white);\n}\n.spinner-anim1 {\n  -webkit-animation: spin2 5s ease infinite;\n          animation: spin2 5s ease infinite;\n}\n.spinner-anim2 {\n  -webkit-animation: counterspin2 5s ease infinite;\n          animation: counterspin2 5s ease infinite;\n}\n@media screen and (max-width: 626px) {\n  .spinner-container {\n    display: none;\n  }\n  .spinner-container-out {\n    display: none;\n  }\n}\n@media screen and (max-height: 640px) {\n  .topHolder {\n    height: 400px;\n    width: 280px;\n\n  }\n}\n"
+module.exports = ".container {\n  display: flex;\n  flex-direction: column;\n  align-items: stretch;\n  justify-content: space-around;\n  margin-left: 13%;\n}\n.sequencer {\n  position: absolute;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  top:-15vh;\n  width: 100vw;\n  height: 100vh;\n  z-index: 9999;\n\n  font-size: 20px;\n}\n.mat-fab.mat-accent[_ngcontent-c3], .mat-mini-fab.mat-accent[_ngcontent-c3], .mat-raised-button.mat-accent[_ngcontent-c3], .mat-raised-button[_ngcontent-c3] .mat-primary[_ngcontent-c3] .mat-fab.mat-primary[_ngcontent-c3], .mat-mini-fab.mat-primary[_ngcontent-c3], .mat-raised-button.mat-primary[_ngcontent-c3]: hover {\n  color: #008bcd !important;\n  font-weight: 500 !important;\n}\n.mat-form-field {\n    font-family: 'Josefin Sans', sans-serif !important;\n}\n.mat-fab.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent, .mat-raised-button .mat-primary .mat-fab.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {\n  background-color: #168ccc !important;\n}\n@media screen and (max-width: 500px) {\n  .container {\n    display: flex;\n    position: fixed;\n    align-items: center;\n    justify-content: center;\n    padding-left: 40px;\n    padding-right: 50px;\n    margin-left: 0px !important;\n  }\n}\n.topHolder {\n  height: 420px;\n  width: 300px;\n  background-color: white;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  border-color: black;\n  border-width: thin;\n  border-radius: 10px;\n  box-shadow: 0 0 12px 0 rgba(0,0,0,0.1), 0 10px 30px 0 rgba(0,0,0,0.2);\n  transition: -webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);\n  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);\n  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1), -webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);\n  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1),-webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);\n}\n.filepond--root {\n    max-height: 2em !important;\n}\n.form-input {\n  margin-top: 10px;\n}\n.image-upload {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  margin-left: 10px !important;\n}\n.image-upload>input {\n  border-radius: 5px;\n  width: 100px;\n  border: 1px solid #b5b5b5;\n}\n.progressBar,\n.progressBarTitle {\n  text-align: center;\n  font-size: 1.7em;\n  color: #168ccc;\n  font-family: 'Raleway', sans-serif;\n  margin-bottom: 23px;\n}\n.selectedFile {\n  text-align: center;\n  font-size: 1em;\n  color: blue;\n  color: #005b7a;\n  font-weight: 500;\n  max-height: 70px;\n  overflow: scroll;\n}\n.selectedFile .fileName2 {\n  font-weight: 300;\n  width: 20px;\n}\n.fileName2 {\n  margin: 5px;\n}\nform {\n  height: 100%;\n  background-color: white;\n  border-radius: 0 0 3px 3px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\nlabel button {\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  margin-bottom: 25px;\n}\nbutton {\n  border-radius: 3px;\n  width: 20%;\n  margin: 10px;\n  margin-top: 30px;\n  font-weight: 300;\n}\n.fileFeedback {\nwidth: 100%;\ndisplay: flex;\nflex-direction: column;\nmargin-bottom: 22px;\n}\n.changeButton {\n  margin: auto;\n  width: 105px;\n  text-align: center;\n}\n.successMessage {\n  display: flex;\n  background-color: white;\n  max-width: 500px;\n  flex-direction: column;\n  padding: 10px;\n  align-items: center;\n  justify-content: space-between;\n  text-align: center;\n  border-radius: 3px;\n  border-color: black;\n  padding: 30px;\n  border-radius: 10px;\n  box-shadow: 0 0 12px 0 rgba(0,0,0,0.1), 0 10px 30px 0 rgba(0,0,0,0.2);\n  transition: -webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);\n  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);\n  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1), -webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);\n  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1),-webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);\n}\n.successMessage h2 {\n  font-weight: 400;\n  font-size: 18px;\n}\n.successMessage .senderEmail {\n  font-weight: 300;\n}\n.successButton {\n  width: 150px;\n}\n.fileName {\n  border: 1px double #005b7a;\n  border-radius: 5px;\n  padding: 10px 20px;\n}\n#text {\n  text-align: left;\n  vertical-align: middle;\n  font-size: 1em;\n}\nh2 {\n  color: #005b7a;\n}\n#file-input {\n  cursor: pointer;\n  width: auto;\n  margin-top: -15px;\n}\n#file-input:hover {\n  -webkit-filter: drop-shadow(0 0 10px white);\n          filter: drop-shadow(0 0 10px white);\n  cursor: pointer;\n}\n.center {\n  overflow: auto;\n}\n.send svg {}\n.example-form {\n  width: auto;\n}\n.example-full-width {}\np {\n  font-size: 1.5em;\n}\n.spinner-margin {\n  margin-bottom: 15px;\n}\n.g-recaptcha {\n  margin: 25px;\n}\n#addYourFiles {\n  position: relative !important;\n  margin-top: 35px !important;\n  font-weight: 300;\n}\ninput[type=\"file\"] {\n  -webkit-appearance: none;\n  opacity: 0;\n}\n#uploadCircle {\n  cursor: pointer !important;\n  z-index: 1000;\n  margin-left: 16px;\n}\n#upload-img {\n  height: 19px;\n  margin: -7px 0 0 0;\n}\n/*Spinner animation*/\n@-webkit-keyframes scaler {\n  0% { width: 50px; height: 50px;}\n  50% { width: 100px; height: 100px;}\n  100% { width: 50px; height: 50px;}\n}\n@keyframes scaler {\n  0% { width: 50px; height: 50px;}\n  50% { width: 100px; height: 100px;}\n  100% { width: 50px; height: 50px;}\n}\n@-webkit-keyframes counterspin2 {\n  0% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  10% { -webkit-transform: rotate(0deg) scale(1.3); transform: rotate(0deg) scale(1.3); }\n  20% { -webkit-transform: rotate(90deg) scale(1.3); transform: rotate(90deg) scale(1.3); }\n  30% { -webkit-transform: rotate(90deg) scale(1.0); transform: rotate(90deg) scale(1.0); }\n  40% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  50% { -webkit-transform: rotate(0deg) scale(1.3); transform: rotate(0deg) scale(1.3); }\n  60% { -webkit-transform: rotate(45deg) scale(1.3); transform: rotate(45deg) scale(1.3); }\n  70% { -webkit-transform: rotate(45deg) scale(1.0); transform: rotate(45deg) scale(1.0); }\n  80% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  90% { -webkit-transform: rotate(0deg) scale(1.3); transform: rotate(0deg) scale(1.3); }\n  100% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n}\n@keyframes counterspin2 {\n  0% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  10% { -webkit-transform: rotate(0deg) scale(1.3); transform: rotate(0deg) scale(1.3); }\n  20% { -webkit-transform: rotate(90deg) scale(1.3); transform: rotate(90deg) scale(1.3); }\n  30% { -webkit-transform: rotate(90deg) scale(1.0); transform: rotate(90deg) scale(1.0); }\n  40% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  50% { -webkit-transform: rotate(0deg) scale(1.3); transform: rotate(0deg) scale(1.3); }\n  60% { -webkit-transform: rotate(45deg) scale(1.3); transform: rotate(45deg) scale(1.3); }\n  70% { -webkit-transform: rotate(45deg) scale(1.0); transform: rotate(45deg) scale(1.0); }\n  80% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  90% { -webkit-transform: rotate(0deg) scale(1.3); transform: rotate(0deg) scale(1.3); }\n  100% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n}\n@-webkit-keyframes spin2 {\n  0% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  10% { -webkit-transform: rotate(-90deg) scale(1.0); transform: rotate(-90deg) scale(1.0); }\n  20% { -webkit-transform: rotate(-90deg) scale(1.3); transform: rotate(-90deg) scale(1.3); }\n  30% { -webkit-transform: rotate(-45deg) scale(1.3); transform: rotate(-45deg) scale(1.3); }\n  40% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  50% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  60% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  70% { -webkit-transform: rotate(45deg) scale(1.0); transform: rotate(45deg) scale(1.0); }\n  80% { -webkit-transform: rotate(90deg) scale(1.3); transform: rotate(90deg) scale(1.3); }\n  90% { -webkit-transform: rotate(45deg) scale(1.0); transform: rotate(45deg) scale(1.0); }\n  100% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n}\n@keyframes spin2 {\n  0% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  10% { -webkit-transform: rotate(-90deg) scale(1.0); transform: rotate(-90deg) scale(1.0); }\n  20% { -webkit-transform: rotate(-90deg) scale(1.3); transform: rotate(-90deg) scale(1.3); }\n  30% { -webkit-transform: rotate(-45deg) scale(1.3); transform: rotate(-45deg) scale(1.3); }\n  40% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  50% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  60% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n  70% { -webkit-transform: rotate(45deg) scale(1.0); transform: rotate(45deg) scale(1.0); }\n  80% { -webkit-transform: rotate(90deg) scale(1.3); transform: rotate(90deg) scale(1.3); }\n  90% { -webkit-transform: rotate(45deg) scale(1.0); transform: rotate(45deg) scale(1.0); }\n  100% { -webkit-transform: rotate(0deg) scale(1.0); transform: rotate(0deg) scale(1.0); }\n}\n@-webkit-keyframes fader {\n  0% { opacity: 0; }\n  100% { opacity: 1; }\n}\n@keyframes fader {\n  0% { opacity: 0; }\n  100% { opacity: 1; }\n}\n@-webkit-keyframes fadeout {\n  0% { opacity: 1;}\n  100% { opacity: 0;}\n}\n@keyframes fadeout {\n  0% { opacity: 1;}\n  100% { opacity: 0;}\n}\n.spinner-container {\n  -webkit-animation: fader linear 0.5s;\n          animation: fader linear 0.5s;\n  position: absolute;\n  width: 100vw;\n  height: 100vh;\n  left:0;\n  top:0;\n}\n.spinner-background {\n  position: absolute;\n  width: 100vw;\n  height: 100vh;\n}\n.spinner-container-out {\n  opacity: 0;\n  -webkit-animation: fadeout linear 0.5s;\n          animation: fadeout linear 0.5s;\n  position: absolute;\n  width: 100vw;\n  height: 100vh;\n  left:0;\n  top:0;\n}\n.spinner-pos {\n  left: 42%;\n  top:42%;\n  opacity: 1.0;\n  -webkit-filter: drop-shadow(0 0 80px white);\n          filter: drop-shadow(0 0 80px white);\n}\n.spinner-anim1 {\n  -webkit-animation: spin2 5s ease infinite;\n          animation: spin2 5s ease infinite;\n}\n.spinner-anim2 {\n  -webkit-animation: counterspin2 5s ease infinite;\n          animation: counterspin2 5s ease infinite;\n}\n@media screen and (max-width: 626px) {\n  .spinner-container {\n    display: none;\n  }\n  .spinner-container-out {\n    display: none;\n  }\n}\n@media screen and (max-height: 640px) {\n  .topHolder {\n    height: 400px;\n    width: 280px;\n\n  }\n}\n"
 
 /***/ }),
 
@@ -458,7 +467,7 @@ module.exports = ".container {\n  display: flex;\n  flex-direction: column;\n  a
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\n\n<div class=\"container\" *ngIf=\"form\">\n\n  <div class=\"topHolder\">\n    <!-- Loading spinner -->\n\n    <!-- Upload icon and button-->\n    <div class=\"image-upload\" *ngIf=\"!showUpdate\">\n      <label for=\"file-input\">\n        <button title=\"Add Your Files\" (click)=\"file.click()\" id=\"uploadCircle\" mat-fab>\n          <img id=\"upload-img\" src=\"../../assets/add-plus-button.png\" />\n        </button>\n      </label>\n      <p id=\"addYourFiles\">Upload your file</p>\n      <app-dragzone #file [onUpload]='upload'></app-dragzone>\n    </div>\n\n    <!-- Displays progress of file upload-->\n    <div class=\"progressBarTitle\" *ngIf=\"!progress && showUpdate && !this.completed\">Checking Files...</div>\n    <div class=\"progressBar\" *ngIf=\"progress && showUpdate && this.completed < this.totalFiles\">\n      <mat-progress-spinner class=\"spinner-margin\" [color]=\"color\" [mode]=\"mode\" [value]=\"value\">\n      </mat-progress-spinner>\n      {{(this.progress / this.parentSize *100).toFixed(1)}} %\n    </div>\n\n    <!-- Displays file name once uploaded and allows user to change selection -->\n    <div class=\"fileFeedback\" *ngIf=\"file.length > 0\">\n      <p class=\"selectedFile\">\n        <strong>Files Selected:</strong>\n        <br>\n        <span class=\"fileName2\" style=\"color:#0099cc\">{{this.name}}</span>\n      </p>\n      <button class=\"changeButton\" mat-raised-button color=\"accent\" (click)=\"toggleFile()\">Change files</button>\n    </div>\n\n    <div class=\"form-input\">\n      <form class=\"example-form\" (ngSubmit)=\"onTestPost()\">\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Send Files to\" [(ngModel)]=\"data.to\" [formControl]=\"toEmailFormControl\" required>\n          <mat-error *ngIf=\"toEmailFormControl.hasError('pattern')\">\n            Please enter a valid email address\n          </mat-error>\n          <mat-error *ngIf=\"toEmailFormControl.hasError('required')\">\n            Email is\n            <strong>required</strong>\n          </mat-error>\n        </mat-form-field>\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Your Email\" [(ngModel)]=\"data.from\" [formControl]=\"fromEmailFormControl\" required>\n          <mat-error *ngIf=\"fromEmailFormControl.hasError('pattern')\">\n            Please enter a valid email address\n          </mat-error>\n          <mat-error *ngIf=\"fromEmailFormControl.hasError('required')\">\n            Email is\n            <strong>required</strong>\n          </mat-error>\n        </mat-form-field>\n\n        <mat-form-field class=\"example-full-width\" hintLabel=\"Max 250 characters\">\n          <textarea matInput placeholder=\"Message\" matTextareaAutosize matAutosizeMinRows=\"2\" matAutosizeMaxRows=\"3\" maxlength=\"250\"\n            [(ngModel)]=\"data.message\" [formControl]=\"messageFormControl\">\n          <mat-error *ngIf=\"messageFormControl.hasError('pattern')\">\n            Please enter a valid message\n          </mat-error>\n          <mat-error *ngIf=\"messageFormControl.hasError('required')\">\n            Message is <strong>required</strong>\n          </mat-error></textarea>\n        </mat-form-field>\n        <button mat-raised-button color=\"accent\" type=\"submit\">Send</button>\n      </form>\n    </div>\n  </div>\n</div>\n\n<!-- Placeholder -->\n<div *ngIf=\"submit\">\n  <h2></h2>\n</div>\n\n<!-- Displays once file has been uploaded and sent -->\n<div class=\"successMessage\" *ngIf=\"submitResponse\">\n  <h2>The file below has been added to IPFS and sent to:\n    <br/>\n    <span class=\"senderEmail\" style=\"color:#0099cc\">{{this.data.to}} </span>\n  </h2>\n  <span class=\"fileName\">{{this.name}}</span>\n  <button class=\"successButton\" mat-raised-button color=\"accent\" (click)=\"refresh()\">Send another file</button>\n</div>\n"
+module.exports = "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\n\n<div class=\"container\" *ngIf=\"form\">\n\n  <div class=\"topHolder\">\n    <!-- Loading spinner -->\n\n    <!-- Upload icon and button-->\n    <div *ngIf=\"!showUpdate\">\n      <file-pond #pond\n      class=\"file-box\"\n      [options]=\"pondOptions\"\n      (oninit)=\"pondHandleInit()\"\n      (onaddfile)=\"upload($event)\"\n      (onremovefile)=\"delete($event)\">\n    </file-pond>\n  </div>\n\n  <!-- Displays progress of file upload-->\n  <div class=\"progressBarTitle\" *ngIf=\"!progress && showUpdate && !this.completed\">Uploading...</div>\n  <div class=\"progressBar\" *ngIf=\"progress && showUpdate\">\n    <mat-progress-spinner class=\"spinner-margin\" [color]=\"color\" [mode]=\"mode\" [value]=\"value\">\n    </mat-progress-spinner>\n    {{(this.progress / this.parentSize *100).toFixed(1)}} %\n  </div>\n\n\n  <div class=\"form-input\">\n    <form class=\"example-form\" (ngSubmit)=\"onPost()\">\n      <mat-form-field class=\"example-full-width\">\n        <input matInput placeholder=\"Send Files to\" [(ngModel)]=\"data.to\" [formControl]=\"toEmailFormControl\" required>\n        <mat-error *ngIf=\"toEmailFormControl.hasError('pattern')\">\n          Please enter a valid email address\n        </mat-error>\n        <mat-error *ngIf=\"toEmailFormControl.hasError('required')\">\n          Email is\n          <strong>required</strong>\n        </mat-error>\n      </mat-form-field>\n      <mat-form-field class=\"example-full-width\">\n        <input matInput placeholder=\"Your Email\" [(ngModel)]=\"data.from\" [formControl]=\"fromEmailFormControl\" required>\n        <mat-error *ngIf=\"fromEmailFormControl.hasError('pattern')\">\n          Please enter a valid email address\n        </mat-error>\n        <mat-error *ngIf=\"fromEmailFormControl.hasError('required')\">\n          Email is\n          <strong>required</strong>\n        </mat-error>\n      </mat-form-field>\n\n      <mat-form-field class=\"example-full-width\" hintLabel=\"Max 250 characters\">\n        <textarea matInput placeholder=\"Message\" matTextareaAutosize matAutosizeMinRows=\"2\" matAutosizeMaxRows=\"3\" maxlength=\"250\"\n        [(ngModel)]=\"data.message\" [formControl]=\"messageFormControl\">\n        <mat-error *ngIf=\"messageFormControl.hasError('pattern')\">\n          Please enter a valid message\n        </mat-error>\n        <mat-error *ngIf=\"messageFormControl.hasError('required')\">\n          Message is <strong>required</strong>\n        </mat-error></textarea>\n      </mat-form-field>\n      <button mat-raised-button color=\"accent\" type=\"submit\">Send</button>\n    </form>\n  </div>\n</div>\n</div>\n\n<!-- Placeholder -->\n<div *ngIf=\"submit\">\n  <h2></h2>\n</div>\n\n<!-- Displays once file has been uploaded and sent -->\n<div class=\"successMessage\" *ngIf=\"submitResponse\">\n  <h2>The files has been added to IPFS and sent to:\n    <span class=\"senderEmail\" style=\"color:#0099cc\">{{this.data.to}} </span>\n  </h2>\n  <span class=\"fileName\">{{this.name}}</span>\n  <button class=\"successButton\" mat-raised-button color=\"accent\" (click)=\"refresh()\">Send another files</button>\n</div>\n"
 
 /***/ }),
 
@@ -501,12 +510,18 @@ var MULTIPLE_REGEX = /^([a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA
 var TEXT_REGEX = /^[a-zA-Z0-9-]/;
 var InputComponent = /** @class */ (function () {
     function InputComponent(document, emailService, ipfsService) {
-        var _this = this;
         this.document = document;
         this.emailService = emailService;
         this.ipfsService = ipfsService;
         this.color = '#168ccc';
         this.mode = 'indeterminate';
+        this.pondOptions = {
+            multiple: true,
+            allowRevert: false,
+            labelIdle: 'Drop files here',
+            maxFiles: 3,
+            acceptedFileTypes: ''
+        };
         //Verifies email inputs
         this.toEmailFormControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [
             _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required,
@@ -520,41 +535,6 @@ var InputComponent = /** @class */ (function () {
             _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required,
             _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].pattern(TEXT_REGEX)
         ]);
-        this.upload = function ($event) {
-            if (!_this.file.length) {
-                _this.showUpdate = true;
-                var concatSize_1 = 0;
-                var file = Object.keys($event.target.files).map(function (key) { return $event.target.files[key]; });
-                var concatName = file.map(function (el) {
-                    concatSize_1 += el.size;
-                    _this.totalFiles++;
-                    return el.name;
-                }).join(' ');
-                _this.name = concatName;
-                _this.parentSize = concatSize_1;
-                file.forEach(function (el) {
-                    var reader = new FileReader();
-                    reader.onload = function (e) {
-                        _this.ipfsService.uploadIPFS(reader.result)
-                            .then(function (hash) {
-                            try {
-                                _this.file.push('https://ipfs.io/ipfs/' + hash);
-                                _this.data.hashes = (_this.file);
-                            }
-                            catch (e) {
-                                console.log(e);
-                            }
-                        }).then(function () {
-                            _this.completed++;
-                        });
-                    };
-                    reader.readAsArrayBuffer(el);
-                });
-            }
-            else {
-                alert("Sorry, still uploading previous file!");
-            }
-        };
         this.data = {
             to: '',
             from: '',
@@ -569,17 +549,67 @@ var InputComponent = /** @class */ (function () {
         this.completed = 0;
         this.hashes = [];
         this.file = [];
+        this.files = [];
         this.submit = false;
         this.submitResponse = false;
         this.form = true;
         this.progress = this.ipfsService.progress;
         this.showUpdate = false;
-        this.getTransfer();
     };
     InputComponent.prototype.animateStyles = function () {
         if (!this.animated)
             gsap__WEBPACK_IMPORTED_MODULE_4__["TweenMax"].to(this.document.getElementById('animatedLoader'), 1, { scrambleText: { text: 'sending through IPFS', chars: '10', revealDelay: 0.1, speed: 0.3 } }),
                 this.animated = true;
+    };
+    InputComponent.prototype.pondHandleInit = function () {
+        console.log('FilePond has initialised', this.pond);
+    };
+    InputComponent.prototype.onPost = function () {
+        var _this = this;
+        this.pond.getFiles().map(function (el) {
+            return _this.files.push(el.file);
+        });
+        this.onFilePost().then(function (res) { return _this.onTestPost(); });
+    };
+    InputComponent.prototype.onFilePost = function () {
+        var _this = this;
+        if (this.files.length > 0) {
+            return new Promise(function (resolve, reject) {
+                setTimeout(function () {
+                }, 10000);
+                var concatSize = 0;
+                var concatName = _this.files.map(function (el) {
+                    concatSize += el.size;
+                    return el.name;
+                }).join(' ');
+                _this.name = concatName;
+                _this.parentSize = concatSize;
+                _this.files.forEach(function (el) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        _this.ipfsService.uploadIPFS(reader.result)
+                            .then(function (ipfsObject) {
+                            try {
+                                _this.file.push('https://ipfs.io/ipfs/' + ipfsObject);
+                                _this.data.hashes = (_this.file);
+                                _this.completed++;
+                            }
+                            catch (e) {
+                                console.log(e);
+                            }
+                        }).then(function () {
+                            if (_this.totalFiles == _this.completed) {
+                                resolve();
+                            }
+                        });
+                    };
+                    reader.readAsArrayBuffer(el);
+                });
+            });
+        }
+        else {
+            alert("File missing");
+        }
     };
     //Called when form is submitted
     InputComponent.prototype.onTestPost = function () {
@@ -591,7 +621,7 @@ var InputComponent = /** @class */ (function () {
         else if (!(this.data.message.length === 0) && (!this.data.message.match(TEXT_REGEX)))
             alert("Invalid message.");
         else {
-            if (this.file.length && this.data.to) {
+            if (this.data.to) {
                 this.form = false;
                 this.submit = true;
                 setTimeout(function () {
@@ -605,7 +635,7 @@ var InputComponent = /** @class */ (function () {
                 }, function (error) { return console.log("Error 123", error); });
             }
             else {
-                alert("No file selected");
+                alert("Files uploading...");
             }
         }
     };
@@ -627,6 +657,7 @@ var InputComponent = /** @class */ (function () {
         this.completed = 0;
         this.hashes = [];
         this.file = [];
+        this.files = [];
         this.submit = false;
         this.submitResponse = false;
         this.form = true;
@@ -635,6 +666,16 @@ var InputComponent = /** @class */ (function () {
         this.data.message = '';
         this.showUpdate = false;
     };
+    InputComponent.prototype.upload = function (event) {
+        this.totalFiles++;
+    };
+    InputComponent.prototype.delete = function (event) {
+        this.totalFiles--;
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('pond'),
+        __metadata("design:type", Object)
+    ], InputComponent.prototype, "pond", void 0);
     InputComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-input',
@@ -747,7 +788,7 @@ var IpfsService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".container {\n  display: flex;\n  flex-direction: column;\n}\n\nlabel{\n  display: inline-block;\n}\n\nlabel button{\n  margin-top: 20px;\n  margin-left: 20px;\n  width: 80px;\n  height: 80px;\n  border-radius: 50%;\n}\n\ninput[type=\"file\"]{\n  position: fixed;\n  top: 5px;\n  left: 5px;\n  text-align: right;\n  outline: none;\n  cursor: inherit;\n}\n\n#text {\n  text-align: left;\n  vertical-align: middle;\n  font-size: 60px;\n}\n\n#file-input:hover {\n  -webkit-filter: drop-shadow(0 0 10px white);\n          filter: drop-shadow(0 0 10px white);\n}\n\n/*.form-input {\n  margin-left: 20px;\n  margin-top: 10px;\n}*/\n\n.center {\n  overflow: auto;\n  height: 200px;\n}\n\n.send svg{\nposition: absolute;\nbottom: 0;\nleft: 40%;\n}\n"
+module.exports = ".container {\n  display: flex;\n  flex-direction: column;\n}\n\nlabel{\n  display: inline-block;\n}\n\nlabel button{\n  margin-top: 20px;\n  margin-left: 20px;\n  width: 80px;\n  height: 80px;\n  border-radius: 50%;\n}\n\ninput[type=\"file\"]{\n  position: fixed;\n  top: 5px;\n  left: 5px;\n  text-align: right;\n  outline: none;\n  cursor: inherit;\n}\n\n#text {\n  text-align: left;\n  vertical-align: middle;\n  font-size: 60px;\n}\n\n#file-input:hover {\n  -webkit-filter: drop-shadow(0 0 10px white);\n          filter: drop-shadow(0 0 10px white);\n}\n\n.center {\n  overflow: auto;\n  height: 200px;\n}\n\n.send svg{\nposition: absolute;\nbottom: 0;\nleft: 40%;\n}\n"
 
 /***/ }),
 
