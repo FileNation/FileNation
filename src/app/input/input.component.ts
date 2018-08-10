@@ -102,6 +102,7 @@ export class InputComponent implements OnInit {
       }
 
       onFilePost() {
+        if(this.files.length > 0) {
         return new Promise((resolve, reject) => {
           setTimeout(() => {
           }, 10000);
@@ -133,6 +134,9 @@ export class InputComponent implements OnInit {
             reader.readAsArrayBuffer(el);
           })
         })
+      } else {
+        alert("File missing")
+      }
       }
 
       //Called when form is submitted
