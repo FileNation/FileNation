@@ -20,6 +20,13 @@ import { IpfsService } from './ipfs.service';
 import { AppComponent } from './app.component';
 import { InputComponent } from './input/input.component';
 
+// import filepond module
+import { FilePondModule, registerPlugin } from 'ngx-filepond';
+
+// import and register filepond file type validation plugin
+import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
+registerPlugin(FilePondPluginFileValidateType);
+
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { DragZoneComponent } from './dragzone/dragzone.component';
@@ -41,6 +48,7 @@ import { TransferComponent } from './transfer/transfer.component';
     [FormsModule, ReactiveFormsModule],
     [MatButtonModule, MatCheckboxModule, MatInputModule, MatListModule, MatFormFieldModule,
     MatProgressBarModule, MatProgressSpinnerModule],
+    FilePondModule,
     RouterModule.forRoot(ROUTES, { preloadingStrategy: PreloadAllModules }),
   ],
   providers: [

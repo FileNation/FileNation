@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { EmailService } from './../email.service';
 import { IpfsService } from '../ipfs.service';
@@ -25,6 +25,7 @@ export class InputComponent implements OnInit {
   name: string;
   parentSize: any;
   file: any;
+  files: any;
   temp: any;
   submit: boolean;
   submitResponse: boolean;
@@ -56,61 +57,118 @@ export class InputComponent implements OnInit {
     this.completed = 0;
     this.hashes = [];
     this.file = [];
+    this.files = [];
     this.submit = false;
     this.submitResponse = false;
     this.form = true;
     this.progress = this.ipfsService.progress;
     this.showUpdate = false;
-    this.getTransfer();
   }
 
   animateStyles() {
     if (!this.animated) TweenMax.to(this.document.getElementById('animatedLoader'),
-      1, { scrambleText: { text: 'sending through IPFS', chars: '10', revealDelay: 0.1, speed: 0.3 } }),
-      this.animated = true;
+    1, { scrambleText: { text: 'sending through IPFS', chars: '10', revealDelay: 0.1, speed: 0.3 } }),
+    this.animated = true;
+  }
+  @ViewChild('pond') pond: any;
+
+  pondOptions = {
+    multiple: true,
+    allowRevert: false,
+    labelIdle: 'Drop files here',
+    maxFiles: 3,
+    acceptedFileTypes: ''
+  }
+
+  pondHandleInit() {
+    console.log('FilePond has initialised', this.pond);
   }
 
   //Verifies email inputs
   toEmailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.pattern(MULTIPLE_REGEX)]);
+  Validators.required,
+  Validators.pattern(MULTIPLE_REGEX)]);
   fromEmailFormControl = new FormControl('', [
     Validators.required,
     Validators.pattern(EMAIL_REGEX)]);
-  messageFormControl = new FormControl('', [
-    Validators.required,
-    Validators.pattern(TEXT_REGEX)]);
+    messageFormControl = new FormControl('', [
+      Validators.required,
+      Validators.pattern(TEXT_REGEX)]);
 
-  //Called when form is submitted
-  onTestPost() {
-    if (!this.data.to.match(MULTIPLE_REGEX)) alert(`Invalid Recipient, please verify recpient's email!`);
-    else if (!this.data.from.match(EMAIL_REGEX)) alert(`Invalid Sender, please verify senders's email!`);
-    else if (!(this.data.message.length === 0) && (!this.data.message.match(TEXT_REGEX))) alert(`Invalid message.`);
-    else {
-      if (this.file.length && this.data.to) {
-        this.form = false;
-        this.submit = true;
-        setTimeout(() => {
-          this.submit = false;
-          this.submitResponse = true;
-        }, 4000);
-        this.emailService.sendEmail(this.data.to, this.data.from, this.data.message, this.data.hashes)
+      onPost() {
+        this.pond.getFiles().map(el =>
+          this.files.push(el.file));
+        this.onFilePost().then(res => this.onTestPost());
+      }
+
+      onFilePost() {
+        if(this.files.length > 0) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+          }, 10000);
+          let concatSize = 0;
+          let concatName = this.files.map(el => {
+            concatSize += el.size;
+            return el.name;
+          }).join(' ');
+          this.name = concatName;
+          this.parentSize = concatSize;
+          this.files.forEach(el => {
+            var reader = new FileReader();
+            reader.onload = (e) => {
+              this.ipfsService.uploadIPFS(reader.result)
+              .then((ipfsObject) => {
+                try {
+                  this.file.push('https://ipfs.io/ipfs/' + ipfsObject);
+                  this.data.hashes = (this.file)
+                  this.completed++;
+                } catch (e) {
+                  console.log(e)
+                }
+              }).then(() => {
+                if (this.totalFiles == this.completed) {
+                  resolve();
+                }
+              });
+            }
+            reader.readAsArrayBuffer(el);
+          })
+        })
+      } else {
+        alert("File missing")
+      }
+      }
+
+      //Called when form is submitted
+      onTestPost() {
+      if (!this.data.to.match(MULTIPLE_REGEX)) alert(`Invalid Recipient, please verify recpient's email!`);
+      else if (!this.data.from.match(EMAIL_REGEX)) alert(`Invalid Sender, please verify senders's email!`);
+      else if (!(this.data.message.length === 0) && (!this.data.message.match(TEXT_REGEX))) alert(`Invalid message.`);
+      else {
+        if (this.data.to) {
+          this.form = false;
+          this.submit = true;
+          setTimeout(() => {
+            this.submit = false;
+            this.submitResponse = true;
+          }, 4000);
+          this.emailService.sendEmail(this.data.to, this.data.from, this.data.message, this.data.hashes)
           .subscribe(
             data => {
               this.postData = JSON.stringify(data),
-                console.log('POST', this.postData)
+              console.log('POST', this.postData)
             },
             error => console.log("Error 123", error)
           );
-      }
-      else {
-        alert("No file selected");
+        }
+        else {
+          alert("Files uploading...");
+        }
       }
     }
-  }
 
-  //Called when user opts to change the selected file
-  toggleFile() {
+    //Called when user opts to change the selected file
+    toggleFile() {
     this.totalFiles = 0;
     this.completed = 0;
     this.hashes = [];
@@ -124,51 +182,25 @@ export class InputComponent implements OnInit {
 
   //Called when user opts to upload / send another file
   refresh() {
-    this.totalFiles = 0;
-    this.completed = 0;
-    this.hashes = [];
-    this.file = [];
-    this.submit = false;
-    this.submitResponse = false;
-    this.form = true;
-    this.data.to = '';
-    this.data.from = '';
-    this.data.message = '';
-    this.showUpdate = false;
+  this.totalFiles = 0;
+  this.completed = 0;
+  this.hashes = [];
+  this.file = [];
+  this.files = []
+  this.submit = false;
+  this.submitResponse = false;
+  this.form = true;
+  this.data.to = '';
+  this.data.from = '';
+  this.data.message = '';
+  this.showUpdate = false;
+}
+
+upload(event: any) {
+  this.totalFiles++
   }
 
-  upload = ($event) => {
-    if (!this.file.length) {
-      this.showUpdate = true;
-      let concatSize = 0;
-      let file = Object.keys($event.target.files).map(key => $event.target.files[key]);
-      let concatName = file.map(el => {
-        concatSize += el.size;
-        this.totalFiles++;
-        return el.name;
-      }).join(' ');
-      this.name = concatName;
-      this.parentSize = concatSize;
-      file.forEach((el) => {
-        var reader = new FileReader();
-        reader.onload = (e) => {
-          this.ipfsService.uploadIPFS(reader.result)
-            .then((hash) => {
-              try {
-                this.file.push('https://ipfs.io/ipfs/' + hash );
-                this.data.hashes = (this.file)
-              } catch (e) {
-                console.log(e)
-              }
-            }).then(() => {
-              this.completed++
-            });
-        }
-        reader.readAsArrayBuffer(el);
-      })
-    }
-    else {
-      alert("Sorry, still uploading previous file!")
-    }
+delete(event: any) {
+  this.totalFiles--
   }
 }

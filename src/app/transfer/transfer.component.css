@@ -34,11 +34,6 @@ input[type="file"]{
   filter: drop-shadow(0 0 10px white);
 }
 
-/*.form-input {
-  margin-left: 20px;
-  margin-top: 10px;
-}*/
-
 .center {
   overflow: auto;
   height: 200px;

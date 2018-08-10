@@ -43,10 +43,9 @@
 }
 
 .topHolder {
-  height: 470px;
+  height: 420px;
   width: 300px;
   background-color: white;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -58,6 +57,14 @@
   transition: -webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1),-webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.filepond--root {
+    max-height: 2em !important;
+}
+
+.form-input {
+  margin-top: 10px;
 }
 
 .image-upload {
