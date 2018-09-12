@@ -38,7 +38,7 @@
     "gsap": "2.0.1",
     "ipfs": "0.32.0",
     "ngx-filepond": "3.0.0",
-    "readable-stream": "3.0.2",
+    "readable-stream": "3.0.3",
     "rxjs": "6.2.2",
     "rxjs-compat": "6.2.2",
     "stream": "0.0.2",
