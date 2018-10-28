@@ -34,7 +34,7 @@
     "angular-filepond": "1.0.5",
     "buffer": "5.2.1",
     "core-js": "2.5.7",
-    "filepond-plugin-file-validate-type": "1.1.0",
+    "filepond-plugin-file-validate-type": "1.2.0",
     "gsap": "2.0.1",
     "ipfs": "0.32.3",
     "ngx-filepond": "4.0.0",
