@@ -6029,7 +6029,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 26:
+/***/ 25:
 /*!********************************!*\
   !*** multi ./src/polyfills.ts ***!
   \********************************/
@@ -6041,5 +6041,5 @@ module.exports = __webpack_require__(/*! /Users/unicorn/Projects/FileNation/File
 
 /***/ })
 
-},[[26,"runtime"]]]);
+},[[25,"runtime"]]]);
 //# sourceMappingURL=polyfills.js.map
