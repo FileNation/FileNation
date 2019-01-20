@@ -36,7 +36,7 @@
     "core-js": "2.5.7",
     "filepond-plugin-file-validate-type": "1.2.0",
     "gsap": "2.0.1",
-    "ipfs": "0.33.1",
+    "ipfs": "0.34.0",
     "ngx-filepond": "4.0.0",
     "readable-stream": "3.0.6",
     "rxjs": "6.2.2",
